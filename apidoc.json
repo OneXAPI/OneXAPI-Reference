@@ -1,0 +1,15 @@
+{
+  "name": "OneXAPI",
+  "version": "0.1.0",
+  "description": "Documentation for the OneXAPI",
+  "title": "OneXAPI Docs",
+  "url" : null,
+  "sampleUrl": null,
+  "order": [
+    "OneXAPI",
+    "Spot",
+    "Futures"
+  ],
+  "forceLanguage":"en",
+  "withGenerator":false
+}
