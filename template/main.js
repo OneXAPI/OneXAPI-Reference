@@ -441,36 +441,25 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
     var jsonTypes = ['string', 'number', 'integer', 'float', 'double', 'object', 'array', 'boolean', 'null'];
     $('.json-schema').click(function (e) {
       e.preventDefault();
-      var group = this.getAttribute('data-group');
       var param = this.getAttribute('data-param');
       var articleName = this.closest('article').getAttribute('data-name');
       var indx = api.findIndex(function (entry) { return entry.name === articleName});
-      if (!group || !param || indx === -1) {
+
+      if (!param || indx === -1) {
         return;
       }
 
-      var jsondata = api[indx][param].fields[group];
+      var jsondata = api[indx][param].examples;
+      var jsonSchema;
       if (!jsondata)
-        return;
-
-      var jsonSchema = {};
-      jsondata.forEach(function (keys) {
-        var type = keys.type.toLowerCase();
-        if (jsonTypes.includes(type) && type !== 'object') {
-          var res = expandDot(keys.field.split('.'), jsonSchema, type);
-          jsonSchema = res;
-        }
-      });
-
-      jsonSchema = {
-        "type": "object",
-        "properties": jsonSchema
-      };
+        jsonSchema = "No Example";
+      else
+        jsonSchema = jsonSchema = jsondata[0].content;
 
       $('#preData').text(syntaxHighlight(jsonSchema, true));
 
       jsonSchema = '<pre class="prettyprint language-json" data-type="json"><code>' + syntaxHighlight(jsonSchema, false) + '</code></pre>';
-      $('#jsonModal .modal-title').html(articleName.split('_').join(' ') + ' - ' + param + ' ' + group);
+      $('#jsonModal .modal-title').html(articleName.split('_').join(' ') + ' - ' + param);
       $('#json-pre').html(jsonSchema);
       $('#jsonModal').modal('toggle');
 
