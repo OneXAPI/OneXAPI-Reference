@@ -1018,6 +1018,14 @@ pre .typ-options {
   color: #878787;
 }
 
+.optionimg {
+  width: 1em;
+  display: block;
+  margin: 2px 2px 0px 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* 툴팁 기본 스타일 설정 시작 */
 
 .tooltip {
@@ -1029,17 +1037,29 @@ pre .typ-options {
   opacity: 100;
 }
 
+.tooltip .hintimg {
+  width: 1em;
+  display: block;
+  margin: 2px 2px 0px 0px;
+}
+
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 160px;
   background-color: black;
   color: #fff;
-  text-align: center;
+  text-align: left;
   border-radius: 6px;
   padding: 5px 0;
 
   position: absolute;
   z-index: 1;
+}
+
+.tooltip .tooltipimg {
+  width: 1em;
+  display: block;
+  margin: 2px 2px 0px 7px;
 }
 
 .tooltip:hover .tooltiptext {

@@ -8,9 +8,8 @@
   <link href="vendor/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="vendor/prettify.css" rel="stylesheet" media="screen">
   <link href="css/style.css" rel="stylesheet" media="screen, print">
-  <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+  <link href="img/logo.png" rel="icon" type="image/x-icon">
   <script src="vendor/polyfill.js"></script>
-  <script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -229,8 +228,15 @@
   {{#each params.fields}}
     <div class="pull-left"><h4 class="headers">{{__ @key}}</div>
     <div class="pull-left">
-      <div class="tooltip"><i class="fas fa-thumbs-up fa-1x"></i>
-      <span class="tooltiptext tooltip-right">M : Mandatory<br>O : Optional<br>I : Ignored<br>F : Forbidden</span>
+      <div class="tooltip"><div style="float: left"><img src="img/hint.png" alt="Hint" class="hintimg"></div>
+      <span class="tooltiptext tooltip-right">
+        <div style="float: left"><img src="img/supported.png" alt="Supported Image" class="tooltipimg"></div> : API Supported<br>
+        <div style="float: left"><img src="img/unsupported.png" alt="Unsupported Image" class="tooltipimg"></div> : API Not Supported<br><br>
+        <div style="float: left"><img src="img/M.png" alt="Mandatory Image" class="tooltipimg"></div> : Mandatory<br>
+        <div style="float: left"><img src="img/O.png" alt="Optional Image" class="tooltipimg"></div> : Optional<br>
+        <div style="float: left"><img src="img/I.png" alt="Ignored Image" class="tooltipimg"></div> : Ignored<br>
+        <div style="float: left"><img src="img/F.png" alt="Forbidden Image" class="tooltipimg"></div> : Forbidden<br>
+      </span>
       </div></h4>
     </div>
 
@@ -271,7 +277,7 @@
           </td>
           {{#each options}}
             <td>
-              {{this}}
+              <img src="img/{{this}}.png" alt="{{this}}" class='optionimg'>
             </td>
           {{/each}}
         </tr>

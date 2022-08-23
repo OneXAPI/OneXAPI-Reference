@@ -104,7 +104,7 @@
  * @apiParam {Double} amount
  * @apiParam {Bool} feeInAmount
  * @apiParam {Bool} internal
- * @onexParamExchanges Upbit Binance
+ * @onexParamExchanges Binance Upbit
  * @onexParamOption {m} {m}
  * @onexParamOption {o} {i}
  * @onexParamOption {m} {m}
@@ -257,7 +257,7 @@
  * @apiParam {String} forceRestApi force to update using REST API
  * @apiParam {String[]} currencies If not exist, return all currencies
  * @apiParam {Bool=false} zeroBalance Whether to include assets with zero balance
- * @onexParamExchanges Upbit Binance
+ * @onexParamExchanges Binance Upbit
  * @onexParamOption {o} {i}
  * @onexParamOption {o} {o}
  * @onexParamOption {o} {o}
@@ -341,7 +341,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {String} currency If not exist, return all currencies.
- * @onexParamExchanges Upbit Binance
+ * @onexParamExchanges Binance Upbit
  * @onexParamOption {o} {o}
  * 
  * @apiParamExample Request Example : 
@@ -435,7 +435,7 @@
  * @apiParam {String} txid
  * @apiParam {Uint} startTime [ms]
  * @apiParam {Uint} endTime [ms]
- * @onexParamExchanges Upbit Binance
+ * @onexParamExchanges Binance Upbit
  * @onexParamOption {o} {o}
  * @onexParamOption {o} {o}
  * @onexParamOption {o} {o}
@@ -518,7 +518,7 @@
  * @apiParam {String} txid
  * @apiParam {Uint} startTime [ms]
  * @apiParam {Uint} endTime [ms]
- * @onexParamExchanges Upbit Binance
+ * @onexParamExchanges Binance Upbit
  * @onexParamOption {o} {o}
  * @onexParamOption {i} {o}
  * @onexParamOption {o} {o}
@@ -596,7 +596,7 @@
  *
  * @apiParam {String} currency If not exist, return all currencies
  * @apiParam {String} chain If not exist, fetch a default chain of the currency
- * @onexParamExchanges Upbit Binance
+ * @onexParamExchanges Binance Upbit
  * @onexParamOption {m} {o}
  * @onexParamOption {o} {i}
  * 
@@ -666,7 +666,7 @@
  * @apiParam {String} currency If this field exists, ‘amount’ and ‘since’ must be sent
  * @apiParam {Double} amount 
  * @apiParam {Uint} since [ms]
- * @onexParamExchanges Upbit Binance
+ * @onexParamExchanges Binance Upbit
  * @onexParamOption {o} {o}
  * @onexParamOption {o} {o}
  * @onexParamOption {o} {o}
@@ -731,7 +731,7 @@
  * @apiParam {String} clientOrderId Client Order ID as assigned by the client
  * @apiParam {Double} amplifier=1.0 If this field exists, the requested price will be <b>price*amplifier</b>
  * @apiParam {String=gtc,ioc,fok} type=gtc
- * @onexParamExchanges Upbit Binance
+ * @onexParamExchanges Binance Upbit
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
