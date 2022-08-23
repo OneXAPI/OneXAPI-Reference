@@ -441,10 +441,11 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
     var jsonTypes = ['string', 'number', 'integer', 'float', 'double', 'object', 'array', 'boolean', 'null'];
     $('.json-schema').click(function (e) {
       e.preventDefault();
+      var group = this.getAttribute('data-group');
       var param = this.getAttribute('data-param');
       var articleName = this.closest('article').getAttribute('data-name');
-      var indx = api.findIndex(function (entry) { return entry.name === articleName});
-      if (!param || indx === -1) {
+      var indx = api.findIndex(function (entry) { return entry.name === articleName && entry.group === group});
+      if (!group || !param || indx === -1) {
         return;
       }
 

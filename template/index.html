@@ -168,8 +168,8 @@
         {{/if}}
 
         {{subTemplate "article-param-block" params=article.header paramType="header" _hasType=_hasTypeInHeaderFields section="header"}}
-        {{subTemplate "article-param-request-block" params=article.parameter exchanges=article.exchanges paramType="parameter" _hasType=_hasTypeInParameterFields section="parameter"}}
-        {{subTemplate "article-param-block" params=article.success paramType="success" _hasType=_hasTypeInSuccessFields section="success"}}
+        {{subTemplate "article-param-request-block" params=article.parameter exchanges=article.exchanges group=article.group paramType="parameter" _hasType=_hasTypeInParameterFields section="parameter"}}
+        {{subTemplate "article-param-block" params=article.success group=article.group paramType="success" _hasType=_hasTypeInSuccessFields section="success"}}
         {{subTemplate "article-param-block" params=article.error paramType="error" _col1="Name" _hasType=_hasTypeInErrorFields section="error"}}
 
         {{subTemplate "article-sample-request" article=article id=id}}
@@ -235,7 +235,7 @@
     </div>
 
     <div class="pull-right">
-      <button class="btn btn-xs json-schema" data-group="{{__ @key}}" data-param="{{../../paramType}}">json sample</button>
+      <button class="btn btn-xs json-schema" data-group="{{../../group}}" data-param="{{../../paramType}}">json sample</button>
     </div>
 
     <table class="table table-hover">
@@ -287,7 +287,7 @@
     {{#each params.fields}}
       <div class="pull-left"><h4 class="headers">{{__ @key}}</h4></div>
       <div class="pull-right">
-        <button class="btn btn-xs json-schema" data-group="{{__ @key}}" data-param="{{../../paramType}}" >json sample</button>
+        <button class="btn btn-xs json-schema" data-group="{{../../group}}" data-param="{{../../paramType}}" >json sample</button>
       </div>
 
 

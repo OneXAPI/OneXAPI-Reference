@@ -9,7 +9,7 @@ def error(msg) :
     sys.exit()
 
 for group in group_list :
-    with open("src/" + group + ".js", "r") as f:
+    with open("tmp/" + group + ".js", "r") as f:
         apiExchangeInfo[group] = dict()
         apiName = ""
         paramCnt = 0
@@ -35,7 +35,8 @@ for group in group_list :
                     error("Exchanges Length is 0, apiName : " + apiName)
             elif "@onexParamOption " in line:
                 apiExchangeInfo[group][apiName]["options"].append([])
-                for option in line.split("@onexParamOption")[-1].split(" "):
+                for option in line.split("@onexParamOption")[-1].split("{"):
+                    option = option.replace(" ","").split("}")[0]
                     if option:
                         option = option.upper()
                         if option not in ['M','O','I','F']:
@@ -46,6 +47,8 @@ for group in group_list :
             elif "@apiExample {python}" in line:
                 if len(apiExchangeInfo[group][apiName]["options"]) != paramCnt:
                     error("Param count of option is wrong : " + apiName)
+
+# print(apiExchangeInfo)
 
 with open("out/api_data.js", "r+") as file:
     data = file.read()
@@ -77,6 +80,11 @@ with open("out/api_data.js", "r+") as file:
                 item["optional"] = False
                 item["field"] = "<i>" + item["field"] + "</i>"
             item["field"] = item["field"].replace("__", " ")
+
+        ### apidoc parsing error correction ###
+        for item in api["examples"]:
+            item["content"] = item["content"].replace(")__;",");")
+
 
     file.seek(0)
     file.write("define(" + json.dumps(jsondata, indent=2) + ");")

@@ -1,9 +1,21 @@
+// C++
 #include <iostream>
 #include "OneXAPI.hpp"
 
 int main(){
+	std::string userInfo = R"(
+		{
+			"accessKey":"user access key",
+			"secretKey":"user secrey key"
+		}
+	)";
 
-	std::cout << OneXAPI::setLoggerConfig(R"({"main":{"logLevel":"info"}})") << std::endl;
+	OneXAPI::Upbit::Spot client(userInfo);
+
+	std::string request = R"(
+		"txid":"0xfad1~~~"
+	)";
+	std::cout << client.isDepositCompleted(request) << std::endl;
 	
 	return 0;
 }
