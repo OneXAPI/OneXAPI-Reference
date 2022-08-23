@@ -11,15 +11,15 @@
  * @apiParam {Double} baseAmount
  * @apiParam {String} clientOrderId Client Order ID as assigned by the client
  * @apiParam {Double} amplifier=1.0 If this field exists, the requested price will be <b>price*amplifier</b>
- * @apiParam {String} type=gtc gtc ioc fok
+ * @apiParam {String=gtc,ioc,fok} type=gtc
  * @onexParamExchanges Binance Upbit
- * @onexParamRequired m m
- * @onexParamRequired m m
- * @onexParamRequired m m
- * @onexParamRequired m m
- * @onexParamRequired o o
- * @onexParamRequired o o
- * @onexParamRequired o i
+ * @onexParamOption m m
+ * @onexParamOption m m
+ * @onexParamOption m m
+ * @onexParamOption m m
+ * @onexParamOption o o
+ * @onexParamOption o o
+ * @onexParamOption o i
  * 
  * @apiParamExample Request Example : 
  *      {

@@ -1,0 +1,9 @@
+#include <iostream>
+#include "OneXAPI.hpp"
+
+int main(){
+
+	std::cout << OneXAPI::setLoggerConfig(R"({"main":{"logLevel":"info"}})") << std::endl;
+	
+	return 0;
+}

@@ -29,16 +29,16 @@ for group in group_list :
                 exchanges = line.split("@onexParamExchanges")[-1].split(" ")
                 for exchange in exchanges:
                     if exchange:
-                        apiExchangeInfo[group][apiName]["exchanges"].append(exchange.lower())
+                        apiExchangeInfo[group][apiName]["exchanges"].append(exchange.capitalize())
 
                 if len(apiExchangeInfo[group][apiName]["exchanges"]) == 0 :
                     error("Exchanges Length is 0, apiName : " + apiName)
-            elif "@onexParamRequired " in line:
+            elif "@onexParamOption " in line:
                 apiExchangeInfo[group][apiName]["options"].append([])
-                for option in line.split("@onexParamRequired")[-1].split(" "):
+                for option in line.split("@onexParamOption")[-1].split(" "):
                     if option:
-                        option = option.lower()
-                        if option not in ['m','o','i','f']:
+                        option = option.upper()
+                        if option not in ['M','O','I','F']:
                             error("Not allowed option : " + option + "    api : " + apiName)
                         apiExchangeInfo[group][apiName]["options"][-1].append(option)
                 if len(apiExchangeInfo[group][apiName]["options"][-1]) != len(apiExchangeInfo[group][apiName]["exchanges"]):
@@ -46,8 +46,6 @@ for group in group_list :
             elif "@apiExample {python}" in line:
                 if len(apiExchangeInfo[group][apiName]["options"]) != paramCnt:
                     error("Param count of option is wrong : " + apiName)
-                        
-# print(apiExchangeInfo)
 
 with open("out/api_data.js", "r+") as file:
     data = file.read()
@@ -57,17 +55,28 @@ with open("out/api_data.js", "r+") as file:
 
     for api in jsondata["api"] :
         ### Key Update ###
-        api["parameter"]["fields"]["Parameter : "] = api["parameter"]["fields"]["Parameter"]
-        del api["parameter"]["fields"]["Parameter"]
-        api["success"]["fields"]["Response : "] = api["success"]["fields"]["Success 200"]
-        del api["success"]["fields"]["Success 200"]
+        if "Parameter" in api["parameter"]["fields"]:
+            api["parameter"]["fields"]["Parameter : "] = api["parameter"]["fields"]["Parameter"]
+            del api["parameter"]["fields"]["Parameter"]
+        if "Success 200" in api["success"]["fields"]:
+            api["success"]["fields"]["Response : "] = api["success"]["fields"]["Success 200"]
+            del api["success"]["fields"]["Success 200"]
 
+        ### Exchange Append ###
         api["exchanges"] = []
         for exchange in apiExchangeInfo[api["group"]][api["name"]]["exchanges"]:
             api["exchanges"].append(exchange)
         
+        ### Exchange Options Append ###
         for it in range(len(apiExchangeInfo[api["group"]][api["name"]]["options"])):
             api["parameter"]["fields"]["Parameter : "][it]["options"] = apiExchangeInfo[api["group"]][api["name"]]["options"][it]
+
+        ### Params Fiels Italic&Space ###
+        for item in api["parameter"]["fields"]["Parameter : "] + api["success"]["fields"]["Response : "]:
+            if item["optional"] is True:
+                item["optional"] = False
+                item["field"] = "<i>" + item["field"] + "</i>"
+            item["field"] = item["field"].replace("__", " ")
 
     file.seek(0)
     file.write("define(" + json.dumps(jsondata, indent=2) + ");")

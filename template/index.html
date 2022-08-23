@@ -168,7 +168,7 @@
         {{/if}}
 
         {{subTemplate "article-param-block" params=article.header paramType="header" _hasType=_hasTypeInHeaderFields section="header"}}
-        {{subTemplate "article-param-request-block" params=article.parameter paramType="parameter" _hasType=_hasTypeInParameterFields section="parameter"}}
+        {{subTemplate "article-param-request-block" params=article.parameter exchanges=article.exchanges paramType="parameter" _hasType=_hasTypeInParameterFields section="parameter"}}
         {{subTemplate "article-param-block" params=article.success paramType="success" _hasType=_hasTypeInSuccessFields section="success"}}
         {{subTemplate "article-param-block" params=article.error paramType="error" _col1="Name" _hasType=_hasTypeInErrorFields section="error"}}
 
@@ -230,7 +230,7 @@
     <div class="pull-left"><h4 class="headers">{{__ @key}}</div>
     <div class="pull-left">
       <div class="tooltip"><i class="fas fa-thumbs-up fa-1x"></i>
-      <span class="tooltiptext tooltip-right">오른쪽 툴팁, M, O, I 등 설명 추가</span>
+      <span class="tooltiptext tooltip-right">M : Mandatory<br>O : Optional<br>I : Ignored<br>F : Forbidden</span>
       </div></h4>
     </div>
 
@@ -243,7 +243,10 @@
         <tr>
         <th style="width: 30%">{{#if ../../_col1}}{{__ ../../_col1}}{{else}}{{__ "Field"}}{{/if}}</th>
           {{#if ../../_hasType}}<th style="width: 10%">{{__ "Type"}}</th>{{/if}}
-          <th style="width: {{#if _hasType}}60%{{else}}70%{{/if}}">{{__ "Description"}}</th>
+          <th style="width: {{#if _hasType}}50%{{else}}60%{{/if}}">{{__ "Description"}}</th>
+          {{#each ../../exchanges}}
+          <th style="width: 10%">{{this}}</th>
+          {{/each}}
         </tr>
       </thead>
       <tbody>
@@ -266,6 +269,11 @@
             </p>
           {{/if}}
           </td>
+          {{#each options}}
+            <td>
+              {{this}}
+            </td>
+          {{/each}}
         </tr>
     {{/each}}
       </tbody>

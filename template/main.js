@@ -444,7 +444,6 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
       var param = this.getAttribute('data-param');
       var articleName = this.closest('article').getAttribute('data-name');
       var indx = api.findIndex(function (entry) { return entry.name === articleName});
-
       if (!param || indx === -1) {
         return;
       }
