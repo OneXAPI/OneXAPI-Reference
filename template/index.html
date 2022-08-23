@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
   <script id="template-sidenav" type="text/x-handlebars-template">
     <nav id="scrollingNav" class="col-md-2">
     
@@ -251,7 +250,7 @@
           {{#if ../../_hasType}}<th style="width: 10%">{{__ "Type"}}</th>{{/if}}
           <th style="width: {{#if _hasType}}50%{{else}}60%{{/if}}">{{__ "Description"}}</th>
           {{#each ../../exchanges}}
-          <th style="width: 10%">{{this}}</th>
+          <th style="width: 10%"><div style="float: left"><img src="img/{{this}}.png" alt="{{this}}" class="optionimg">{{__ @key}}</div></th>
           {{/each}}
         </tr>
       </thead>

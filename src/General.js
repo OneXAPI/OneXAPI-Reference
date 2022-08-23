@@ -5,7 +5,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {NoParam} __EMPTY__ 
- * @onexParamExchanges all
+ * @onexParamExchanges {all o}
  * @onexParamOption {i}
  * 
  * @apiParamExample Request Example : 
@@ -75,7 +75,7 @@
  * @apiParam {Uint} restRequestTimeout [ms]
  * @apiParam {Uint} websocketConnectTimeout [ms]
  * @apiParam {Uint} websocketIdleTimeout [ms]
- * @onexParamExchanges all
+ * @onexParamExchanges {all o}
  * @onexParamOption {i}
  * @onexParamOption {i}
  * @onexParamOption {i}
@@ -125,7 +125,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {NoParam} __EMPTY__ 
- * @onexParamExchanges all
+ * @onexParamExchanges {all o}
  * @onexParamOption {i}
  * 
  * @apiParamExample Request Example : 
@@ -183,7 +183,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {String} api if not exist, return all APIs
- * @onexParamExchanges all
+ * @onexParamExchanges {all o}
  * @onexParamOption {i}
  * 
  * @apiParamExample Request Example : 

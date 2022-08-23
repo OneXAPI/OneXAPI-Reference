@@ -6,7 +6,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {NoParam} __EMPTY__ 
- * @onexParamExchanges all
+ * @onexParamExchanges {all o}
  * @onexParamOption {i}
  * 
  * @apiParamExample Request Example : 
@@ -67,7 +67,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {NoParam} __EMPTY__ 
- * @onexParamExchanges all
+ * @onexParamExchanges {all o}
  * @onexParamOption {i}
  * 
  * @apiParamExample Request Example : 
@@ -124,7 +124,7 @@
  * @apiParam {Object} websocket 
  * @apiParam {String} websocket.logLevel 
  * @apiParam {String} websocket.outputMethod 
- * @onexParamExchanges all
+ * @onexParamExchanges {all o}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}

@@ -19,19 +19,27 @@ for group in group_list :
                 apiName = line.split(" ")[-1]
                 paramCnt = 0
                 apiExchangeInfo[group][apiName] = dict()
-                apiExchangeInfo[group][apiName]["exchanges"] = []
+                apiExchangeInfo[group][apiName]["exchanges"] = dict()
                 apiExchangeInfo[group][apiName]["options"] = []
             elif "@apiParam " in line:
                 paramCnt += 1
             elif "@onexParamExchanges " in line:
                 if not apiName or paramCnt < 1:
                     error("Cannot find apiName or params!")
-                exchanges = line.split("@onexParamExchanges")[-1].split(" ")
-                for exchange in exchanges:
-                    if exchange:
-                        apiExchangeInfo[group][apiName]["exchanges"].append(exchange.capitalize())
+                exchanges = line.split("@onexParamExchanges")[-1].split("{")
+                for exchangeOption in exchanges:
+                    if "}" in exchangeOption:
+                        exchangeOption = exchangeOption.replace("}","")
+                        exchange = exchangeOption.split(" ")[0]
+                        option = exchangeOption.split(" ")[1].lower()
+                        if option == "o":
+                            apiExchangeInfo[group][apiName]["exchanges"][exchange.capitalize()] = "supported"
+                        elif option == "x":
+                            apiExchangeInfo[group][apiName]["exchanges"][exchange.capitalize()] = "unsupported"
+                        else:
+                            error("Not defined option : " + option + "    in api : " + apiName)
 
-                if len(apiExchangeInfo[group][apiName]["exchanges"]) == 0 :
+                if len(apiExchangeInfo[group][apiName]["exchanges"].keys()) == 0 :
                     error("Exchanges Length is 0, apiName : " + apiName)
             elif "@onexParamOption " in line:
                 apiExchangeInfo[group][apiName]["options"].append([])
@@ -42,7 +50,7 @@ for group in group_list :
                         if option not in ['M','O','I','F']:
                             error("Not allowed option : " + option + "    api : " + apiName)
                         apiExchangeInfo[group][apiName]["options"][-1].append(option)
-                if len(apiExchangeInfo[group][apiName]["options"][-1]) != len(apiExchangeInfo[group][apiName]["exchanges"]):
+                if len(apiExchangeInfo[group][apiName]["options"][-1]) != len(apiExchangeInfo[group][apiName]["exchanges"].keys()):
                     error("Option size is wrong : " + apiName)
             elif "@apiExample {python}" in line:
                 if len(apiExchangeInfo[group][apiName]["options"]) != paramCnt:
@@ -66,9 +74,9 @@ with open("out/api_data.js", "r+") as file:
             del api["success"]["fields"]["Success 200"]
 
         ### Exchange Append ###
-        api["exchanges"] = []
-        for exchange in apiExchangeInfo[api["group"]][api["name"]]["exchanges"]:
-            api["exchanges"].append(exchange)
+        api["exchanges"] = dict()
+        for exchange in apiExchangeInfo[api["group"]][api["name"]]["exchanges"].keys():
+            api["exchanges"][exchange] = apiExchangeInfo[api["group"]][api["name"]]["exchanges"][exchange]
         
         ### Exchange Options Append ###
         for it in range(len(apiExchangeInfo[api["group"]][api["name"]]["options"])):
