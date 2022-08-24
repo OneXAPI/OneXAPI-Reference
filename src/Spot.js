@@ -5,7 +5,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {NoParam} __EMPTY__ 
- * @onexParamExchanges {all o}
+ * @onexParamExchanges {All o}
  * @onexParamOption {i}
  * 
  * @apiParamExample Request Example : 
@@ -49,7 +49,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {String=ceil,floor,round} roundingRule
- * @onexParamExchanges {all o}
+ * @onexParamExchanges {All o}
  * @onexParamOption {m}
  * 
  * @apiParamExample Request Example : 
@@ -142,7 +142,7 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  currently empty
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -180,7 +180,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {NoParam} __EMPTY__ 
- * @onexParamExchanges {all o}
+ * @onexParamExchanges {All o}
  * @onexParamOption {i}
  * 
  * @apiParamExample Request Example : 
@@ -304,7 +304,7 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  currently empty
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -401,7 +401,7 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  currently empty
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -478,7 +478,7 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  currently empty
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -560,7 +560,7 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  currently empty
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -630,7 +630,7 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  currently empty
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -692,7 +692,7 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  currently empty
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -712,6 +712,118 @@
  *          "txid":"0xfad1~~~"
  *      )";
  *      std::cout << client.isDepositCompleted(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot getOrderRoundingRule
+ * @apiName getOrderRoundingRule
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {NoParam} __EMPTY__ 
+ * @onexParamExchanges {All o}
+ * @onexParamOption {i}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String=ceil,floor,round} limitBuyPrice=round
+ * @apiSuccess {String=ceil,floor,round} limitBuyBaseAmount=round
+ * @apiSuccess {String=ceil,floor,round} limitSellPrice=round
+ * @apiSuccess {String=ceil,floor,round} limitSellBaseAmount=round
+ * @apiSuccess {String=ceil,floor,round} marketBuyQuoteAmount=round
+ * @apiSuccess {String=ceil,floor,round} marketSellBaseAmount=round
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":0,
+ *          "limitBuyPrice":"ceil",             
+ *          "limitBuyBaseAmount":"floor",
+ *          "limitSellPrice":"ceil",
+ *          "limitSellBaseAmount":"floor",
+ *          "marketBuyQuoteAmount":"round",
+ *          "marketSellBaseAmount":"round",
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::cout << client.getOrderRoundingRule() << std::endl;
+ *      // or
+ *      std::cout << client.getOrderRoundingRule("") << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot setOrderRoundingRule
+ * @apiName setOrderRoundingRule
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String=ceil,floor,round} limitBuyPrice
+ * @apiParam {String=ceil,floor,round} limitBuyBaseAmount
+ * @apiParam {String=ceil,floor,round} limitSellPrice
+ * @apiParam {String=ceil,floor,round} limitSellBaseAmount
+ * @apiParam {String=ceil,floor,round} marketBuyQuoteAmount
+ * @apiParam {String=ceil,floor,round} marketSellBaseAmount
+ * @onexParamExchanges {All o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "marketSellBaseAmount":"floor"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String=ceil,floor,round} [requested__rule]
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":0,
+ *          "marketSellBaseAmount":"floor"
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *      std::string request = R"(
+ *          {
+ *              "limitBuyPrice":"ceil"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.setOrderRoundingRule(request) << std::endl;
  *      
  *      return 0;
  *  }
@@ -741,13 +853,13 @@
  * @onexParamOption {o} {i}
  * 
  * @apiParamExample Request Example : 
- *      {
- *          "baseCurrency":"BTC",
- *          "quoteCurrency":"USDT",
- *          "price":21351.1384,
- *          "baseAmount":1.5843,
- *          "amplifier":1.03       //requested price will be 21351.1384*1.03 = 21991.672552
- *      }
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "price":21351.1384,
+ *      "baseAmount":1.5843,
+ *      "amplifier":1.03       //requested price will be 21351.1384*1.03 = 21991.672552
+ *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {String} baseCurrency
@@ -755,26 +867,26 @@
  * @apiSuccess {String} symbol
  * @apiSuccess {String} orderId
  * @apiSuccess {String} clientOrderId
- * @apiSuccess {String} price
- * @apiSuccess {String} baseAmount
+ * @apiSuccess {DoubleString} price
+ * @apiSuccess {DoubleString} baseAmount
  * 
  * @apiSuccessExample Success-Response :
- *      {
- *          "success":true,
- *          "data":{
- *              "requestedApiCount":1,
- *              "baseCurrency":"BTC",
- *              "quoteCurrency":"USDT",
- *              "symbol":"BTC-USDT",
- *              "orderId":"38463215",
- *              "clientOrderId":"",
- *              "price":"21991.67",
- *              "baseAmount":"1.584"
- *          }
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "orderId":"38463215",
+ *          "clientOrderId":"",
+ *          "price":"21991.67",
+ *          "baseAmount":"1.584"
  *      }
+ *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  currently empty
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -794,6 +906,990 @@
  *      })";
  * 
  *      std::cout << client.orderLimitBuy(request) << std::endl;
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot orderLimitSell
+ * @apiName orderLimitSell
+ * @apiDescription Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {Double} price
+ * @apiParam {Double} baseAmount
+ * @apiParam {String} clientOrderId Client Order ID as assigned by the client
+ * @apiParam {Double} amplifier=1.0 If this field exists, the requested price will be <b>price*amplifier</b>
+ * @apiParam {String=gtc,ioc,fok} type=gtc
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {i}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "price":21351.1384,
+ *      "baseAmount":1.5843,
+ *      "amplifier":0.97       //requested price will be 21351.1384*0.97 = 20710.604248
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} symbol
+ * @apiSuccess {String} orderId
+ * @apiSuccess {String} clientOrderId
+ * @apiSuccess {DoubleString} price
+ * @apiSuccess {DoubleString} baseAmount
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "orderId":"38463215",
+ *          "clientOrderId":"",
+ *          "price":"20710.6",
+ *          "baseAmount":"1.584"
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){    
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Spot client(userInfo)__;
+ *      
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"XRP",
+ *              "quoteCurrency":"KRW",
+ *              "price":486.2348,
+ *              "baseAmount":23.834219
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.orderLimitSell(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot orderMarketBuy
+ * @apiName orderMarketBuy
+ * @apiDescription Amount is automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {Double} quoteAmount
+ * @apiParam {String} clientOrderId Client Order ID as assigned by the client
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "quoteAmount":1.5843
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} symbol
+ * @apiSuccess {String} orderId
+ * @apiSuccess {String} clientOrderId
+ * @apiSuccess {DoubleString} quoteAmount
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "orderId":"38463215",
+ *          "clientOrderId":"",
+ *          "quoteAmount":"1.584"
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){    
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Spot client(userInfo)__;
+ *      
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"USDT",
+ *              "quoteAmount":1.5843
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.orderMarketBuy(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot orderMarketSell
+ * @apiName orderMarketSell
+ * @apiDescription Amount is automatically rounded according to the exchange. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {Double} baseAmount
+ * @apiParam {String} clientOrderId Client Order ID as assigned by the client
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "baseAmount":1.5843
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} symbol
+ * @apiSuccess {String} orderId
+ * @apiSuccess {String} clientOrderId
+ * @apiSuccess {DoubleString} baseAmount
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "orderId":"38463215",
+ *          "price":"20710.6",
+ *          "baseAmount":"1.584"
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){    
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Spot client(userInfo)__;
+ *      
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"USDT",
+ *              "baseAmount":1.5843
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.orderMarketSell(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot orderCancel
+ * @apiName orderCancel
+ * @apiDescription If both orderId and clientOrderId are options, either of them must be sent. If both are sent, orderId is used preferentially.
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {String} orderId
+ * @apiParam {String} clientOrderId
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {i}
+ * @onexParamOption {m} {i}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "orderId":"38463215"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} symbol
+ * @apiSuccess {String} orderId
+ * @apiSuccess {String} clientOrderId
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "orderId":"38463215",
+ *          "clientOrderId":""
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){    
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Spot client(userInfo)__;
+ *      
+ *      std::string request = R"(
+ *          {
+ *              "orderId":"39713467831"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.orderCancel(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot fetchTradingFee
+ * @apiName fetchTradingFee
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {o} {m}
+ * @onexParamOption {o} {m}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {Object[]} fees
+ * @apiSuccess {String} fees.baseCurrency
+ * @apiSuccess {String} fees.quoteCurrency
+ * @apiSuccess {String} fees.symbol
+ * @apiSuccess {DoubleString} fees.makerFee
+ * @apiSuccess {DoubleString} fees.takerFee
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "fees":[
+ *              {
+ *                  "baseCurrency":"BTC",
+ *                  "quoteCurrency":"USDT",
+ *                  "symbol":"BTCUSDT",
+ *                  "makerFee":"0.0004",
+ *                  "takerFee":"0.00075"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Spot client(userInfo)__;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"KRW"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchTradingFee(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot fetchOrderInfo
+ * @apiName fetchOrderInfo
+ * @apiDescription If both <b>orderId</b> and <b>clientOrderId</b> are options, either of them must be sent. If both are sent, orderId is used preferentially.
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {String} orderId
+ * @apiParam {String} clientOrderId
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {i}
+ * @onexParamOption {m} {i}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "orderId":"38463215"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} symbol
+ * @apiSuccess {String} orderId
+ * @apiSuccess {String} clientOrderId
+ * @apiSuccess {String=buy,sell} side
+ * @apiSuccess {DoubleString} originalAmount
+ * @apiSuccess {DoubleString} filledAmount
+ * @apiSuccess {DoubleString} remainingAmount
+ * @apiSuccess {DoubleString} originalPrice
+ * @apiSuccess {DoubleString} avgFillPrice
+ * @apiSuccess {Uint} created [ms]
+ * @apiSuccess {String} feeCurrency
+ * @apiSuccess {DoubleString} feeAmount
+ * @apiSuccess {String=open,filled,cancelled} status
+ * @apiSuccess {Object[]} fills
+ * @apiSuccess {String} fills.orderId
+ * @apiSuccess {DoubleString} fills.price
+ * @apiSuccess {DoubleString} fills.amount
+ * @apiSuccess {Uint} fills.timestamp [ms]
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":2,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "orderId":"38463215",
+ *          "clientOrderId":"",
+ *          "side":"buy",
+ *          "originalAmount":"1.5984",
+ *          "filledAmount":"0.3686",
+ *          "remainingAmount":"1.2298",
+ *          "originalPrice":"22135.35",
+ *          "avgFillPrice":"22135.28",
+ *          "created":1656044045
+ *          "feeCurrency":"BTC",
+ *          "feeAmount":"0.00027645",
+ *          "status":"open",
+ *          "fills":[
+ *              {
+ *                  "orderId":"38435724",
+ *                  "price":"22135.28",
+ *                  "amount":"0.3686",
+ *                  "timestamp":1661327586135
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Spot client(userInfo)__;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "orderId":"13868943153"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchOrderInfo(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot fetchOpenOrders
+ * @apiName fetchOpenOrders
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {String=buy,sell} side
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "side":"buy"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {Object[]} openOrders
+ * @apiSuccess {String} openOrders.baseCurrency
+ * @apiSuccess {String} openOrders.quoteCurrency
+ * @apiSuccess {String} openOrders.symbol
+ * @apiSuccess {String} openOrders.orderId
+ * @apiSuccess {String=buy,sell} openOrders.side
+ * @apiSuccess {DoubleString} openOrders.originalAmount
+ * @apiSuccess {DoubleString} openOrders.filledAmount
+ * @apiSuccess {DoubleString} openOrders.remainingAmount
+ * @apiSuccess {DoubleString} openOrders.originalPrice
+ * @apiSuccess {Uint} openOrders.created [ms]
+ * @apiSuccess {String} openOrders.lockedCurrency
+ * @apiSuccess {DoubleString} openOrders.lockedAmount
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":2,
+ *          "openOrders":[
+ *              {
+ *                  "baseCurrency":"BTC",
+ *                  "quoteCurrency":"USDT",
+ *                  "symbol":"BTC-USDT",
+ *                  "orderId":"38463215",
+ *                  "side":"buy",
+ *                  "originalAmount":"1.5984",
+ *                  "filledAmount":"0.3686",
+ *                  "remainingAmount":"1.2298",
+ *                  "originalPrice":"22135.35",
+ *                  "created":1656044045,
+ *                  "lockedCurrency":"USDT",
+ *                  "lockedAmount":"27222.05343"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Spot client(userInfo)__;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"KRW"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchOpenOrders(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot getCandleIntervalCandidates
+ * @apiName getCandleIntervalCandidates
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {NoParam} __EMPTY__ 
+ * @onexParamExchanges {All o}
+ * @onexParamOption {i}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String[]=1min,3min,5min,10min,15min,30min,1hour,2hour,4hour,6hour,8hour,12hour,1day,3day,1week,1month} intervals
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":0,
+ *          "intervals":[
+ *              "10min","15min","1day","1hour","1min","1month","1week","30min","3min","4hour","5min"
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::cout << client.getCandleIntervalCandidates() << std::endl;
+ *      // or
+ *      std::cout << client.getCandleIntervalCandidates("") << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot fetchMarkets
+ * @apiName fetchMarkets
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "quoteCurrency":"USDT"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {Object[]} markets
+ * @apiSuccess {String} markets.baseCurrency
+ * @apiSuccess {String} markets.quoteCurrency
+ * @apiSuccess {String} markets.symbol
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "markets":[
+ *              {
+ *                  "baseCurrency":"BTC",
+ *                  "quoteCurrency":"USDT",
+ *                  "symbol":"BTC-USDT"
+ *              },
+ *              {
+ *                  "baseCurrency":"ETH",
+ *                  "quoteCurrency":"USDT",
+ *                  "symbol":"ETH-USDT"
+ *              },
+ *              {
+ *                  "baseCurrency":"XRP",
+ *                  "quoteCurrency":"USDT",
+ *                  "symbol":"XRP-USDT"
+ *              },
+ *              {
+ *                  "baseCurrency":"ADA",
+ *                  "quoteCurrency":"USDT",
+ *                  "symbol":"ADA-USDT"
+ *              },
+ *              ...
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Upbit::Spot client;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "quoteCurrency":"USDT"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchMarkets(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot fetchTicker
+ * @apiName fetchTicker
+ * @apiDescription During ticker websocket is running, fetchTicker does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true. 
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {String} forceRestApi
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "forceRestApi":true
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} symbol
+ * @apiSuccess {String=rest,websocket} fetchType
+ * @apiSuccess {Uint} openTime [s] open Time(UTC)
+ * @apiSuccess {DoubleString} openPrice
+ * @apiSuccess {DoubleString} closePrice close Price(last Price)
+ * @apiSuccess {DoubleString} lowPrice low Price(24h)
+ * @apiSuccess {DoubleString} highPrice high Price(24h)
+ * @apiSuccess {DoubleString} baseVolume baseCurrency Volume(24h)
+ * @apiSuccess {DoubleString} quoteVolume quoteCurrency Volume(24h)
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "fetchType":"rest",
+ *          "openTime":"1656044045,
+ *          "openPrice":"21004.0",
+ *          "closePrice":"21432.14",
+ *          "lowPrice":"20844.64",
+ *          "highPrice":"21662.5",
+ *          "baseVolume":"591235.5124",
+ *          "quoteVolume":"1529512525.23145"
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Upbit::Spot client;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC"
+ *              "quoteCurrency":"USDT"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchTicker(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot fetchOrderbook
+ * @apiName fetchOrderbook
+ * @apiDescription During orderbook websocket is running, fetchOrderbook does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true. 
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {String} forceRestApi
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} symbol
+ * @apiSuccess {String=rest,websocket} fetchType
+ * @apiSuccess {Uint} timestamp [ms]
+ * @apiSuccess {Object[]} bids Descending order according to timestamp
+ * @apiSuccess {DoubleString} bids.price
+ * @apiSuccess {DoubleString} bids.size
+ * @apiSuccess {Object[]} asks Ascending order according to price
+ * @apiSuccess {DoubleString} asks.price
+ * @apiSuccess {DoubleString} asks.size
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":0,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "fetchType":"websocket",
+ *          "timestamp":1656044045154,
+ *          "bids":[
+ *              {
+ *                  "price":"21458.15",
+ *                  "size":"0.1548"
+ *              },
+ *              {
+ *                  "price":"21458.08",
+ *                  "size":"0.1578"
+ *              },
+ *              {
+ *                  "price":"21458.03",
+ *                  "size":"0.3518"
+ *              },
+ *              ...
+ *          ],
+ *          "asks":[
+ *              {
+ *                  "price":"21458.16", 
+ *                  "size":"0.0232"
+ *              },
+ *              {
+ *                  "price":"21458.32",
+ *                  "size":"0.2158"
+ *              },
+ *              {
+ *                  "price":"21458.36",
+ *                  "size":"0.3183"
+ *              },
+ *              ...
+ *          ]    
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Upbit::Spot client;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"USDT"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchOrderbook(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot fetchCandleHistory
+ * @apiName fetchCandleHistory
+ * @apiDescription When enormous amount of data is requested, getCandleData takes a long time to execute.
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {String} interval This param depends on the exchange. Please check available intervals using getCandleIntervalCandidates
+ * @apiParam {Uint} startTime
+ * @apiParam {Uint} endTime=now
+ * @apiParam {Uint} fetchInterval=200 frequent api request may exceeds rate limit, therefore apiReqInterval decides how long time to sleep between each api request
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "interval":"1min",
+ *      "startTime":1656042045,
+ *      "endTime":1656063182,
+ *      "fetchInterval":200
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} symbol
+ * @apiSuccess {Object[]} candles Ascending order according to timestamp
+ * @apiSuccess {DoubleString} candles.openPrice
+ * @apiSuccess {DoubleString} candles.closePrice
+ * @apiSuccess {DoubleString} candles.highPrice
+ * @apiSuccess {DoubleString} candles.lowPrice
+ * @apiSuccess {DoubleString} candles.baseVolume
+ * @apiSuccess {DoubleString} candles.quoteVolume
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":31,
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "symbol":"BTC-USDT",
+ *          "candles":[
+ *              {
+ *                  "timestamp":1656042060,
+ *                  "openPrice":"21035.12",
+ *                  "closePrice":"21086.83",
+ *                  "highPrice":"21132.28",
+ *                  "lowPrice":"21028.83",
+ *                  "baseVolume":"0.83648",
+ *                  "quoteVolume":"1087.424"
+ *              },
+ *              {
+ *                  "timestamp":1656042120,
+ *                  "openPrice":"21086.83",
+ *                  "closePrice":"21098.19",
+ *                  "highPrice":"21099.89",
+ *                  "lowPrice":"21073.14",
+ *                  "baseVolume":"0.58492",
+ *                  "quoteVolume":"760.396"
+ *              },
+ *              ...
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Upbit::Spot client;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"USDT",
+ *              "interval":"3min",
+ *              "startTime":1659189600,
+ *              "fetchInterval":100
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchCandleHistory(request) << std::endl;
+ *      
  *      return 0;
  *  }
  */
