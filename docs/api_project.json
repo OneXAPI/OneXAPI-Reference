@@ -1,4 +1,4 @@
-define({
+{
   "name": "OneXAPI",
   "version": "0.1.0",
   "description": "Documentation for the OneXAPI",
@@ -57,8 +57,8 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2022-08-24T06:39:28.655Z",
+    "time": "2022-08-24T06:42:48.127Z",
     "url": "https://apidocjs.com",
     "version": "0.29.0"
   }
-});
+}

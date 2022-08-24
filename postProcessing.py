@@ -58,7 +58,7 @@ for group in group_list :
 
 # print(apiExchangeInfo)
 
-with open("out/api_data.js", "r+") as file:
+with open("docs/api_data.js", "r+") as file:
     data = file.read()
     data = data.replace("__EMPTY__","")
 
