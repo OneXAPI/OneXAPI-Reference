@@ -3,19 +3,19 @@
 #include "OneXAPI.hpp"
 
 int main(){
-	std::string userInfo = R"(
+	OneXAPI::Upbit::Spot client;
+
+	std::string request = R"(
 		{
-			"accessKey":"user access key",
-			"secretKey":"user secrey key"
+			"baseCurrency":"BTC",
+			"quoteCurrency":"USDT",
+			"interval":"3min",
+			"startTime":1659189600,
+			"fetchInterval":100
 		}
 	)";
 
-	OneXAPI::Upbit::Spot client(userInfo);
-
-	std::string request = R"(
-		"txid":"0xfad1~~~"
-	)";
-	std::cout << client.isDepositCompleted(request) << std::endl;
+	std::cout << client.fetchCandleHistory(request) << std::endl;
 	
 	return 0;
 }

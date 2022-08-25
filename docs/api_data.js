@@ -3,6 +3,2600 @@ define({
     {
       "type": "onex",
       "url": "/Futures",
+      "title": "changeLeverage",
+      "name": "changeLeverage",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "leverage",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"leverage\":10\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "leverage",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTCUSDT\",\n        \"leverage\":10\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"leverage\":10\n        }\n    )\";\n\n    std::cout << client.changeLeverage(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "changeMarginType",
+      "name": "changeMarginType",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "cross",
+                "isolated"
+              ],
+              "optional": false,
+              "field": "marginType",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"marginType\":\"isolated\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginType",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTCUSDT\",\n        \"marginType\":\"isolated\"\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"marginType\":\"isolated\"\n        }\n    )\";\n\n    std::cout << client.changeMarginType(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchBalance",
+      "name": "fetchBalance",
+      "description": "<p>During websocket is running, updateAccountBalance does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "forceRestApi",
+              "description": "<p>force to update using REST API</p>",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String[]",
+              "optional": false,
+              "field": "currencies",
+              "description": "<p>If not exist, return all currencies</p>",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"forceRestApi\":false,\n    \"currencies\":[\"BTC\", \"ETH\", \"XRP\", \"ADA\"]\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "balance",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "balance.currency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.balance",
+              "description": "<p>wallet balance</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.crossWalletBalance",
+              "description": "<p>crossed wallet balance</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.crossUnPnl",
+              "description": "<p>unrealized profit of crossed positions</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.availableBalance",
+              "description": "<p>available balance</p>"
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"rest\",\n        \"balance\":{\n            \"BTC\":{\n                \"balance\":\"3.15437\",\n                \"crossWalletBalance\":\"1.1357\",\n                \"crossUnPnl\":\"0.0\",\n                \"availableBalance\":\"1.1357\"\n            },\n            \"ETH\":{\n                \"balance\":\"124.8435\",\n                \"crossWalletBalance\":\"83.5831\",\n                \"crossUnPnl\":\"3.8354\",\n                \"availableBalance\":\"83.5831\"\n            }\n        }\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"forceRestApi\":false,\n            \"currencies\":[\"BTC\", \"ETH\"]\n        }\n    )\";\n\n    std::cout << client.fetchBalance(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchCandleHistory",
+      "name": "fetchCandleHistory",
+      "description": "<p>When enormous amount of data is requested, getCandleData takes a long time to execute.</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "interval",
+              "description": "<p>This param depends on the exchange. Please check available intervals using getCandleIntervalCandidates</p>",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "startTime",
+              "description": "<p>[s]</p>",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "endTime",
+              "defaultValue": "now",
+              "description": "<p>[s]</p>",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "fetchInterval",
+              "defaultValue": "200",
+              "description": "<p>[ms]<br>frequent api request may exceeds rate limit, therefore apiReqInterval decides how long time to sleep between each api request</p>",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"interval\":\"1min\",\n    \"startTime\":1656042045,\n    \"endTime\":1656063182,\n    \"fetchInterval\":200\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "candles",
+              "description": "<p>Ascending order according to timestamp</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.openPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.closePrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.highPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.lowPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.baseVolume",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.quoteVolume",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":31,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"candles\":[\n            {\n                \"timestamp\":1656042060,\n                \"openPrice\":\"21035.12\",\n                \"closePrice\":\"21086.83\",\n                \"highPrice\":\"21132.28\",\n                \"lowPrice\":\"21028.83\",\n                \"baseVolume\":\"0.83648\",\n                \"quoteVolume\":\"1087.424\"\n            },\n            {\n                \"timestamp\":1656042120,\n                \"openPrice\":\"21086.83\",\n                \"closePrice\":\"21098.19\",\n                \"highPrice\":\"21099.89\",\n                \"lowPrice\":\"21073.14\",\n                \"baseVolume\":\"0.58492\",\n                \"quoteVolume\":\"760.396\"\n            },\n            ...\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"interval\":\"3min\",\n            \"startTime\":1659189600,\n            \"fetchInterval\":100\n        }\n    )\";\n\n    std::cout << client.fetchCandleHistory(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchFundingFeeIncomeHistory",
+      "name": "fetchFundingFeeIncomeHistory",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "startTime",
+              "description": "<p>[ms]</p>",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "endTime",
+              "defaultValue": "now",
+              "description": "<p>[ms]</p>",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"startTime\":1656042045125,\n    \"endTime\":1656063182432\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "incomes",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "incomes.income",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.incomeCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "timestamp",
+              "description": "<p>[ms]</p>"
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"positions\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"income\":\"-31.13586\",\n                \"incomeCurrency\":\"USDT\",\n                \"timestamp\":1656044000000\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"startTime\":1656042045125,\n            \"endTime\":1656063182432\n        }\n    )\";\n\n    std::cout << client.fetchFundingFeeIncomeHistory(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchFundingRate",
+      "name": "fetchFundingRate",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "fundingRates",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fundingRates.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fundingRates.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fundingRates.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fundingRates.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fundingRates.rate",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "fundingRates.time",
+              "description": "<p>[s]</p>"
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fundingRates\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"rate\":\"0.0025\",\n                \"time\":1661406463\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchFundingRate(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchLeverage",
+      "name": "fetchLeverage",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "F"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "F"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "F"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "leverages",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "leverages.baseCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "leverages.quoteCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "leverages.expiration",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "leverages.symbol",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "leverages.leverage",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"leverages\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"leverage\":10\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Bybit::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchLeverage(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "unsupported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchMarginType",
+      "name": "fetchMarginType",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "F"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "F"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "F"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "marginTypes",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginTypes.baseCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginTypes.quoteCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginTypes.expiration",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginTypes.symbol",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "cross",
+                "isolated"
+              ],
+              "optional": false,
+              "field": "marginTypes.marginType",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"marginTypes\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"marginType\":\"cross\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Bybit::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchMarginType(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "unsupported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchMarkets",
+      "name": "fetchMarkets",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": "<p>&quot;PERP&quot; or date(&quot;0930&quot;, &quot;1015&quot;) are allowed</p>",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"quoteCurrency\":\"USDT\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "markets",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"markets\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTC-USDT\"\n            },\n            {\n                \"baseCurrency\":\"ETH\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"ETH-USDT\"\n            },\n            {\n                \"baseCurrency\":\"XRP\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"XRP-USDT\"\n            },\n            {\n                \"baseCurrency\":\"ADA\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"ADA-USDT\"\n            },\n            ...\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchMarkets(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchOpenOrders",
+      "name": "fetchOpenOrders",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "buy",
+                "sell"
+              ],
+              "optional": false,
+              "field": "side",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"side\":\"buy\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "openOrders",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "buy",
+                "sell"
+              ],
+              "optional": false,
+              "field": "openOrders.side",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "long",
+                "short"
+              ],
+              "optional": false,
+              "field": "positionSide",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "reduceOnly",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.originalAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.filledAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.remainingAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.originalPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "openOrders.created",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.lockedCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.lockedAmount",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":2,\n        \"openOrders\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"symbol\":\"BTC-USDT\",\n                \"orderId\":\"38463215\",\n                \"side\":\"buy\",\n                \"positionSide\":\"long\",\n                \"reduceOnly\":false,\n                \"originalAmount\":\"1.5984\",\n                \"filledAmount\":\"0.3686\",\n                \"remainingAmount\":\"1.2298\",\n                \"originalPrice\":\"22135.35\",\n                \"created\":1656044045,\n                \"lockedCurrency\":\"USDT\",\n                \"lockedAmount\":\"27222.05343\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchOpenOrders(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchOrderInfo",
+      "name": "fetchOrderInfo",
+      "description": "<p>If both <b>orderId</b> and <b>clientOrderId</b> are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"orderId\":\"38463215\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "buy",
+                "sell"
+              ],
+              "optional": false,
+              "field": "side",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "long",
+                "short"
+              ],
+              "optional": false,
+              "field": "positionSide",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "reduceOnly",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "originalAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "filledAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "remainingAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "originalPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "avgFillPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "created",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "feeCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "feeAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "open",
+                "filled",
+                "cancelled"
+              ],
+              "optional": false,
+              "field": "status",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "fills",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fills.orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fills.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fills.amount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "fills.timestamp",
+              "description": "<p>[ms]</p>"
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":2,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"orderId\":\"38463215\",\n        \"clientOrderId\":\"\",\n        \"side\":\"buy\",\n        \"positionSide\":\"long\",\n        \"reduceOnly\":false,\n        \"originalAmount\":\"1.5984\",\n        \"filledAmount\":\"0.3686\",\n        \"remainingAmount\":\"1.2298\",\n        \"originalPrice\":\"22135.35\",\n        \"avgFillPrice\":\"22135.28\",\n        \"created\":1656044045\n        \"feeCurrency\":\"BTC\",\n        \"feeAmount\":\"0.00027645\",\n        \"status\":\"open\",\n        \"fills\":[\n            {\n                \"orderId\":\"38435724\",\n                \"price\":\"22135.28\",\n                \"amount\":\"0.3686\",\n                \"timestamp\":1661327586135\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"orderId\":\"13868943153\"\n        }\n    )\";\n\n    std::cout << client.fetchOrderInfo(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchOrderbook",
+      "name": "fetchOrderbook",
+      "description": "<p>During orderbook websocket is running, fetchOrderbook does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "forceRestApi",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "timestamp",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "bids",
+              "description": "<p>Descending order according to timestamp</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "bids.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "bids.size",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "asks",
+              "description": "<p>Ascending order according to price</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "asks.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "asks.size",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"fetchType\":\"websocket\",\n        \"timestamp\":1656044045154,\n        \"bids\":[\n            {\n                \"price\":\"21458.15\",\n                \"size\":\"0.1548\"\n            },\n            {\n                \"price\":\"21458.08\",\n                \"size\":\"0.1578\"\n            },\n            {\n                \"price\":\"21458.03\",\n                \"size\":\"0.3518\"\n            },\n            ...\n        ],\n        \"asks\":[\n            {\n                \"price\":\"21458.16\", \n                \"size\":\"0.0232\"\n            },\n            {\n                \"price\":\"21458.32\",\n                \"size\":\"0.2158\"\n            },\n            {\n                \"price\":\"21458.36\",\n                \"size\":\"0.3183\"\n            },\n            ...\n        ]    \n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchOrderbook(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchPositions",
+      "name": "fetchPositions",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "buy",
+                "sell"
+              ],
+              "optional": false,
+              "field": "side",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "positions",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "positions.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "positions.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "positions.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "positions.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "positions.initialMargin",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "positions.unrealizedProfit",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "positions.entryPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "positions.positionAmt",
+              "description": "<p>positive means long position, negative means short position</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "positions.leverage",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "cross",
+                "isolated"
+              ],
+              "optional": false,
+              "field": "positions.marginType",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"positions\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"initialMargin\":\"1235.13586\",\n                \"unrealizedProfit\":\"10.23854\",\n                \"entryPrice\":\"21752.12\",\n                \"positionAmt\":\"1.235\",\n                \"leverage\":10,\n                \"marginType\":\"isolated\",\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchPositions(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchTicker",
+      "name": "fetchTicker",
+      "description": "<p>During ticker websocket is running, fetchTicker does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "forceRestApi",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"forceRestApi\":true\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "openTime",
+              "description": "<p>[s] open Time(UTC)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "closePrice",
+              "description": "<p>close Price(last Price)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "lowPrice",
+              "description": "<p>low Price(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "highPrice",
+              "description": "<p>high Price(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseVolume",
+              "description": "<p>baseCurrency Volume(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "quoteVolume",
+              "description": "<p>quoteCurrency Volume(24h)</p>"
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"fetchType\":\"rest\",\n        \"openTime\":\"1656044045,\n        \"openPrice\":\"21004.0\",\n        \"closePrice\":\"21432.14\",\n        \"lowPrice\":\"20844.64\",\n        \"highPrice\":\"21662.5\",\n        \"baseVolume\":\"591235.5124\",\n        \"quoteVolume\":\"1529512525.23145\"\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\"\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchTicker(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchTradingFee",
+      "name": "fetchTradingFee",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object[]",
+              "optional": false,
+              "field": "fees",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fees.makerFee",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fees.takerFee",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fees\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"makerFee\":\"0.0004\",\n                \"takerFee\":\"0.00075\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchTradingFee(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "getCandleIntervalCandidates",
+      "name": "getCandleIntervalCandidates",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "I"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String[]",
+              "allowedValues": [
+                "1min",
+                "3min",
+                "5min",
+                "15min",
+                "30min",
+                "1hour",
+                "2hour",
+                "4hour",
+                "6hour",
+                "8hour",
+                "12hour",
+                "1day",
+                "3day",
+                "1week",
+                "1month"
+              ],
+              "optional": false,
+              "field": "intervals",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"intervals\":[\n            \"15min\",\"1day\",\"1hour\",\"1min\",\"1month\",\"1week\",\"30min\",\"3min\",\"4hour\",\"5min\"\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.getCandleIntervalCandidates() << std::endl;\n    // or\n    std::cout << client.getCandleIntervalCandidates(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "All": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
       "title": "getConfig",
       "name": "getConfig",
       "group": "Futures",
@@ -237,6 +2831,152 @@ define({
     {
       "type": "onex",
       "url": "/Futures",
+      "title": "getOrderRoundingRule",
+      "name": "getOrderRoundingRule",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "I"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitBuyPrice",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitBuyBaseAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitSellPrice",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitSellBaseAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "marketBuyQuoteAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "marketSellBaseAmount",
+              "defaultValue": "round",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"limitBuyPrice\":\"ceil\",             \n        \"limitBuyBaseAmount\":\"floor\",\n        \"limitSellPrice\":\"ceil\",\n        \"limitSellBaseAmount\":\"floor\",\n        \"marketBuyQuoteAmount\":\"round\",\n        \"marketSellBaseAmount\":\"round\",\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.getOrderRoundingRule() << std::endl;\n    // or\n    std::cout << client.getOrderRoundingRule(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "All": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
       "title": "has",
       "name": "has",
       "description": "<p>check whether API exists or not</p>",
@@ -308,6 +3048,926 @@ define({
       "groupTitle": "Futures",
       "exchanges": {
         "All": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "orderCancel",
+      "name": "orderCancel",
+      "description": "<p>If both orderId and clientOrderId are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"orderId\":\"38463215\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"orderId\":\"38463215\",\n        \"clientOrderId\":\"\"\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"orderId\":\"39713467831\"\n        }\n    )\";\n\n    std::cout << client.orderCancel(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "orderLimitBuy",
+      "name": "orderLimitBuy",
+      "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Double",
+              "optional": false,
+              "field": "price",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Double",
+              "optional": false,
+              "field": "baseAmount",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "bool",
+              "optional": false,
+              "field": "reduceOnly",
+              "defaultValue": "false",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": "<p>Client Order ID as assigned by the client</p>",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Double",
+              "optional": false,
+              "field": "amplifier",
+              "defaultValue": "1.0",
+              "description": "<p>If this field exists, the requested price will be <b>price*amplifier</b></p>",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "gtc",
+                "ioc",
+                "fok"
+              ],
+              "optional": false,
+              "field": "type",
+              "defaultValue": "gtc",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"price\":21351.1384,\n    \"baseAmount\":1.5843,\n    \"amplifier\":1.03       //requested price will be 21351.1384*1.03 = 21991.672552\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"orderId\":\"38463215\",\n        \"clientOrderId\":\"\",\n        \"price\":\"21991.67\",\n        \"baseAmount\":\"1.584\"\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\t\n    std::string userInfo = R\"({\n        \"accessKey\":\"user access key\",\n        \"secretKey\":\"user secrey key\"\n    })\";\n    OneXAPI::Binance::Futures client(userInfo\n    std::string request = R\"({\n        \"baseCurrency\":\"XRP\",\n        \"quoteCurrency\":\"USDT\",\n        \"price\":0.4348,\n        \"baseAmount\":23.834219\n    })\";\n\n    std::cout << client.orderLimitBuy(request) << std::endl;\n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "orderLimitSell",
+      "name": "orderLimitSell",
+      "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Double",
+              "optional": false,
+              "field": "price",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Double",
+              "optional": false,
+              "field": "baseAmount",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "bool",
+              "optional": false,
+              "field": "reduceOnly",
+              "defaultValue": "false",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": "<p>Client Order ID as assigned by the client</p>",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Double",
+              "optional": false,
+              "field": "amplifier",
+              "defaultValue": "1.0",
+              "description": "<p>If this field exists, the requested price will be <b>price*amplifier</b></p>",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "gtc",
+                "ioc",
+                "fok"
+              ],
+              "optional": false,
+              "field": "type",
+              "defaultValue": "gtc",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"price\":21351.1384,\n    \"baseAmount\":1.5843,\n    \"amplifier\":0.97       //requested price will be 21351.1384*0.97 = 20710.604248\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"orderId\":\"38463215\",\n        \"clientOrderId\":\"\",\n        \"price\":\"20710.6\",\n        \"baseAmount\":\"1.584\"\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"XRP\",\n            \"quoteCurrency\":\"USDT\",\n            \"price\":486.2348,\n            \"baseAmount\":23.834219\n        }\n    )\";\n\n    std::cout << client.orderLimitSell(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "orderMarketBuy",
+      "name": "orderMarketBuy",
+      "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Amount is automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Double",
+              "optional": false,
+              "field": "quoteAmount",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "bool",
+              "optional": false,
+              "field": "reduceOnly",
+              "defaultValue": "false",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": "<p>Client Order ID as assigned by the client</p>",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"quoteAmount\":1.5843\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "quoteAmount",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"orderId\":\"38463215\",\n        \"clientOrderId\":\"\",\n        \"quoteAmount\":\"1.584\"\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"quoteAmount\":1.5843\n        }\n    )\";\n\n    std::cout << client.orderMarketBuy(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "orderMarketSell",
+      "name": "orderMarketSell",
+      "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Amount is automatically rounded according to the exchange. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Double",
+              "optional": false,
+              "field": "baseAmount",
+              "description": "",
+              "options": [
+                "M"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "bool",
+              "optional": false,
+              "field": "reduceOnly",
+              "defaultValue": "false",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": "<p>Client Order ID as assigned by the client</p>",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"baseAmount\":1.5843\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"orderId\":\"38463215\",\n        \"price\":\"20710.6\",\n        \"baseAmount\":\"1.584\"\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"baseAmount\":1.5843\n        }\n    )\";\n\n    std::cout << client.orderMarketSell(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
       }
     },
     {
@@ -447,6 +4107,166 @@ define({
         {
           "title": "c++",
           "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.setConfig(R\"({\"accessKey\":\"new access key\",\"secretKey\":\"new secret key\",\"websocketIdleTimeout\":2000})\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "All": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "setOrderRoundingRule",
+      "name": "setOrderRoundingRule",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitBuyPrice",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitBuyBaseAmount",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitSellPrice",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitSellBaseAmount",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "marketBuyQuoteAmount",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "marketSellBaseAmount",
+              "description": "",
+              "options": [
+                "O"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"marketSellBaseAmount\":\"floor\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "<i>requested rule</i>",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"marketSellBaseAmount\":\"floor\"\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n    std::string request = R\"(\n        {\n            \"limitBuyPrice\":\"ceil\"\n        }\n    )\";\n\n    std::cout << client.setOrderRoundingRule(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -984,14 +4804,14 @@ define({
               "group": "Success 200",
               "type": "DoubleString",
               "optional": false,
-              "field": "balance.free",
+              "field": "balance.currency.free",
               "description": ""
             },
             {
               "group": "Success 200",
               "type": "DoubleString",
               "optional": false,
-              "field": "balance.locked",
+              "field": "balance.currency.locked",
               "description": ""
             }
           ]
@@ -1072,7 +4892,7 @@ define({
               "type": "Uint",
               "optional": false,
               "field": "startTime",
-              "description": "",
+              "description": "<p>[s]</p>",
               "options": [
                 "M",
                 "M"
@@ -1084,7 +4904,7 @@ define({
               "optional": false,
               "field": "endTime",
               "defaultValue": "now",
-              "description": "",
+              "description": "<p>[s]</p>",
               "options": [
                 "O",
                 "O"
@@ -1096,7 +4916,7 @@ define({
               "optional": false,
               "field": "fetchInterval",
               "defaultValue": "200",
-              "description": "<p>frequent api request may exceeds rate limit, therefore apiReqInterval decides how long time to sleep between each api request</p>",
+              "description": "<p>[ms]<br>frequent api request may exceeds rate limit, therefore apiReqInterval decides how long time to sleep between each api request</p>",
               "options": [
                 "O",
                 "O"
@@ -2056,7 +5876,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"orderId\":\"13868943153\"\n        }\n    )\";\n\n    std::cout << client.fetchOrderInfo(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"orderId\":\"13868943153\"\n        }\n    )\";\n\n    std::cout << client.fetchOrderInfo(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -3695,7 +7515,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"orderId\":\"39713467831\"\n        }\n    )\";\n\n    std::cout << client.orderCancel(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"orderId\":\"39713467831\"\n        }\n    )\";\n\n    std::cout << client.orderCancel(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],

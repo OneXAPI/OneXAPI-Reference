@@ -273,8 +273,8 @@
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {Object} balance
  * @apiSuccess {String} balance.currency
- * @apiSuccess {DoubleString} balance.free
- * @apiSuccess {DoubleString} balance.locked
+ * @apiSuccess {DoubleString} balance.currency.free
+ * @apiSuccess {DoubleString} balance.currency.locked
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -1215,84 +1215,13 @@
  *      
  *      std::string request = R"(
  *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"USDT",
  *              "orderId":"39713467831"
  *          }
  *      )";
  *  
  *      std::cout << client.orderCancel(request) << std::endl;
- *      
- *      return 0;
- *  }
- */
-
-/**
- * @api {onex} /Spot fetchTradingFee
- * @apiName fetchTradingFee
- * @apiGroup Spot
- * @apiVersion 0.0.0
- *
- * @apiParam {String} baseCurrency
- * @apiParam {String} quoteCurrency
- * @onexParamExchanges {Binance o} {Upbit o}
- * @onexParamOption {o} {m}
- * @onexParamOption {o} {m}
- * 
- * @apiParamExample Request Example : 
- *  {
- *      "baseCurrency":"BTC",
- *      "quoteCurrency":"USDT"
- *  }
- * 
- * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} fees
- * @apiSuccess {String} fees.baseCurrency
- * @apiSuccess {String} fees.quoteCurrency
- * @apiSuccess {String} fees.symbol
- * @apiSuccess {DoubleString} fees.makerFee
- * @apiSuccess {DoubleString} fees.takerFee
- * 
- * @apiSuccessExample Success-Response :
- *  {
- *      "success":true,
- *      "data":{
- *          "requestedApiCount":1,
- *          "fees":[
- *              {
- *                  "baseCurrency":"BTC",
- *                  "quoteCurrency":"USDT",
- *                  "symbol":"BTCUSDT",
- *                  "makerFee":"0.0004",
- *                  "takerFee":"0.00075"
- *              }
- *          ]
- *      }
- *  }
- *
- * @apiExample {python} python
- *  currently empty
- * 
- * @apiExample {cpp} c++
- *  #include <iostream>
- *  #include "OneXAPI.hpp"
- *  
- *  int main(){
- *      std::string userInfo = R"(
- *          {
- *              "accessKey":"user access key",
- *              "secretKey":"user secrey key"
- *          }
- *      )";
- *  
- *      OneXAPI::Binance::Spot client(userInfo)__;
- *  
- *      std::string request = R"(
- *          {
- *              "baseCurrency":"BTC",
- *              "quoteCurrency":"USDT"
- *          }
- *      )";
- *  
- *      std::cout << client.fetchTradingFee(request) << std::endl;
  *      
  *      return 0;
  *  }
@@ -1394,6 +1323,8 @@
  *  
  *      std::string request = R"(
  *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"USDT",
  *              "orderId":"13868943153"
  *          }
  *      )";
@@ -1489,6 +1420,79 @@
  *      )";
  *  
  *      std::cout << client.fetchOpenOrders(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot fetchTradingFee
+ * @apiName fetchTradingFee
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {o} {m}
+ * @onexParamOption {o} {m}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {Object[]} fees
+ * @apiSuccess {String} fees.baseCurrency
+ * @apiSuccess {String} fees.quoteCurrency
+ * @apiSuccess {String} fees.symbol
+ * @apiSuccess {DoubleString} fees.makerFee
+ * @apiSuccess {DoubleString} fees.takerFee
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "fees":[
+ *              {
+ *                  "baseCurrency":"BTC",
+ *                  "quoteCurrency":"USDT",
+ *                  "symbol":"BTCUSDT",
+ *                  "makerFee":"0.0004",
+ *                  "takerFee":"0.00075"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Spot client(userInfo)__;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"USDT"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchTradingFee(request) << std::endl;
  *      
  *      return 0;
  *  }
@@ -1803,9 +1807,9 @@
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
  * @apiParam {String} interval This param depends on the exchange. Please check available intervals using getCandleIntervalCandidates
- * @apiParam {Uint} startTime
- * @apiParam {Uint} endTime=now
- * @apiParam {Uint} fetchInterval=200 frequent api request may exceeds rate limit, therefore apiReqInterval decides how long time to sleep between each api request
+ * @apiParam {Uint} startTime [s]
+ * @apiParam {Uint} endTime=now [s]
+ * @apiParam {Uint} fetchInterval=200 [ms]<br>frequent api request may exceeds rate limit, therefore apiReqInterval decides how long time to sleep between each api request
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
