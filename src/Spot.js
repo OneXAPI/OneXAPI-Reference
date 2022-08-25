@@ -986,7 +986,7 @@
  *      std::string request = R"(
  *          {
  *              "baseCurrency":"XRP",
- *              "quoteCurrency":"KRW",
+ *              "quoteCurrency":"USDT",
  *              "price":486.2348,
  *              "baseAmount":23.834219
  *          }
@@ -1288,7 +1288,7 @@
  *      std::string request = R"(
  *          {
  *              "baseCurrency":"BTC",
- *              "quoteCurrency":"KRW"
+ *              "quoteCurrency":"USDT"
  *          }
  *      )";
  *  
@@ -1484,7 +1484,7 @@
  *      std::string request = R"(
  *          {
  *              "baseCurrency":"BTC",
- *              "quoteCurrency":"KRW"
+ *              "quoteCurrency":"USDT"
  *          }
  *      )";
  *  
@@ -1602,7 +1602,7 @@
  *  #include "OneXAPI.hpp"
  *  
  *  int main(){
- *      OneXAPI::Upbit::Spot client;
+ *      OneXAPI::Binance::Spot client;
  *  
  *      std::string request = R"(
  *          {
@@ -1678,7 +1678,7 @@
  *  #include "OneXAPI.hpp"
  *  
  *  int main(){
- *      OneXAPI::Upbit::Spot client;
+ *      OneXAPI::Binance::Spot client;
  *  
  *      std::string request = R"(
  *          {
@@ -1778,7 +1778,7 @@
  *  #include "OneXAPI.hpp"
  *  
  *  int main(){
- *      OneXAPI::Upbit::Spot client;
+ *      OneXAPI::Binance::Spot client;
  *  
  *      std::string request = R"(
  *          {
@@ -1876,7 +1876,7 @@
  *  #include "OneXAPI.hpp"
  *  
  *  int main(){
- *      OneXAPI::Upbit::Spot client;
+ *      OneXAPI::Binance::Spot client;
  *  
  *      std::string request = R"(
  *          {
