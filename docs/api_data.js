@@ -1210,7 +1210,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Upbit::Spot client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"interval\":\"3min\",\n            \"startTime\":1659189600,\n            \"fetchInterval\":100\n        }\n    )\";\n\n    std::cout << client.fetchCandleHistory(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"interval\":\"3min\",\n            \"startTime\":1659189600,\n            \"fetchInterval\":100\n        }\n    )\";\n\n    std::cout << client.fetchCandleHistory(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -1612,7 +1612,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Upbit::Spot client;\n\n    std::string request = R\"(\n        {\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchMarkets(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchMarkets(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -1803,7 +1803,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"KRW\"\n        }\n    )\";\n\n    std::cout << client.fetchOpenOrders(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchOpenOrders(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -2230,7 +2230,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Upbit::Spot client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchOrderbook(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchOrderbook(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -2404,7 +2404,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Upbit::Spot client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\"\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchTicker(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\"\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchTicker(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -2527,7 +2527,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"KRW\"\n        }\n    )\";\n\n    std::cout << client.fetchTradingFee(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchTradingFee(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -4081,7 +4081,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"XRP\",\n            \"quoteCurrency\":\"KRW\",\n            \"price\":486.2348,\n            \"baseAmount\":23.834219\n        }\n    )\";\n\n    std::cout << client.orderLimitSell(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"XRP\",\n            \"quoteCurrency\":\"USDT\",\n            \"price\":486.2348,\n            \"baseAmount\":23.834219\n        }\n    )\";\n\n    std::cout << client.orderLimitSell(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
