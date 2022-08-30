@@ -13,7 +13,7 @@
  *  {
  *  }
  * 
- * @apiSuccess {Object[]} supportedExchanges 
+ * @apiSuccess {ObjectArray} supportedExchanges 
  * @apiSuccess {String} supportedExchanges.exchange     exchange name
  * @apiSuccess {String=Spot,Futures} supportedExchanges.instrument
  * @apiSuccess {String} onexapiVersion

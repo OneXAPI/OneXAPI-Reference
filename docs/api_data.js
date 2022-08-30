@@ -295,7 +295,7 @@ define({
             },
             {
               "group": "Parameter",
-              "type": "String[]",
+              "type": "StringArray",
               "optional": false,
               "field": "currencies",
               "description": "<p>If not exist, return all currencies</p>",
@@ -538,7 +538,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "candles",
               "description": "<p>Ascending order according to timestamp</p>"
@@ -696,7 +696,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "incomes",
               "description": ""
@@ -841,7 +841,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "fundingRates",
               "description": ""
@@ -979,7 +979,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "leverages",
               "description": ""
@@ -1110,7 +1110,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "marginTypes",
               "description": ""
@@ -1244,7 +1244,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "markets",
               "description": ""
@@ -1382,7 +1382,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "openOrders",
               "description": ""
@@ -1744,7 +1744,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "fills",
               "description": ""
@@ -1925,7 +1925,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "bids",
               "description": "<p>Descending order according to timestamp</p>"
@@ -1946,7 +1946,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "asks",
               "description": "<p>Ascending order according to price</p>"
@@ -2069,7 +2069,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "positions",
               "description": ""
@@ -2427,7 +2427,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "fees",
               "description": ""
@@ -2544,7 +2544,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "String[]",
+              "type": "StringArray",
               "allowedValues": [
                 "1min",
                 "3min",
@@ -2992,7 +2992,7 @@ define({
               "field": "api",
               "description": "<p>if not exist, return all APIs</p>",
               "options": [
-                "I"
+                "O"
               ]
             }
           ]
@@ -3988,7 +3988,7 @@ define({
               "field": "accessKey",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -3998,7 +3998,7 @@ define({
               "field": "secretKey",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -4008,7 +4008,7 @@ define({
               "field": "restEndpoint",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -4018,7 +4018,7 @@ define({
               "field": "publicWebsocketEndpoint",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -4028,7 +4028,7 @@ define({
               "field": "privateWebsocketEndpoint",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -4038,7 +4038,7 @@ define({
               "field": "restRequestTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -4048,7 +4048,7 @@ define({
               "field": "websocketConnectTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -4058,7 +4058,7 @@ define({
               "field": "websocketIdleTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "I"
+                "O"
               ]
             }
           ]
@@ -4312,7 +4312,7 @@ define({
           "Response : ": [
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "supportedExchanges",
               "description": ""
@@ -4656,12 +4656,12 @@ define({
               "group": "Success 200",
               "type": "Object",
               "optional": false,
-              "field": "currencies.currency",
+              "field": "currencies.<i>currency name</i>",
               "description": ""
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "currencies.currency.chains",
               "description": "<p><b>If this field is empty, exchange supports only single chain or nothing. Please check exchange before withdraw or deposit crypto currency.</b></p>"
@@ -4685,7 +4685,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"currencies\":{\n            \"BTC\":{\n                \"chains\":[]\n            },\n            \"USDT\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"TRX\",\n                        \"isDefault\":true\n                    },{\n                        \"chain\":\"ETH\",\n                        \"isDefault\":false\n                    },{\n                        \"chain\":\"SOL\",\n                        \"isDefault\":false\n                    }\n                ]\n            },\n            ...\n        }\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"currencies\":{\n            \"BTC\":{\n                \"chains\":[]\n            },\n            \"USDT\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"TRX\",\n                        \"isDefault\":true\n                    },\n                    {\n                        \"chain\":\"ETH\",\n                        \"isDefault\":false\n                    },\n                    {\n                        \"chain\":\"SOL\",\n                        \"isDefault\":false\n                    }\n                ]\n            },\n            ...\n        }\n    }\n}",
             "type": "json"
           }
         ]
@@ -4721,9 +4721,10 @@ define({
           "Parameter : ": [
             {
               "group": "Parameter",
-              "type": "String",
+              "type": "Bool",
               "optional": false,
               "field": "forceRestApi",
+              "defaultValue": "false",
               "description": "<p>force to update using REST API</p>",
               "options": [
                 "O",
@@ -4732,7 +4733,7 @@ define({
             },
             {
               "group": "Parameter",
-              "type": "String[]",
+              "type": "StringArray",
               "optional": false,
               "field": "currencies",
               "description": "<p>If not exist, return all currencies</p>",
@@ -4744,11 +4745,9 @@ define({
             {
               "group": "Parameter",
               "type": "Bool",
-              "allowedValues": [
-                "false"
-              ],
               "optional": false,
               "field": "zeroBalance",
+              "defaultValue": "false",
               "description": "<p>Whether to include assets with zero balance</p>",
               "options": [
                 "O",
@@ -4797,7 +4796,7 @@ define({
               "group": "Success 200",
               "type": "String",
               "optional": false,
-              "field": "balance.currency",
+              "field": "balance.<i>currency name</i>",
               "description": ""
             },
             {
@@ -4965,7 +4964,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "candles",
               "description": "<p>Ascending order according to timestamp</p>"
@@ -5102,9 +5101,9 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
-              "field": "addresses.currency",
+              "field": "addresses.<i>currency name</i>",
               "description": ""
             },
             {
@@ -5126,7 +5125,7 @@ define({
               "type": "String",
               "optional": false,
               "field": "addresses.currency.tag",
-              "description": ""
+              "description": "<p>If not exist, return empty string</p>"
             }
           ]
         },
@@ -5146,7 +5145,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::string request = R\"(\n        \"currencies\":[\"BTC\",\"ETH\",\"XRP\"]\n    )\";\n    std::cout << client.fetchDepositAddress(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::string request = R\"(\n        \"currency\":\"BTC\"\n    )\";\n    std::cout << client.fetchDepositAddress(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -5162,7 +5161,7 @@ define({
       "url": "/Spot",
       "title": "fetchDepositHistory",
       "name": "fetchDepositHistory",
-      "description": "<p>Binance supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now</p>",
+      "description": "<p>Upbit supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -5217,6 +5216,7 @@ define({
               "type": "Uint",
               "optional": false,
               "field": "endTime",
+              "defaultValue": "now",
               "description": "<p>[ms]</p>",
               "options": [
                 "O",
@@ -5245,7 +5245,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "deposits",
               "description": ""
@@ -5388,7 +5388,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "markets",
               "description": ""
@@ -5512,7 +5512,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "openOrders",
               "description": ""
@@ -5825,7 +5825,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "fills",
               "description": ""
@@ -5992,7 +5992,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "bids",
               "description": "<p>Descending order according to timestamp</p>"
@@ -6013,7 +6013,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "asks",
               "description": "<p>Ascending order according to price</p>"
@@ -6289,7 +6289,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "fees",
               "description": ""
@@ -6410,7 +6410,7 @@ define({
               "group": "Success 200",
               "type": "Object",
               "optional": false,
-              "field": "currencies.currency",
+              "field": "currencies.<i>currency name</i>",
               "description": ""
             },
             {
@@ -6446,7 +6446,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"currencies\":{\n            \"MATIC\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"MATIC\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":false\n                    },\n                    {\n                        \"chain\":\"ETH\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    }\n                ]\n            },\n            \"USDT\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"TRX\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    },\n                    {\n                        \"chain\":\"SOL\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    },\n                    {\n                        \"chain\":\"ETH\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    }\n                ]\n            }\n        }\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"currencies\":{\n            \"BTC\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"BTC\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":false\n                    },\n                    {\n                        \"chain\":\"BSC\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    }\n                ]\n            }\n        }\n    }\n}",
             "type": "json"
           }
         ]
@@ -6475,7 +6475,7 @@ define({
       "url": "/Spot",
       "title": "fetchWithdrawHistory",
       "name": "fetchWithdrawHistory",
-      "description": "<p>Binance supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now</p>",
+      "description": "<p>Upbit supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -6530,6 +6530,7 @@ define({
               "type": "Uint",
               "optional": false,
               "field": "endTime",
+              "defaultValue": "now",
               "description": "<p>[ms]</p>",
               "options": [
                 "O",
@@ -6558,7 +6559,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "Object[]",
+              "type": "ObjectArray",
               "optional": false,
               "field": "withdrawals",
               "description": ""
@@ -6688,7 +6689,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "String[]",
+              "type": "StringArray",
               "allowedValues": [
                 "1min",
                 "3min",
@@ -7218,7 +7219,7 @@ define({
               "field": "api",
               "description": "<p>if not exist, return all APIs</p>",
               "options": [
-                "I"
+                "O"
               ]
             }
           ]
@@ -8222,7 +8223,7 @@ define({
               "field": "accessKey",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -8232,7 +8233,7 @@ define({
               "field": "secretKey",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -8242,7 +8243,7 @@ define({
               "field": "restEndpoint",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -8252,7 +8253,7 @@ define({
               "field": "publicWebsocketEndpoint",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -8262,7 +8263,7 @@ define({
               "field": "privateWebsocketEndpoint",
               "description": "",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -8272,7 +8273,7 @@ define({
               "field": "restRequestTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -8282,7 +8283,7 @@ define({
               "field": "websocketConnectTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "I"
+                "O"
               ]
             },
             {
@@ -8292,7 +8293,7 @@ define({
               "field": "websocketIdleTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "I"
+                "O"
               ]
             }
           ]
@@ -8479,7 +8480,7 @@ define({
                 "round"
               ],
               "optional": false,
-              "field": "<i>requested rule</i>",
+              "field": "<i>requested field</i>",
               "description": ""
             }
           ]

@@ -189,8 +189,8 @@
  * 
  * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {Object} currencies
- * @apiSuccess {Object} currencies.currency
- * @apiSuccess {Object[]} currencies.currency.chains <b>If this field is empty, exchange supports only single chain or nothing. Please check exchange before withdraw or deposit crypto currency.</b>
+ * @apiSuccess {Object} [currencies.currency__name]
+ * @apiSuccess {ObjectArray} currencies.currency.chains <b>If this field is empty, exchange supports only single chain or nothing. Please check exchange before withdraw or deposit crypto currency.</b>
  * @apiSuccess {String} currencies.currency.chains.chain
  * @apiSuccess {Bool} currencies.currency.chains.isDefault
  * 
@@ -208,10 +208,12 @@
  *                      {
  *                          "chain":"TRX",
  *                          "isDefault":true
- *                      },{
+ *                      },
+ *                      {
  *                          "chain":"ETH",
  *                          "isDefault":false
- *                      },{
+ *                      },
+ *                      {
  *                          "chain":"SOL",
  *                          "isDefault":false
  *                      }
@@ -254,9 +256,9 @@
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
- * @apiParam {String} forceRestApi force to update using REST API
- * @apiParam {String[]} currencies If not exist, return all currencies
- * @apiParam {Bool=false} zeroBalance Whether to include assets with zero balance
+ * @apiParam {Bool} forceRestApi=false force to update using REST API
+ * @apiParam {StringArray} currencies If not exist, return all currencies
+ * @apiParam {Bool} zeroBalance=false Whether to include assets with zero balance
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {o} {i}
  * @onexParamOption {o} {o}
@@ -272,7 +274,7 @@
  * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {Object} balance
- * @apiSuccess {String} balance.currency
+ * @apiSuccess {String} [balance.currency__name]
  * @apiSuccess {DoubleString} balance.currency.free
  * @apiSuccess {DoubleString} balance.currency.locked
  * 
@@ -351,7 +353,7 @@
  * 
  * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {Object} currencies
- * @apiSuccess {Object} currencies.currency
+ * @apiSuccess {Object} [currencies.currency__name]
  * @apiSuccess {Array} currencies.currency.chains
  * @apiSuccess {String} currencies.currency.chains.chain If chain is empty string, it means exchange supports single chain.
  * @apiSuccess {Bool} currencies.currency.chains.withdrawEnable
@@ -363,34 +365,15 @@
  *      "data":{
  *          "requestedApiCount":1,
  *          "currencies":{
- *              "MATIC":{
+ *              "BTC":{
  *                  "chains":[
  *                      {
- *                          "chain":"MATIC",
+ *                          "chain":"BTC",
  *                          "withdrawEnable":true,
  *                          "depositEnable":false
  *                      },
  *                      {
- *                          "chain":"ETH",
- *                          "withdrawEnable":true,
- *                          "depositEnable":true
- *                      }
- *                  ]
- *              },
- *              "USDT":{
- *                  "chains":[
- *                      {
- *                          "chain":"TRX",
- *                          "withdrawEnable":true,
- *                          "depositEnable":true
- *                      },
- *                      {
- *                          "chain":"SOL",
- *                          "withdrawEnable":true,
- *                          "depositEnable":true
- *                      },
- *                      {
- *                          "chain":"ETH",
+ *                          "chain":"BSC",
  *                          "withdrawEnable":true,
  *                          "depositEnable":true
  *                      }
@@ -426,7 +409,7 @@
 /**
  * @api {onex} /Spot fetchWithdrawHistory
  * @apiName fetchWithdrawHistory
- * @apiDescription Binance supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now
+ * @apiDescription Upbit supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -434,7 +417,7 @@
  * @apiParam {String} orderId
  * @apiParam {String} txid
  * @apiParam {Uint} startTime [ms]
- * @apiParam {Uint} endTime [ms]
+ * @apiParam {Uint} endTime=now [ms]
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {o} {o}
  * @onexParamOption {o} {o}
@@ -449,7 +432,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {Object[]} withdrawals
+ * @apiSuccess {ObjectArray} withdrawals
  * @apiSuccess {String} withdrawals.currency
  * @apiSuccess {DoubleString} withdrawals.amount
  * @apiSuccess {DoubleString} withdrawals.fee
@@ -509,7 +492,7 @@
 /**
  * @api {onex} /Spot fetchDepositHistory
  * @apiName fetchDepositHistory
- * @apiDescription Binance supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now
+ * @apiDescription Upbit supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -517,7 +500,7 @@
  * @apiParam {String} orderId
  * @apiParam {String} txid
  * @apiParam {Uint} startTime [ms]
- * @apiParam {Uint} endTime [ms]
+ * @apiParam {Uint} endTime=now [ms]
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {o} {o}
  * @onexParamOption {i} {o}
@@ -531,7 +514,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {Object[]} deposits
+ * @apiSuccess {ObjectArray} deposits
  * @apiSuccess {String} deposits.currency
  * @apiSuccess {DoubleString} deposits.amount
  * @apiSuccess {DoubleString} deposits.fee
@@ -607,11 +590,10 @@
  * 
  * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {Object} addresses
- * @apiSuccess {Object[]} addresses.currency
+ * @apiSuccess {ObjectArray} [addresses.currency__name]
  * @apiSuccess {String} addresses.currency.chain
  * @apiSuccess {String} addresses.currency.address
- * @apiSuccess {String} addresses.currency.tag
- * 
+ * @apiSuccess {String} addresses.currency.tag If not exist, return empty string
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
@@ -647,7 +629,7 @@
  *      OneXAPI::Binance::Spot client(userInfo)__;
  *  
  *      std::string request = R"(
- *          "currencies":["BTC","ETH","XRP"]
+ *          "currency":"BTC"
  *      )";
  *      std::cout << client.fetchDepositAddress(request) << std::endl;
  *      
@@ -797,7 +779,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {String=ceil,floor,round} [requested__rule]
+ * @apiSuccess {String=ceil,floor,round} [requested__field]
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -1267,7 +1249,7 @@
  * @apiSuccess {String} feeCurrency
  * @apiSuccess {DoubleString} feeAmount
  * @apiSuccess {String=open,filled,cancelled} status
- * @apiSuccess {Object[]} fills
+ * @apiSuccess {ObjectArray} fills
  * @apiSuccess {String} fills.orderId
  * @apiSuccess {DoubleString} fills.price
  * @apiSuccess {DoubleString} fills.amount
@@ -1357,7 +1339,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} openOrders
+ * @apiSuccess {ObjectArray} openOrders
  * @apiSuccess {String} openOrders.baseCurrency
  * @apiSuccess {String} openOrders.quoteCurrency
  * @apiSuccess {String} openOrders.symbol
@@ -1444,7 +1426,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} fees
+ * @apiSuccess {ObjectArray} fees
  * @apiSuccess {String} fees.baseCurrency
  * @apiSuccess {String} fees.quoteCurrency
  * @apiSuccess {String} fees.symbol
@@ -1513,7 +1495,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {String[]=1min,3min,5min,10min,15min,30min,1hour,2hour,4hour,6hour,8hour,12hour,1day,3day,1week,1month} intervals
+ * @apiSuccess {StringArray=1min,3min,5min,10min,15min,30min,1hour,2hour,4hour,6hour,8hour,12hour,1day,3day,1week,1month} intervals
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -1562,7 +1544,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} markets
+ * @apiSuccess {ObjectArray} markets
  * @apiSuccess {String} markets.baseCurrency
  * @apiSuccess {String} markets.quoteCurrency
  * @apiSuccess {String} markets.symbol
@@ -1724,10 +1706,10 @@
  * @apiSuccess {String} symbol
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {Uint} timestamp [ms]
- * @apiSuccess {Object[]} bids Descending order according to timestamp
+ * @apiSuccess {ObjectArray} bids Descending order according to timestamp
  * @apiSuccess {DoubleString} bids.price
  * @apiSuccess {DoubleString} bids.size
- * @apiSuccess {Object[]} asks Ascending order according to price
+ * @apiSuccess {ObjectArray} asks Ascending order according to price
  * @apiSuccess {DoubleString} asks.price
  * @apiSuccess {DoubleString} asks.size
  * 
@@ -1832,7 +1814,7 @@
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} symbol
- * @apiSuccess {Object[]} candles Ascending order according to timestamp
+ * @apiSuccess {ObjectArray} candles Ascending order according to timestamp
  * @apiSuccess {DoubleString} candles.openPrice
  * @apiSuccess {DoubleString} candles.closePrice
  * @apiSuccess {DoubleString} candles.highPrice

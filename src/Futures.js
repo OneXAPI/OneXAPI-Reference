@@ -6,7 +6,7 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {String} forceRestApi force to update using REST API
- * @apiParam {String[]} currencies If not exist, return all currencies
+ * @apiParam {StringArray} currencies If not exist, return all currencies
  * @onexParamExchanges {Binance o}
  * @onexParamOption {o}
  * @onexParamOption {o}
@@ -102,7 +102,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {Object[]} positions 
+ * @apiSuccess {ObjectArray} positions 
  * @apiSuccess {String} positions.baseCurrency
  * @apiSuccess {String} positions.quoteCurrency
  * @apiSuccess {String} positions.expiration
@@ -193,7 +193,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {Object[]} incomes 
+ * @apiSuccess {ObjectArray} incomes 
  * @apiSuccess {String} incomes.baseCurrency
  * @apiSuccess {String} incomes.quoteCurrency
  * @apiSuccess {String} incomes.expiration
@@ -836,7 +836,7 @@
  * @apiSuccess {String} feeCurrency
  * @apiSuccess {DoubleString} feeAmount
  * @apiSuccess {String=open,filled,cancelled} status
- * @apiSuccess {Object[]} fills
+ * @apiSuccess {ObjectArray} fills
  * @apiSuccess {String} fills.orderId
  * @apiSuccess {DoubleString} fills.price
  * @apiSuccess {DoubleString} fills.amount
@@ -931,7 +931,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} openOrders
+ * @apiSuccess {ObjectArray} openOrders
  * @apiSuccess {String} openOrders.baseCurrency
  * @apiSuccess {String} openOrders.quoteCurrency
  * @apiSuccess {String} openOrders.symbol
@@ -1024,7 +1024,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} fees
+ * @apiSuccess {ObjectArray} fees
  * @apiSuccess {String} fees.baseCurrency
  * @apiSuccess {String} fees.quoteCurrency
  * @apiSuccess {String} fees.expiration
@@ -1101,7 +1101,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} fundingRates
+ * @apiSuccess {ObjectArray} fundingRates
  * @apiSuccess {String} fundingRates.baseCurrency
  * @apiSuccess {String} fundingRates.quoteCurrency
  * @apiSuccess {String} fundingRates.expiration
@@ -1178,7 +1178,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} leverages
+ * @apiSuccess {ObjectArray} leverages
  * @apiSuccess {String} leverages.baseCurrency If this field is empty, all symbols have the same leverage
  * @apiSuccess {String} leverages.quoteCurrency If this field is empty, all symbols have the same leverage
  * @apiSuccess {String} leverages.expiration If this field is empty, all symbols have the same leverage
@@ -1327,7 +1327,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} marginTypes
+ * @apiSuccess {ObjectArray} marginTypes
  * @apiSuccess {String} marginTypes.baseCurrency If this field is empty, all symbols have the same leverage
  * @apiSuccess {String} marginTypes.quoteCurrency If this field is empty, all symbols have the same leverage
  * @apiSuccess {String} marginTypes.expiration If this field is empty, all symbols have the same leverage
@@ -1470,7 +1470,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {String[]=1min,3min,5min,15min,30min,1hour,2hour,4hour,6hour,8hour,12hour,1day,3day,1week,1month} intervals
+ * @apiSuccess {StringArray=1min,3min,5min,15min,30min,1hour,2hour,4hour,6hour,8hour,12hour,1day,3day,1week,1month} intervals
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -1521,7 +1521,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {Object[]} markets
+ * @apiSuccess {ObjectArray} markets
  * @apiSuccess {String} markets.baseCurrency
  * @apiSuccess {String} markets.quoteCurrency
  * @apiSuccess {String} markets.expiration
@@ -1695,10 +1695,10 @@
  * @apiSuccess {String} symbol
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {Uint} timestamp [ms]
- * @apiSuccess {Object[]} bids Descending order according to timestamp
+ * @apiSuccess {ObjectArray} bids Descending order according to timestamp
  * @apiSuccess {DoubleString} bids.price
  * @apiSuccess {DoubleString} bids.size
- * @apiSuccess {Object[]} asks Ascending order according to price
+ * @apiSuccess {ObjectArray} asks Ascending order according to price
  * @apiSuccess {DoubleString} asks.price
  * @apiSuccess {DoubleString} asks.size
  * 
@@ -1807,7 +1807,7 @@
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
  * @apiSuccess {String} symbol
- * @apiSuccess {Object[]} candles Ascending order according to timestamp
+ * @apiSuccess {ObjectArray} candles Ascending order according to timestamp
  * @apiSuccess {DoubleString} candles.openPrice
  * @apiSuccess {DoubleString} candles.closePrice
  * @apiSuccess {DoubleString} candles.highPrice

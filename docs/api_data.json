@@ -261,7 +261,7 @@
           },
           {
             "group": "Parameter",
-            "type": "String[]",
+            "type": "StringArray",
             "optional": false,
             "field": "currencies",
             "description": "<p>If not exist, return all currencies</p>"
@@ -477,7 +477,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "candles",
             "description": "<p>Ascending order according to timestamp</p>"
@@ -617,7 +617,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "incomes",
             "description": ""
@@ -750,7 +750,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "fundingRates",
             "description": ""
@@ -876,7 +876,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "leverages",
             "description": ""
@@ -995,7 +995,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "marginTypes",
             "description": ""
@@ -1117,7 +1117,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "markets",
             "description": ""
@@ -1240,7 +1240,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "openOrders",
             "description": ""
@@ -1584,7 +1584,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "fills",
             "description": ""
@@ -1750,7 +1750,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "bids",
             "description": "<p>Descending order according to timestamp</p>"
@@ -1771,7 +1771,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "asks",
             "description": "<p>Ascending order according to price</p>"
@@ -1879,7 +1879,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "positions",
             "description": ""
@@ -2210,7 +2210,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "fees",
             "description": ""
@@ -2321,7 +2321,7 @@
           },
           {
             "group": "Success 200",
-            "type": "String[]",
+            "type": "StringArray",
             "allowedValues": [
               "1min",
               "3min",
@@ -3891,7 +3891,7 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "supportedExchanges",
             "description": ""
@@ -4201,13 +4201,13 @@
           {
             "group": "Success 200",
             "type": "Object",
-            "optional": false,
-            "field": "currencies.currency",
+            "optional": true,
+            "field": "currencies.currency__name",
             "description": ""
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "currencies.currency.chains",
             "description": "<p><b>If this field is empty, exchange supports only single chain or nothing. Please check exchange before withdraw or deposit crypto currency.</b></p>"
@@ -4231,7 +4231,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"currencies\":{\n            \"BTC\":{\n                \"chains\":[]\n            },\n            \"USDT\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"TRX\",\n                        \"isDefault\":true\n                    },{\n                        \"chain\":\"ETH\",\n                        \"isDefault\":false\n                    },{\n                        \"chain\":\"SOL\",\n                        \"isDefault\":false\n                    }\n                ]\n            },\n            ...\n        }\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"currencies\":{\n            \"BTC\":{\n                \"chains\":[]\n            },\n            \"USDT\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"TRX\",\n                        \"isDefault\":true\n                    },\n                    {\n                        \"chain\":\"ETH\",\n                        \"isDefault\":false\n                    },\n                    {\n                        \"chain\":\"SOL\",\n                        \"isDefault\":false\n                    }\n                ]\n            },\n            ...\n        }\n    }\n}",
           "type": "json"
         }
       ]
@@ -4264,14 +4264,15 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Bool",
             "optional": false,
             "field": "forceRestApi",
+            "defaultValue": "false",
             "description": "<p>force to update using REST API</p>"
           },
           {
             "group": "Parameter",
-            "type": "String[]",
+            "type": "StringArray",
             "optional": false,
             "field": "currencies",
             "description": "<p>If not exist, return all currencies</p>"
@@ -4279,11 +4280,9 @@
           {
             "group": "Parameter",
             "type": "Bool",
-            "allowedValues": [
-              "false"
-            ],
             "optional": false,
             "field": "zeroBalance",
+            "defaultValue": "false",
             "description": "<p>Whether to include assets with zero balance</p>"
           }
         ]
@@ -4327,8 +4326,8 @@
           {
             "group": "Success 200",
             "type": "String",
-            "optional": false,
-            "field": "balance.currency",
+            "optional": true,
+            "field": "balance.currency__name",
             "description": ""
           },
           {
@@ -4468,7 +4467,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "candles",
             "description": "<p>Ascending order according to timestamp</p>"
@@ -4593,9 +4592,9 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "addresses.currency",
+            "type": "ObjectArray",
+            "optional": true,
+            "field": "addresses.currency__name",
             "description": ""
           },
           {
@@ -4617,7 +4616,7 @@
             "type": "String",
             "optional": false,
             "field": "addresses.currency.tag",
-            "description": ""
+            "description": "<p>If not exist, return empty string</p>"
           }
         ]
       },
@@ -4637,7 +4636,7 @@
       },
       {
         "title": "c++",
-        "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo)__;\n\n    std::string request = R\"(\n        \"currencies\":[\"BTC\",\"ETH\",\"XRP\"]\n    )\";\n    std::cout << client.fetchDepositAddress(request) << std::endl;\n    \n    return 0;\n}",
+        "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo)__;\n\n    std::string request = R\"(\n        \"currency\":\"BTC\"\n    )\";\n    std::cout << client.fetchDepositAddress(request) << std::endl;\n    \n    return 0;\n}",
         "type": "cpp"
       }
     ],
@@ -4649,7 +4648,7 @@
     "url": "/Spot",
     "title": "fetchDepositHistory",
     "name": "fetchDepositHistory",
-    "description": "<p>Binance supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now</p>",
+    "description": "<p>Upbit supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -4688,6 +4687,7 @@
             "type": "Uint",
             "optional": false,
             "field": "endTime",
+            "defaultValue": "now",
             "description": "<p>[ms]</p>"
           }
         ]
@@ -4712,7 +4712,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "deposits",
             "description": ""
@@ -4843,7 +4843,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "markets",
             "description": ""
@@ -4951,7 +4951,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "openOrders",
             "description": ""
@@ -5244,7 +5244,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "fills",
             "description": ""
@@ -5395,7 +5395,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "bids",
             "description": "<p>Descending order according to timestamp</p>"
@@ -5416,7 +5416,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "asks",
             "description": "<p>Ascending order according to price</p>"
@@ -5664,7 +5664,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "fees",
             "description": ""
@@ -5776,8 +5776,8 @@
           {
             "group": "Success 200",
             "type": "Object",
-            "optional": false,
-            "field": "currencies.currency",
+            "optional": true,
+            "field": "currencies.currency__name",
             "description": ""
           },
           {
@@ -5813,7 +5813,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"currencies\":{\n            \"MATIC\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"MATIC\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":false\n                    },\n                    {\n                        \"chain\":\"ETH\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    }\n                ]\n            },\n            \"USDT\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"TRX\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    },\n                    {\n                        \"chain\":\"SOL\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    },\n                    {\n                        \"chain\":\"ETH\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    }\n                ]\n            }\n        }\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"currencies\":{\n            \"BTC\":{\n                \"chains\":[\n                    {\n                        \"chain\":\"BTC\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":false\n                    },\n                    {\n                        \"chain\":\"BSC\",\n                        \"withdrawEnable\":true,\n                        \"depositEnable\":true\n                    }\n                ]\n            }\n        }\n    }\n}",
           "type": "json"
         }
       ]
@@ -5838,7 +5838,7 @@
     "url": "/Spot",
     "title": "fetchWithdrawHistory",
     "name": "fetchWithdrawHistory",
-    "description": "<p>Binance supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now</p>",
+    "description": "<p>Upbit supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -5877,6 +5877,7 @@
             "type": "Uint",
             "optional": false,
             "field": "endTime",
+            "defaultValue": "now",
             "description": "<p>[ms]</p>"
           }
         ]
@@ -5901,7 +5902,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "ObjectArray",
             "optional": false,
             "field": "withdrawals",
             "description": ""
@@ -6024,7 +6025,7 @@
           },
           {
             "group": "Success 200",
-            "type": "String[]",
+            "type": "StringArray",
             "allowedValues": [
               "1min",
               "3min",
@@ -7593,7 +7594,7 @@
               "round"
             ],
             "optional": true,
-            "field": "requested__rule",
+            "field": "requested__field",
             "description": ""
           }
         ]

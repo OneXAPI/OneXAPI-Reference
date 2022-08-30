@@ -76,14 +76,14 @@
  * @apiParam {Uint} websocketConnectTimeout [ms]
  * @apiParam {Uint} websocketIdleTimeout [ms]
  * @onexParamExchanges {all o}
- * @onexParamOption {i}
- * @onexParamOption {i}
- * @onexParamOption {i}
- * @onexParamOption {i}
- * @onexParamOption {i}
- * @onexParamOption {i}
- * @onexParamOption {i}
- * @onexParamOption {i}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
  * 
  * @apiParamExample Request Example : 
  *  {
@@ -184,7 +184,7 @@
  *
  * @apiParam {String} api if not exist, return all APIs
  * @onexParamExchanges {all o}
- * @onexParamOption {i}
+ * @onexParamOption {o}
  * 
  * @apiParamExample Request Example : 
  *  {

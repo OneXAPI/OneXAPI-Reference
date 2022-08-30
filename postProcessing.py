@@ -86,7 +86,11 @@ with open("docs/api_data.js", "r+") as file:
         for item in api["parameter"]["fields"]["Parameter : "] + api["success"]["fields"]["Response : "]:
             if item["optional"] is True:
                 item["optional"] = False
-                item["field"] = "<i>" + item["field"] + "</i>"
+                fieldSplitted = item["field"].split(".")
+                item["field"] = ""
+                for i in range(len(fieldSplitted) - 1):
+                    item["field"] += fieldSplitted[i] + "."
+                item["field"] += "<i>" + fieldSplitted[-1] + "</i>"
             item["field"] = item["field"].replace("__", " ")
 
         ### apidoc parsing error correction ###
