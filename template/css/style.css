@@ -124,11 +124,16 @@ td {
 }
 
 .table>thead>tr>th {
-  border-bottom: 1px solid rgba(59,65,81,.2);
+  border-bottom: 2px solid rgba(59,65,81,.2);
 }
 
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+.table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
   border-top: 0px;
+}
+
+.table>tbody>tr>td {
+  border-top: 0px;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 .table>tbody>tr>td>p>code {
@@ -249,7 +254,6 @@ pre code {
   font-style: normal;
   font-weight: 400;
   word-wrap: normal;
-  white-space: pre;
 }
 
 pre code.sample-request-response-json {
@@ -894,7 +898,6 @@ pre .typ-options {
 .row .no-float {
   display: table-cell;
   float: none;
-  width: 100%;
 }
 
 .headers {
@@ -1103,7 +1106,7 @@ pre .typ-options {
 /* 오른쪽 툴팁 시작 */
 
 .tooltip .tooltip-right {
-  top: -5px;
+  top: -50px;
   left: 105%;
 }
 
