@@ -750,7 +750,7 @@ body::-webkit-scrollbar-thumb
 
 .section-example {
   padding: 0;
-  height: 100%;
+  height: auto;
   background: #282a36;
   border-radius: 0px 5px 5px 0px;
 }
@@ -879,6 +879,7 @@ pre .typ-options {
 .pre-onex {
   background: rgba(18, 8, 8, 0.1);
   border: 1px dotted #f0f0f0;
+  display: flex;
 }
 .pre-head {
   background: rgba(144,18,254,.1);
@@ -898,6 +899,11 @@ pre .typ-options {
 .row .no-float {
   display: table-cell;
   float: none;
+}
+
+.row .no-padding {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .headers {
