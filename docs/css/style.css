@@ -11,6 +11,9 @@ body, p, a, div, th, td {
   font-weight: 400;
   font-size: 14px;
 }
+.container-fluid {
+  padding-right: 0px;
+}
 
 td.code {
   font-size: 15px;
@@ -20,8 +23,7 @@ td.code {
 }
 
 #content {
-  /* padding-top: 16px; */
-  padding: 16px 40px;
+  padding: 16px 0px 16px 40px;
 }
 
 td p {
@@ -107,6 +109,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 0 0 20px 0;
+  background: #dfdfdf;
 }
 
 th {
@@ -261,6 +264,51 @@ pre code.sample-request-response-json {
   max-height: 500px;
   overflow: auto;
 }
+
+/* 
+ Callouts
+ */
+
+.bd-callout {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-left-width: .75rem;
+  border-radius: .25rem;
+}
+
+.bd-callout h4 {
+  margin-top: 0;
+  margin-bottom: .25rem;
+}
+
+.bd-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.bd-callout code {
+  border-radius: .25rem;
+}
+
+.bd-callout + .bd-callout {
+  margin-top: -.25rem;
+}
+
+.bd-callout-info {
+  border-left-color: #5bc0de;
+}
+.bd-callout-warning {
+  border-left-color: #f0ad4e;
+}
+.bd-callout-danger {
+  border-left-color: #d9534f;
+}
+
 
 /* ------------------------------------------------------------------------------------------
  * Sidenav
@@ -892,6 +940,7 @@ pre .typ-options {
 
 .row {
   border-radius: 5px;
+  margin-right: 0px;
   margin-bottom: 15px;
 }
 

@@ -149,7 +149,7 @@
         <div class="clearfix"></div>
 
         {{#if article.description}}
-          <p>{{{nl2br article.description}}}</p>
+          <div class="bd-callout bd-callout-info"><p>{{{nl2br article.description}}}</p></div>
         {{/if}}
 
         {{#if article.permission}}
@@ -225,7 +225,7 @@
 <script id="template-article-param-request-block" type="text/x-handlebars-template">
   {{#if params}}
   {{#each params.fields}}
-    <div class="pull-left"><h4 class="headers">{{__ @key}}</div>
+    <div class="pull-left"><h4 class="headers">Request : </div>
     <div class="pull-left">
       <div class="tooltip"><div style="float: left"><img src="img/hint.png" alt="Hint" class="hintimg"></div>
       <span class="tooltiptext tooltip-right">
