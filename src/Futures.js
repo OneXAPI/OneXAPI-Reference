@@ -1,11 +1,11 @@
 /**
  * @api {onex} /Futures fetchBalance
  * @apiName fetchBalance
- * @apiDescription During websocket is running, updateAccountBalance does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.
+ * @onexWarn During websocket is running, fetchBalance does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
- * @apiParam {String} forceRestApi force to update using REST API
+ * @apiParam {Bool} forceRestApi=false force to update using REST API
  * @apiParam {StringArray} currencies If not exist, return all currencies
  * @onexParamExchanges {Binance o}
  * @onexParamOption {o}
@@ -20,7 +20,7 @@
  * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {Object} balance
- * @apiSuccess {String} balance.currency
+ * @apiSuccess {Object} [balance.currency__name]
  * @apiSuccess {DoubleString} balance.currency.balance wallet balance
  * @apiSuccess {DoubleString} balance.currency.crossWalletBalance crossed wallet balance
  * @apiSuccess {DoubleString} balance.currency.crossUnPnl unrealized profit of crossed positions
@@ -200,14 +200,14 @@
  * @apiSuccess {String} incomes.symbol
  * @apiSuccess {DoubleString} incomes.income
  * @apiSuccess {String} incomes.incomeCurrency
- * @apiSuccess {Uint} timestamp [ms]
+ * @apiSuccess {Uint} incomes.timestamp [ms]
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
  *      "data":{
  *          "requestedApiCount":1,
- *          "positions":[
+ *          "incomes":[
  *              {
  *                  "baseCurrency":"BTC",
  *                  "quoteCurrency":"USDT",
@@ -333,7 +333,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {String=ceil,floor,round} [requested__rule]
+ * @apiSuccess {String=ceil,floor,round} [requested__field]
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -368,7 +368,8 @@
 /**
  * @api {onex} /Futures orderLimitBuy
  * @apiName orderLimitBuy
- * @apiDescription Currently, OneXAPI supports only One-way mode trading<br>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @onexWarn Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.
+ * @onexDanger Currently, OneXAPI supports only One-way mode trading.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -455,7 +456,8 @@
 /**
  * @api {onex} /Futures orderLimitSell
  * @apiName orderLimitSell
- * @apiDescription Currently, OneXAPI supports only One-way mode trading<br>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @onexWarn Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.
+ * @onexDanger Currently, OneXAPI supports only One-way mode trading.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -549,7 +551,8 @@
 /**
  * @api {onex} /Futures orderMarketBuy
  * @apiName orderMarketBuy
- * @apiDescription Currently, OneXAPI supports only One-way mode trading<br>Amount is automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @onexWarn Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.
+ * @onexDanger Currently, OneXAPI supports only One-way mode trading.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -632,7 +635,8 @@
 /**
  * @api {onex} /Futures orderMarketSell
  * @apiName orderMarketSell
- * @apiDescription Currently, OneXAPI supports only One-way mode trading<br>Amount is automatically rounded according to the exchange. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @onexWarn Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.
+ * @onexDanger Currently, OneXAPI supports only One-way mode trading.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -715,7 +719,7 @@
 /**
  * @api {onex} /Futures orderCancel
  * @apiName orderCancel
- * @apiDescription If both orderId and clientOrderId are options, either of them must be sent. If both are sent, orderId is used preferentially.
+ * @onexWarn If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -723,7 +727,7 @@
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration=PERP
  * @apiParam {String} orderId
- * @apiParam {String} clientOrderId
+ * @apiParam {String} clientOrderId Client Order ID as assigned by the client
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -794,7 +798,7 @@
 /**
  * @api {onex} /Futures fetchOrderInfo
  * @apiName fetchOrderInfo
- * @apiDescription If both <b>orderId</b> and <b>clientOrderId</b> are options, either of them must be sent. If both are sent, orderId is used preferentially.
+ * @onexWarn If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -802,7 +806,7 @@
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration=PERP
  * @apiParam {String} orderId
- * @apiParam {String} clientOrderId
+ * @apiParam {String} clientOrderId Client Order ID as assigned by the client
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -937,8 +941,8 @@
  * @apiSuccess {String} openOrders.symbol
  * @apiSuccess {String} openOrders.orderId
  * @apiSuccess {String=buy,sell} openOrders.side
- * @apiSuccess {String=long,short} positionSide
- * @apiSuccess {Bool} reduceOnly
+ * @apiSuccess {String=long,short} openOrders.positionSide
+ * @apiSuccess {Bool} openOrders.reduceOnly
  * @apiSuccess {DoubleString} openOrders.originalAmount
  * @apiSuccess {DoubleString} openOrders.filledAmount
  * @apiSuccess {DoubleString} openOrders.remainingAmount
@@ -1006,6 +1010,7 @@
 /**
  * @api {onex} /Futures fetchTradingFee
  * @apiName fetchTradingFee
+ * @onexDanger Binance : Trading fee is a value before bnb discount
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -1587,14 +1592,14 @@
 /**
  * @api {onex} /Futures fetchTicker
  * @apiName fetchTicker
- * @apiDescription During ticker websocket is running, fetchTicker does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true. 
+ * @onexWarn During ticker websocket is running, fetchTicker does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true. 
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration=PERP
- * @apiParam {String} forceRestApi
+ * @apiParam {Bool} forceRestApi=false
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -1668,14 +1673,15 @@
 /**
  * @api {onex} /Futures fetchOrderbook
  * @apiName fetchOrderbook
- * @apiDescription During orderbook websocket is running, fetchOrderbook does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true. 
+ * @onexWarn During orderbook websocket is running, fetchOrderbook does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true. 
+ * @onexDanger Binance : Timestamp does not mean the server time; it means the time when the response arrived.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration=PERP
- * @apiParam {String} forceRestApi
+ * @apiParam {Bool} forceRestApi=false
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -1772,7 +1778,7 @@
 /**
  * @api {onex} /Futures fetchCandleHistory
  * @apiName fetchCandleHistory
- * @apiDescription When enormous amount of data is requested, getCandleData takes a long time to execute.
+ * @onexWarn When enormous amount of data is requested, fetchCandleHistory takes a long time to execute.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -1808,6 +1814,7 @@
  * @apiSuccess {String} expiration
  * @apiSuccess {String} symbol
  * @apiSuccess {ObjectArray} candles Ascending order according to timestamp
+ * @apiSuccess {Uint} candles.timestamp [s]
  * @apiSuccess {DoubleString} candles.openPrice
  * @apiSuccess {DoubleString} candles.closePrice
  * @apiSuccess {DoubleString} candles.highPrice

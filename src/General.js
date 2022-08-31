@@ -63,7 +63,8 @@
 /**
  * @api {onex} /__GENERAL__ setConfig
  * @apiName setConfig
- * @apiDescription Requested endpoint must be in the endpoint candidates. Otherwise, error. Refer to getEndpointCandidates
+ * @onexInfo Sets the settings for the object. Only the requested parameters are included in the response
+ * @onexWarn The requested endpoint must be included in the endpoint candidates, otherwise it returns an error. See <a href=#api-Spot-getEndpointCandidates>getEndpointCandidates</a>.
  * @apiGroup __GENERAL__
  * @apiVersion 0.0.0
  *
@@ -178,7 +179,7 @@
 /**
  * @api {onex} /__GENERAL__ has
  * @apiName has
- * @apiDescription check whether API exists or not
+ * @onexInfo Check if API exists or not
  * @apiGroup __GENERAL__
  * @apiVersion 0.0.0
  *

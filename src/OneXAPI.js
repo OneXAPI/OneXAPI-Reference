@@ -1,7 +1,7 @@
 /**
  * @api {onex} /OneXAPI getInfo
  * @apiName getInfo
- * @apiDescription get information of the OneXAPI Library
+ * @onexInfo get information of the OneXAPI Library
  * @apiGroup OneXAPI
  * @apiVersion 0.0.0
  *

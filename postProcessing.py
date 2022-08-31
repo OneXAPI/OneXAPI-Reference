@@ -21,6 +21,18 @@ for group in group_list :
                 apiExchangeInfo[group][apiName] = dict()
                 apiExchangeInfo[group][apiName]["exchanges"] = dict()
                 apiExchangeInfo[group][apiName]["options"] = []
+            elif "@onexInfo " in line:
+                if not apiName:
+                    error("Cannot find apiName!")
+                apiExchangeInfo[group][apiName]["info"] = line.split("@onexInfo ")[-1]
+            elif "@onexWarn " in line:
+                if not apiName:
+                    error("Cannot find apiName!")
+                apiExchangeInfo[group][apiName]["warn"] = line.split("@onexWarn ")[-1]
+            elif "@onexDanger " in line:
+                if not apiName:
+                    error("Cannot find apiName!")
+                apiExchangeInfo[group][apiName]["danger"] = line.split("@onexDanger ")[-1]
             elif "@apiParam " in line:
                 paramCnt += 1
             elif "@onexParamExchanges " in line:
@@ -72,6 +84,14 @@ with open("docs/api_data.js", "r+") as file:
         if "Success 200" in api["success"]["fields"]:
             api["success"]["fields"]["Response : "] = api["success"]["fields"]["Success 200"]
             del api["success"]["fields"]["Success 200"]
+
+        ### Info&Warn&Danger Update ###
+        if "info" in apiExchangeInfo[api["group"]][api["name"]].keys():
+            api["info"] = apiExchangeInfo[api["group"]][api["name"]]["info"]
+        if "warn" in apiExchangeInfo[api["group"]][api["name"]].keys():
+            api["warn"] = apiExchangeInfo[api["group"]][api["name"]]["warn"]
+        if "danger" in apiExchangeInfo[api["group"]][api["name"]].keys():
+            api["danger"] = apiExchangeInfo[api["group"]][api["name"]]["danger"]
 
         ### Exchange Append ###
         api["exchanges"] = dict()

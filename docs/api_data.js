@@ -277,7 +277,6 @@ define({
       "url": "/Futures",
       "title": "fetchBalance",
       "name": "fetchBalance",
-      "description": "<p>During websocket is running, updateAccountBalance does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -285,9 +284,10 @@ define({
           "Parameter : ": [
             {
               "group": "Parameter",
-              "type": "String",
+              "type": "Bool",
               "optional": false,
               "field": "forceRestApi",
+              "defaultValue": "false",
               "description": "<p>force to update using REST API</p>",
               "options": [
                 "O"
@@ -343,9 +343,9 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "String",
+              "type": "Object",
               "optional": false,
-              "field": "balance.currency",
+              "field": "balance.<i>currency name</i>",
               "description": ""
             },
             {
@@ -400,6 +400,7 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "During websocket is running, fetchBalance does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -409,7 +410,6 @@ define({
       "url": "/Futures",
       "title": "fetchCandleHistory",
       "name": "fetchCandleHistory",
-      "description": "<p>When enormous amount of data is requested, getCandleData takes a long time to execute.</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -545,6 +545,13 @@ define({
             },
             {
               "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "candles.timestamp",
+              "description": "<p>[s]</p>"
+            },
+            {
+              "group": "Success 200",
               "type": "DoubleString",
               "optional": false,
               "field": "candles.openPrice",
@@ -609,6 +616,7 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "When enormous amount of data is requested, fetchCandleHistory takes a long time to execute.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -747,7 +755,7 @@ define({
               "group": "Success 200",
               "type": "Uint",
               "optional": false,
-              "field": "timestamp",
+              "field": "incomes.timestamp",
               "description": "<p>[ms]</p>"
             }
           ]
@@ -755,7 +763,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"positions\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"income\":\"-31.13586\",\n                \"incomeCurrency\":\"USDT\",\n                \"timestamp\":1656044000000\n            }\n        ]\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"incomes\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"income\":\"-31.13586\",\n                \"incomeCurrency\":\"USDT\",\n                \"timestamp\":1656044000000\n            }\n        ]\n    }\n}",
             "type": "json"
           }
         ]
@@ -1434,14 +1442,14 @@ define({
                 "short"
               ],
               "optional": false,
-              "field": "positionSide",
+              "field": "openOrders.positionSide",
               "description": ""
             },
             {
               "group": "Success 200",
               "type": "Bool",
               "optional": false,
-              "field": "reduceOnly",
+              "field": "openOrders.reduceOnly",
               "description": ""
             },
             {
@@ -1526,7 +1534,6 @@ define({
       "url": "/Futures",
       "title": "fetchOrderInfo",
       "name": "fetchOrderInfo",
-      "description": "<p>If both <b>orderId</b> and <b>clientOrderId</b> are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -1578,7 +1585,7 @@ define({
               "type": "String",
               "optional": false,
               "field": "clientOrderId",
-              "description": "",
+              "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
                 "O"
               ]
@@ -1801,6 +1808,7 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -1810,7 +1818,6 @@ define({
       "url": "/Futures",
       "title": "fetchOrderbook",
       "name": "fetchOrderbook",
-      "description": "<p>During orderbook websocket is running, fetchOrderbook does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -1849,9 +1856,10 @@ define({
             },
             {
               "group": "Parameter",
-              "type": "String",
+              "type": "Bool",
               "optional": false,
               "field": "forceRestApi",
+              "defaultValue": "false",
               "description": "",
               "options": [
                 "O"
@@ -1989,6 +1997,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "During orderbook websocket is running, fetchOrderbook does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true.",
+      "danger": "Binance : Timestamp does not mean the server time; it means the time when the response arrived.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -2181,7 +2191,6 @@ define({
       "url": "/Futures",
       "title": "fetchTicker",
       "name": "fetchTicker",
-      "description": "<p>During ticker websocket is running, fetchTicker does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -2220,9 +2229,10 @@ define({
             },
             {
               "group": "Parameter",
-              "type": "String",
+              "type": "Bool",
               "optional": false,
               "field": "forceRestApi",
+              "defaultValue": "false",
               "description": "",
               "options": [
                 "O"
@@ -2360,6 +2370,7 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "During ticker websocket is running, fetchTicker does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -2498,6 +2509,7 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "danger": "Binance : Trading fee is a value before bnb discount",
       "exchanges": {
         "Binance": "supported"
       }
@@ -2979,7 +2991,6 @@ define({
       "url": "/Futures",
       "title": "has",
       "name": "has",
-      "description": "<p>check whether API exists or not</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -3046,6 +3057,7 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "info": "Check if API exists or not",
       "exchanges": {
         "All": "supported"
       }
@@ -3055,7 +3067,6 @@ define({
       "url": "/Futures",
       "title": "orderCancel",
       "name": "orderCancel",
-      "description": "<p>If both orderId and clientOrderId are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -3107,7 +3118,7 @@ define({
               "type": "String",
               "optional": false,
               "field": "clientOrderId",
-              "description": "",
+              "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
                 "O"
               ]
@@ -3198,6 +3209,7 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -3207,7 +3219,6 @@ define({
       "url": "/Futures",
       "title": "orderLimitBuy",
       "name": "orderLimitBuy",
-      "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -3412,6 +3423,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.",
+      "danger": "Currently, OneXAPI supports only One-way mode trading.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -3421,7 +3434,6 @@ define({
       "url": "/Futures",
       "title": "orderLimitSell",
       "name": "orderLimitSell",
-      "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -3626,6 +3638,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.",
+      "danger": "Currently, OneXAPI supports only One-way mode trading.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -3635,7 +3649,6 @@ define({
       "url": "/Futures",
       "title": "orderMarketBuy",
       "name": "orderMarketBuy",
-      "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Amount is automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -3796,6 +3809,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.",
+      "danger": "Currently, OneXAPI supports only One-way mode trading.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -3805,7 +3820,6 @@ define({
       "url": "/Futures",
       "title": "orderMarketSell",
       "name": "orderMarketSell",
-      "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Amount is automatically rounded according to the exchange. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -3966,6 +3980,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.",
+      "danger": "Currently, OneXAPI supports only One-way mode trading.",
       "exchanges": {
         "Binance": "supported"
       }
@@ -3975,7 +3991,6 @@ define({
       "url": "/Futures",
       "title": "setConfig",
       "name": "setConfig",
-      "description": "<p>Requested endpoint must be in the endpoint candidates. Otherwise, error. Refer to getEndpointCandidates</p>",
       "group": "Futures",
       "version": "0.0.0",
       "parameter": {
@@ -4112,6 +4127,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "info": "Sets the settings for the object. Only the requested parameters are included in the response",
+      "warn": "The requested endpoint must be included in the endpoint candidates, otherwise it returns an error. See <a href=#api-Spot-getEndpointCandidates>getEndpointCandidates</a>.",
       "exchanges": {
         "All": "supported"
       }
@@ -4245,7 +4262,7 @@ define({
                 "round"
               ],
               "optional": false,
-              "field": "<i>requested rule</i>",
+              "field": "<i>requested field</i>",
               "description": ""
             }
           ]
@@ -4281,7 +4298,6 @@ define({
       "url": "/OneXAPI",
       "title": "getInfo",
       "name": "getInfo",
-      "description": "<p>get information of the OneXAPI Library</p>",
       "group": "OneXAPI",
       "version": "0.0.0",
       "parameter": {
@@ -4366,6 +4382,7 @@ define({
       ],
       "filename": "tmp/OneXAPI.js",
       "groupTitle": "OneXAPI",
+      "info": "get information of the OneXAPI Library",
       "exchanges": {
         "All": "supported"
       }
@@ -4713,7 +4730,6 @@ define({
       "url": "/Spot",
       "title": "fetchBalance",
       "name": "fetchBalance",
-      "description": "<p>During websocket is running, updateAccountBalance does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -4794,7 +4810,7 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "String",
+              "type": "Object",
               "optional": false,
               "field": "balance.<i>currency name</i>",
               "description": ""
@@ -4837,6 +4853,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "During websocket is running, updateAccountBalance does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -4847,7 +4864,6 @@ define({
       "url": "/Spot",
       "title": "fetchCandleHistory",
       "name": "fetchCandleHistory",
-      "description": "<p>When enormous amount of data is requested, getCandleData takes a long time to execute.</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -4971,6 +4987,13 @@ define({
             },
             {
               "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "candles.timestamp",
+              "description": "<p>[s]</p>"
+            },
+            {
+              "group": "Success 200",
               "type": "DoubleString",
               "optional": false,
               "field": "candles.openPrice",
@@ -5035,6 +5058,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "When enormous amount of data is requested, fetchCandleHistory takes a long time to execute.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -5111,7 +5135,7 @@ define({
               "type": "String",
               "optional": false,
               "field": "addresses.currency.chain",
-              "description": ""
+              "description": "<p>If this field is empty string, it is a default chain</p>"
             },
             {
               "group": "Success 200",
@@ -5161,7 +5185,6 @@ define({
       "url": "/Spot",
       "title": "fetchDepositHistory",
       "name": "fetchDepositHistory",
-      "description": "<p>Upbit supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -5329,6 +5352,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "danger": "Upbit : supports up to 100 deposits<br>Binance : supports up to 1000 deposits and 90 days from now",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -5639,7 +5663,6 @@ define({
       "url": "/Spot",
       "title": "fetchOrderInfo",
       "name": "fetchOrderInfo",
-      "description": "<p>If both <b>orderId</b> and <b>clientOrderId</b> are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -5882,6 +5905,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -5892,7 +5916,6 @@ define({
       "url": "/Spot",
       "title": "fetchOrderbook",
       "name": "fetchOrderbook",
-      "description": "<p>During orderbook websocket is running, fetchOrderbook does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -5922,9 +5945,10 @@ define({
             },
             {
               "group": "Parameter",
-              "type": "String",
+              "type": "Bool",
               "optional": false,
               "field": "forceRestApi",
+              "defaultValue": "false",
               "description": "",
               "options": [
                 "O",
@@ -6056,6 +6080,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "During orderbook websocket is running, fetchOrderbook does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.",
+      "danger": "Binance : Timestamp does not mean the server time; it means the time when the response arrived.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -6066,7 +6092,6 @@ define({
       "url": "/Spot",
       "title": "fetchTicker",
       "name": "fetchTicker",
-      "description": "<p>During ticker websocket is running, fetchTicker does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -6096,9 +6121,10 @@ define({
             },
             {
               "group": "Parameter",
-              "type": "String",
+              "type": "Bool",
               "optional": false,
               "field": "forceRestApi",
+              "defaultValue": "false",
               "description": "",
               "options": [
                 "O",
@@ -6162,7 +6188,7 @@ define({
               "type": "Uint",
               "optional": false,
               "field": "openTime",
-              "description": "<p>[s] open Time(UTC)</p>"
+              "description": "<p>[s]<br>open Time(UTC)</p>"
             },
             {
               "group": "Success 200",
@@ -6230,6 +6256,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "During ticker websocket is running, fetchTicker does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -6353,6 +6380,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "danger": "Binance : Trading fee is a value before bnb discount",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -6475,7 +6503,6 @@ define({
       "url": "/Spot",
       "title": "fetchWithdrawHistory",
       "name": "fetchWithdrawHistory",
-      "description": "<p>Upbit supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -6642,6 +6669,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "danger": "Upbit : supports up to 100 withdrawals<br>Binance : supports up to 1000 withdrawals and 90 days from now",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -7206,7 +7234,6 @@ define({
       "url": "/Spot",
       "title": "has",
       "name": "has",
-      "description": "<p>check whether API exists or not</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -7273,6 +7300,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "info": "Check if API exists or not",
       "exchanges": {
         "All": "supported"
       }
@@ -7282,7 +7310,6 @@ define({
       "url": "/Spot",
       "title": "isDepositCompleted",
       "name": "isDepositCompleted",
-      "description": "<p>'Deposit Completed' means that the deposited asset is tradable. This does not mean that client can withdraw asset depending on the exchange.<br>This API is used in two ways.<br>1. inquire by txid<br>2. inquire by \u2018currency\u2019 and \u2018amount\u2019 and \u2018since\u2019<br><br>Binance supports up to 1000 deposits and 90 days from now</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -7383,6 +7410,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "'Deposit Completed' means that the deposited asset is tradable. This does not mean that client can withdraw asset depending on the exchange.<br>This API is used in two ways.<br>1. inquire by txid<br>2. inquire by \u2018currency\u2019 and \u2018amount\u2019 and \u2018since\u2019",
+      "danger": "Binance : supports up to 1000 deposits and 90 days from now",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -7393,7 +7422,6 @@ define({
       "url": "/Spot",
       "title": "orderCancel",
       "name": "orderCancel",
-      "description": "<p>If both orderId and clientOrderId are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -7437,7 +7465,7 @@ define({
               "type": "String",
               "optional": false,
               "field": "clientOrderId",
-              "description": "",
+              "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
                 "O",
                 "O"
@@ -7522,6 +7550,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -7532,7 +7561,6 @@ define({
       "url": "/Spot",
       "title": "orderLimitBuy",
       "name": "orderLimitBuy",
-      "description": "<p>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -7715,6 +7743,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -7725,7 +7754,6 @@ define({
       "url": "/Spot",
       "title": "orderLimitSell",
       "name": "orderLimitSell",
-      "description": "<p>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -7908,6 +7936,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -7918,7 +7947,6 @@ define({
       "url": "/Spot",
       "title": "orderMarketBuy",
       "name": "orderMarketBuy",
-      "description": "<p>Amount is automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -8054,6 +8082,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -8064,7 +8093,6 @@ define({
       "url": "/Spot",
       "title": "orderMarketSell",
       "name": "orderMarketSell",
-      "description": "<p>Amount is automatically rounded according to the exchange. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -8200,6 +8228,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -8210,7 +8239,6 @@ define({
       "url": "/Spot",
       "title": "setConfig",
       "name": "setConfig",
-      "description": "<p>Requested endpoint must be in the endpoint candidates. Otherwise, error. Refer to getEndpointCandidates</p>",
       "group": "Spot",
       "version": "0.0.0",
       "parameter": {
@@ -8347,6 +8375,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "info": "Sets the settings for the object. Only the requested parameters are included in the response",
+      "warn": "The requested endpoint must be included in the endpoint candidates, otherwise it returns an error. See <a href=#api-Spot-getEndpointCandidates>getEndpointCandidates</a>.",
       "exchanges": {
         "All": "supported"
       }
@@ -8762,6 +8792,7 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "danger": "Binance : If the fast draw setting for the account is enabled, internal draw will be executed.",
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"

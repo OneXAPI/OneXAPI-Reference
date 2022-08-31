@@ -94,6 +94,7 @@
 /**
  * @api {onex} /Spot withdraw
  * @apiName withdraw
+ * @onexDanger Binance : If the fast draw setting for the account is enabled, internal draw will be executed.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -252,7 +253,7 @@
 /**
  * @api {onex} /Spot fetchBalance
  * @apiName fetchBalance
- * @apiDescription During websocket is running, updateAccountBalance does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.
+ * @onexWarn During websocket is running, updateAccountBalance does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -274,7 +275,7 @@
  * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {Object} balance
- * @apiSuccess {String} [balance.currency__name]
+ * @apiSuccess {Object} [balance.currency__name]
  * @apiSuccess {DoubleString} balance.currency.free
  * @apiSuccess {DoubleString} balance.currency.locked
  * 
@@ -409,7 +410,7 @@
 /**
  * @api {onex} /Spot fetchWithdrawHistory
  * @apiName fetchWithdrawHistory
- * @apiDescription Upbit supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now
+ * @onexDanger Upbit : supports up to 100 withdrawals<br>Binance : supports up to 1000 withdrawals and 90 days from now
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -492,7 +493,7 @@
 /**
  * @api {onex} /Spot fetchDepositHistory
  * @apiName fetchDepositHistory
- * @apiDescription Upbit supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now
+ * @onexDanger Upbit : supports up to 100 deposits<br>Binance : supports up to 1000 deposits and 90 days from now
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -591,7 +592,7 @@
  * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {Object} addresses
  * @apiSuccess {ObjectArray} [addresses.currency__name]
- * @apiSuccess {String} addresses.currency.chain
+ * @apiSuccess {String} addresses.currency.chain If this field is empty string, it is a default chain
  * @apiSuccess {String} addresses.currency.address
  * @apiSuccess {String} addresses.currency.tag If not exist, return empty string
  * @apiSuccessExample Success-Response :
@@ -640,7 +641,8 @@
 /**
  * @api {onex} /Spot isDepositCompleted
  * @apiName isDepositCompleted
- * @apiDescription 'Deposit Completed' means that the deposited asset is tradable. This does not mean that client can withdraw asset depending on the exchange.<br>This API is used in two ways.<br>1. inquire by txid<br>2. inquire by ‘currency’ and ‘amount’ and ‘since’<br><br>Binance supports up to 1000 deposits and 90 days from now
+ * @onexWarn 'Deposit Completed' means that the deposited asset is tradable. This does not mean that client can withdraw asset depending on the exchange.<br>This API is used in two ways.<br>1. inquire by txid<br>2. inquire by ‘currency’ and ‘amount’ and ‘since’
+ * @onexDanger Binance : supports up to 1000 deposits and 90 days from now
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -814,7 +816,7 @@
 /**
  * @api {onex} /Spot orderLimitBuy
  * @apiName orderLimitBuy
- * @apiDescription Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @onexWarn Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -895,7 +897,7 @@
 /**
  * @api {onex} /Spot orderLimitSell
  * @apiName orderLimitSell
- * @apiDescription Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @onexWarn Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -983,7 +985,7 @@
 /**
  * @api {onex} /Spot orderMarketBuy
  * @apiName orderMarketBuy
- * @apiDescription Amount is automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @onexWarn Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -1060,7 +1062,7 @@
 /**
  * @api {onex} /Spot orderMarketSell
  * @apiName orderMarketSell
- * @apiDescription Amount is automatically rounded according to the exchange. If user wants to change rounding rule, refer to getOrderRoundingRule & setOrderRoundingRule
+ * @onexWarn Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -1137,14 +1139,14 @@
 /**
  * @api {onex} /Spot orderCancel
  * @apiName orderCancel
- * @apiDescription If both orderId and clientOrderId are options, either of them must be sent. If both are sent, orderId is used preferentially.
+ * @onexWarn If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
  * @apiParam {String} orderId
- * @apiParam {String} clientOrderId
+ * @apiParam {String} clientOrderId Client Order ID as assigned by the client
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {m} {i}
  * @onexParamOption {m} {i}
@@ -1212,7 +1214,7 @@
 /**
  * @api {onex} /Spot fetchOrderInfo
  * @apiName fetchOrderInfo
- * @apiDescription If both <b>orderId</b> and <b>clientOrderId</b> are options, either of them must be sent. If both are sent, orderId is used preferentially.
+ * @onexWarn If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -1410,6 +1412,7 @@
 /**
  * @api {onex} /Spot fetchTradingFee
  * @apiName fetchTradingFee
+ * @onexDanger Binance : Trading fee is a value before bnb discount
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -1605,13 +1608,13 @@
 /**
  * @api {onex} /Spot fetchTicker
  * @apiName fetchTicker
- * @apiDescription During ticker websocket is running, fetchTicker does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true. 
+ * @onexWarn During ticker websocket is running, fetchTicker does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true. 
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} forceRestApi
+ * @apiParam {Bool} forceRestApi=false
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
@@ -1629,7 +1632,7 @@
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} symbol
  * @apiSuccess {String=rest,websocket} fetchType
- * @apiSuccess {Uint} openTime [s] open Time(UTC)
+ * @apiSuccess {Uint} openTime [s]<br>open Time(UTC)
  * @apiSuccess {DoubleString} openPrice
  * @apiSuccess {DoubleString} closePrice close Price(last Price)
  * @apiSuccess {DoubleString} lowPrice low Price(24h)
@@ -1682,13 +1685,14 @@
 /**
  * @api {onex} /Spot fetchOrderbook
  * @apiName fetchOrderbook
- * @apiDescription During orderbook websocket is running, fetchOrderbook does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true. 
+ * @onexWarn During orderbook websocket is running, fetchOrderbook does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.
+ * @onexDanger Binance : Timestamp does not mean the server time; it means the time when the response arrived.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} forceRestApi
+ * @apiParam {Bool} forceRestApi=false
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
@@ -1782,7 +1786,7 @@
 /**
  * @api {onex} /Spot fetchCandleHistory
  * @apiName fetchCandleHistory
- * @apiDescription When enormous amount of data is requested, getCandleData takes a long time to execute.
+ * @onexWarn When enormous amount of data is requested, fetchCandleHistory takes a long time to execute.
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -1815,6 +1819,7 @@
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} symbol
  * @apiSuccess {ObjectArray} candles Ascending order according to timestamp
+ * @apiSuccess {Uint} candles.timestamp [s]
  * @apiSuccess {DoubleString} candles.openPrice
  * @apiSuccess {DoubleString} candles.closePrice
  * @apiSuccess {DoubleString} candles.highPrice

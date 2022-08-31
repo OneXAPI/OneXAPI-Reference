@@ -149,7 +149,16 @@
         <div class="clearfix"></div>
 
         {{#if article.description}}
-          <div class="bd-callout bd-callout-info"><p>{{{nl2br article.description}}}</p></div>
+          <p>{{{nl2br article.description}}}</p>
+        {{/if}}
+        {{#if article.info}}
+          <div class="bd-callout bd-callout-info"><p>{{{nl2br article.info}}}</p></div>
+        {{/if}}
+        {{#if article.warn}}
+          <div class="bd-callout bd-callout-warning"><p>{{{nl2br article.warn}}}</p></div>
+        {{/if}}
+        {{#if article.danger}}
+          <div class="bd-callout bd-callout-danger"><p>{{{nl2br article.danger}}}</p></div>
         {{/if}}
 
         {{#if article.permission}}

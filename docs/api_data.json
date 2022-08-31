@@ -246,7 +246,6 @@
     "url": "/Futures",
     "title": "fetchBalance",
     "name": "fetchBalance",
-    "description": "<p>During websocket is running, updateAccountBalance does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -254,9 +253,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Bool",
             "optional": false,
             "field": "forceRestApi",
+            "defaultValue": "false",
             "description": "<p>force to update using REST API</p>"
           },
           {
@@ -306,9 +306,9 @@
           },
           {
             "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "balance.currency",
+            "type": "Object",
+            "optional": true,
+            "field": "balance.currency__name",
             "description": ""
           },
           {
@@ -369,7 +369,6 @@
     "url": "/Futures",
     "title": "fetchCandleHistory",
     "name": "fetchCandleHistory",
-    "description": "<p>When enormous amount of data is requested, getCandleData takes a long time to execute.</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -481,6 +480,13 @@
             "optional": false,
             "field": "candles",
             "description": "<p>Ascending order according to timestamp</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "candles.timestamp",
+            "description": "<p>[s]</p>"
           },
           {
             "group": "Success 200",
@@ -668,7 +674,7 @@
             "group": "Success 200",
             "type": "Uint",
             "optional": false,
-            "field": "timestamp",
+            "field": "incomes.timestamp",
             "description": "<p>[ms]</p>"
           }
         ]
@@ -676,7 +682,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"positions\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"income\":\"-31.13586\",\n                \"incomeCurrency\":\"USDT\",\n                \"timestamp\":1656044000000\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"incomes\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"income\":\"-31.13586\",\n                \"incomeCurrency\":\"USDT\",\n                \"timestamp\":1656044000000\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -1292,14 +1298,14 @@
               "short"
             ],
             "optional": false,
-            "field": "positionSide",
+            "field": "openOrders.positionSide",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "Bool",
             "optional": false,
-            "field": "reduceOnly",
+            "field": "openOrders.reduceOnly",
             "description": ""
           },
           {
@@ -1381,7 +1387,6 @@
     "url": "/Futures",
     "title": "fetchOrderInfo",
     "name": "fetchOrderInfo",
-    "description": "<p>If both <b>orderId</b> and <b>clientOrderId</b> are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -1421,7 +1426,7 @@
             "type": "String",
             "optional": false,
             "field": "clientOrderId",
-            "description": ""
+            "description": "<p>Client Order ID as assigned by the client</p>"
           }
         ]
       },
@@ -1647,7 +1652,6 @@
     "url": "/Futures",
     "title": "fetchOrderbook",
     "name": "fetchOrderbook",
-    "description": "<p>During orderbook websocket is running, fetchOrderbook does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -1677,9 +1681,10 @@
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Bool",
             "optional": false,
             "field": "forceRestApi",
+            "defaultValue": "false",
             "description": ""
           }
         ]
@@ -1988,7 +1993,6 @@
     "url": "/Futures",
     "title": "fetchTicker",
     "name": "fetchTicker",
-    "description": "<p>During ticker websocket is running, fetchTicker does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -2018,9 +2022,10 @@
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Bool",
             "optional": false,
             "field": "forceRestApi",
+            "defaultValue": "false",
             "description": ""
           }
         ]
@@ -2735,7 +2740,6 @@
     "url": "/Futures",
     "title": "has",
     "name": "has",
-    "description": "<p>check whether API exists or not</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -2805,7 +2809,6 @@
     "url": "/Futures",
     "title": "orderCancel",
     "name": "orderCancel",
-    "description": "<p>If both orderId and clientOrderId are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -2845,7 +2848,7 @@
             "type": "String",
             "optional": false,
             "field": "clientOrderId",
-            "description": ""
+            "description": "<p>Client Order ID as assigned by the client</p>"
           }
         ]
       },
@@ -2939,7 +2942,6 @@
     "url": "/Futures",
     "title": "orderLimitBuy",
     "name": "orderLimitBuy",
-    "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -3123,7 +3125,6 @@
     "url": "/Futures",
     "title": "orderLimitSell",
     "name": "orderLimitSell",
-    "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -3307,7 +3308,6 @@
     "url": "/Futures",
     "title": "orderMarketBuy",
     "name": "orderMarketBuy",
-    "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Amount is automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -3456,7 +3456,6 @@
     "url": "/Futures",
     "title": "orderMarketSell",
     "name": "orderMarketSell",
-    "description": "<p>Currently, OneXAPI supports only One-way mode trading<br>Amount is automatically rounded according to the exchange. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -3605,7 +3604,6 @@
     "url": "/Futures",
     "title": "setConfig",
     "name": "setConfig",
-    "description": "<p>Requested endpoint must be in the endpoint candidates. Otherwise, error. Refer to getEndpointCandidates</p>",
     "group": "Futures",
     "version": "0.0.0",
     "parameter": {
@@ -3830,7 +3828,7 @@
               "round"
             ],
             "optional": true,
-            "field": "requested__rule",
+            "field": "requested__field",
             "description": ""
           }
         ]
@@ -3863,7 +3861,6 @@
     "url": "/OneXAPI",
     "title": "getInfo",
     "name": "getInfo",
-    "description": "<p>get information of the OneXAPI Library</p>",
     "group": "OneXAPI",
     "version": "0.0.0",
     "parameter": {
@@ -4256,7 +4253,6 @@
     "url": "/Spot",
     "title": "fetchBalance",
     "name": "fetchBalance",
-    "description": "<p>During websocket is running, updateAccountBalance does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -4325,7 +4321,7 @@
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Object",
             "optional": true,
             "field": "balance.currency__name",
             "description": ""
@@ -4374,7 +4370,6 @@
     "url": "/Spot",
     "title": "fetchCandleHistory",
     "name": "fetchCandleHistory",
-    "description": "<p>When enormous amount of data is requested, getCandleData takes a long time to execute.</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -4471,6 +4466,13 @@
             "optional": false,
             "field": "candles",
             "description": "<p>Ascending order according to timestamp</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "candles.timestamp",
+            "description": "<p>[s]</p>"
           },
           {
             "group": "Success 200",
@@ -4602,7 +4604,7 @@
             "type": "String",
             "optional": false,
             "field": "addresses.currency.chain",
-            "description": ""
+            "description": "<p>If this field is empty string, it is a default chain</p>"
           },
           {
             "group": "Success 200",
@@ -4648,7 +4650,6 @@
     "url": "/Spot",
     "title": "fetchDepositHistory",
     "name": "fetchDepositHistory",
-    "description": "<p>Upbit supports up to 100 deposits<br>Binance supports up to 1000 deposits and 90 days from now</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -5074,7 +5075,6 @@
     "url": "/Spot",
     "title": "fetchOrderInfo",
     "name": "fetchOrderInfo",
-    "description": "<p>If both <b>orderId</b> and <b>clientOrderId</b> are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -5307,7 +5307,6 @@
     "url": "/Spot",
     "title": "fetchOrderbook",
     "name": "fetchOrderbook",
-    "description": "<p>During orderbook websocket is running, fetchOrderbook does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -5329,9 +5328,10 @@
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Bool",
             "optional": false,
             "field": "forceRestApi",
+            "defaultValue": "false",
             "description": ""
           }
         ]
@@ -5465,7 +5465,6 @@
     "url": "/Spot",
     "title": "fetchTicker",
     "name": "fetchTicker",
-    "description": "<p>During ticker websocket is running, fetchTicker does not send rest API request. If you want to force to send rest API, set forceRestApi parameter as true.</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -5487,9 +5486,10 @@
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Bool",
             "optional": false,
             "field": "forceRestApi",
+            "defaultValue": "false",
             "description": ""
           }
         ]
@@ -5549,7 +5549,7 @@
             "type": "Uint",
             "optional": false,
             "field": "openTime",
-            "description": "<p>[s] open Time(UTC)</p>"
+            "description": "<p>[s]<br>open Time(UTC)</p>"
           },
           {
             "group": "Success 200",
@@ -5838,7 +5838,6 @@
     "url": "/Spot",
     "title": "fetchWithdrawHistory",
     "name": "fetchWithdrawHistory",
-    "description": "<p>Upbit supports up to 100 withdrawals<br>Binance supports up to 1000 withdrawals and 90 days from now</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -6515,7 +6514,6 @@
     "url": "/Spot",
     "title": "has",
     "name": "has",
-    "description": "<p>check whether API exists or not</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -6585,7 +6583,6 @@
     "url": "/Spot",
     "title": "isDepositCompleted",
     "name": "isDepositCompleted",
-    "description": "<p>'Deposit Completed' means that the deposited asset is tradable. This does not mean that client can withdraw asset depending on the exchange.<br>This API is used in two ways.<br>1. inquire by txid<br>2. inquire by ‘currency’ and ‘amount’ and ‘since’<br><br>Binance supports up to 1000 deposits and 90 days from now</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -6676,7 +6673,6 @@
     "url": "/Spot",
     "title": "orderCancel",
     "name": "orderCancel",
-    "description": "<p>If both orderId and clientOrderId are options, either of them must be sent. If both are sent, orderId is used preferentially.</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -6708,7 +6704,7 @@
             "type": "String",
             "optional": false,
             "field": "clientOrderId",
-            "description": ""
+            "description": "<p>Client Order ID as assigned by the client</p>"
           }
         ]
       },
@@ -6795,7 +6791,6 @@
     "url": "/Spot",
     "title": "orderLimitBuy",
     "name": "orderLimitBuy",
-    "description": "<p>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -6956,7 +6951,6 @@
     "url": "/Spot",
     "title": "orderLimitSell",
     "name": "orderLimitSell",
-    "description": "<p>Price and amount are automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -7117,7 +7111,6 @@
     "url": "/Spot",
     "title": "orderMarketBuy",
     "name": "orderMarketBuy",
-    "description": "<p>Amount is automatically rounded according to the exchange market. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -7243,7 +7236,6 @@
     "url": "/Spot",
     "title": "orderMarketSell",
     "name": "orderMarketSell",
-    "description": "<p>Amount is automatically rounded according to the exchange. If user wants to change rounding rule, refer to getOrderRoundingRule &amp; setOrderRoundingRule</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
@@ -7369,7 +7361,6 @@
     "url": "/Spot",
     "title": "setConfig",
     "name": "setConfig",
-    "description": "<p>Requested endpoint must be in the endpoint candidates. Otherwise, error. Refer to getEndpointCandidates</p>",
     "group": "Spot",
     "version": "0.0.0",
     "parameter": {
