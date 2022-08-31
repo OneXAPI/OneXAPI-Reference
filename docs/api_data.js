@@ -17,7 +17,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -27,7 +27,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -38,7 +38,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -48,7 +48,7 @@ define({
               "field": "leverage",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             }
           ]
@@ -151,7 +151,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -161,7 +161,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -172,7 +172,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -186,7 +186,7 @@ define({
               "field": "marginType",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             }
           ]
@@ -290,7 +290,7 @@ define({
               "defaultValue": "false",
               "description": "<p>force to update using REST API</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -300,7 +300,7 @@ define({
               "field": "currencies",
               "description": "<p>If not exist, return all currencies</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -422,7 +422,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -432,7 +432,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -443,7 +443,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -453,7 +453,7 @@ define({
               "field": "interval",
               "description": "<p>This param depends on the exchange. Please check available intervals using getCandleIntervalCandidates</p>",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -463,7 +463,7 @@ define({
               "field": "startTime",
               "description": "<p>[s]</p>",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -474,7 +474,7 @@ define({
               "defaultValue": "now",
               "description": "<p>[s]</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -485,7 +485,7 @@ define({
               "defaultValue": "200",
               "description": "<p>[ms]<br>frequent api request may exceeds rate limit, therefore apiReqInterval decides how long time to sleep between each api request</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -638,7 +638,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -648,7 +648,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -658,7 +658,7 @@ define({
               "field": "expiration",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -668,7 +668,7 @@ define({
               "field": "startTime",
               "description": "<p>[ms]</p>",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -679,7 +679,7 @@ define({
               "defaultValue": "now",
               "description": "<p>[ms]</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -803,7 +803,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -813,7 +813,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -824,7 +824,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -941,7 +941,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "F"
+                "Forbidden"
               ]
             },
             {
@@ -951,7 +951,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "F"
+                "Forbidden"
               ]
             },
             {
@@ -962,7 +962,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "F"
+                "Forbidden"
               ]
             }
           ]
@@ -1072,7 +1072,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "F"
+                "Forbidden"
               ]
             },
             {
@@ -1082,7 +1082,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "F"
+                "Forbidden"
               ]
             },
             {
@@ -1093,7 +1093,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "F"
+                "Forbidden"
               ]
             }
           ]
@@ -1207,7 +1207,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -1217,7 +1217,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -1227,7 +1227,7 @@ define({
               "field": "expiration",
               "description": "<p>&quot;PERP&quot; or date(&quot;0930&quot;, &quot;1015&quot;) are allowed</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -1330,7 +1330,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -1340,7 +1340,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -1351,7 +1351,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -1365,7 +1365,7 @@ define({
               "field": "side",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -1546,7 +1546,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -1556,7 +1556,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -1567,7 +1567,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -1577,7 +1577,7 @@ define({
               "field": "orderId",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -1587,7 +1587,7 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -1830,7 +1830,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -1840,7 +1840,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -1851,7 +1851,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -1862,7 +1862,7 @@ define({
               "defaultValue": "false",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -2020,7 +2020,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -2030,7 +2030,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -2040,7 +2040,7 @@ define({
               "field": "expiration",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -2054,7 +2054,7 @@ define({
               "field": "side",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -2203,7 +2203,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -2213,7 +2213,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -2224,7 +2224,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -2235,7 +2235,7 @@ define({
               "defaultValue": "false",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -2392,7 +2392,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -2402,7 +2402,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -2413,7 +2413,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -2531,7 +2531,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -2623,7 +2623,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -2768,7 +2768,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -2793,21 +2793,21 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "String[]",
+              "type": "StringArray",
               "optional": false,
               "field": "restEndpoints",
               "description": ""
             },
             {
               "group": "Success 200",
-              "type": "String[]",
+              "type": "StringArray",
               "optional": false,
               "field": "publicWebsocketEndpoints",
               "description": ""
             },
             {
               "group": "Success 200",
-              "type": "String[]",
+              "type": "StringArray",
               "optional": false,
               "field": "privateWebsocketEndpoints",
               "description": ""
@@ -2857,7 +2857,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -3003,7 +3003,7 @@ define({
               "field": "api",
               "description": "<p>if not exist, return all APIs</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -3079,7 +3079,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3089,7 +3089,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3100,7 +3100,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3110,7 +3110,7 @@ define({
               "field": "orderId",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3120,7 +3120,7 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -3231,7 +3231,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3241,7 +3241,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3252,7 +3252,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3262,7 +3262,7 @@ define({
               "field": "price",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3272,7 +3272,7 @@ define({
               "field": "baseAmount",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3283,7 +3283,7 @@ define({
               "defaultValue": "false",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3293,7 +3293,7 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3304,7 +3304,7 @@ define({
               "defaultValue": "1.0",
               "description": "<p>If this field exists, the requested price will be <b>price*amplifier</b></p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3320,7 +3320,7 @@ define({
               "defaultValue": "gtc",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -3446,7 +3446,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3456,7 +3456,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3467,7 +3467,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3477,7 +3477,7 @@ define({
               "field": "price",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3487,7 +3487,7 @@ define({
               "field": "baseAmount",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3498,7 +3498,7 @@ define({
               "defaultValue": "false",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3508,7 +3508,7 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3519,7 +3519,7 @@ define({
               "defaultValue": "1.0",
               "description": "<p>If this field exists, the requested price will be <b>price*amplifier</b></p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3535,7 +3535,7 @@ define({
               "defaultValue": "gtc",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -3661,7 +3661,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3671,7 +3671,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3682,7 +3682,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3692,7 +3692,7 @@ define({
               "field": "quoteAmount",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3703,7 +3703,7 @@ define({
               "defaultValue": "false",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3713,7 +3713,7 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -3832,7 +3832,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3842,7 +3842,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3853,7 +3853,7 @@ define({
               "defaultValue": "PERP",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3863,7 +3863,7 @@ define({
               "field": "baseAmount",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             },
             {
@@ -3874,7 +3874,7 @@ define({
               "defaultValue": "false",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -3884,7 +3884,7 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -4003,7 +4003,7 @@ define({
               "field": "accessKey",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4013,7 +4013,7 @@ define({
               "field": "secretKey",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4023,7 +4023,7 @@ define({
               "field": "restEndpoint",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4033,7 +4033,7 @@ define({
               "field": "publicWebsocketEndpoint",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4043,7 +4043,7 @@ define({
               "field": "privateWebsocketEndpoint",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4053,7 +4053,7 @@ define({
               "field": "restRequestTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4063,7 +4063,7 @@ define({
               "field": "websocketConnectTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4073,7 +4073,7 @@ define({
               "field": "websocketIdleTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -4155,7 +4155,7 @@ define({
               "field": "limitBuyPrice",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4170,7 +4170,7 @@ define({
               "field": "limitBuyBaseAmount",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4185,7 +4185,7 @@ define({
               "field": "limitSellPrice",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4200,7 +4200,7 @@ define({
               "field": "limitSellBaseAmount",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4215,7 +4215,7 @@ define({
               "field": "marketBuyQuoteAmount",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4230,7 +4230,7 @@ define({
               "field": "marketSellBaseAmount",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -4310,7 +4310,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -4404,7 +4404,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -4507,7 +4507,7 @@ define({
               "field": "main",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4525,7 +4525,7 @@ define({
               "defaultValue": "off",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4541,7 +4541,7 @@ define({
               "defaultValue": "terminal",
               "description": "<p>terminal : \ucf58\uc194\uc5d0 \ub85c\uadf8\uac00 \ucd9c\ub825\ub41c\ub2e4.<br>file : OneXAPI_Log \ud3f4\ub354\uc5d0 \ud574\ub2f9 \ub0a0\uc9dc\uc758 \ud30c\uc77c.log \uc5d0 \ub85c\uadf8\uac00 \uae30\ub85d\ub41c\ub2e4.<br>both : \ucf58\uc194\uacfc \ud30c\uc77c\uc5d0 \ub85c\uadf8\uac00 \uae30\ub85d\ub41c\ub2e4.</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4551,7 +4551,7 @@ define({
               "field": "websocket",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4561,7 +4561,7 @@ define({
               "field": "websocket.logLevel",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -4571,7 +4571,7 @@ define({
               "field": "websocket.outputMethod",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -4639,7 +4639,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -4743,8 +4743,8 @@ define({
               "defaultValue": "false",
               "description": "<p>force to update using REST API</p>",
               "options": [
-                "O",
-                "I"
+                "Optional",
+                "Ignored"
               ]
             },
             {
@@ -4754,8 +4754,8 @@ define({
               "field": "currencies",
               "description": "<p>If not exist, return all currencies</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -4766,8 +4766,8 @@ define({
               "defaultValue": "false",
               "description": "<p>Whether to include assets with zero balance</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -4876,8 +4876,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -4887,8 +4887,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -4898,8 +4898,8 @@ define({
               "field": "interval",
               "description": "<p>This param depends on the exchange. Please check available intervals using getCandleIntervalCandidates</p>",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -4909,8 +4909,8 @@ define({
               "field": "startTime",
               "description": "<p>[s]</p>",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -4921,8 +4921,8 @@ define({
               "defaultValue": "now",
               "description": "<p>[s]</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -4933,8 +4933,8 @@ define({
               "defaultValue": "200",
               "description": "<p>[ms]<br>frequent api request may exceeds rate limit, therefore apiReqInterval decides how long time to sleep between each api request</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -5081,8 +5081,8 @@ define({
               "field": "currency",
               "description": "<p>If not exist, return all currencies</p>",
               "options": [
-                "M",
-                "O"
+                "Mandatory",
+                "Optional"
               ]
             },
             {
@@ -5092,8 +5092,8 @@ define({
               "field": "chain",
               "description": "<p>If not exist, fetch a default chain of the currency</p>",
               "options": [
-                "O",
-                "I"
+                "Optional",
+                "Ignored"
               ]
             }
           ]
@@ -5197,8 +5197,8 @@ define({
               "field": "currency",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -5208,8 +5208,8 @@ define({
               "field": "orderId",
               "description": "",
               "options": [
-                "I",
-                "O"
+                "Ignored",
+                "Optional"
               ]
             },
             {
@@ -5219,8 +5219,8 @@ define({
               "field": "txid",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -5230,8 +5230,8 @@ define({
               "field": "startTime",
               "description": "<p>[ms]</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -5242,8 +5242,8 @@ define({
               "defaultValue": "now",
               "description": "<p>[ms]</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -5375,8 +5375,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -5386,8 +5386,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -5484,8 +5484,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -5495,8 +5495,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -5510,8 +5510,8 @@ define({
               "field": "side",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -5675,8 +5675,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "I"
+                "Mandatory",
+                "Ignored"
               ]
             },
             {
@@ -5686,8 +5686,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "I"
+                "Mandatory",
+                "Ignored"
               ]
             },
             {
@@ -5697,8 +5697,8 @@ define({
               "field": "orderId",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -5708,8 +5708,8 @@ define({
               "field": "clientOrderId",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -5928,8 +5928,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -5939,8 +5939,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -5951,8 +5951,8 @@ define({
               "defaultValue": "false",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -6104,8 +6104,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -6115,8 +6115,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -6127,8 +6127,8 @@ define({
               "defaultValue": "false",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -6279,8 +6279,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "O",
-                "M"
+                "Optional",
+                "Mandatory"
               ]
             },
             {
@@ -6290,8 +6290,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "O",
-                "M"
+                "Optional",
+                "Mandatory"
               ]
             }
           ]
@@ -6403,8 +6403,8 @@ define({
               "field": "currency",
               "description": "<p>If not exist, return all currencies.</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -6515,8 +6515,8 @@ define({
               "field": "currency",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -6526,8 +6526,8 @@ define({
               "field": "orderId",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -6537,8 +6537,8 @@ define({
               "field": "txid",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -6548,8 +6548,8 @@ define({
               "field": "startTime",
               "description": "<p>[ms]</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -6560,8 +6560,8 @@ define({
               "defaultValue": "now",
               "description": "<p>[ms]</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -6692,7 +6692,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -6785,7 +6785,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -6930,7 +6930,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -6955,21 +6955,21 @@ define({
             },
             {
               "group": "Success 200",
-              "type": "String[]",
+              "type": "StringArray",
               "optional": false,
               "field": "restEndpoints",
               "description": ""
             },
             {
               "group": "Success 200",
-              "type": "String[]",
+              "type": "StringArray",
               "optional": false,
               "field": "publicWebsocketEndpoints",
               "description": ""
             },
             {
               "group": "Success 200",
-              "type": "String[]",
+              "type": "StringArray",
               "optional": false,
               "field": "privateWebsocketEndpoints",
               "description": ""
@@ -7019,7 +7019,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -7165,7 +7165,7 @@ define({
               "field": "",
               "description": "",
               "options": [
-                "I"
+                "Ignored"
               ]
             }
           ]
@@ -7246,7 +7246,7 @@ define({
               "field": "api",
               "description": "<p>if not exist, return all APIs</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -7322,8 +7322,8 @@ define({
               "field": "txid",
               "description": "<p>If this field exists, \u2018currency\u2019, \u2018amount\u2019 and \u2018since\u2019 are ignored</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -7333,8 +7333,8 @@ define({
               "field": "currency",
               "description": "<p>If this field exists, \u2018amount\u2019 and \u2018since\u2019 must be sent</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -7344,8 +7344,8 @@ define({
               "field": "amount",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -7355,8 +7355,8 @@ define({
               "field": "since",
               "description": "<p>[ms]</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -7434,8 +7434,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "I"
+                "Mandatory",
+                "Ignored"
               ]
             },
             {
@@ -7445,8 +7445,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "I"
+                "Mandatory",
+                "Ignored"
               ]
             },
             {
@@ -7456,8 +7456,8 @@ define({
               "field": "orderId",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -7467,8 +7467,8 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -7573,8 +7573,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7584,8 +7584,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7595,8 +7595,8 @@ define({
               "field": "price",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7606,8 +7606,8 @@ define({
               "field": "baseAmount",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7617,8 +7617,8 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -7629,8 +7629,8 @@ define({
               "defaultValue": "1.0",
               "description": "<p>If this field exists, the requested price will be <b>price*amplifier</b></p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -7646,8 +7646,8 @@ define({
               "defaultValue": "gtc",
               "description": "",
               "options": [
-                "O",
-                "I"
+                "Optional",
+                "Ignored"
               ]
             }
           ]
@@ -7766,8 +7766,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7777,8 +7777,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7788,8 +7788,8 @@ define({
               "field": "price",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7799,8 +7799,8 @@ define({
               "field": "baseAmount",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7810,8 +7810,8 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -7822,8 +7822,8 @@ define({
               "defaultValue": "1.0",
               "description": "<p>If this field exists, the requested price will be <b>price*amplifier</b></p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -7839,8 +7839,8 @@ define({
               "defaultValue": "gtc",
               "description": "",
               "options": [
-                "O",
-                "I"
+                "Optional",
+                "Ignored"
               ]
             }
           ]
@@ -7959,8 +7959,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7970,8 +7970,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7981,8 +7981,8 @@ define({
               "field": "quoteAmount",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -7992,8 +7992,8 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -8105,8 +8105,8 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -8116,8 +8116,8 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -8127,8 +8127,8 @@ define({
               "field": "baseAmount",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -8138,8 +8138,8 @@ define({
               "field": "clientOrderId",
               "description": "<p>Client Order ID as assigned by the client</p>",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             }
           ]
@@ -8251,7 +8251,7 @@ define({
               "field": "accessKey",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8261,7 +8261,7 @@ define({
               "field": "secretKey",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8271,7 +8271,7 @@ define({
               "field": "restEndpoint",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8281,7 +8281,7 @@ define({
               "field": "publicWebsocketEndpoint",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8291,7 +8291,7 @@ define({
               "field": "privateWebsocketEndpoint",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8301,7 +8301,7 @@ define({
               "field": "restRequestTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8311,7 +8311,7 @@ define({
               "field": "websocketConnectTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8321,7 +8321,7 @@ define({
               "field": "websocketIdleTimeout",
               "description": "<p>[ms]</p>",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -8403,7 +8403,7 @@ define({
               "field": "limitBuyPrice",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8418,7 +8418,7 @@ define({
               "field": "limitBuyBaseAmount",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8433,7 +8433,7 @@ define({
               "field": "limitSellPrice",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8448,7 +8448,7 @@ define({
               "field": "limitSellBaseAmount",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8463,7 +8463,7 @@ define({
               "field": "marketBuyQuoteAmount",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             },
             {
@@ -8478,7 +8478,7 @@ define({
               "field": "marketSellBaseAmount",
               "description": "",
               "options": [
-                "O"
+                "Optional"
               ]
             }
           ]
@@ -8563,7 +8563,7 @@ define({
               "field": "roundingRule",
               "description": "",
               "options": [
-                "M"
+                "Mandatory"
               ]
             }
           ]
@@ -8643,8 +8643,8 @@ define({
               "field": "currency",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -8654,8 +8654,8 @@ define({
               "field": "chain",
               "description": "<p>if this field is empty, default chain is used</p>",
               "options": [
-                "O",
-                "I"
+                "Optional",
+                "Ignored"
               ]
             },
             {
@@ -8665,8 +8665,8 @@ define({
               "field": "address",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -8676,8 +8676,8 @@ define({
               "field": "tag",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -8687,8 +8687,8 @@ define({
               "field": "amount",
               "description": "",
               "options": [
-                "M",
-                "M"
+                "Mandatory",
+                "Mandatory"
               ]
             },
             {
@@ -8698,8 +8698,8 @@ define({
               "field": "feeInAmount",
               "description": "",
               "options": [
-                "O",
-                "O"
+                "Optional",
+                "Optional"
               ]
             },
             {
@@ -8709,8 +8709,8 @@ define({
               "field": "internal",
               "description": "",
               "options": [
-                "I",
-                "O"
+                "Ignored",
+                "Optional"
               ]
             }
           ]

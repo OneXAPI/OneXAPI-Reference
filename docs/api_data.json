@@ -2551,21 +2551,21 @@
           },
           {
             "group": "Success 200",
-            "type": "String[]",
+            "type": "StringArray",
             "optional": false,
             "field": "restEndpoints",
             "description": ""
           },
           {
             "group": "Success 200",
-            "type": "String[]",
+            "type": "StringArray",
             "optional": false,
             "field": "publicWebsocketEndpoints",
             "description": ""
           },
           {
             "group": "Success 200",
-            "type": "String[]",
+            "type": "StringArray",
             "optional": false,
             "field": "privateWebsocketEndpoints",
             "description": ""
@@ -6250,21 +6250,21 @@
           },
           {
             "group": "Success 200",
-            "type": "String[]",
+            "type": "StringArray",
             "optional": false,
             "field": "restEndpoints",
             "description": ""
           },
           {
             "group": "Success 200",
-            "type": "String[]",
+            "type": "StringArray",
             "optional": false,
             "field": "publicWebsocketEndpoints",
             "description": ""
           },
           {
             "group": "Success 200",
-            "type": "String[]",
+            "type": "StringArray",
             "optional": false,
             "field": "privateWebsocketEndpoints",
             "description": ""

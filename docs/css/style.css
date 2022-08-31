@@ -1099,12 +1099,15 @@ pre .typ-options {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 160px;
+  width: max-content;
   background-color: black;
   color: #fff;
   text-align: left;
   border-radius: 6px;
-  padding: 5px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 10px;
 
   position: absolute;
   z-index: 1;
@@ -1120,6 +1123,30 @@ pre .typ-options {
   visibility: visible;
 }
 
+.tooltipOption {
+  position: relative;
+  display: block;
+  opacity: 100;
+}
+
+.tooltipOption .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 12px;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltipOption:hover .tooltiptext {
+  visibility: visible;
+}
+
 /* 툴팁 기본 스타일 설정 끝 */
 
 /* -------------------------- */
@@ -1127,6 +1154,13 @@ pre .typ-options {
 /* 툴팁 화살표 기본 스타일 설정 시작 */
 
 .tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.tooltipOption .tooltiptext::after {
   content: " ";
   position: absolute;
   border-style: solid;
@@ -1147,6 +1181,19 @@ pre .typ-options {
 }
 
 .tooltip .tooltip-left::after {
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-color: transparent transparent transparent black;
+}
+
+.tooltipOption .tooltip-left {
+  top: -50%;
+  right: 50%;
+  margin-right: 1.25em;
+}
+
+.tooltipOption .tooltip-left::after {
   top: 50%;
   left: 100%;
   margin-top: -5px;

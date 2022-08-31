@@ -59,9 +59,17 @@ for group in group_list :
                     option = option.replace(" ","").split("}")[0]
                     if option:
                         option = option.upper()
-                        if option not in ['M','O','I','F']:
+                        if option == "M":
+                            apiExchangeInfo[group][apiName]["options"][-1].append("Mandatory")
+                        elif option == "O":
+                            apiExchangeInfo[group][apiName]["options"][-1].append("Optional")
+                        elif option == "I":
+                            apiExchangeInfo[group][apiName]["options"][-1].append("Ignored")
+                        elif option == "F":
+                            apiExchangeInfo[group][apiName]["options"][-1].append("Forbidden")
+                        else:
                             error("Not allowed option : " + option + "    api : " + apiName)
-                        apiExchangeInfo[group][apiName]["options"][-1].append(option)
+                        
                 if len(apiExchangeInfo[group][apiName]["options"][-1]) != len(apiExchangeInfo[group][apiName]["exchanges"].keys()):
                     error("Option size is wrong : " + apiName)
             elif "@apiExample {python}" in line:

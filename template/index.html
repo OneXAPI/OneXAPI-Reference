@@ -234,9 +234,10 @@
 <script id="template-article-param-request-block" type="text/x-handlebars-template">
   {{#if params}}
   {{#each params.fields}}
-    <div class="pull-left"><h4 class="headers">Request : </div>
+    <div class="pull-left"><h4 class="headers">Request : </h4></div>
     <div class="pull-left">
-      <div class="tooltip"><div style="float: left"><img src="img/hint.png" alt="Hint" class="hintimg"></div>
+      <div class="tooltip">
+      <div style="float: left"><img src="img/hint.png" alt="Hint" class="hintimg"></div>
       <span class="tooltiptext tooltip-right">
         <div style="float: left"><img src="img/supported.png" alt="Supported Image" class="tooltipimg"></div> : API Supported<br>
         <div style="float: left"><img src="img/unsupported.png" alt="Unsupported Image" class="tooltipimg"></div> : API Not Supported<br><br>
@@ -245,7 +246,7 @@
         <div style="float: left"><img src="img/I.png" alt="Ignored Image" class="tooltipimg"></div> : Ignored<br>
         <div style="float: left"><img src="img/F.png" alt="Forbidden Image" class="tooltipimg"></div> : Forbidden<br>
       </span>
-      </div></h4>
+      </div>
     </div>
 
     <div class="pull-right">
@@ -285,7 +286,13 @@
           </td>
           {{#each options}}
             <td>
-              <img src="img/{{this}}.png" alt="{{this}}" class='optionimg'>
+              <div class="tooltipOption">
+              <img src="img/{{this}}.png" alt="{{this}}" class="optionimg">
+              <span class="tooltiptext tooltip-left">
+                {{this}}
+              </span>
+              </div>
+              <!-- <img src="img/.png" alt="{{this}}" class='optionimg'> -->
             </td>
           {{/each}}
         </tr>
