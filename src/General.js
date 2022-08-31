@@ -134,9 +134,9 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
- * @apiSuccess {String[]} restEndpoints
- * @apiSuccess {String[]} publicWebsocketEndpoints
- * @apiSuccess {String[]} privateWebsocketEndpoints
+ * @apiSuccess {StringArray} restEndpoints
+ * @apiSuccess {StringArray} publicWebsocketEndpoints
+ * @apiSuccess {StringArray} privateWebsocketEndpoints
  * 
  * @apiSuccessExample Success-Response :
  *  {
