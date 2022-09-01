@@ -1,4 +1,11 @@
 /**
+ * @api {onex} /Spot Wallet
+ * @apiName Wallet
+ * @apiGroup Spot
+ * @onexCategory
+ */
+
+/**
  * @api {onex} /Spot getWithdrawRoundingRule
  * @apiName getWithdrawRoundingRule
  * @apiGroup Spot
@@ -699,6 +706,140 @@
  *      
  *      return 0;
  *  }
+ */
+
+/**
+ * @api {onex} /Spot subscribeBalance
+ * @apiName subscribeBalance
+ * @onexInfo Start updating balance via websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {NoParam} __EMPTY__ 
+ * @onexParamExchanges {Binance o} {Upbit x}
+ * @onexParamOption {i} {f}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *  }
+ * 
+ * @apiSuccess {NoParam} __EMPTY__
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::cout << client.subscribeBalance() << std::endl;
+ *      // or
+ *      std::cout << client.subscribeBalance("") << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot unsubscribeBalance
+ * @apiName unsubscribeBalance
+ * @onexInfo Stop updating balance via websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {NoParam} __EMPTY__ 
+ * @onexParamExchanges {Binance o} {Upbit x}
+ * @onexParamOption {i} {f}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *  }
+ * 
+ * @apiSuccess {NoParam} __EMPTY__
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::cout << client.unsubscribeBalance() << std::endl;
+ *      // or
+ *      std::cout << client.unsubscribeBalance("") << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot isSubscribingBalance
+ * @apiName isSubscribingBalance
+ * @onexInfo Returns whether balance is being updated via websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {NoParam} __EMPTY__ 
+ * @onexParamExchanges {All o}
+ * @onexParamOption {i}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *  }
+ * 
+ * @apiSuccess {NoParam} __EMPTY__
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "isSubscribing": true
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::cout << client.isSubscribingBalance() << std::endl;
+ *      // or
+ *      std::cout << client.isSubscribingBalance("") << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot Trade
+ * @apiName Trade
+ * @apiGroup Spot
+ * @onexCategory
  */
 
 /**
@@ -1484,6 +1625,13 @@
  */
 
 /**
+ * @api {onex} /Spot Market
+ * @apiName Market
+ * @apiGroup Spot
+ * @onexCategory
+ */
+
+/**
  * @api {onex} /Spot getCandleIntervalCandidates
  * @apiName getCandleIntervalCandidates
  * @apiGroup Spot
@@ -1880,6 +2028,500 @@
  *      )";
  *  
  *      std::cout << client.fetchCandleHistory(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot getSubscribingTickers
+ * @apiName getSubscribingTickers
+ * @onexInfo Returns ticker symbols being received on websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {NoParam} __EMPTY__ 
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {i} {i}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *  }
+ * 
+ * @apiSuccess {ObjectArray} tickers
+ * @apiSuccess {String} tickers.baseCurrency
+ * @apiSuccess {String} tickers.quoteCurrency
+ * @apiSuccess {String} tickers.symbol
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "tickers": [
+ *              {
+ *                  "baseCurrency": "BTC",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "ETH-USDT"
+ *              },
+ *              {
+ *                  "baseCurrency": "ETH",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "ETH-USDT"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::cout << client.getSubscribingTickers() << std::endl;
+ *      // or
+ *      std::cout << client.getSubscribingTickers("") << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot getSubscribingOrderbooks
+ * @apiName getSubscribingOrderbooks
+ * @onexInfo Returns orderbook symbols being received on websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {NoParam} __EMPTY__ 
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {i} {i}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *  }
+ * 
+ * @apiSuccess {ObjectArray} orderbooks
+ * @apiSuccess {String} orderbooks.baseCurrency
+ * @apiSuccess {String} orderbooks.quoteCurrency
+ * @apiSuccess {String} orderbooks.symbol
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "orderbooks": [
+ *              {
+ *                  "baseCurrency": "BTC",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "ETH-USDT"
+ *              },
+ *              {
+ *                  "baseCurrency": "ETH",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "ETH-USDT"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::cout << client.getSubscribingOrderbooks() << std::endl;
+ *      // or
+ *      std::cout << client.getSubscribingOrderbooks("") << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot subscribeTicker
+ * @apiName subscribeTicker
+ * @onexInfo Start updating tickers via websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {ObjectArray} market
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "market":[
+ *          {
+ *              "baseCurrency": "BTC",
+ *              "quoteCurrency": "USDT"
+ *          },
+ *          {
+ *              "baseCurrency": "ETH",
+ *              "quoteCurrency": "USDT"
+ *          }
+ *      ],
+ *      "reconnect":false,
+ *      "requestTimeout":2500
+ *  }
+ * 
+ * @apiSuccess {ObjectArray} subscribed
+ * @apiSuccess {String} subscribed.baseCurrency
+ * @apiSuccess {String} subscribed.quoteCurrency
+ * @apiSuccess {String} subscribed.symbol
+ * @apiSuccess {ObjectArray} subscribeFailed
+ * @apiSuccess {String} subscribeFailed.baseCurrency
+ * @apiSuccess {String} subscribeFailed.quoteCurrency
+ * @apiSuccess {String} subscribeFailed.symbol
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "subscribed": [
+ *              {
+ *                  "baseCurrency": "BTC",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "BTC-USDT"
+ *              }
+ *          ],
+ *          "subscribeFailed": [
+ *              {
+ *                  "baseCurrency": "ETH",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "ETH-USDT"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "market":[
+ *                  {
+ *                      "baseCurrency": "BTC",
+ *                      "quoteCurrency": "USDT"
+ *                  },
+ *                  {
+ *                      "baseCurrency": "ETH",
+ *                      "quoteCurrency": "USDT"
+ *                  }
+ *              ]
+ *          }
+ *      )";
+ *      std::cout << client.subscribeTicker(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot unsubscribeTicker
+ * @apiName unsubscribeTicker
+ * @onexInfo Stop updating tickers via websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {ObjectArray} market
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "market":[
+ *          {
+ *              "baseCurrency": "BTC",
+ *              "quoteCurrency": "USDT"
+ *          },
+ *          {
+ *              "baseCurrency": "ETH",
+ *              "quoteCurrency": "USDT"
+ *          }
+ *      ],
+ *      "reconnect":false,
+ *      "requestTimeout":2500
+ *  }
+ * 
+ * @apiSuccess {ObjectArray} unsubscribed
+ * @apiSuccess {String} unsubscribed.baseCurrency
+ * @apiSuccess {String} unsubscribed.quoteCurrency
+ * @apiSuccess {String} unsubscribed.symbol
+ * @apiSuccess {ObjectArray} unsubscribeFailed
+ * @apiSuccess {String} unsubscribeFailed.baseCurrency
+ * @apiSuccess {String} unsubscribeFailed.quoteCurrency
+ * @apiSuccess {String} unsubscribeFailed.symbol
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "unsubscribed": [
+ *              {
+ *                  "baseCurrency": "BTC",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "BTC-USDT"
+ *              }
+ *          ],
+ *          "unsubscribeFailed": [
+ *              {
+ *                  "baseCurrency": "ETH",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "ETH-USDT"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "market":[
+ *                  {
+ *                      "baseCurrency": "BTC",
+ *                      "quoteCurrency": "USDT"
+ *                  },
+ *                  {
+ *                      "baseCurrency": "ETH",
+ *                      "quoteCurrency": "USDT"
+ *                  }
+ *              ]
+ *          }
+ *      )";
+ *      std::cout << client.unsubscribeTicker(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot subscribeOrderbook
+ * @apiName subscribeOrderbook
+ * @onexInfo Start updating orderbooks via websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {ObjectArray} market
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "market":[
+ *          {
+ *              "baseCurrency": "BTC",
+ *              "quoteCurrency": "USDT"
+ *          },
+ *          {
+ *              "baseCurrency": "ETH",
+ *              "quoteCurrency": "USDT"
+ *          }
+ *      ],
+ *      "reconnect":false,
+ *      "requestTimeout":2500
+ *  }
+ * 
+ * @apiSuccess {ObjectArray} subscribed
+ * @apiSuccess {String} subscribed.baseCurrency
+ * @apiSuccess {String} subscribed.quoteCurrency
+ * @apiSuccess {String} subscribed.symbol
+ * @apiSuccess {ObjectArray} subscribeFailed
+ * @apiSuccess {String} subscribeFailed.baseCurrency
+ * @apiSuccess {String} subscribeFailed.quoteCurrency
+ * @apiSuccess {String} subscribeFailed.symbol
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "subscribed": [
+ *              {
+ *                  "baseCurrency": "BTC",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "BTC-USDT"
+ *              }
+ *          ],
+ *          "subscribeFailed": [
+ *              {
+ *                  "baseCurrency": "ETH",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "ETH-USDT"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "market":[
+ *                  {
+ *                      "baseCurrency": "BTC",
+ *                      "quoteCurrency": "USDT"
+ *                  },
+ *                  {
+ *                      "baseCurrency": "ETH",
+ *                      "quoteCurrency": "USDT"
+ *                  }
+ *              ]
+ *          }
+ *      )";
+ *      std::cout << client.subscribeOrderbook(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Spot unsubscribeOrderbook
+ * @apiName unsubscribeOrderbook
+ * @onexInfo Stop updating orderbooks via websocket
+ * @apiGroup Spot
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {ObjectArray} market
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @onexParamExchanges {Binance o} {Upbit o}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {m} {m}
+ * @onexParamOption {o} {o}
+ * @onexParamOption {o} {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "market":[
+ *          {
+ *              "baseCurrency": "BTC",
+ *              "quoteCurrency": "USDT"
+ *          },
+ *          {
+ *              "baseCurrency": "ETH",
+ *              "quoteCurrency": "USDT"
+ *          }
+ *      ],
+ *      "reconnect":false,
+ *      "requestTimeout":2500
+ *  }
+ * 
+ * @apiSuccess {ObjectArray} unsubscribed
+ * @apiSuccess {String} unsubscribed.baseCurrency
+ * @apiSuccess {String} unsubscribed.quoteCurrency
+ * @apiSuccess {String} unsubscribed.symbol
+ * @apiSuccess {ObjectArray} unsubscribeFailed
+ * @apiSuccess {String} unsubscribeFailed.baseCurrency
+ * @apiSuccess {String} unsubscribeFailed.quoteCurrency
+ * @apiSuccess {String} unsubscribeFailed.symbol
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "unsubscribed": [
+ *              {
+ *                  "baseCurrency": "BTC",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "BTC-USDT"
+ *              }
+ *          ],
+ *          "unsubscribeFailed": [
+ *              {
+ *                  "baseCurrency": "ETH",
+ *                  "quoteCurrency": "USDT",
+ *                  "symbol": "ETH-USDT"
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      OneXAPI::Binance::Spot client;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "market":[
+ *                  {
+ *                      "baseCurrency": "BTC",
+ *                      "quoteCurrency": "USDT"
+ *                  },
+ *                  {
+ *                      "baseCurrency": "ETH",
+ *                      "quoteCurrency": "USDT"
+ *                  }
+ *              ]
+ *          }
+ *      )";
+ *      std::cout << client.unsubscribeOrderbook(request) << std::endl;
  *      
  *      return 0;
  *  }

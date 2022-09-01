@@ -3,6 +3,54 @@ define({
     {
       "type": "onex",
       "url": "/Futures",
+      "title": "General",
+      "name": "General",
+      "group": "Futures",
+      "version": "0.0.0",
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "isCategory": true,
+      "exchanges": {}
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "Market",
+      "name": "Market",
+      "group": "Futures",
+      "version": "0.0.0",
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "isCategory": true,
+      "exchanges": {}
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "Trade",
+      "name": "Trade",
+      "group": "Futures",
+      "version": "0.0.0",
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "isCategory": true,
+      "exchanges": {}
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "Wallet",
+      "name": "Wallet",
+      "group": "Futures",
+      "version": "0.0.0",
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "isCategory": true,
+      "exchanges": {}
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
       "title": "changeLeverage",
       "name": "changeLeverage",
       "group": "Futures",
@@ -4625,6 +4673,54 @@ define({
     {
       "type": "onex",
       "url": "/Spot",
+      "title": "General",
+      "name": "General",
+      "group": "Spot",
+      "version": "0.0.0",
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "isCategory": true,
+      "exchanges": {}
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "Market",
+      "name": "Market",
+      "group": "Spot",
+      "version": "0.0.0",
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "isCategory": true,
+      "exchanges": {}
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "Trade",
+      "name": "Trade",
+      "group": "Spot",
+      "version": "0.0.0",
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "isCategory": true,
+      "exchanges": {}
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "Wallet",
+      "name": "Wallet",
+      "group": "Spot",
+      "version": "0.0.0",
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "isCategory": true,
+      "exchanges": {}
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
       "title": "fetchAllCurrencies",
       "name": "fetchAllCurrencies",
       "group": "Spot",
@@ -7151,6 +7247,190 @@ define({
     {
       "type": "onex",
       "url": "/Spot",
+      "title": "getSubscribingOrderbooks",
+      "name": "getSubscribingOrderbooks",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored",
+                "Ignored"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "orderbooks",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"orderbooks\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.getSubscribingOrderbooks() << std::endl;\n    // or\n    std::cout << client.getSubscribingOrderbooks(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Returns orderbook symbols being received on websocket",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "getSubscribingTickers",
+      "name": "getSubscribingTickers",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored",
+                "Ignored"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "tickers",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"tickers\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.getSubscribingTickers() << std::endl;\n    // or\n    std::cout << client.getSubscribingTickers(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Returns ticker symbols being received on websocket",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
       "title": "getWithdrawRoundingRule",
       "name": "getWithdrawRoundingRule",
       "group": "Spot",
@@ -7415,6 +7695,75 @@ define({
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "isSubscribingBalance",
+      "name": "isSubscribingBalance",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"isSubscribing\": true\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.isSubscribingBalance() << std::endl;\n    // or\n    std::cout << client.isSubscribingBalance(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Returns whether balance is being updated via websocket",
+      "exchanges": {
+        "All": "supported"
       }
     },
     {
@@ -8624,6 +8973,812 @@ define({
       "groupTitle": "Spot",
       "exchanges": {
         "All": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "subscribeBalance",
+      "name": "subscribeBalance",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored",
+                "Forbidden"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.subscribeBalance() << std::endl;\n    // or\n    std::cout << client.subscribeBalance(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Start updating balance via websocket",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "unsupported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "subscribeOrderbook",
+      "name": "subscribeOrderbook",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "market",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "reconnect",
+              "defaultValue": "false",
+              "description": "<p>If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed</p>",
+              "options": [
+                "Optional",
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>",
+              "options": [
+                "Optional",
+                "Optional"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ],\n    \"reconnect\":false,\n    \"requestTimeout\":2500\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"market\":[\n                {\n                    \"baseCurrency\": \"BTC\",\n                    \"quoteCurrency\": \"USDT\"\n                },\n                {\n                    \"baseCurrency\": \"ETH\",\n                    \"quoteCurrency\": \"USDT\"\n                }\n            ]\n        }\n    )\";\n    std::cout << client.subscribeOrderbook(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Start updating orderbooks via websocket",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "subscribeTicker",
+      "name": "subscribeTicker",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "market",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "reconnect",
+              "defaultValue": "false",
+              "description": "<p>If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed</p>",
+              "options": [
+                "Optional",
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>",
+              "options": [
+                "Optional",
+                "Optional"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ],\n    \"reconnect\":false,\n    \"requestTimeout\":2500\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"market\":[\n                {\n                    \"baseCurrency\": \"BTC\",\n                    \"quoteCurrency\": \"USDT\"\n                },\n                {\n                    \"baseCurrency\": \"ETH\",\n                    \"quoteCurrency\": \"USDT\"\n                }\n            ]\n        }\n    )\";\n    std::cout << client.subscribeTicker(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Start updating tickers via websocket",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "unsubscribeBalance",
+      "name": "unsubscribeBalance",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored",
+                "Forbidden"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.unsubscribeBalance() << std::endl;\n    // or\n    std::cout << client.unsubscribeBalance(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Stop updating balance via websocket",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "unsupported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "unsubscribeOrderbook",
+      "name": "unsubscribeOrderbook",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "market",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "reconnect",
+              "defaultValue": "false",
+              "description": "<p>If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed</p>",
+              "options": [
+                "Optional",
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>",
+              "options": [
+                "Optional",
+                "Optional"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ],\n    \"reconnect\":false,\n    \"requestTimeout\":2500\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"market\":[\n                {\n                    \"baseCurrency\": \"BTC\",\n                    \"quoteCurrency\": \"USDT\"\n                },\n                {\n                    \"baseCurrency\": \"ETH\",\n                    \"quoteCurrency\": \"USDT\"\n                }\n            ]\n        }\n    )\";\n    std::cout << client.unsubscribeOrderbook(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Stop updating orderbooks via websocket",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Spot",
+      "title": "unsubscribeTicker",
+      "name": "unsubscribeTicker",
+      "group": "Spot",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "market",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                "Mandatory",
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "reconnect",
+              "defaultValue": "false",
+              "description": "<p>If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed</p>",
+              "options": [
+                "Optional",
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>",
+              "options": [
+                "Optional",
+                "Optional"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ],\n    \"reconnect\":false,\n    \"requestTimeout\":2500\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"market\":[\n                {\n                    \"baseCurrency\": \"BTC\",\n                    \"quoteCurrency\": \"USDT\"\n                },\n                {\n                    \"baseCurrency\": \"ETH\",\n                    \"quoteCurrency\": \"USDT\"\n                }\n            ]\n        }\n    )\";\n    std::cout << client.unsubscribeTicker(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Spot.js",
+      "groupTitle": "Spot",
+      "info": "Stop updating tickers via websocket",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "supported"
       }
     },
     {

@@ -1,4 +1,11 @@
 /**
+ * @api {onex} /__GENERAL__ General
+ * @apiName General
+ * @apiGroup __GENERAL__
+ * @onexCategory
+ */
+
+/**
  * @api {onex} /__GENERAL__ getConfig
  * @apiName getConfig
  * @apiGroup __GENERAL__

@@ -12,10 +12,13 @@ define({
     "setLoggerConfig",
     "Spot",
     "Futures",
+    "General",
     "getConfig",
     "setConfig",
     "getEndpointCandidates",
     "has",
+    "Account",
+    "Wallet",
     "getWithdrawRoundingRule",
     "setWithdrawRoundingRule",
     "withdraw",
@@ -31,6 +34,7 @@ define({
     "isSubscribingBalance",
     "fetchPositions",
     "fetchFundingFeeIncomeHistory",
+    "Trade",
     "getOrderRoundingRule",
     "setOrderRoundingRule",
     "orderLimitBuy",
@@ -46,6 +50,7 @@ define({
     "changeLeverage",
     "fetchMarginType",
     "changeMarginType",
+    "Market",
     "getCandleIntervalCandidates",
     "fetchMarkets",
     "fetchTicker",
@@ -64,7 +69,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2022-08-31T08:26:59.782Z",
+    "time": "2022-09-01T06:07:40.441Z",
     "url": "https://apidocjs.com",
     "version": "0.29.0"
   }

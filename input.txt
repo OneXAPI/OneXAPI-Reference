@@ -3,19 +3,23 @@
 #include "OneXAPI.hpp"
 
 int main(){
-	OneXAPI::Upbit::Spot client;
+    OneXAPI::Binance::Spot client;
 
-	std::string request = R"(
-		{
-			"baseCurrency":"BTC",
-			"quoteCurrency":"USDT",
-			"interval":"3min",
-			"startTime":1659189600,
-			"fetchInterval":100
-		}
-	)";
-
-	std::cout << client.fetchCandleHistory(request) << std::endl;
-	
-	return 0;
+    std::string request = R"(
+        {
+            "market":[
+                {
+                    "baseCurrency": "BTC",
+                    "quoteCurrency": "USDT"
+                },
+                {
+                    "baseCurrency": "ETH",
+                    "quoteCurrency": "USDT"
+                }
+            ]
+        }
+    )";
+    std::cout << client.subscribeTicker(request) << std::endl;
+    
+    return 0;
 }

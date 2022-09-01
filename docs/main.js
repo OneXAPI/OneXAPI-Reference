@@ -190,8 +190,19 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
     // Submenu
     var oldName = '';
     api.forEach(function (entry) {
+      console.log(entry)
       if (entry.group === group) {
-        if (oldName !== entry.name) {
+        if (entry.isCategory) {
+          nav.push({
+            title: entry.title,
+            group: group,
+            name: entry.name,
+            type: entry.type,
+            typeName: shortenType(entry.type),
+            version: entry.version,
+            isCategory: true
+          });
+        } else if (oldName !== entry.name) {
           nav.push({
             title: entry.title,
             group: group,

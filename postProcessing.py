@@ -21,6 +21,10 @@ for group in group_list :
                 apiExchangeInfo[group][apiName] = dict()
                 apiExchangeInfo[group][apiName]["exchanges"] = dict()
                 apiExchangeInfo[group][apiName]["options"] = []
+            elif "@onexCategory" in line:
+                if not apiName:
+                    error("Cannot find apiName!")
+                apiExchangeInfo[group][apiName]["isCategory"] = True
             elif "@onexInfo " in line:
                 if not apiName:
                     error("Cannot find apiName!")
@@ -86,12 +90,16 @@ with open("docs/api_data.js", "r+") as file:
 
     for api in jsondata["api"] :
         ### Key Update ###
-        if "Parameter" in api["parameter"]["fields"]:
+        if "parameter" in api and "Parameter" in api["parameter"]["fields"]:
             api["parameter"]["fields"]["Parameter : "] = api["parameter"]["fields"]["Parameter"]
             del api["parameter"]["fields"]["Parameter"]
-        if "Success 200" in api["success"]["fields"]:
+        if "success" in api and "Success 200" in api["success"]["fields"]:
             api["success"]["fields"]["Response : "] = api["success"]["fields"]["Success 200"]
             del api["success"]["fields"]["Success 200"]
+
+        ### Category Marking ###
+        if "isCategory" in apiExchangeInfo[api["group"]][api["name"]].keys():
+            api["isCategory"] = apiExchangeInfo[api["group"]][api["name"]]["isCategory"]
 
         ### Info&Warn&Danger Update ###
         if "info" in apiExchangeInfo[api["group"]][api["name"]].keys():
@@ -110,20 +118,22 @@ with open("docs/api_data.js", "r+") as file:
         for it in range(len(apiExchangeInfo[api["group"]][api["name"]]["options"])):
             api["parameter"]["fields"]["Parameter : "][it]["options"] = apiExchangeInfo[api["group"]][api["name"]]["options"][it]
 
-        ### Params Fiels Italic&Space ###
-        for item in api["parameter"]["fields"]["Parameter : "] + api["success"]["fields"]["Response : "]:
-            if item["optional"] is True:
-                item["optional"] = False
-                fieldSplitted = item["field"].split(".")
-                item["field"] = ""
-                for i in range(len(fieldSplitted) - 1):
-                    item["field"] += fieldSplitted[i] + "."
-                item["field"] += "<i>" + fieldSplitted[-1] + "</i>"
-            item["field"] = item["field"].replace("__", " ")
+        ### Params Fields Italic&Space ###
+        if "parameter" in api:
+            for item in api["parameter"]["fields"]["Parameter : "] + api["success"]["fields"]["Response : "]:
+                if item["optional"] is True:
+                    item["optional"] = False
+                    fieldSplitted = item["field"].split(".")
+                    item["field"] = ""
+                    for i in range(len(fieldSplitted) - 1):
+                        item["field"] += fieldSplitted[i] + "."
+                    item["field"] += "<i>" + fieldSplitted[-1] + "</i>"
+                item["field"] = item["field"].replace("__", " ")
 
         ### apidoc parsing error correction ###
-        for item in api["examples"]:
-            item["content"] = item["content"].replace(")__;",");")
+        if "examples" in api:
+            for item in api["examples"]:
+                item["content"] = item["content"].replace(")__;",");")
 
 
     file.seek(0)

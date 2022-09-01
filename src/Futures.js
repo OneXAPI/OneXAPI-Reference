@@ -1,4 +1,11 @@
 /**
+ * @api {onex} /Futures Wallet
+ * @apiName Wallet
+ * @apiGroup Futures
+ * @onexCategory
+ */
+
+/**
  * @api {onex} /Futures fetchBalance
  * @apiName fetchBalance
  * @onexWarn During websocket is running, fetchBalance does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.
@@ -251,6 +258,13 @@
  *      
  *      return 0;
  *  }
+ */
+
+/**
+ * @api {onex} /Futures Trade
+ * @apiName Trade
+ * @apiGroup Futures
+ * @onexCategory
  */
 
 /**
@@ -1458,6 +1472,13 @@
  *      
  *      return 0;
  *  }
+ */
+
+/**
+ * @api {onex} /Futures Market
+ * @apiName Market
+ * @apiGroup Futures
+ * @onexCategory
  */
 
 /**
