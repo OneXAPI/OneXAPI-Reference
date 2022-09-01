@@ -4419,7 +4419,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nprint(OneXAPI.getInfo())\n# or\nprint(OneXAPI.getInfo(\"\"))",
           "type": "python"
         },
         {
@@ -4523,7 +4523,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nprint(OneXAPI.getLoggerConfig())\n# or\nprint(OneXAPI.getLoggerConfig(\"\"))",
           "type": "python"
         },
         {
@@ -4655,7 +4655,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nprint(OneXAPI.setLoggerConfig('{\"main\":{\"logLevel\":\"info\"}}'))  #str\n# or\nprint(OneXAPI.setLoggerConfig({\"websocket\":{\"outputMethod\":\"both\"}}))   #dict",
           "type": "python"
         },
         {

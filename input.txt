@@ -1,25 +1,5 @@
-// C++
-#include <iostream>
-#include "OneXAPI.hpp"
+import OneXAPI
 
-int main(){
-    OneXAPI::Binance::Spot client;
-
-    std::string request = R"(
-        {
-            "market":[
-                {
-                    "baseCurrency": "BTC",
-                    "quoteCurrency": "USDT"
-                },
-                {
-                    "baseCurrency": "ETH",
-                    "quoteCurrency": "USDT"
-                }
-            ]
-        }
-    )";
-    std::cout << client.subscribeTicker(request) << std::endl;
-    
-    return 0;
-}
+print(OneXAPI.setLoggerConfig('{"main":{"logLevel":"info"}}'))  #str
+# or
+print(OneXAPI.setLoggerConfig({"websocket":{"outputMethod":"both"}}))   #dict

@@ -45,7 +45,11 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  print(OneXAPI.getInfo())
+ *  # or
+ *  print(OneXAPI.getInfo(""))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -97,7 +101,11 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  print(OneXAPI.getLoggerConfig())
+ *  # or
+ *  print(OneXAPI.getLoggerConfig(""))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -154,7 +162,11 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  print(OneXAPI.setLoggerConfig('{"main":{"logLevel":"info"}}'))  #str
+ *  # or
+ *  print(OneXAPI.setLoggerConfig({"websocket":{"outputMethod":"both"}}))   #dict
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
