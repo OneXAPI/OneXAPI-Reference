@@ -2784,7 +2784,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getConfig())\n# or\nprint(client.getConfig(\"\"))\n# or\nprint(client.getConfig({}))",
           "type": "python"
         },
         {
@@ -2873,7 +2873,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getEndpointCandidates())\n# or\nprint(client.getEndpointCandidates(\"\"))\n# or\nprint(client.getEndpointCandidates({}))",
           "type": "python"
         },
         {
@@ -3094,7 +3094,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.has({}))\n# or\nprint(client.has(\"{}\"))\n# or\nprint(client.has({\"api\":\"orderLimitBuy\"}))",
           "type": "python"
         },
         {
@@ -4164,7 +4164,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\"accessKey\":\"new access key\",\"secretKey\":\"new secret key\",\"websocketIdleTimeout\":2000}\n\nprint(client.setConfig(request))",
           "type": "python"
         },
         {
@@ -4587,7 +4587,7 @@ define({
               "optional": false,
               "field": "main.outputMethod",
               "defaultValue": "terminal",
-              "description": "<p>terminal : \ucf58\uc194\uc5d0 \ub85c\uadf8\uac00 \ucd9c\ub825\ub41c\ub2e4.<br>file : OneXAPI_Log \ud3f4\ub354\uc5d0 \ud574\ub2f9 \ub0a0\uc9dc\uc758 \ud30c\uc77c.log \uc5d0 \ub85c\uadf8\uac00 \uae30\ub85d\ub41c\ub2e4.<br>both : \ucf58\uc194\uacfc \ud30c\uc77c\uc5d0 \ub85c\uadf8\uac00 \uae30\ub85d\ub41c\ub2e4.</p>",
+              "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal+file</p>",
               "options": [
                 "Optional"
               ]
@@ -4806,7 +4806,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.fetchAllCurrencies())\n# or\nprint(client.fetchAllCurrencies(\"\"))\n# or\nprint(client.fetchAllCurrencies({}))",
           "type": "python"
         },
         {
@@ -4871,7 +4871,7 @@ define({
         "examples": [
           {
             "title": "Request Example : ",
-            "content": "{\n    \"forceRestApi\":false,\n    \"currencies\":[\"BTC\", \"ETH\", \"XRP\", \"ADA\"]\n    \"zeroBalance\":true\n}",
+            "content": "{\n    \"forceRestApi\":false,\n    \"currencies\":[\"BTC\", \"ETH\", \"XRP\", \"ADA\"],\n    \"zeroBalance\":true\n}",
             "type": "json"
           }
         ]
@@ -4938,7 +4938,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"forceRestApi\":False,\n    \"currencies\":[\"BTC\", \"ETH\", \"XRP\", \"ADA\"],\n    \"zeroBalance\":True\n}\n\nprint(client.fetchBalance(request))",
           "type": "python"
         },
         {
@@ -5143,7 +5143,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"interval\":\"3min\",\n    \"startTime\":1659189600,\n    \"fetchInterval\":100\n}\n\nprint(client.fetchCandleHistory(request))",
           "type": "python"
         },
         {
@@ -5260,7 +5260,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.fetchDepositAddress({\"currency\":\"BTC\"}))",
           "type": "python"
         },
         {
@@ -5437,7 +5437,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.fetchDepositHistory({}))\n# or\nprint(client.fetchDepositHistory({\"currency\":\"xrP\"}))",
           "type": "python"
         },
         {
@@ -5547,7 +5547,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchMarkets(request))",
           "type": "python"
         },
         {
@@ -5738,7 +5738,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchOpenOrders(request))",
           "type": "python"
         },
         {
@@ -5990,7 +5990,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"orderId\":\"39713467831\"\n}\n\nprint(client.fetchOrderInfo(request))",
           "type": "python"
         },
         {
@@ -6165,7 +6165,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchOrderbook(request))",
           "type": "python"
         },
         {
@@ -6341,12 +6341,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchTicker(request))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\"\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchTicker(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchTicker(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -6465,7 +6465,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchTradingFee(request))",
           "type": "python"
         },
         {
@@ -6578,12 +6578,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.fetchWalletStatus({}))\n# or\nprint(client.fetchWalletStatus({\"currency\":\"BTC\"}))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::cout << client.fetchWalletStatus(\"\") << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Spot client(userInfo);\n\n    std::cout << client.fetchWalletStatus(\"{}\") << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -6754,7 +6754,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.fetchWithdrawHistory({}))\n# or\nprint(client.fetchWithdrawHistory({\"currency\":\"xrP\"}))",
           "type": "python"
         },
         {
@@ -6849,7 +6849,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getCandleIntervalCandidates())\n# or\nprint(client.getCandleIntervalCandidates(\"\"))\n# or\nprint(client.getCandleIntervalCandidates({}))",
           "type": "python"
         },
         {
@@ -6994,7 +6994,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getConfig())\n# or\nprint(client.getConfig(\"\"))\n# or\nprint(client.getConfig({}))",
           "type": "python"
         },
         {
@@ -7083,7 +7083,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getEndpointCandidates())\n# or\nprint(client.getEndpointCandidates(\"\"))\n# or\nprint(client.getEndpointCandidates({}))",
           "type": "python"
         },
         {
@@ -7229,7 +7229,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getOrderRoundingRule())\n# or\nprint(client.getOrderRoundingRule(\"\"))\n# or\nprint(client.getOrderRoundingRule({}))",
           "type": "python"
         },
         {
@@ -7319,7 +7319,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getSubscribingOrderbooks())\n# or\nprint(client.getSubscribingOrderbooks(\"\"))\n# or\nprint(client.getSubscribingOrderbooks({}))",
           "type": "python"
         },
         {
@@ -7411,7 +7411,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getSubscribingTickers())\n# or\nprint(client.getSubscribingTickers(\"\"))\n# or\nprint(client.getSubscribingTickers({}))",
           "type": "python"
         },
         {
@@ -7494,7 +7494,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getWithdrawRoundingRule())\n# or\nprint(client.getWithdrawRoundingRule(\"\"))\n# or\nprint(client.getWithdrawRoundingRule({}))",
           "type": "python"
         },
         {
@@ -7569,7 +7569,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.has({}))\n# or\nprint(client.has(\"{}\"))\n# or\nprint(client.has({\"api\":\"orderLimitBuy\"}))",
           "type": "python"
         },
         {
@@ -7679,7 +7679,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.isDepositCompleted({\"txid\":\"0xfad1~~~\"}))",
           "type": "python"
         },
         {
@@ -7750,7 +7750,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.isSubscribingBalance())\n# or\nprint(client.isSubscribingBalance(\"\"))\n# or\nprint(client.isSubscribingBalance({}))",
           "type": "python"
         },
         {
@@ -7888,7 +7888,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"orderId\":\"39713467831\"\n}\n\nprint(client.orderCancel(request))",
           "type": "python"
         },
         {
@@ -8081,7 +8081,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"baseCurrency\":\"XRP\",\n    \"quoteCurrency\":\"USDT\",\n    \"price\":0.4348,\n    \"baseAmount\":23.834219\n}\n\nprint(client.orderLimitBuy(request))",
           "type": "python"
         },
         {
@@ -8274,7 +8274,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"baseCurrency\":\"XRP\",\n    \"quoteCurrency\":\"USDT\",\n    \"price\":0.4348,\n    \"baseAmount\":23.834219\n}\n\nprint(client.orderLimitSell(request))",
           "type": "python"
         },
         {
@@ -8420,7 +8420,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"quoteAmount\":1.5843\n}\n\nprint(client.orderMarketBuy(request))",
           "type": "python"
         },
         {
@@ -8566,7 +8566,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"baseAmount\":1.5843\n}\n\nprint(client.orderMarketSell(request))",
           "type": "python"
         },
         {
@@ -8713,7 +8713,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\"accessKey\":\"new access key\",\"secretKey\":\"new secret key\",\"websocketIdleTimeout\":2000}\n\nprint(client.setConfig(request))",
           "type": "python"
         },
         {
@@ -8875,7 +8875,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"limitBuyPrice\":\"ceil\",\n    \"limitSellBaseAmount\":\"floor\"\n}\n\nprint(client.setOrderRoundingRule(request))",
           "type": "python"
         },
         {
@@ -8960,7 +8960,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.setWithdrawRoundingRule({\"roundingRule\":\"ceil\"}))\n# or\nprint(client.setWithdrawRoundingRule('{\"roundingRule\":\"floor\"}'))",
           "type": "python"
         },
         {
@@ -9029,7 +9029,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.subscribeBalance())\n# or\nprint(client.subscribeBalance(\"\"))\n# or\nprint(client.subscribeBalance({}))",
           "type": "python"
         },
         {
@@ -9195,7 +9195,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ]\n}\n\nprint(client.subscribeOrderbook(request))",
           "type": "python"
         },
         {
@@ -9361,7 +9361,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ]\n}\n\nprint(client.subscribeTicker(request))",
           "type": "python"
         },
         {
@@ -9432,7 +9432,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nprint(client.unsubscribeBalance())\n# or\nprint(client.unsubscribeBalance(\"\"))\n# or\nprint(client.unsubscribeBalance({}))",
           "type": "python"
         },
         {
@@ -9598,7 +9598,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ]\n}\n\nprint(client.unsubscribeOrderbook(request))",
           "type": "python"
         },
         {
@@ -9764,7 +9764,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ]\n}\n\nprint(client.unsubscribeTicker(request))",
           "type": "python"
         },
         {
@@ -9936,7 +9936,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Spot(user_info)\n\nrequest = {\n    \"currency\":\"MATIC\",\n    \"chain\":\"ETH\",\n    \"address\":\"0xAFWE13FAES1387\",\n    \"amount\":1365.135468\n}\n\nprint(client.withdraw(request))",
           "type": "python"
         },
         {

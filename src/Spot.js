@@ -32,7 +32,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  print(client.getWithdrawRoundingRule())
+ *  # or
+ *  print(client.getWithdrawRoundingRule(""))
+ *  # or
+ *  print(client.getWithdrawRoundingRule({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -77,7 +85,13 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  print(client.setWithdrawRoundingRule({"roundingRule":"ceil"}))
+ *  # or
+ *  print(client.setWithdrawRoundingRule('{"roundingRule":"floor"}'))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -150,7 +164,23 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "currency":"MATIC",
+ *      "chain":"ETH",
+ *      "address":"0xAFWE13FAES1387",
+ *      "amount":1365.135468
+ *  }
+ *  
+ *  print(client.withdraw(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -233,7 +263,20 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.fetchAllCurrencies())
+ *  # or
+ *  print(client.fetchAllCurrencies(""))
+ *  # or
+ *  print(client.fetchAllCurrencies({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -275,7 +318,7 @@
  * @apiParamExample Request Example : 
  *  {
  *      "forceRestApi":false,
- *      "currencies":["BTC", "ETH", "XRP", "ADA"]
+ *      "currencies":["BTC", "ETH", "XRP", "ADA"],
  *      "zeroBalance":true
  *  }
  * 
@@ -314,7 +357,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "forceRestApi":False,
+ *      "currencies":["BTC", "ETH", "XRP", "ADA"],
+ *      "zeroBalance":True
+ *  }
+ *  
+ *  print(client.fetchBalance(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -392,7 +450,18 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.fetchWalletStatus({}))
+ *  # or
+ *  print(client.fetchWalletStatus({"currency":"BTC"}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -408,7 +477,7 @@
  *  
  *      OneXAPI::Binance::Spot client(userInfo)__;
  *  
- *      std::cout << client.fetchWalletStatus("") << std::endl;
+ *      std::cout << client.fetchWalletStatus("{}") << std::endl;
  *      
  *      return 0;
  *  }
@@ -469,7 +538,18 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.fetchWithdrawHistory({}))
+ *  # or
+ *  print(client.fetchWithdrawHistory({"currency":"xrP"}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -551,7 +631,18 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.fetchDepositHistory({}))
+ *  # or
+ *  print(client.fetchDepositHistory({"currency":"xrP"}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -620,7 +711,16 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.fetchDepositAddress({"currency":"BTC"}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -683,7 +783,16 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.isDepositCompleted({"txid":"0xfad1~~~"}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -733,7 +842,20 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.subscribeBalance())
+ *  # or
+ *  print(client.subscribeBalance(""))
+ *  # or
+ *  print(client.subscribeBalance({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -775,7 +897,20 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.unsubscribeBalance())
+ *  # or
+ *  print(client.unsubscribeBalance(""))
+ *  # or
+ *  print(client.unsubscribeBalance({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -818,7 +953,20 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  print(client.isSubscribingBalance())
+ *  # or
+ *  print(client.isSubscribingBalance(""))
+ *  # or
+ *  print(client.isSubscribingBalance({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -879,7 +1027,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  print(client.getOrderRoundingRule())
+ *  # or
+ *  print(client.getOrderRoundingRule(""))
+ *  # or
+ *  print(client.getOrderRoundingRule({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -934,7 +1090,16 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "limitBuyPrice":"ceil",
+ *      "limitSellBaseAmount":"floor"
+ *  }
+ *  
+ *  print(client.setOrderRoundingRule(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1011,7 +1176,23 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"XRP",
+ *      "quoteCurrency":"USDT",
+ *      "price":0.4348,
+ *      "baseAmount":23.834219
+ *  }
+ *  
+ *  print(client.orderLimitBuy(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1092,7 +1273,23 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"XRP",
+ *      "quoteCurrency":"USDT",
+ *      "price":0.4348,
+ *      "baseAmount":23.834219
+ *  }
+ *  
+ *  print(client.orderLimitSell(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1170,7 +1367,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "quoteAmount":1.5843
+ *  }
+ *  
+ *  print(client.orderMarketBuy(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1247,7 +1459,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "baseAmount":1.5843
+ *  }
+ *  
+ *  print(client.orderMarketSell(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1322,7 +1549,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "orderId":"39713467831"
+ *  }
+ *  
+ *  print(client.orderCancel(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1430,7 +1672,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "orderId":"39713467831"
+ *  }
+ *  
+ *  print(client.fetchOrderInfo(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1521,7 +1778,21 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchOpenOrders(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1595,7 +1866,21 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Spot(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchTradingFee(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1660,7 +1945,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  print(client.getCandleIntervalCandidates())
+ *  # or
+ *  print(client.getCandleIntervalCandidates(""))
+ *  # or
+ *  print(client.getCandleIntervalCandidates({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1732,7 +2025,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchMarkets(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1808,7 +2109,16 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchTicker(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1819,7 +2129,7 @@
  *  
  *      std::string request = R"(
  *          {
- *              "baseCurrency":"BTC"
+ *              "baseCurrency":"BTC",
  *              "quoteCurrency":"USDT"
  *          }
  *      )";
@@ -1909,7 +2219,16 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchOrderbook(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -2008,7 +2327,19 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "interval":"3min",
+ *      "startTime":1659189600,
+ *      "fetchInterval":100
+ *  }
+ *  
+ *  print(client.fetchCandleHistory(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -2073,7 +2404,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  print(client.getSubscribingTickers())
+ *  # or
+ *  print(client.getSubscribingTickers(""))
+ *  # or
+ *  print(client.getSubscribingTickers({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -2130,7 +2469,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  print(client.getSubscribingOrderbooks())
+ *  # or
+ *  print(client.getSubscribingOrderbooks(""))
+ *  # or
+ *  print(client.getSubscribingOrderbooks({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -2213,7 +2560,24 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "market":[
+ *          {
+ *              "baseCurrency": "BTC",
+ *              "quoteCurrency": "USDT"
+ *          },
+ *          {
+ *              "baseCurrency": "ETH",
+ *              "quoteCurrency": "USDT"
+ *          }
+ *      ]
+ *  }
+ *  
+ *  print(client.subscribeTicker(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -2308,7 +2672,24 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "market":[
+ *          {
+ *              "baseCurrency": "BTC",
+ *              "quoteCurrency": "USDT"
+ *          },
+ *          {
+ *              "baseCurrency": "ETH",
+ *              "quoteCurrency": "USDT"
+ *          }
+ *      ]
+ *  }
+ *  
+ *  print(client.unsubscribeTicker(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -2403,7 +2784,24 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "market":[
+ *          {
+ *              "baseCurrency": "BTC",
+ *              "quoteCurrency": "USDT"
+ *          },
+ *          {
+ *              "baseCurrency": "ETH",
+ *              "quoteCurrency": "USDT"
+ *          }
+ *      ]
+ *  }
+ *  
+ *  print(client.subscribeOrderbook(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -2498,7 +2896,24 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {
+ *      "market":[
+ *          {
+ *              "baseCurrency": "BTC",
+ *              "quoteCurrency": "USDT"
+ *          },
+ *          {
+ *              "baseCurrency": "ETH",
+ *              "quoteCurrency": "USDT"
+ *          }
+ *      ]
+ *  }
+ *  
+ *  print(client.unsubscribeOrderbook(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>

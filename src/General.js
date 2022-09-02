@@ -50,7 +50,15 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ * 
+ *  print(client.getConfig())
+ *  # or
+ *  print(client.getConfig(""))
+ *  # or
+ *  print(client.getConfig({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -111,7 +119,13 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  request = {"accessKey":"new access key","secretKey":"new secret key","websocketIdleTimeout":2000}
+ *  
+ *  print(client.setConfig(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -166,7 +180,15 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  print(client.getEndpointCandidates())
+ *  # or
+ *  print(client.getEndpointCandidates(""))
+ *  # or
+ *  print(client.getEndpointCandidates({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -212,7 +234,15 @@
  *  }
  *
  * @apiExample {python} python
- *   currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Spot()
+ *  
+ *  print(client.has({}))
+ *  # or
+ *  print(client.has("{}"))
+ *  # or
+ *  print(client.has({"api":"orderLimitBuy"}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>

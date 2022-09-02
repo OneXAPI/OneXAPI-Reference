@@ -128,7 +128,7 @@
  *
  * @apiParam {Object} main 
  * @apiParam {String=off,info,warn,error,critical} main.logLevel=off
- * @apiParam {String=terminal,file,both} main.outputMethod=terminal terminal : 콘솔에 로그가 출력된다.<br>file : OneXAPI_Log 폴더에 해당 날짜의 파일.log 에 로그가 기록된다.<br>both : 콘솔과 파일에 로그가 기록된다.
+ * @apiParam {String=terminal,file,both} main.outputMethod=terminal terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal+file
  * @apiParam {Object} websocket 
  * @apiParam {String} websocket.logLevel 
  * @apiParam {String} websocket.outputMethod 
