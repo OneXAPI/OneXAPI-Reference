@@ -2989,7 +2989,7 @@ define({
                 "round"
               ],
               "optional": false,
-              "field": "marketBuyQuoteAmount",
+              "field": "marketBuyBaseAmount",
               "defaultValue": "round",
               "description": ""
             },
@@ -3011,7 +3011,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"limitBuyPrice\":\"ceil\",             \n        \"limitBuyBaseAmount\":\"floor\",\n        \"limitSellPrice\":\"ceil\",\n        \"limitSellBaseAmount\":\"floor\",\n        \"marketBuyQuoteAmount\":\"round\",\n        \"marketSellBaseAmount\":\"round\",\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"limitBuyPrice\":\"ceil\",             \n        \"limitBuyBaseAmount\":\"floor\",\n        \"limitSellPrice\":\"ceil\",\n        \"limitSellBaseAmount\":\"floor\",\n        \"marketBuyBaseAmount\":\"round\",\n        \"marketSellBaseAmount\":\"round\",\n    }\n}",
             "type": "json"
           }
         ]
@@ -3737,7 +3737,7 @@ define({
               "group": "Parameter",
               "type": "Double",
               "optional": false,
-              "field": "quoteAmount",
+              "field": "baseAmount",
               "description": "",
               "options": [
                 "Mandatory"
@@ -3769,7 +3769,7 @@ define({
         "examples": [
           {
             "title": "Request Example : ",
-            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"quoteAmount\":1.5843\n}",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"baseAmount\":1.5843\n}",
             "type": "json"
           }
         ]
@@ -3830,7 +3830,7 @@ define({
               "group": "Success 200",
               "type": "DoubleString",
               "optional": false,
-              "field": "quoteAmount",
+              "field": "baseAmount",
               "description": ""
             }
           ]
@@ -3838,7 +3838,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"orderId\":\"38463215\",\n        \"clientOrderId\":\"\",\n        \"quoteAmount\":\"1.584\"\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"orderId\":\"38463215\",\n        \"clientOrderId\":\"\",\n        \"baseAmount\":\"1.584\"\n    }\n}",
             "type": "json"
           }
         ]
@@ -3851,7 +3851,7 @@ define({
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"quoteAmount\":1.5843\n        }\n    )\";\n\n    std::cout << client.orderMarketBuy(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"baseAmount\":1.5843\n        }\n    )\";\n\n    std::cout << client.orderMarketBuy(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -4260,7 +4260,7 @@ define({
                 "round"
               ],
               "optional": false,
-              "field": "marketBuyQuoteAmount",
+              "field": "marketBuyBaseAmount",
               "description": "",
               "options": [
                 "Optional"

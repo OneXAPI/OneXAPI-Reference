@@ -286,7 +286,7 @@
  * @apiSuccess {String=ceil,floor,round} limitBuyBaseAmount=round
  * @apiSuccess {String=ceil,floor,round} limitSellPrice=round
  * @apiSuccess {String=ceil,floor,round} limitSellBaseAmount=round
- * @apiSuccess {String=ceil,floor,round} marketBuyQuoteAmount=round
+ * @apiSuccess {String=ceil,floor,round} marketBuyBaseAmount=round
  * @apiSuccess {String=ceil,floor,round} marketSellBaseAmount=round
  * 
  * @apiSuccessExample Success-Response :
@@ -298,7 +298,7 @@
  *          "limitBuyBaseAmount":"floor",
  *          "limitSellPrice":"ceil",
  *          "limitSellBaseAmount":"floor",
- *          "marketBuyQuoteAmount":"round",
+ *          "marketBuyBaseAmount":"round",
  *          "marketSellBaseAmount":"round",
  *      }
  *  }
@@ -339,7 +339,7 @@
  * @apiParam {String=ceil,floor,round} limitBuyBaseAmount
  * @apiParam {String=ceil,floor,round} limitSellPrice
  * @apiParam {String=ceil,floor,round} limitSellBaseAmount
- * @apiParam {String=ceil,floor,round} marketBuyQuoteAmount
+ * @apiParam {String=ceil,floor,round} marketBuyBaseAmount
  * @apiParam {String=ceil,floor,round} marketSellBaseAmount
  * @onexParamExchanges {All o}
  * @onexParamOption {o}
@@ -590,7 +590,7 @@
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration=PERP
- * @apiParam {Double} quoteAmount
+ * @apiParam {Double} baseAmount
  * @apiParam {bool} reduceOnly=false
  * @apiParam {String} clientOrderId Client Order ID as assigned by the client
  * @onexParamExchanges {Binance o}
@@ -605,7 +605,7 @@
  *  {
  *      "baseCurrency":"BTC",
  *      "quoteCurrency":"USDT",
- *      "quoteAmount":1.5843
+ *      "baseAmount":1.5843
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
@@ -615,7 +615,7 @@
  * @apiSuccess {String} symbol
  * @apiSuccess {String} orderId
  * @apiSuccess {String} clientOrderId
- * @apiSuccess {DoubleString} quoteAmount
+ * @apiSuccess {DoubleString} baseAmount
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -628,7 +628,7 @@
  *          "symbol":"BTC-USDT",
  *          "orderId":"38463215",
  *          "clientOrderId":"",
- *          "quoteAmount":"1.584"
+ *          "baseAmount":"1.584"
  *      }
  *  }
  *
@@ -653,7 +653,7 @@
  *          {
  *              "baseCurrency":"BTC",
  *              "quoteCurrency":"USDT",
- *              "quoteAmount":1.5843
+ *              "baseAmount":1.5843
  *          }
  *      )";
  *  
