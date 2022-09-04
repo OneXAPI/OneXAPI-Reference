@@ -489,7 +489,7 @@ define({
               "optional": false,
               "field": "expiration",
               "defaultValue": "PERP",
-              "description": "",
+              "description": "<p>&quot;PERP&quot; or date([YYMMDD] format such as &quot;220930&quot;, &quot;221015&quot;) are allowed</p>",
               "options": [
                 "Optional"
               ]
@@ -541,7 +541,7 @@ define({
         "examples": [
           {
             "title": "Request Example : ",
-            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"interval\":\"1min\",\n    \"startTime\":1656042045,\n    \"endTime\":1656063182,\n    \"fetchInterval\":200\n}",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"PERP\",\n    \"interval\":\"1min\",\n    \"startTime\":1656042045,\n    \"endTime\":1656063182,\n    \"fetchInterval\":200\n}",
             "type": "json"
           }
         ]
@@ -653,12 +653,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"PERP\",\n    \"interval\":\"3min\",\n    \"startTime\":1659189600,\n    \"fetchInterval\":100\n}\n\nprint(client.fetchCandleHistory(request))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"interval\":\"3min\",\n            \"startTime\":1659189600,\n            \"fetchInterval\":100\n        }\n    )\";\n\n    std::cout << client.fetchCandleHistory(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"expiration\":\"PERP\",\n            \"interval\":\"3min\",\n            \"startTime\":1659189600,\n            \"fetchInterval\":100\n        }\n    )\";\n\n    std::cout << client.fetchCandleHistory(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -1273,7 +1273,7 @@ define({
               "type": "String",
               "optional": false,
               "field": "expiration",
-              "description": "<p>&quot;PERP&quot; or date(&quot;0930&quot;, &quot;1015&quot;) are allowed</p>",
+              "description": "<p>&quot;PERP&quot; or date([YYMMDD] format such as &quot;220930&quot;, &quot;221015&quot;) are allowed</p>",
               "options": [
                 "Optional"
               ]
@@ -1338,7 +1338,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"markets\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTC-USDT\"\n            },\n            {\n                \"baseCurrency\":\"ETH\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"ETH-USDT\"\n            },\n            {\n                \"baseCurrency\":\"XRP\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"XRP-USDT\"\n            },\n            {\n                \"baseCurrency\":\"ADA\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"ADA-USDT\"\n            },\n            ...\n        ]\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"markets\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\":\"ETH\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"ETHUSDT\"\n            },\n            {\n                \"baseCurrency\":\"XRP\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"XRPUSDT\"\n            },\n            {\n                \"baseCurrency\":\"ADA\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"ADAUSDT\"\n            },\n            ...\n        ]\n    }\n}",
             "type": "json"
           }
         ]
@@ -1346,7 +1346,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchMarkets(request))",
           "type": "python"
         },
         {
@@ -1897,7 +1897,7 @@ define({
               "optional": false,
               "field": "expiration",
               "defaultValue": "PERP",
-              "description": "",
+              "description": "<p>&quot;PERP&quot; or date([YYMMDD] format such as &quot;220930&quot;, &quot;221015&quot;) are allowed</p>",
               "options": [
                 "Optional"
               ]
@@ -1918,7 +1918,7 @@ define({
         "examples": [
           {
             "title": "Request Example : ",
-            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"220930\"\n}",
             "type": "json"
           }
         ]
@@ -2026,7 +2026,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTC-USDT\",\n        \"fetchType\":\"websocket\",\n        \"timestamp\":1656044045154,\n        \"bids\":[\n            {\n                \"price\":\"21458.15\",\n                \"size\":\"0.1548\"\n            },\n            {\n                \"price\":\"21458.08\",\n                \"size\":\"0.1578\"\n            },\n            {\n                \"price\":\"21458.03\",\n                \"size\":\"0.3518\"\n            },\n            ...\n        ],\n        \"asks\":[\n            {\n                \"price\":\"21458.16\", \n                \"size\":\"0.0232\"\n            },\n            {\n                \"price\":\"21458.32\",\n                \"size\":\"0.2158\"\n            },\n            {\n                \"price\":\"21458.36\",\n                \"size\":\"0.3183\"\n            },\n            ...\n        ]    \n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"220930\",\n        \"symbol\":\"BTCUSDT_220930\",\n        \"fetchType\":\"websocket\",\n        \"timestamp\":1656044045154,\n        \"bids\":[\n            {\n                \"price\":\"21458.15\",\n                \"size\":\"0.1548\"\n            },\n            {\n                \"price\":\"21458.08\",\n                \"size\":\"0.1578\"\n            },\n            {\n                \"price\":\"21458.03\",\n                \"size\":\"0.3518\"\n            },\n            ...\n        ],\n        \"asks\":[\n            {\n                \"price\":\"21458.16\", \n                \"size\":\"0.0232\"\n            },\n            {\n                \"price\":\"21458.32\",\n                \"size\":\"0.2158\"\n            },\n            {\n                \"price\":\"21458.36\",\n                \"size\":\"0.3183\"\n            },\n            ...\n        ]    \n    }\n}",
             "type": "json"
           }
         ]
@@ -2034,12 +2034,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"220930\"\n}\n\nprint(client.fetchOrderbook(request))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchOrderbook(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\",\n            \"expiration\":\"220930\"\n        }\n    )\";\n\n    std::cout << client.fetchOrderbook(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -2270,7 +2270,7 @@ define({
               "optional": false,
               "field": "expiration",
               "defaultValue": "PERP",
-              "description": "",
+              "description": "<p>&quot;PERP&quot; or date([YYMMDD] format such as &quot;220930&quot;, &quot;221015&quot;) are allowed</p>",
               "options": [
                 "Optional"
               ]
@@ -2291,7 +2291,7 @@ define({
         "examples": [
           {
             "title": "Request Example : ",
-            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"forceRestApi\":true\n}",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"PERP\",\n    \"forceRestApi\":true\n}",
             "type": "json"
           }
         ]
@@ -2407,12 +2407,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"PERP\"\n}\n\nprint(client.fetchTicker(request))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\"\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchTicker(request) << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\"\n            \"quoteCurrency\":\"USDT\",\n            \"expiration\":\"220930\"\n        }\n    )\";\n\n    std::cout << client.fetchTicker(request) << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -2639,7 +2639,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nprint(client.getCandleIntervalCandidates())\n# or\nprint(client.getCandleIntervalCandidates(\"\"))\n# or\nprint(client.getCandleIntervalCandidates({}))",
           "type": "python"
         },
         {
@@ -2784,12 +2784,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getConfig())\n# or\nprint(client.getConfig(\"\"))\n# or\nprint(client.getConfig({}))",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nprint(client.getConfig())\n# or\nprint(client.getConfig(\"\"))\n# or\nprint(client.getConfig({}))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.getConfig() << std::endl;\n    // or\n    std::cout << client.getConfig(\"\") << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.getConfig() << std::endl;\n    // or\n    std::cout << client.getConfig(\"\") << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -2873,12 +2873,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.getEndpointCandidates())\n# or\nprint(client.getEndpointCandidates(\"\"))\n# or\nprint(client.getEndpointCandidates({}))",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nprint(client.getEndpointCandidates())\n# or\nprint(client.getEndpointCandidates(\"\"))\n# or\nprint(client.getEndpointCandidates({}))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.getEndpointCandidates() << std::endl;\n    // or\n    std::cout << client.getEndpointCandidates(\"\") << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.getEndpointCandidates() << std::endl;\n    // or\n    std::cout << client.getEndpointCandidates(\"\") << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -3019,7 +3019,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nprint(client.getOrderRoundingRule())\n# or\nprint(client.getOrderRoundingRule(\"\"))\n# or\nprint(client.getOrderRoundingRule({}))",
           "type": "python"
         },
         {
@@ -3094,12 +3094,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nprint(client.has({}))\n# or\nprint(client.has(\"{}\"))\n# or\nprint(client.has({\"api\":\"orderLimitBuy\"}))",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nprint(client.has({}))\n# or\nprint(client.has(\"{}\"))\n# or\nprint(client.has({\"api\":\"orderLimitBuy\"}))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.has(\"{}\") << std::endl;\n    // or\n    std::cout << client.has(R\"({\"api\":\"withdraw\"})\") << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.has(\"{}\") << std::endl;\n    // or\n    std::cout << client.has(R\"({\"api\":\"withdraw\"})\") << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -4164,12 +4164,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Spot()\n\nrequest = {\"accessKey\":\"new access key\",\"secretKey\":\"new secret key\",\"websocketIdleTimeout\":2000}\n\nprint(client.setConfig(request))",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\"accessKey\":\"new access key\",\"secretKey\":\"new secret key\",\"websocketIdleTimeout\":2000}\n\nprint(client.setConfig(request))",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Spot client;\n\n    std::cout << client.setConfig(R\"({\"accessKey\":\"new access key\",\"secretKey\":\"new secret key\",\"websocketIdleTimeout\":2000})\") << std::endl;\n    \n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.setConfig(R\"({\"accessKey\":\"new access key\",\"secretKey\":\"new secret key\",\"websocketIdleTimeout\":2000})\") << std::endl;\n    \n    return 0;\n}",
           "type": "cpp"
         }
       ],
@@ -4326,7 +4326,7 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "currently empty",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"limitBuyPrice\":\"ceil\",\n    \"limitSellBaseAmount\":\"floor\"\n}\n\nprint(client.setOrderRoundingRule(request))",
           "type": "python"
         },
         {

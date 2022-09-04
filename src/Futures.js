@@ -304,7 +304,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Futures()
+ *  
+ *  print(client.getOrderRoundingRule())
+ *  # or
+ *  print(client.getOrderRoundingRule(""))
+ *  # or
+ *  print(client.getOrderRoundingRule({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -359,7 +367,16 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Futures()
+ *  
+ *  request = {
+ *      "limitBuyPrice":"ceil",
+ *      "limitSellBaseAmount":"floor"
+ *  }
+ *  
+ *  print(client.setOrderRoundingRule(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1510,7 +1527,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Futures()
+ *  
+ *  print(client.getCandleIntervalCandidates())
+ *  # or
+ *  print(client.getCandleIntervalCandidates(""))
+ *  # or
+ *  print(client.getCandleIntervalCandidates({}))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1535,7 +1560,7 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration "PERP" or date("0930", "1015") are allowed
+ * @apiParam {String} expiration "PERP" or date([YYMMDD] format such as "220930", "221015") are allowed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {o}
  * @onexParamOption {o}
@@ -1563,25 +1588,25 @@
  *                  "baseCurrency":"BTC",
  *                  "quoteCurrency":"USDT",
  *                  "expiration":"PERP",
- *                  "symbol":"BTC-USDT"
+ *                  "symbol":"BTCUSDT"
  *              },
  *              {
  *                  "baseCurrency":"ETH",
  *                  "quoteCurrency":"USDT",
  *                  "expiration":"PERP",
- *                  "symbol":"ETH-USDT"
+ *                  "symbol":"ETHUSDT"
  *              },
  *              {
  *                  "baseCurrency":"XRP",
  *                  "quoteCurrency":"USDT",
  *                  "expiration":"PERP",
- *                  "symbol":"XRP-USDT"
+ *                  "symbol":"XRPUSDT"
  *              },
  *              {
  *                  "baseCurrency":"ADA",
  *                  "quoteCurrency":"USDT",
  *                  "expiration":"PERP",
- *                  "symbol":"ADA-USDT"
+ *                  "symbol":"ADAUSDT"
  *              },
  *              ...
  *          ]
@@ -1589,7 +1614,15 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Futures()
+ *  
+ *  request = {
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchMarkets(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1619,7 +1652,7 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration=PERP
+ * @apiParam {String} expiration=PERP "PERP" or date([YYMMDD] format such as "220930", "221015") are allowed
  * @apiParam {Bool} forceRestApi=false
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
@@ -1631,6 +1664,7 @@
  *  {
  *      "baseCurrency":"BTC",
  *      "quoteCurrency":"USDT",
+ *      "expiration":"PERP",
  *      "forceRestApi":true
  *  }
  * 
@@ -1669,7 +1703,17 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Futures()
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"PERP"
+ *  }
+ *  
+ *  print(client.fetchTicker(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1681,7 +1725,8 @@
  *      std::string request = R"(
  *          {
  *              "baseCurrency":"BTC"
- *              "quoteCurrency":"USDT"
+ *              "quoteCurrency":"USDT",
+ *              "expiration":"220930"
  *          }
  *      )";
  *  
@@ -1701,7 +1746,7 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration=PERP
+ * @apiParam {String} expiration=PERP "PERP" or date([YYMMDD] format such as "220930", "221015") are allowed
  * @apiParam {Bool} forceRestApi=false
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
@@ -1712,7 +1757,8 @@
  * @apiParamExample Request Example : 
  *  {
  *      "baseCurrency":"BTC",
- *      "quoteCurrency":"USDT"
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"220930"
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
@@ -1736,8 +1782,8 @@
  *          "requestedApiCount":0,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
- *          "expiration":"PERP",
- *          "symbol":"BTC-USDT",
+ *          "expiration":"220930",
+ *          "symbol":"BTCUSDT_220930",
  *          "fetchType":"websocket",
  *          "timestamp":1656044045154,
  *          "bids":[
@@ -1774,7 +1820,17 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Futures()
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"220930"
+ *  }
+ *  
+ *  print(client.fetchOrderbook(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1786,7 +1842,8 @@
  *      std::string request = R"(
  *          {
  *              "baseCurrency":"BTC",
- *              "quoteCurrency":"USDT"
+ *              "quoteCurrency":"USDT",
+ *              "expiration":"220930"
  *          }
  *      )";
  *  
@@ -1805,7 +1862,7 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration=PERP
+ * @apiParam {String} expiration=PERP "PERP" or date([YYMMDD] format such as "220930", "221015") are allowed
  * @apiParam {String} interval This param depends on the exchange. Please check available intervals using getCandleIntervalCandidates
  * @apiParam {Uint} startTime [s]
  * @apiParam {Uint} endTime=now [s]
@@ -1823,6 +1880,7 @@
  *  {
  *      "baseCurrency":"BTC",
  *      "quoteCurrency":"USDT",
+ *      "expiration":"PERP",
  *      "interval":"1min",
  *      "startTime":1656042045,
  *      "endTime":1656063182,
@@ -1877,7 +1935,20 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  client = OneXAPI.Binance.Futures()
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"PERP",
+ *      "interval":"3min",
+ *      "startTime":1659189600,
+ *      "fetchInterval":100
+ *  }
+ *  
+ *  print(client.fetchCandleHistory(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1890,6 +1961,7 @@
  *          {
  *              "baseCurrency":"BTC",
  *              "quoteCurrency":"USDT",
+ *              "expiration":"PERP",
  *              "interval":"3min",
  *              "startTime":1659189600,
  *              "fetchInterval":100

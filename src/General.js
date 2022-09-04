@@ -52,7 +52,7 @@
  * @apiExample {python} python
  *  import OneXAPI
  *  
- *  client = OneXAPI.Binance.Spot()
+ *  client = OneXAPI.Binance.__GENERAL__()
  * 
  *  print(client.getConfig())
  *  # or
@@ -65,7 +65,7 @@
  *  #include "OneXAPI.hpp"
  *  
  *  int main(){
- *      OneXAPI::Binance::Spot client;
+ *      OneXAPI::Binance::__GENERAL__ client;
  *  
  *      std::cout << client.getConfig() << std::endl;
  *      // or
@@ -121,7 +121,7 @@
  * @apiExample {python} python
  *  import OneXAPI
  *  
- *  client = OneXAPI.Binance.Spot()
+ *  client = OneXAPI.Binance.__GENERAL__()
  *  
  *  request = {"accessKey":"new access key","secretKey":"new secret key","websocketIdleTimeout":2000}
  *  
@@ -132,7 +132,7 @@
  *  #include "OneXAPI.hpp"
  *  
  *  int main(){
- *      OneXAPI::Binance::Spot client;
+ *      OneXAPI::Binance::__GENERAL__ client;
  *  
  *      std::cout << client.setConfig(R"({"accessKey":"new access key","secretKey":"new secret key","websocketIdleTimeout":2000})") << std::endl;
  *      
@@ -182,7 +182,7 @@
  * @apiExample {python} python
  *  import OneXAPI
  *  
- *  client = OneXAPI.Binance.Spot()
+ *  client = OneXAPI.Binance.__GENERAL__()
  *  
  *  print(client.getEndpointCandidates())
  *  # or
@@ -195,7 +195,7 @@
  *  #include "OneXAPI.hpp"
  *  
  *  int main(){
- *      OneXAPI::Binance::Spot client;
+ *      OneXAPI::Binance::__GENERAL__ client;
  *  
  *      std::cout << client.getEndpointCandidates() << std::endl;
  *      // or
@@ -236,7 +236,7 @@
  * @apiExample {python} python
  *  import OneXAPI
  *  
- *  client = OneXAPI.Binance.Spot()
+ *  client = OneXAPI.Binance.__GENERAL__()
  *  
  *  print(client.has({}))
  *  # or
@@ -249,7 +249,7 @@
  *  #include "OneXAPI.hpp"
  *  
  *  int main(){
- *      OneXAPI::Binance::Spot client;
+ *      OneXAPI::Binance::__GENERAL__ client;
  *  
  *      std::cout << client.has("{}") << std::endl;
  *      // or
