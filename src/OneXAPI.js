@@ -79,11 +79,11 @@
  *  }
  * 
  * @apiSuccess {Object} main 
- * @apiSuccess {String} main.outputMethod
- * @apiSuccess {String} main.logLevel
+ * @apiSuccess {String=terminal,file,both} main.outputMethod=terminal
+ * @apiSuccess {String=off,info,warn,error,critical} main.logLevel=off
  * @apiSuccess {Object} websocket
- * @apiSuccess {String} websocket.outputMethod
- * @apiSuccess {String} websocket.logLevel
+ * @apiSuccess {String=terminal,file,both} websocket.outputMethod=terminal
+ * @apiSuccess {String=off,info,warn,error,critical} websocket.logLevel=off
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -127,11 +127,11 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {Object} main 
- * @apiParam {String=off,info,warn,error,critical} main.logLevel=off
- * @apiParam {String=terminal,file,both} main.outputMethod=terminal terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal+file
+ * @apiParam {String=off,info,warn,error,critical} main.logLevel
+ * @apiParam {String=terminal,file,both} main.outputMethod terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file
  * @apiParam {Object} websocket 
- * @apiParam {String} websocket.logLevel 
- * @apiParam {String} websocket.outputMethod 
+ * @apiParam {String=off,info,warn,error,critical} websocket.logLevel 
+ * @apiParam {String=terminal,file,both} websocket.outputMethod terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file
  * @onexParamExchanges {all o}
  * @onexParamOption {o}
  * @onexParamOption {o}

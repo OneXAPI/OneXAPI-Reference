@@ -4478,15 +4478,29 @@ define({
             {
               "group": "Success 200",
               "type": "String",
+              "allowedValues": [
+                "terminal",
+                "file",
+                "both"
+              ],
               "optional": false,
               "field": "main.outputMethod",
+              "defaultValue": "terminal",
               "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
+              "allowedValues": [
+                "off",
+                "info",
+                "warn",
+                "error",
+                "critical"
+              ],
               "optional": false,
               "field": "main.logLevel",
+              "defaultValue": "off",
               "description": ""
             },
             {
@@ -4499,15 +4513,29 @@ define({
             {
               "group": "Success 200",
               "type": "String",
+              "allowedValues": [
+                "terminal",
+                "file",
+                "both"
+              ],
               "optional": false,
               "field": "websocket.outputMethod",
+              "defaultValue": "terminal",
               "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
+              "allowedValues": [
+                "off",
+                "info",
+                "warn",
+                "error",
+                "critical"
+              ],
               "optional": false,
               "field": "websocket.logLevel",
+              "defaultValue": "off",
               "description": ""
             }
           ]
@@ -4570,7 +4598,6 @@ define({
               ],
               "optional": false,
               "field": "main.logLevel",
-              "defaultValue": "off",
               "description": "",
               "options": [
                 "Optional"
@@ -4586,8 +4613,7 @@ define({
               ],
               "optional": false,
               "field": "main.outputMethod",
-              "defaultValue": "terminal",
-              "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal+file</p>",
+              "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file</p>",
               "options": [
                 "Optional"
               ]
@@ -4605,6 +4631,13 @@ define({
             {
               "group": "Parameter",
               "type": "String",
+              "allowedValues": [
+                "off",
+                "info",
+                "warn",
+                "error",
+                "critical"
+              ],
               "optional": false,
               "field": "websocket.logLevel",
               "description": "",
@@ -4615,9 +4648,14 @@ define({
             {
               "group": "Parameter",
               "type": "String",
+              "allowedValues": [
+                "terminal",
+                "file",
+                "both"
+              ],
               "optional": false,
               "field": "websocket.outputMethod",
-              "description": "",
+              "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file</p>",
               "options": [
                 "Optional"
               ]
