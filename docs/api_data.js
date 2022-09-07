@@ -1460,6 +1460,13 @@ define({
               "group": "Success 200",
               "type": "String",
               "optional": false,
+              "field": "openOrders.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
               "field": "openOrders.symbol",
               "description": ""
             },

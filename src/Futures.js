@@ -969,6 +969,7 @@
  * @apiSuccess {ObjectArray} openOrders
  * @apiSuccess {String} openOrders.baseCurrency
  * @apiSuccess {String} openOrders.quoteCurrency
+ * @apiSuccess {String} openOrders.expiration
  * @apiSuccess {String} openOrders.symbol
  * @apiSuccess {String} openOrders.orderId
  * @apiSuccess {String=buy,sell} openOrders.side
