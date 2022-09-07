@@ -980,8 +980,6 @@
  * @apiSuccess {DoubleString} openOrders.remainingAmount
  * @apiSuccess {DoubleString} openOrders.originalPrice
  * @apiSuccess {Uint} openOrders.created [ms]
- * @apiSuccess {String} openOrders.lockedCurrency
- * @apiSuccess {DoubleString} openOrders.lockedAmount
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -992,7 +990,8 @@
  *              {
  *                  "baseCurrency":"BTC",
  *                  "quoteCurrency":"USDT",
- *                  "symbol":"BTC-USDT",
+ *                  "expiration":"PERP",
+ *                  "symbol":"BTCUSDT",
  *                  "orderId":"38463215",
  *                  "side":"buy",
  *                  "positionSide":"long",
@@ -1001,9 +1000,7 @@
  *                  "filledAmount":"0.3686",
  *                  "remainingAmount":"1.2298",
  *                  "originalPrice":"22135.35",
- *                  "created":1656044045,
- *                  "lockedCurrency":"USDT",
- *                  "lockedAmount":"27222.05343"
+ *                  "created":1656044045
  *              }
  *          ]
  *      }

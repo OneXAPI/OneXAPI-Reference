@@ -1540,27 +1540,13 @@ define({
               "optional": false,
               "field": "openOrders.created",
               "description": "<p>[ms]</p>"
-            },
-            {
-              "group": "Success 200",
-              "type": "String",
-              "optional": false,
-              "field": "openOrders.lockedCurrency",
-              "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "DoubleString",
-              "optional": false,
-              "field": "openOrders.lockedAmount",
-              "description": ""
             }
           ]
         },
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":2,\n        \"openOrders\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"symbol\":\"BTC-USDT\",\n                \"orderId\":\"38463215\",\n                \"side\":\"buy\",\n                \"positionSide\":\"long\",\n                \"reduceOnly\":false,\n                \"originalAmount\":\"1.5984\",\n                \"filledAmount\":\"0.3686\",\n                \"remainingAmount\":\"1.2298\",\n                \"originalPrice\":\"22135.35\",\n                \"created\":1656044045,\n                \"lockedCurrency\":\"USDT\",\n                \"lockedAmount\":\"27222.05343\"\n            }\n        ]\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":2,\n        \"openOrders\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"orderId\":\"38463215\",\n                \"side\":\"buy\",\n                \"positionSide\":\"long\",\n                \"reduceOnly\":false,\n                \"originalAmount\":\"1.5984\",\n                \"filledAmount\":\"0.3686\",\n                \"remainingAmount\":\"1.2298\",\n                \"originalPrice\":\"22135.35\",\n                \"created\":1656044045\n            }\n        ]\n    }\n}",
             "type": "json"
           }
         ]
