@@ -1122,7 +1122,7 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration=PERP
+ * @apiParam {String} expiration
  * @onexParamExchanges {Binance o}
  * @onexParamOption {o}
  * @onexParamOption {o}
