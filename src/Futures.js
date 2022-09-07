@@ -1123,10 +1123,10 @@
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration
- * @onexParamExchanges {Binance o}
- * @onexParamOption {o}
- * @onexParamOption {o}
- * @onexParamOption {o}
+ * @onexParamExchanges {Binance x}
+ * @onexParamOption {f}
+ * @onexParamOption {f}
+ * @onexParamOption {f}
  * 
  * @apiParamExample Request Example : 
  *  {

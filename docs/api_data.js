@@ -851,7 +851,7 @@ define({
               "field": "baseCurrency",
               "description": "",
               "options": [
-                "Optional"
+                "Forbidden"
               ]
             },
             {
@@ -861,7 +861,7 @@ define({
               "field": "quoteCurrency",
               "description": "",
               "options": [
-                "Optional"
+                "Forbidden"
               ]
             },
             {
@@ -871,7 +871,7 @@ define({
               "field": "expiration",
               "description": "",
               "options": [
-                "Optional"
+                "Forbidden"
               ]
             }
           ]
@@ -968,7 +968,7 @@ define({
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "exchanges": {
-        "Binance": "supported"
+        "Binance": "unsupported"
       }
     },
     {
