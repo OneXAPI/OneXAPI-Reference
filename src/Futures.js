@@ -950,7 +950,7 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration=PERP
+ * @apiParam {String} expiration
  * @apiParam {String=buy,sell} side
  * @onexParamExchanges {Binance o}
  * @onexParamOption {o}

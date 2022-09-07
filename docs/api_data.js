@@ -1396,7 +1396,6 @@ define({
               "type": "String",
               "optional": false,
               "field": "expiration",
-              "defaultValue": "PERP",
               "description": "",
               "options": [
                 "Optional"
