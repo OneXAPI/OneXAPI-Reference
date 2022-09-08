@@ -1362,10 +1362,10 @@
  * 
  * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} marginTypes
- * @apiSuccess {String} marginTypes.baseCurrency If this field is empty, all symbols have the same leverage
- * @apiSuccess {String} marginTypes.quoteCurrency If this field is empty, all symbols have the same leverage
- * @apiSuccess {String} marginTypes.expiration If this field is empty, all symbols have the same leverage
- * @apiSuccess {String} marginTypes.symbol If this field is empty, all symbols have the same leverage
+ * @apiSuccess {String} marginTypes.baseCurrency
+ * @apiSuccess {String} marginTypes.quoteCurrency
+ * @apiSuccess {String} marginTypes.expiration
+ * @apiSuccess {String} marginTypes.symbol
  * @apiSuccess {String=cross,isolated} marginTypes.marginType
  * 
  * @apiSuccessExample Success-Response :
@@ -1439,11 +1439,11 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {String} baseCurrency If this field is empty, all symbols have the same leverage
- * @apiSuccess {String} quoteCurrency If this field is empty, all symbols have the same leverage
- * @apiSuccess {String} expiration If this field is empty, all symbols have the same leverage
- * @apiSuccess {String} symbol If this field is empty, all symbols have the same leverage
- * @apiSuccess {String} marginType
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} expiration
+ * @apiSuccess {String} symbol
+ * @apiSuccess {String=cross,isolated} marginType
  * 
  * @apiSuccessExample Success-Response :
  *  {

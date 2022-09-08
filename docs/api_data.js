@@ -262,32 +262,36 @@ define({
               "type": "String",
               "optional": false,
               "field": "baseCurrency",
-              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+              "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
               "optional": false,
               "field": "quoteCurrency",
-              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+              "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
               "optional": false,
               "field": "expiration",
-              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+              "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
               "optional": false,
               "field": "symbol",
-              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+              "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
+              "allowedValues": [
+                "cross",
+                "isolated"
+              ],
               "optional": false,
               "field": "marginType",
               "description": ""
@@ -1175,28 +1179,28 @@ define({
               "type": "String",
               "optional": false,
               "field": "marginTypes.baseCurrency",
-              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+              "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
               "optional": false,
               "field": "marginTypes.quoteCurrency",
-              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+              "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
               "optional": false,
               "field": "marginTypes.expiration",
-              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+              "description": ""
             },
             {
               "group": "Success 200",
               "type": "String",
               "optional": false,
               "field": "marginTypes.symbol",
-              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+              "description": ""
             },
             {
               "group": "Success 200",
