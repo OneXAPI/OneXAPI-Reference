@@ -1,5 +1,10 @@
 import OneXAPI
 
-print(OneXAPI.setLoggerConfig('{"main":{"logLevel":"info"}}'))  #str
-# or
-print(OneXAPI.setLoggerConfig({"websocket":{"outputMethod":"both"}}))   #dict
+client = OneXAPI.Binance.Spot()
+
+request = {
+    "limitBuyPrice":"ceil",
+    "limitSellBaseAmount":"floor"
+}
+
+print(client.setOrderRoundingRule(request))

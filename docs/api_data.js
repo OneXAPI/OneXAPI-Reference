@@ -354,6 +354,17 @@ define({
               "options": [
                 "Optional"
               ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "zeroBalance",
+              "defaultValue": "false",
+              "description": "<p>Whether to include assets with zero balance</p>",
+              "options": [
+                "Optional"
+              ]
             }
           ]
         },

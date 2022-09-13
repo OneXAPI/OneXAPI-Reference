@@ -14,7 +14,9 @@
  *
  * @apiParam {Bool} forceRestApi=false force to update using REST API
  * @apiParam {StringArray} currencies If not exist, return all currencies
+ * @apiParam {Bool} zeroBalance=false Whether to include assets with zero balance
  * @onexParamExchanges {Binance o}
+ * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * 
