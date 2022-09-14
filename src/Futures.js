@@ -97,9 +97,7 @@
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration
- * @apiParam {String=buy,sell} side
  * @onexParamExchanges {Binance o}
- * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
@@ -116,7 +114,7 @@
  * @apiSuccess {String} positions.quoteCurrency
  * @apiSuccess {String} positions.expiration
  * @apiSuccess {String} positions.symbol
- * @apiSuccess {DoubleString} positions.initialMargin
+ * @apiSuccess {DoubleString} positions.initialMargin If the marginType is 'cross', this field will be 0
  * @apiSuccess {DoubleString} positions.unrealizedProfit
  * @apiSuccess {DoubleString} positions.entryPrice
  * @apiSuccess {DoubleString} positions.positionAmt positive means long position, negative means short position

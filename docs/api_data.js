@@ -2096,20 +2096,6 @@ define({
               "options": [
                 "Optional"
               ]
-            },
-            {
-              "group": "Parameter",
-              "type": "String",
-              "allowedValues": [
-                "buy",
-                "sell"
-              ],
-              "optional": false,
-              "field": "side",
-              "description": "",
-              "options": [
-                "Optional"
-              ]
             }
           ]
         },
@@ -2171,7 +2157,7 @@ define({
               "type": "DoubleString",
               "optional": false,
               "field": "positions.initialMargin",
-              "description": ""
+              "description": "<p>If the marginType is 'cross', this field will be 0</p>"
             },
             {
               "group": "Success 200",
