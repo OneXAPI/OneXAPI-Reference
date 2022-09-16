@@ -3029,6 +3029,200 @@ define({
     {
       "type": "onex",
       "url": "/Futures",
+      "title": "getSubscribingOrderbooks",
+      "name": "getSubscribingOrderbooks",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "orderbooks",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"orderbooks\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nprint(client.getSubscribingOrderbooks())\n# or\nprint(client.getSubscribingOrderbooks(\"\"))\n# or\nprint(client.getSubscribingOrderbooks({}))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.getSubscribingOrderbooks() << std::endl;\n    // or\n    std::cout << client.getSubscribingOrderbooks(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Returns orderbook symbols being received on websocket",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "getSubscribingTickers",
+      "name": "getSubscribingTickers",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "tickers",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"tickers\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nprint(client.getSubscribingTickers())\n# or\nprint(client.getSubscribingTickers(\"\"))\n# or\nprint(client.getSubscribingTickers({}))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.getSubscribingTickers() << std::endl;\n    // or\n    std::cout << client.getSubscribingTickers(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Returns ticker symbols being received on websocket",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
       "title": "has",
       "name": "has",
       "group": "Futures",
@@ -3098,6 +3292,75 @@ define({
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "info": "Check if API exists or not",
+      "exchanges": {
+        "All": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "isSubscribingBalance",
+      "name": "isSubscribingBalance",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "isSubscribing",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"isSubscribing\": true\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nprint(client.isSubscribingBalance())\n# or\nprint(client.isSubscribingBalance(\"\"))\n# or\nprint(client.isSubscribingBalance({}))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.isSubscribingBalance() << std::endl;\n    // or\n    std::cout << client.isSubscribingBalance(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Returns whether balance is being updated via websocket",
       "exchanges": {
         "All": "supported"
       }
@@ -4331,6 +4594,884 @@ define({
       "groupTitle": "Futures",
       "exchanges": {
         "All": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "subscribeBalance",
+      "name": "subscribeBalance",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nprint(client.subscribeBalance())\n# or\nprint(client.subscribeBalance(\"\"))\n# or\nprint(client.subscribeBalance({}))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.subscribeBalance() << std::endl;\n    // or\n    std::cout << client.subscribeBalance(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Start updating balance via websocket",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "subscribeOrderbook",
+      "name": "subscribeOrderbook",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "market",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.baseCurrency",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.quoteCurrency",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "reconnect",
+              "defaultValue": "false",
+              "description": "<p>If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed</p>",
+              "options": [
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>",
+              "options": [
+                "Optional"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\":\"ETH\",\n            \"quoteCurrency\":\"USDT\",\n            \"expiration\":\"220930\"\n        }\n    ],\n    \"reconnect\":false,\n    \"requestTimeout\":2500\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ]\n}\n\nprint(client.subscribeOrderbook(request))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"market\":[\n                {\n                    \"baseCurrency\": \"BTC\",\n                    \"quoteCurrency\": \"USDT\"\n                },\n                {\n                    \"baseCurrency\": \"ETH\",\n                    \"quoteCurrency\": \"USDT\"\n                }\n            ]\n        }\n    )\";\n    std::cout << client.subscribeOrderbook(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Start updating orderbooks via websocket",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "subscribeTicker",
+      "name": "subscribeTicker",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "market",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.baseCurrency",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.quoteCurrency",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "reconnect",
+              "defaultValue": "false",
+              "description": "<p>If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed</p>",
+              "options": [
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>",
+              "options": [
+                "Optional"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"market\":[\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        },\n        {\n            \"baseCurrency\":\"ETH\",\n            \"quoteCurrency\":\"USDT\",\n            \"expiration\":\"220930\"\n        }\n    ],\n    \"reconnect\":false,\n    \"requestTimeout\":2500\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\":\"ETH\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"220930\",\n                \"symbol\":\"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ]\n}\n\nprint(client.subscribeTicker(request))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"market\":[\n                {\n                    \"baseCurrency\": \"BTC\",\n                    \"quoteCurrency\": \"USDT\"\n                },\n                {\n                    \"baseCurrency\": \"ETH\",\n                    \"quoteCurrency\": \"USDT\"\n                }\n            ]\n        }\n    )\";\n    std::cout << client.subscribeTicker(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Start updating tickers via websocket",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "unsubscribeBalance",
+      "name": "unsubscribeBalance",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": "",
+              "options": [
+                "Ignored"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nprint(client.unsubscribeBalance())\n# or\nprint(client.unsubscribeBalance(\"\"))\n# or\nprint(client.unsubscribeBalance({}))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::cout << client.unsubscribeBalance() << std::endl;\n    // or\n    std::cout << client.unsubscribeBalance(\"\") << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Stop updating balance via websocket",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "unsubscribeOrderbook",
+      "name": "unsubscribeOrderbook",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "market",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.baseCurrency",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.quoteCurrency",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "reconnect",
+              "defaultValue": "false",
+              "description": "<p>If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed</p>",
+              "options": [
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>",
+              "options": [
+                "Optional"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"market\":[\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        },\n        {\n            \"baseCurrency\":\"ETH\",\n            \"quoteCurrency\":\"USDT\",\n            \"expiration\":\"220930\"\n        }\n    ],\n    \"reconnect\":false,\n    \"requestTimeout\":2500\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ]\n}\n\nprint(client.unsubscribeOrderbook(request))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"market\":[\n                {\n                    \"baseCurrency\": \"BTC\",\n                    \"quoteCurrency\": \"USDT\"\n                },\n                {\n                    \"baseCurrency\": \"ETH\",\n                    \"quoteCurrency\": \"USDT\"\n                }\n            ]\n        }\n    )\";\n    std::cout << client.unsubscribeOrderbook(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Stop updating orderbooks via websocket",
+      "exchanges": {
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "unsubscribeTicker",
+      "name": "unsubscribeTicker",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "market",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.baseCurrency",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.quoteCurrency",
+              "description": "",
+              "options": [
+                "Mandatory"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "market.expiration",
+              "defaultValue": "PERP",
+              "description": "",
+              "options": [
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "reconnect",
+              "defaultValue": "false",
+              "description": "<p>If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed</p>",
+              "options": [
+                "Optional"
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>",
+              "options": [
+                "Optional"
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"market\":[\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        },\n        {\n            \"baseCurrency\":\"ETH\",\n            \"quoteCurrency\":\"USDT\",\n            \"expiration\":\"220930\"\n        }\n    ],\n    \"reconnect\":false,\n    \"requestTimeout\":2500\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\":\"229030\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nclient = OneXAPI.Binance.Futures()\n\nrequest = {\n    \"market\":[\n        {\n            \"baseCurrency\": \"BTC\",\n            \"quoteCurrency\": \"USDT\"\n        },\n        {\n            \"baseCurrency\": \"ETH\",\n            \"quoteCurrency\": \"USDT\"\n        }\n    ]\n}\n\nprint(client.unsubscribeTicker(request))",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    OneXAPI::Binance::Futures client;\n\n    std::string request = R\"(\n        {\n            \"market\":[\n                {\n                    \"baseCurrency\": \"BTC\",\n                    \"quoteCurrency\": \"USDT\"\n                },\n                {\n                    \"baseCurrency\": \"ETH\",\n                    \"quoteCurrency\": \"USDT\"\n                }\n            ]\n        }\n    )\";\n    std::cout << client.unsubscribeTicker(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "info": "Stop updating tickers via websocket",
+      "exchanges": {
+        "Binance": "supported"
       }
     },
     {
@@ -7341,7 +8482,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"orderbooks\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"orderbooks\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
             "type": "json"
           }
         ]
@@ -7433,7 +8574,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"tickers\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"tickers\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
             "type": "json"
           }
         ]
@@ -7762,9 +8903,9 @@ define({
           "Response : ": [
             {
               "group": "Success 200",
-              "type": "NoParam",
+              "type": "Bool",
               "optional": false,
-              "field": "",
+              "field": "isSubscribing",
               "description": ""
             }
           ]
@@ -9101,7 +10242,7 @@ define({
               "group": "Parameter",
               "type": "String",
               "optional": false,
-              "field": "baseCurrency",
+              "field": "market.baseCurrency",
               "description": "",
               "options": [
                 "Mandatory",
@@ -9112,7 +10253,7 @@ define({
               "group": "Parameter",
               "type": "String",
               "optional": false,
-              "field": "quoteCurrency",
+              "field": "market.quoteCurrency",
               "description": "",
               "options": [
                 "Mandatory",
@@ -9267,7 +10408,7 @@ define({
               "group": "Parameter",
               "type": "String",
               "optional": false,
-              "field": "baseCurrency",
+              "field": "market.baseCurrency",
               "description": "",
               "options": [
                 "Mandatory",
@@ -9278,7 +10419,7 @@ define({
               "group": "Parameter",
               "type": "String",
               "optional": false,
-              "field": "quoteCurrency",
+              "field": "market.quoteCurrency",
               "description": "",
               "options": [
                 "Mandatory",
@@ -9504,7 +10645,7 @@ define({
               "group": "Parameter",
               "type": "String",
               "optional": false,
-              "field": "baseCurrency",
+              "field": "market.baseCurrency",
               "description": "",
               "options": [
                 "Mandatory",
@@ -9515,7 +10656,7 @@ define({
               "group": "Parameter",
               "type": "String",
               "optional": false,
-              "field": "quoteCurrency",
+              "field": "market.quoteCurrency",
               "description": "",
               "options": [
                 "Mandatory",
@@ -9670,7 +10811,7 @@ define({
               "group": "Parameter",
               "type": "String",
               "optional": false,
-              "field": "baseCurrency",
+              "field": "market.baseCurrency",
               "description": "",
               "options": [
                 "Mandatory",
@@ -9681,7 +10822,7 @@ define({
               "group": "Parameter",
               "type": "String",
               "optional": false,
-              "field": "quoteCurrency",
+              "field": "market.quoteCurrency",
               "description": "",
               "options": [
                 "Mandatory",

@@ -942,7 +942,7 @@
  *  {
  *  }
  * 
- * @apiSuccess {NoParam} __EMPTY__
+ * @apiSuccess {Bool} isSubscribing 
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -2392,7 +2392,7 @@
  *              {
  *                  "baseCurrency": "BTC",
  *                  "quoteCurrency": "USDT",
- *                  "symbol": "ETH-USDT"
+ *                  "symbol": "BTC-USDT"
  *              },
  *              {
  *                  "baseCurrency": "ETH",
@@ -2457,7 +2457,7 @@
  *              {
  *                  "baseCurrency": "BTC",
  *                  "quoteCurrency": "USDT",
- *                  "symbol": "ETH-USDT"
+ *                  "symbol": "BTC-USDT"
  *              },
  *              {
  *                  "baseCurrency": "ETH",
@@ -2502,8 +2502,8 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {ObjectArray} market
- * @apiParam {String} baseCurrency
- * @apiParam {String} quoteCurrency
+ * @apiParam {String} market.baseCurrency
+ * @apiParam {String} market.quoteCurrency
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
  * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
  * @onexParamExchanges {Binance o} {Upbit o}
@@ -2614,8 +2614,8 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {ObjectArray} market
- * @apiParam {String} baseCurrency
- * @apiParam {String} quoteCurrency
+ * @apiParam {String} market.baseCurrency
+ * @apiParam {String} market.quoteCurrency
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
  * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
  * @onexParamExchanges {Binance o} {Upbit o}
@@ -2726,8 +2726,8 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {ObjectArray} market
- * @apiParam {String} baseCurrency
- * @apiParam {String} quoteCurrency
+ * @apiParam {String} market.baseCurrency
+ * @apiParam {String} market.quoteCurrency
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
  * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
  * @onexParamExchanges {Binance o} {Upbit o}
@@ -2838,8 +2838,8 @@
  * @apiVersion 0.0.0
  *
  * @apiParam {ObjectArray} market
- * @apiParam {String} baseCurrency
- * @apiParam {String} quoteCurrency
+ * @apiParam {String} market.baseCurrency
+ * @apiParam {String} market.quoteCurrency
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
  * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
  * @onexParamExchanges {Binance o} {Upbit o}

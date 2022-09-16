@@ -29,11 +29,11 @@ define({
     "fetchDepositHistory",
     "fetchDepositAddress",
     "isDepositCompleted",
+    "fetchPositions",
+    "fetchFundingFeeIncomeHistory",
     "subscribeBalance",
     "unsubscribeBalance",
     "isSubscribingBalance",
-    "fetchPositions",
-    "fetchFundingFeeIncomeHistory",
     "Trade",
     "getOrderRoundingRule",
     "setOrderRoundingRule",
@@ -69,7 +69,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2022-09-14T07:57:25.444Z",
+    "time": "2022-09-16T08:25:50.544Z",
     "url": "https://apidocjs.com",
     "version": "0.29.0"
   }
