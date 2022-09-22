@@ -60,19 +60,23 @@ for group in group_list :
             elif "@onexParamOption " in line:
                 apiExchangeInfo[group][apiName]["options"].append([])
                 for option in line.split("@onexParamOption")[-1].split("{"):
-                    option = option.replace(" ","").split("}")[0]
-                    if option:
-                        option = option.upper()
+                    not_empty_check = option.replace(" ","")
+                    if not_empty_check:
+                        option = option.split("}")[0]
+                        description = option[2:]
+                        option = option[0:1].upper()
                         if option == "M":
-                            apiExchangeInfo[group][apiName]["options"][-1].append("Mandatory")
+                            apiExchangeInfo[group][apiName]["options"][-1].append(["Mandatory"])
                         elif option == "O":
-                            apiExchangeInfo[group][apiName]["options"][-1].append("Optional")
+                            apiExchangeInfo[group][apiName]["options"][-1].append(["Optional"])
                         elif option == "I":
-                            apiExchangeInfo[group][apiName]["options"][-1].append("Ignored")
+                            apiExchangeInfo[group][apiName]["options"][-1].append(["Ignored"])
                         elif option == "F":
-                            apiExchangeInfo[group][apiName]["options"][-1].append("Forbidden")
+                            apiExchangeInfo[group][apiName]["options"][-1].append(["Forbidden"])
                         else:
                             error("Not allowed option : " + option + "    api : " + apiName)
+                        if description:
+                            apiExchangeInfo[group][apiName]["options"][-1][-1].append(description)
                         
                 if len(apiExchangeInfo[group][apiName]["options"][-1]) != len(apiExchangeInfo[group][apiName]["exchanges"].keys()):
                     error("Option size is wrong : " + apiName)

@@ -1204,7 +1204,7 @@ pre .typ-options {
 }
 
 .tooltipOption .tooltip-left::after {
-  top: 50%;
+  top: 1.25em;
   left: 100%;
   margin-top: -5px;
   border-color: transparent transparent transparent black;

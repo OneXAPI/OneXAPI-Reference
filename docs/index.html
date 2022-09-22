@@ -292,12 +292,24 @@
           </td>
           {{#each options}}
             <td>
-              <div class="tooltipOption">
-              <img src="img/{{this}}.png" alt="{{this}}" class="optionimg">
-              <span class="tooltiptext tooltip-left">
-                {{this}}
-              </span>
-              </div>
+              {{#each this}}
+                {{#if_eq @index compare=0}}
+                  <div class="tooltipOption">
+                  <img src="img/{{this}}.png" alt="{{this}}" class="optionimg">
+                  <span class="tooltiptext tooltip-left">
+                    {{this}}
+                  </span>
+                  </div>
+                {{/if_eq}}
+                {{#if_eq @index compare=1}}
+                  <div class="tooltipOption">
+                  <img src="img/question.png" alt="hint" class="optionimg">
+                  <span class="tooltiptext tooltip-left">
+                    {{this}}
+                  </span>
+                  </div>
+                {{/if_eq}}
+              {{/each}}
             </td>
           {{/each}}
         </tr>
