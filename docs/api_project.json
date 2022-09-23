@@ -56,8 +56,11 @@
     "fetchTicker",
     "fetchOrderbook",
     "fetchCandleHistory",
+    "getSubscribingMarketInfo",
     "getSubscribingTickers",
     "getSubscribingOrderbooks",
+    "subscribeMarketInfo",
+    "unsubscribeMarketInfo",
     "subscribeTicker",
     "unsubscribeTicker",
     "subscribeOrderbook",
@@ -69,7 +72,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2022-09-23T03:25:28.565Z",
+    "time": "2022-09-23T04:47:03.499Z",
     "url": "https://apidocjs.com",
     "version": "0.29.0"
   }
