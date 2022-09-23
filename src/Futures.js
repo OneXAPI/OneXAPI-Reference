@@ -32,8 +32,6 @@
  * @apiSuccess {Object} [balance.currency__name]
  * @apiSuccess {DoubleString} balance.currency.balance wallet balance
  * @apiSuccess {DoubleString} balance.currency.crossWalletBalance crossed wallet balance
- * @apiSuccess {DoubleString} balance.currency.crossUnPnl unrealized profit of crossed positions
- * @apiSuccess {DoubleString} balance.currency.availableBalance available balance
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -44,15 +42,11 @@
  *          "balance":{
  *              "BTC":{
  *                  "balance":"3.15437",
- *                  "crossWalletBalance":"1.1357",
- *                  "crossUnPnl":"0.0",
- *                  "availableBalance":"1.1357"
+ *                  "crossWalletBalance":"1.1357"
  *              },
  *              "ETH":{
  *                  "balance":"124.8435",
- *                  "crossWalletBalance":"83.5831",
- *                  "crossUnPnl":"3.8354",
- *                  "availableBalance":"83.5831"
+ *                  "crossWalletBalance":"83.5831"
  *              }
  *          }
  *      }
@@ -97,7 +91,9 @@
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration
+ * @apiParam {Bool} forceRestApi=false force to update using REST API
  * @onexParamExchanges {Binance o}
+ * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
@@ -109,12 +105,12 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 
+ * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {ObjectArray} positions 
  * @apiSuccess {String} positions.baseCurrency
  * @apiSuccess {String} positions.quoteCurrency
  * @apiSuccess {String} positions.expiration
  * @apiSuccess {String} positions.symbol
- * @apiSuccess {DoubleString} positions.initialMargin If the marginType is 'cross', this field will be 0
  * @apiSuccess {DoubleString} positions.unrealizedProfit
  * @apiSuccess {DoubleString} positions.entryPrice
  * @apiSuccess {DoubleString} positions.positionAmt positive means long position, negative means short position
@@ -126,13 +122,13 @@
  *      "success":true,
  *      "data":{
  *          "requestedApiCount":1,
+ *          "fetchType":"rest",
  *          "positions":[
  *              {
  *                  "baseCurrency":"BTC",
  *                  "quoteCurrency":"USDT",
  *                  "expiration":"PERP",
  *                  "symbol":"BTCUSDT",
- *                  "initialMargin":"1235.13586",
  *                  "unrealizedProfit":"10.23854",
  *                  "entryPrice":"21752.12",
  *                  "positionAmt":"1.235",
@@ -1281,83 +1277,6 @@
  */
 
 /**
- * @api {onex} /Futures fetchFundingRate
- * @apiName fetchFundingRate
- * @apiGroup Futures
- * @apiVersion 0.0.0
- *
- * @apiParam {String} baseCurrency
- * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration
- * @onexParamExchanges {Binance x}
- * @onexParamOption {f}
- * @onexParamOption {f}
- * @onexParamOption {f}
- * 
- * @apiParamExample Request Example : 
- *  {
- *      "baseCurrency":"BTC",
- *      "quoteCurrency":"USDT"
- *  }
- * 
- * @apiSuccess {Uint} requestedApiCount
- * @apiSuccess {ObjectArray} fundingRates
- * @apiSuccess {String} fundingRates.baseCurrency
- * @apiSuccess {String} fundingRates.quoteCurrency
- * @apiSuccess {String} fundingRates.expiration
- * @apiSuccess {String} fundingRates.symbol
- * @apiSuccess {DoubleString} fundingRates.rate
- * @apiSuccess {Uint} fundingRates.time [s]
- * 
- * @apiSuccessExample Success-Response :
- *  {
- *      "success":true,
- *      "data":{
- *          "requestedApiCount":1,
- *          "fundingRates":[
- *              {
- *                  "baseCurrency":"BTC",
- *                  "quoteCurrency":"USDT",
- *                  "expiration":"PERP",
- *                  "symbol":"BTCUSDT",
- *                  "rate":"0.0025",
- *                  "time":1661406463
- *              }
- *          ]
- *      }
- *  }
- *
- * @apiExample {python} python
- *  currently empty
- * 
- * @apiExample {cpp} c++
- *  #include <iostream>
- *  #include "OneXAPI.hpp"
- *  
- *  int main(){
- *      std::string userInfo = R"(
- *          {
- *              "accessKey":"user access key",
- *              "secretKey":"user secrey key"
- *          }
- *      )";
- *  
- *      OneXAPI::Binance::Futures client(userInfo)__;
- *  
- *      std::string request = R"(
- *          {
- *              "baseCurrency":"BTC",
- *              "quoteCurrency":"USDT"
- *          }
- *      )";
- *  
- *      std::cout << client.fetchFundingRate(request) << std::endl;
- *      
- *      return 0;
- *  }
- */
-
-/**
  * @api {onex} /Futures fetchLeverage
  * @apiName fetchLeverage
  * @apiGroup Futures
@@ -1365,11 +1284,13 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration=PERP
- * @onexParamExchanges {Binance x}
- * @onexParamOption {f}
- * @onexParamOption {f}
- * @onexParamOption {f}
+ * @apiParam {String} expiration
+ * @apiParam {Bool} forceRestApi=false
+ * @onexParamExchanges {Binance o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
  * 
  * @apiParamExample Request Example : 
  *  {
@@ -1378,6 +1299,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {ObjectArray} leverages
  * @apiSuccess {String} leverages.baseCurrency If this field is empty, all symbols have the same leverage
  * @apiSuccess {String} leverages.quoteCurrency If this field is empty, all symbols have the same leverage
@@ -1390,6 +1312,7 @@
  *      "success":true,
  *      "data":{
  *          "requestedApiCount":1,
+ *          "fetchType":"rest",
  *          "leverages":[
  *              {
  *                  "baseCurrency":"BTC",
@@ -1514,11 +1437,13 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration=PERP
- * @onexParamExchanges {Binance x}
- * @onexParamOption {f}
- * @onexParamOption {f}
- * @onexParamOption {f}
+ * @apiParam {String} expiration
+ * @apiParam {Bool} forceRestApi=false
+ * @onexParamExchanges {Binance o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
  * 
  * @apiParamExample Request Example : 
  *  {
@@ -1527,6 +1452,7 @@
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {ObjectArray} marginTypes
  * @apiSuccess {String} marginTypes.baseCurrency
  * @apiSuccess {String} marginTypes.quoteCurrency
@@ -1539,6 +1465,7 @@
  *      "success":true,
  *      "data":{
  *          "requestedApiCount":1,
+ *          "fetchType":"websocket",
  *          "marginTypes":[
  *              {
  *                  "baseCurrency":"BTC",
@@ -1802,6 +1729,89 @@
  *      )";
  *  
  *      std::cout << client.fetchMarkets(request) << std::endl;
+ *      
+ *      return 0;
+ *  }
+ */
+
+/**
+ * @api {onex} /Futures fetchMarketInfo
+ * @apiName fetchMarketInfo
+ * @apiGroup Futures
+ * @apiVersion 0.0.0
+ *
+ * @apiParam {String} baseCurrency
+ * @apiParam {String} quoteCurrency
+ * @apiParam {String} expiration
+ * @apiParam {Bool} forceRestApi=false
+ * @onexParamExchanges {Binance o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
+ * 
+ * @apiParamExample Request Example : 
+ *  {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ * 
+ * @apiSuccess {Uint} requestedApiCount
+ * @apiSuccess {String=rest,websocket} fetchType
+ * @apiSuccess {ObjectArray} marketInfo
+ * @apiSuccess {String} marketInfo.baseCurrency
+ * @apiSuccess {String} marketInfo.quoteCurrency
+ * @apiSuccess {String} marketInfo.expiration
+ * @apiSuccess {String} marketInfo.symbol
+ * @apiSuccess {DoubleString} marketInfo.markPrice
+ * @apiSuccess {DoubleString} marketInfo.fundingRate
+ * @apiSuccess {Uint} marketInfo.nextFundingTime [s]
+ * 
+ * @apiSuccessExample Success-Response :
+ *  {
+ *      "success":true,
+ *      "data":{
+ *          "requestedApiCount":1,
+ *          "fetchType":"rest",
+ *          "marketInfo":[
+ *              {
+ *                  "baseCurrency":"BTC",
+ *                  "quoteCurrency":"USDT",
+ *                  "expiration":"PERP",
+ *                  "symbol":"BTCUSDT",
+ *                  "markPrice":"19358.15",
+ *                  "fundingRate":"0.0025",
+ *                  "nextFundingTime":1661406463
+ *              }
+ *          ]
+ *      }
+ *  }
+ *
+ * @apiExample {python} python
+ *  currently empty
+ * 
+ * @apiExample {cpp} c++
+ *  #include <iostream>
+ *  #include "OneXAPI.hpp"
+ *  
+ *  int main(){
+ *      std::string userInfo = R"(
+ *          {
+ *              "accessKey":"user access key",
+ *              "secretKey":"user secrey key"
+ *          }
+ *      )";
+ *  
+ *      OneXAPI::Binance::Futures client(userInfo)__;
+ *  
+ *      std::string request = R"(
+ *          {
+ *              "baseCurrency":"BTC",
+ *              "quoteCurrency":"USDT"
+ *          }
+ *      )";
+ *  
+ *      std::cout << client.fetchMarketInfo(request) << std::endl;
  *      
  *      return 0;
  *  }

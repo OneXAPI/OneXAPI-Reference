@@ -446,27 +446,13 @@ define({
               "optional": false,
               "field": "balance.currency.crossWalletBalance",
               "description": "<p>crossed wallet balance</p>"
-            },
-            {
-              "group": "Success 200",
-              "type": "DoubleString",
-              "optional": false,
-              "field": "balance.currency.crossUnPnl",
-              "description": "<p>unrealized profit of crossed positions</p>"
-            },
-            {
-              "group": "Success 200",
-              "type": "DoubleString",
-              "optional": false,
-              "field": "balance.currency.availableBalance",
-              "description": "<p>available balance</p>"
             }
           ]
         },
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"rest\",\n        \"balance\":{\n            \"BTC\":{\n                \"balance\":\"3.15437\",\n                \"crossWalletBalance\":\"1.1357\",\n                \"crossUnPnl\":\"0.0\",\n                \"availableBalance\":\"1.1357\"\n            },\n            \"ETH\":{\n                \"balance\":\"124.8435\",\n                \"crossWalletBalance\":\"83.5831\",\n                \"crossUnPnl\":\"3.8354\",\n                \"availableBalance\":\"83.5831\"\n            }\n        }\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"rest\",\n        \"balance\":{\n            \"BTC\":{\n                \"balance\":\"3.15437\",\n                \"crossWalletBalance\":\"1.1357\"\n            },\n            \"ETH\":{\n                \"balance\":\"124.8435\",\n                \"crossWalletBalance\":\"83.5831\"\n            }\n        }\n    }\n}",
             "type": "json"
           }
         ]
@@ -898,149 +884,6 @@ define({
     {
       "type": "onex",
       "url": "/Futures",
-      "title": "fetchFundingRate",
-      "name": "fetchFundingRate",
-      "group": "Futures",
-      "version": "0.0.0",
-      "parameter": {
-        "fields": {
-          "Parameter : ": [
-            {
-              "group": "Parameter",
-              "type": "String",
-              "optional": false,
-              "field": "baseCurrency",
-              "description": "",
-              "options": [
-                [
-                  "Forbidden"
-                ]
-              ]
-            },
-            {
-              "group": "Parameter",
-              "type": "String",
-              "optional": false,
-              "field": "quoteCurrency",
-              "description": "",
-              "options": [
-                [
-                  "Forbidden"
-                ]
-              ]
-            },
-            {
-              "group": "Parameter",
-              "type": "String",
-              "optional": false,
-              "field": "expiration",
-              "description": "",
-              "options": [
-                [
-                  "Forbidden"
-                ]
-              ]
-            }
-          ]
-        },
-        "examples": [
-          {
-            "title": "Request Example : ",
-            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
-            "type": "json"
-          }
-        ]
-      },
-      "success": {
-        "fields": {
-          "Response : ": [
-            {
-              "group": "Success 200",
-              "type": "Uint",
-              "optional": false,
-              "field": "requestedApiCount",
-              "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "ObjectArray",
-              "optional": false,
-              "field": "fundingRates",
-              "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "String",
-              "optional": false,
-              "field": "fundingRates.baseCurrency",
-              "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "String",
-              "optional": false,
-              "field": "fundingRates.quoteCurrency",
-              "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "String",
-              "optional": false,
-              "field": "fundingRates.expiration",
-              "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "String",
-              "optional": false,
-              "field": "fundingRates.symbol",
-              "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "DoubleString",
-              "optional": false,
-              "field": "fundingRates.rate",
-              "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "Uint",
-              "optional": false,
-              "field": "fundingRates.time",
-              "description": "<p>[s]</p>"
-            }
-          ]
-        },
-        "examples": [
-          {
-            "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fundingRates\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"rate\":\"0.0025\",\n                \"time\":1661406463\n            }\n        ]\n    }\n}",
-            "type": "json"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "python",
-          "content": "currently empty",
-          "type": "python"
-        },
-        {
-          "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchFundingRate(request) << std::endl;\n    \n    return 0;\n}",
-          "type": "cpp"
-        }
-      ],
-      "filename": "tmp/Futures.js",
-      "groupTitle": "Futures",
-      "exchanges": {
-        "Binance": "unsupported"
-      }
-    },
-    {
-      "type": "onex",
-      "url": "/Futures",
       "title": "fetchLeverage",
       "name": "fetchLeverage",
       "group": "Futures",
@@ -1056,7 +899,7 @@ define({
               "description": "",
               "options": [
                 [
-                  "Forbidden"
+                  "Optional"
                 ]
               ]
             },
@@ -1068,7 +911,7 @@ define({
               "description": "",
               "options": [
                 [
-                  "Forbidden"
+                  "Optional"
                 ]
               ]
             },
@@ -1077,11 +920,23 @@ define({
               "type": "String",
               "optional": false,
               "field": "expiration",
-              "defaultValue": "PERP",
               "description": "",
               "options": [
                 [
-                  "Forbidden"
+                  "Optional"
+                ]
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "forceRestApi",
+              "defaultValue": "false",
+              "description": "",
+              "options": [
+                [
+                  "Optional"
                 ]
               ]
             }
@@ -1103,6 +958,17 @@ define({
               "type": "Uint",
               "optional": false,
               "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
               "description": ""
             },
             {
@@ -1152,7 +1018,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"leverages\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"leverage\":10\n            }\n        ]\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"rest\",\n        \"leverages\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"leverage\":10\n            }\n        ]\n    }\n}",
             "type": "json"
           }
         ]
@@ -1172,7 +1038,7 @@ define({
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "exchanges": {
-        "Binance": "unsupported"
+        "Binance": "supported"
       }
     },
     {
@@ -1193,7 +1059,7 @@ define({
               "description": "",
               "options": [
                 [
-                  "Forbidden"
+                  "Optional"
                 ]
               ]
             },
@@ -1205,7 +1071,7 @@ define({
               "description": "",
               "options": [
                 [
-                  "Forbidden"
+                  "Optional"
                 ]
               ]
             },
@@ -1214,11 +1080,23 @@ define({
               "type": "String",
               "optional": false,
               "field": "expiration",
-              "defaultValue": "PERP",
               "description": "",
               "options": [
                 [
-                  "Forbidden"
+                  "Optional"
+                ]
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "forceRestApi",
+              "defaultValue": "false",
+              "description": "",
+              "options": [
+                [
+                  "Optional"
                 ]
               ]
             }
@@ -1240,6 +1118,17 @@ define({
               "type": "Uint",
               "optional": false,
               "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
               "description": ""
             },
             {
@@ -1293,7 +1182,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"marginTypes\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"marginType\":\"cross\"\n            }\n        ]\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"websocket\",\n        \"marginTypes\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"marginType\":\"cross\"\n            }\n        ]\n    }\n}",
             "type": "json"
           }
         ]
@@ -1313,7 +1202,181 @@ define({
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "exchanges": {
-        "Binance": "unsupported"
+        "Binance": "supported"
+      }
+    },
+    {
+      "type": "onex",
+      "url": "/Futures",
+      "title": "fetchMarketInfo",
+      "name": "fetchMarketInfo",
+      "group": "Futures",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "",
+              "options": [
+                [
+                  "Optional"
+                ]
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "",
+              "options": [
+                [
+                  "Optional"
+                ]
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": "",
+              "options": [
+                [
+                  "Optional"
+                ]
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "forceRestApi",
+              "defaultValue": "false",
+              "description": "",
+              "options": [
+                [
+                  "Optional"
+                ]
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "success": {
+        "fields": {
+          "Response : ": [
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "marketInfo",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marketInfo.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marketInfo.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marketInfo.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marketInfo.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "marketInfo.markPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "marketInfo.fundingRate",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "marketInfo.nextFundingTime",
+              "description": "<p>[s]</p>"
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Success-Response :",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"rest\",\n        \"marketInfo\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"markPrice\":\"19358.15\",\n                \"fundingRate\":\"0.0025\",\n                \"nextFundingTime\":1661406463\n            }\n        ]\n    }\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "currently empty",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo);\n\n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"BTC\",\n            \"quoteCurrency\":\"USDT\"\n        }\n    )\";\n\n    std::cout << client.fetchMarketInfo(request) << std::endl;\n    \n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Futures.js",
+      "groupTitle": "Futures",
+      "exchanges": {
+        "Binance": "supported"
       }
     },
     {
@@ -2198,6 +2261,19 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Parameter",
+              "type": "Bool",
+              "optional": false,
+              "field": "forceRestApi",
+              "defaultValue": "false",
+              "description": "<p>force to update using REST API</p>",
+              "options": [
+                [
+                  "Optional"
+                ]
+              ]
             }
           ]
         },
@@ -2217,6 +2293,17 @@ define({
               "type": "Uint",
               "optional": false,
               "field": "requestedApiCount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
               "description": ""
             },
             {
@@ -2253,13 +2340,6 @@ define({
               "optional": false,
               "field": "positions.symbol",
               "description": ""
-            },
-            {
-              "group": "Success 200",
-              "type": "DoubleString",
-              "optional": false,
-              "field": "positions.initialMargin",
-              "description": "<p>If the marginType is 'cross', this field will be 0</p>"
             },
             {
               "group": "Success 200",
@@ -2305,7 +2385,7 @@ define({
         "examples": [
           {
             "title": "Success-Response :",
-            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"positions\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"initialMargin\":\"1235.13586\",\n                \"unrealizedProfit\":\"10.23854\",\n                \"entryPrice\":\"21752.12\",\n                \"positionAmt\":\"1.235\",\n                \"leverage\":10,\n                \"marginType\":\"isolated\",\n            }\n        ]\n    }\n}",
+            "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"rest\",\n        \"positions\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"unrealizedProfit\":\"10.23854\",\n                \"entryPrice\":\"21752.12\",\n                \"positionAmt\":\"1.235\",\n                \"leverage\":10,\n                \"marginType\":\"isolated\",\n            }\n        ]\n    }\n}",
             "type": "json"
           }
         ]
