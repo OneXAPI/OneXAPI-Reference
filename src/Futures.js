@@ -30,8 +30,9 @@
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {Object} balance
  * @apiSuccess {Object} [balance.currency__name]
- * @apiSuccess {DoubleString} balance.currency.balance wallet balance
- * @apiSuccess {DoubleString} balance.currency.crossWalletBalance crossed wallet balance
+ * @apiSuccess {DoubleString} balance.currency.balance wallet balance including isolated balance
+ * @apiSuccess {DoubleString} balance.currency.crossWalletBalance
+ * @apiSuccess {DoubleString} balance.currency.availableBalance
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -92,7 +93,9 @@
  * @apiParam {String} quoteCurrency
  * @apiParam {String} expiration
  * @apiParam {Bool} forceRestApi=false force to update using REST API
+ * @apiParam {Bool} zeroAmount=false Whether to include positions with zero amount
  * @onexParamExchanges {Binance o}
+ * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
@@ -1742,11 +1745,11 @@
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
- * @apiParam {String} expiration
+ * @apiParam {String} expiration=PERP "PERP" or date([YYMMDD] format such as "220930", "221015") are allowed
  * @apiParam {Bool} forceRestApi=false
  * @onexParamExchanges {Binance o}
- * @onexParamOption {o}
- * @onexParamOption {o}
+ * @onexParamOption {m}
+ * @onexParamOption {m}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * 
@@ -1758,14 +1761,13 @@
  * 
  * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String=rest,websocket} fetchType
- * @apiSuccess {ObjectArray} marketInfo
- * @apiSuccess {String} marketInfo.baseCurrency
- * @apiSuccess {String} marketInfo.quoteCurrency
- * @apiSuccess {String} marketInfo.expiration
- * @apiSuccess {String} marketInfo.symbol
- * @apiSuccess {DoubleString} marketInfo.markPrice
- * @apiSuccess {DoubleString} marketInfo.fundingRate
- * @apiSuccess {Uint} marketInfo.nextFundingTime [s]
+ * @apiSuccess {String} baseCurrency
+ * @apiSuccess {String} quoteCurrency
+ * @apiSuccess {String} expiration
+ * @apiSuccess {String} symbol
+ * @apiSuccess {DoubleString} markPrice
+ * @apiSuccess {DoubleString} fundingRate
+ * @apiSuccess {Uint} nextFundingTime [s]
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -1773,17 +1775,13 @@
  *      "data":{
  *          "requestedApiCount":1,
  *          "fetchType":"rest",
- *          "marketInfo":[
- *              {
- *                  "baseCurrency":"BTC",
- *                  "quoteCurrency":"USDT",
- *                  "expiration":"PERP",
- *                  "symbol":"BTCUSDT",
- *                  "markPrice":"19358.15",
- *                  "fundingRate":"0.0025",
- *                  "nextFundingTime":1661406463
- *              }
- *          ]
+ *          "baseCurrency":"BTC",
+ *          "quoteCurrency":"USDT",
+ *          "expiration":"PERP",
+ *          "symbol":"BTCUSDT",
+ *          "markPrice":"19358.15",
+ *          "fundingRate":"0.0025",
+ *          "nextFundingTime":1661406463
  *      }
  *  }
  *

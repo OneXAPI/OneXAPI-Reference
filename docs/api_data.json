@@ -368,14 +368,21 @@
             "type": "DoubleString",
             "optional": false,
             "field": "balance.currency.balance",
-            "description": "<p>wallet balance</p>"
+            "description": "<p>wallet balance including isolated balance</p>"
           },
           {
             "group": "Success 200",
             "type": "DoubleString",
             "optional": false,
             "field": "balance.currency.crossWalletBalance",
-            "description": "<p>crossed wallet balance</p>"
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "DoubleString",
+            "optional": false,
+            "field": "balance.currency.availableBalance",
+            "description": ""
           }
         ]
       },
@@ -1047,7 +1054,8 @@
             "type": "String",
             "optional": false,
             "field": "expiration",
-            "description": ""
+            "defaultValue": "PERP",
+            "description": "<p>&quot;PERP&quot; or date([YYMMDD] format such as &quot;220930&quot;, &quot;221015&quot;) are allowed</p>"
           },
           {
             "group": "Parameter",
@@ -1090,58 +1098,51 @@
           },
           {
             "group": "Success 200",
-            "type": "ObjectArray",
+            "type": "String",
             "optional": false,
-            "field": "marketInfo",
+            "field": "baseCurrency",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "marketInfo.baseCurrency",
+            "field": "quoteCurrency",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "marketInfo.quoteCurrency",
+            "field": "expiration",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "marketInfo.expiration",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "marketInfo.symbol",
+            "field": "symbol",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "DoubleString",
             "optional": false,
-            "field": "marketInfo.markPrice",
+            "field": "markPrice",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "DoubleString",
             "optional": false,
-            "field": "marketInfo.fundingRate",
+            "field": "fundingRate",
             "description": ""
           },
           {
             "group": "Success 200",
             "type": "Uint",
             "optional": false,
-            "field": "marketInfo.nextFundingTime",
+            "field": "nextFundingTime",
             "description": "<p>[s]</p>"
           }
         ]
@@ -1149,7 +1150,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"rest\",\n        \"marketInfo\":[\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\",\n                \"markPrice\":\"19358.15\",\n                \"fundingRate\":\"0.0025\",\n                \"nextFundingTime\":1661406463\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1,\n        \"fetchType\":\"rest\",\n        \"baseCurrency\":\"BTC\",\n        \"quoteCurrency\":\"USDT\",\n        \"expiration\":\"PERP\",\n        \"symbol\":\"BTCUSDT\",\n        \"markPrice\":\"19358.15\",\n        \"fundingRate\":\"0.0025\",\n        \"nextFundingTime\":1661406463\n    }\n}",
           "type": "json"
         }
       ]
@@ -1949,6 +1950,14 @@
             "field": "forceRestApi",
             "defaultValue": "false",
             "description": "<p>force to update using REST API</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Bool",
+            "optional": false,
+            "field": "zeroAmount",
+            "defaultValue": "false",
+            "description": "<p>Whether to include positions with zero amount</p>"
           }
         ]
       },
