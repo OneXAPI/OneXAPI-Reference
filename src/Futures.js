@@ -16,7 +16,7 @@
  * @apiParam {StringArray} currencies If not exist, return all currencies
  * @apiParam {Bool} zeroBalance=false Whether to include assets with zero balance
  * @onexParamExchanges {Binance o}
- * @onexParamOption {o}
+ * @onexParamOption {i only rest}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * 
@@ -2362,7 +2362,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription marketInfo message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -2481,7 +2481,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription marketInfo message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -2600,7 +2600,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription ticker message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -2719,7 +2719,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription ticker message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -2838,7 +2838,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription orderbook message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -2957,7 +2957,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription orderbook message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}

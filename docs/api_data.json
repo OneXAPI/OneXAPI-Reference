@@ -4404,7 +4404,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription marketInfo message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
           }
         ]
       },
@@ -4567,7 +4567,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription orderbook message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
           }
         ]
       },
@@ -4730,7 +4730,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription ticker message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
           }
         ]
       },
@@ -4955,7 +4955,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription marketInfo message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>"
           }
         ]
       },
@@ -5118,7 +5118,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription orderbook message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>"
           }
         ]
       },
@@ -5281,7 +5281,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription ticker message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>"
           }
         ]
       },
@@ -9640,7 +9640,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription orderbook message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
           }
         ]
       },
@@ -9781,7 +9781,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription ticker message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
           }
         ]
       },
@@ -9984,7 +9984,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription orderbook message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>"
           }
         ]
       },
@@ -10125,7 +10125,7 @@
             "optional": false,
             "field": "requestTimeout",
             "defaultValue": "5000",
-            "description": "<p>[ms]<br>If the subscription success message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>"
+            "description": "<p>[ms]<br>If the subscription ticker message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>"
           }
         ]
       },
