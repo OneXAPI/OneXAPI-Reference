@@ -424,7 +424,7 @@ define({
               "options": [
                 [
                   "Ignored", 
-                  "only rest"
+                  "always true"
                 ]
               ]
             }, 
@@ -5909,7 +5909,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription marketInfo message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If the subscription marketInfo message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -5931,6 +5931,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
+      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -6106,7 +6107,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription orderbook message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If the subscription orderbook message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -6128,6 +6129,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
+      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -6303,7 +6305,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription ticker message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If the subscription ticker message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -6325,6 +6327,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
+      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -12025,7 +12028,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription orderbook message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If the subscription orderbook message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -12050,6 +12053,7 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
+      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -12211,7 +12215,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription ticker message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If the subscription ticker message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -12236,6 +12240,7 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
+      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {

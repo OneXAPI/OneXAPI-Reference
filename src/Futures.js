@@ -16,7 +16,7 @@
  * @apiParam {StringArray} currencies If not exist, return all currencies
  * @apiParam {Bool} zeroBalance=false Whether to include assets with zero balance
  * @onexParamExchanges {Binance o}
- * @onexParamOption {i only rest}
+ * @onexParamOption {i always true}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * 
@@ -2472,6 +2472,7 @@
 /**
  * @api {onex} /Futures unsubscribeMarketInfo
  * @apiName unsubscribeMarketInfo
+ * @onexWarn This function returns a result after the requestTimeout
  * @onexInfo Stop updating MarketInfo via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
@@ -2481,7 +2482,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription marketInfo message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription marketInfo message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -2710,6 +2711,7 @@
 /**
  * @api {onex} /Futures unsubscribeTicker
  * @apiName unsubscribeTicker
+ * @onexWarn This function returns a result after the requestTimeout
  * @onexInfo Stop updating tickers via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
@@ -2719,7 +2721,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription ticker message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription ticker message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
@@ -2948,6 +2950,7 @@
 /**
  * @api {onex} /Futures unsubscribeOrderbook
  * @apiName unsubscribeOrderbook
+ * @onexWarn This function returns a result after the requestTimeout
  * @onexInfo Stop updating orderbooks via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
@@ -2957,7 +2960,7 @@
  * @apiParam {String} market.quoteCurrency
  * @apiParam {String} market.expiration=PERP
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription orderbook message come in after requestTimeout after the unsubscription request, the unsubscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription orderbook message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed
  * @onexParamExchanges {Binance o}
  * @onexParamOption {m}
  * @onexParamOption {m}
