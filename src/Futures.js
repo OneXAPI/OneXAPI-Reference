@@ -1740,6 +1740,7 @@
 /**
  * @api {onex} /Futures fetchMarketInfo
  * @apiName fetchMarketInfo
+ * @onexWarn During marketInfo websocket is running, fetchMarketInfo does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true. 
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *

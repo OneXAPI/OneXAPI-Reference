@@ -1362,6 +1362,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
+      "warn": "During marketInfo websocket is running, fetchMarketInfo does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true.", 
       "version": "0.0.0", 
       "examples": [
         {
