@@ -1514,6 +1514,7 @@
 /**
  * @api {onex} /Futures changeMarginType
  * @apiName changeMarginType
+ * @onexDanger Binance : Returns an error if the requested marginType is the same as the existing marginType.
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
