@@ -267,12 +267,13 @@
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
- * @apiParam {NoParam} __EMPTY__ 
+ * @apiParam {Bool} reconnect=false
  * @onexParamExchanges {Binance o}
- * @onexParamOption {i}
+ * @onexParamOption {o}
  * 
  * @apiParamExample Request Example : 
  *  {
+ *      "reconnect":false
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 

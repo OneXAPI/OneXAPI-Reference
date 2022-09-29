@@ -5083,11 +5083,12 @@ define({
               "group": "Parameter", 
               "description": "", 
               "optional": false, 
-              "field": "", 
-              "type": "NoParam", 
+              "defaultValue": "false", 
+              "field": "reconnect", 
+              "type": "Bool", 
               "options": [
                 [
-                  "Ignored"
+                  "Optional"
                 ]
               ]
             }
@@ -5095,7 +5096,7 @@ define({
         }, 
         "examples": [
           {
-            "content": "{\n}", 
+            "content": "{\n    \"reconnect\":false\n}", 
             "type": "json", 
             "title": "Request Example : "
           }
@@ -11495,11 +11496,12 @@ define({
               "group": "Parameter", 
               "description": "", 
               "optional": false, 
-              "field": "", 
-              "type": "NoParam", 
+              "defaultValue": "false", 
+              "field": "reconnect", 
+              "type": "Bool", 
               "options": [
                 [
-                  "Ignored"
+                  "Optional"
                 ], 
                 [
                   "Forbidden"
@@ -11510,7 +11512,7 @@ define({
         }, 
         "examples": [
           {
-            "content": "{\n}", 
+            "content": "{\n    \"reconnect\":false\n}", 
             "type": "json", 
             "title": "Request Example : "
           }

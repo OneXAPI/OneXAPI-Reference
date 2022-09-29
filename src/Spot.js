@@ -825,12 +825,13 @@
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
- * @apiParam {NoParam} __EMPTY__ 
+ * @apiParam {Bool} reconnect=false
  * @onexParamExchanges {Binance o} {Upbit x}
- * @onexParamOption {i} {f}
+ * @onexParamOption {o} {f}
  * 
  * @apiParamExample Request Example : 
  *  {
+ *      "reconnect":false
  *  }
  * 
  * @apiSuccess {Uint} requestedApiCount 

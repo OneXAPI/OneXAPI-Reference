@@ -4329,9 +4329,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "NoParam",
+            "type": "Bool",
             "optional": false,
-            "field": "__EMPTY__",
+            "field": "reconnect",
+            "defaultValue": "false",
             "description": ""
           }
         ]
@@ -4339,7 +4340,7 @@
       "examples": [
         {
           "title": "Request Example : ",
-          "content": "{\n}",
+          "content": "{\n    \"reconnect\":false\n}",
           "type": "json"
         }
       ]
@@ -9636,9 +9637,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "NoParam",
+            "type": "Bool",
             "optional": false,
-            "field": "__EMPTY__",
+            "field": "reconnect",
+            "defaultValue": "false",
             "description": ""
           }
         ]
@@ -9646,7 +9648,7 @@
       "examples": [
         {
           "title": "Request Example : ",
-          "content": "{\n}",
+          "content": "{\n    \"reconnect\":false\n}",
           "type": "json"
         }
       ]
