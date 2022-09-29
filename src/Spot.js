@@ -820,7 +820,7 @@
 /**
  * @api {onex} /Spot subscribeBalance
  * @apiName subscribeBalance
- * @onexWarn If restarted websocket for unknown error, use restApi as mush as requestedApiCount
+ * @onexWarn If restarted websocket, use restApi as mush as requestedApiCount
  * @onexInfo Start updating balance via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -2506,7 +2506,7 @@
 /**
  * @api {onex} /Spot subscribeTicker
  * @apiName subscribeTicker
- * @onexWarn If restarted websocket for unknown error, use restApi as mush as requestedApiCount
+ * @onexWarn If restarted websocket, use restApi as mush as requestedApiCount
  * @onexInfo Start updating tickers via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -2736,7 +2736,7 @@
 /**
  * @api {onex} /Spot subscribeOrderbook
  * @apiName subscribeOrderbook
- * @onexWarn If restarted websocket for unknown error, use restApi as mush as requestedApiCount
+ * @onexWarn If restarted websocket, use restApi as mush as requestedApiCount
  * @onexInfo Start updating orderbooks via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0

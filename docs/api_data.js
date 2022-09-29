@@ -5102,7 +5102,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "If restarted websocket for unknown error, use restApi as mush as requestedApiCount", 
+      "warn": "If restarted websocket, use restApi as mush as requestedApiCount", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -5307,7 +5307,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "If restarted websocket for unknown error, use restApi as mush as requestedApiCount", 
+      "warn": "If restarted websocket, use restApi as mush as requestedApiCount", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -5512,7 +5512,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "If restarted websocket for unknown error, use restApi as mush as requestedApiCount", 
+      "warn": "If restarted websocket, use restApi as mush as requestedApiCount", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -5717,7 +5717,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "If restarted websocket for unknown error, use restApi as mush as requestedApiCount", 
+      "warn": "If restarted websocket, use restApi as mush as requestedApiCount", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -11517,7 +11517,7 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
-      "warn": "If restarted websocket for unknown error, use restApi as mush as requestedApiCount", 
+      "warn": "If restarted websocket, use restApi as mush as requestedApiCount", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -11711,7 +11711,7 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
-      "warn": "If restarted websocket for unknown error, use restApi as mush as requestedApiCount", 
+      "warn": "If restarted websocket, use restApi as mush as requestedApiCount", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -11905,7 +11905,7 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
-      "warn": "If restarted websocket for unknown error, use restApi as mush as requestedApiCount", 
+      "warn": "If restarted websocket, use restApi as mush as requestedApiCount", 
       "version": "0.0.0", 
       "examples": [
         {
