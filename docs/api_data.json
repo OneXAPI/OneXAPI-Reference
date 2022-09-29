@@ -2868,6 +2868,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "marketInfo",
@@ -2906,7 +2913,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"marketInfo\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"marketInfo\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -2958,6 +2965,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "orderbooks",
@@ -2996,7 +3010,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"orderbooks\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"orderbooks\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -3048,6 +3062,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "tickers",
@@ -3086,7 +3107,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"tickers\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"tickers\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -3207,6 +3228,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "Bool",
             "optional": false,
             "field": "isSubscribing",
@@ -3217,7 +3245,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"isSubscribing\": true\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"isSubscribing\": true\n    }\n}",
           "type": "json"
         }
       ]
@@ -4321,9 +4349,9 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "NoParam",
+            "type": "Uint",
             "optional": false,
-            "field": "__EMPTY__",
+            "field": "requestedApiCount",
             "description": ""
           }
         ]
@@ -4331,7 +4359,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1\n    }\n}",
           "type": "json"
         }
       ]
@@ -4421,6 +4449,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "subscribed",
@@ -4494,7 +4529,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\":\"ETH\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"220930\",\n                \"symbol\":\"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"subscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\":\"ETH\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"220930\",\n                \"symbol\":\"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -4584,6 +4619,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "subscribed",
@@ -4657,7 +4699,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":2,\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -4747,6 +4789,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "subscribed",
@@ -4820,7 +4869,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\":\"ETH\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"220930\",\n                \"symbol\":\"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"subscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\":\"ETH\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"220930\",\n                \"symbol\":\"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -4872,9 +4921,9 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "NoParam",
+            "type": "Uint",
             "optional": false,
-            "field": "__EMPTY__",
+            "field": "requestedApiCount",
             "description": ""
           }
         ]
@@ -4882,7 +4931,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0\n    }\n}",
           "type": "json"
         }
       ]
@@ -4972,6 +5021,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "unsubscribed",
@@ -5045,7 +5101,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\":\"229030\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\":\"229030\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -5135,6 +5191,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "unsubscribed",
@@ -5208,7 +5271,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"PERP\",\n                \"symbol\": \"BTCUSDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\": \"220930\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -5298,6 +5361,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "unsubscribed",
@@ -5371,7 +5441,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\":\"229030\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\":\"BTC\",\n                \"quoteCurrency\":\"USDT\",\n                \"expiration\":\"PERP\",\n                \"symbol\":\"BTCUSDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"expiration\":\"229030\",\n                \"symbol\": \"ETHUSDT_220930\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -8079,6 +8149,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "orderbooks",
@@ -8110,7 +8187,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"orderbooks\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"orderbooks\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -8162,6 +8239,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "tickers",
@@ -8193,7 +8277,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"tickers\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"tickers\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            },\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -8479,6 +8563,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "Bool",
             "optional": false,
             "field": "isSubscribing",
@@ -8489,7 +8580,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"isSubscribing\": true\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"isSubscribing\": true\n    }\n}",
           "type": "json"
         }
       ]
@@ -9565,9 +9656,9 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "NoParam",
+            "type": "Uint",
             "optional": false,
-            "field": "__EMPTY__",
+            "field": "requestedApiCount",
             "description": ""
           }
         ]
@@ -9575,7 +9666,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":1\n    }\n}",
           "type": "json"
         }
       ]
@@ -9657,6 +9748,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "subscribed",
@@ -9716,7 +9814,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -9798,6 +9896,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "subscribed",
@@ -9857,7 +9962,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"subscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"subscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -9909,9 +10014,9 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "NoParam",
+            "type": "Uint",
             "optional": false,
-            "field": "__EMPTY__",
+            "field": "requestedApiCount",
             "description": ""
           }
         ]
@@ -9919,7 +10024,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0\n    }\n}",
           "type": "json"
         }
       ]
@@ -10001,6 +10106,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "unsubscribed",
@@ -10060,7 +10172,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -10142,6 +10254,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Uint",
+            "optional": false,
+            "field": "requestedApiCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
             "type": "ObjectArray",
             "optional": false,
             "field": "unsubscribed",
@@ -10201,7 +10320,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"data\":{\n        \"requestedApiCount\":0,\n        \"unsubscribed\": [\n            {\n                \"baseCurrency\": \"BTC\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"BTC-USDT\"\n            }\n        ],\n        \"unsubscribeFailed\": [\n            {\n                \"baseCurrency\": \"ETH\",\n                \"quoteCurrency\": \"USDT\",\n                \"symbol\": \"ETH-USDT\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]

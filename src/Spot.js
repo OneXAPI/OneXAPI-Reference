@@ -820,6 +820,7 @@
 /**
  * @api {onex} /Spot subscribeBalance
  * @apiName subscribeBalance
+ * @onexWarn If restarted websocket for unknown error, use restApi as mush as requestedApiCount
  * @onexInfo Start updating balance via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -832,12 +833,13 @@
  *  {
  *  }
  * 
- * @apiSuccess {NoParam} __EMPTY__
+ * @apiSuccess {Uint} requestedApiCount 
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":1
  *      }
  *  }
  *
@@ -887,12 +889,13 @@
  *  {
  *  }
  * 
- * @apiSuccess {NoParam} __EMPTY__
+ * @apiSuccess {Uint} requestedApiCount 
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":0
  *      }
  *  }
  *
@@ -942,12 +945,14 @@
  *  {
  *  }
  * 
+ * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {Bool} isSubscribing 
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":0,
  *          "isSubscribing": true
  *      }
  *  }
@@ -2379,6 +2384,7 @@
  *  {
  *  }
  * 
+ * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {ObjectArray} tickers
  * @apiSuccess {String} tickers.baseCurrency
  * @apiSuccess {String} tickers.quoteCurrency
@@ -2388,6 +2394,7 @@
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":0,
  *          "tickers": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -2444,6 +2451,7 @@
  *  {
  *  }
  * 
+ * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {ObjectArray} orderbooks
  * @apiSuccess {String} orderbooks.baseCurrency
  * @apiSuccess {String} orderbooks.quoteCurrency
@@ -2453,6 +2461,7 @@
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":0,
  *          "orderbooks": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -2497,6 +2506,7 @@
 /**
  * @api {onex} /Spot subscribeTicker
  * @apiName subscribeTicker
+ * @onexWarn If restarted websocket for unknown error, use restApi as mush as requestedApiCount
  * @onexInfo Start updating tickers via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -2529,6 +2539,7 @@
  *      "requestTimeout":2500
  *  }
  * 
+ * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} subscribed
  * @apiSuccess {String} subscribed.baseCurrency
  * @apiSuccess {String} subscribed.quoteCurrency
@@ -2542,6 +2553,7 @@
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":0,
  *          "subscribed": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -2642,6 +2654,7 @@
  *      "requestTimeout":2500
  *  }
  * 
+ * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {ObjectArray} unsubscribed
  * @apiSuccess {String} unsubscribed.baseCurrency
  * @apiSuccess {String} unsubscribed.quoteCurrency
@@ -2655,6 +2668,7 @@
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":0,
  *          "unsubscribed": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -2722,6 +2736,7 @@
 /**
  * @api {onex} /Spot subscribeOrderbook
  * @apiName subscribeOrderbook
+ * @onexWarn If restarted websocket for unknown error, use restApi as mush as requestedApiCount
  * @onexInfo Start updating orderbooks via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -2754,6 +2769,7 @@
  *      "requestTimeout":2500
  *  }
  * 
+ * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {ObjectArray} subscribed
  * @apiSuccess {String} subscribed.baseCurrency
  * @apiSuccess {String} subscribed.quoteCurrency
@@ -2767,6 +2783,7 @@
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":0,
  *          "subscribed": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -2867,6 +2884,7 @@
  *      "requestTimeout":2500
  *  }
  * 
+ * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {ObjectArray} unsubscribed
  * @apiSuccess {String} unsubscribed.baseCurrency
  * @apiSuccess {String} unsubscribed.quoteCurrency
@@ -2880,6 +2898,7 @@
  *  {
  *      "success":true,
  *      "data":{
+ *          "requestedApiCount":0,
  *          "unsubscribed": [
  *              {
  *                  "baseCurrency": "BTC",
