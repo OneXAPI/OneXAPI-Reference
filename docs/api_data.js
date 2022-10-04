@@ -5285,7 +5285,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription marketInfo message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -5307,7 +5307,6 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "Binance : If restarted websocket, use restApi as mush as subscribed marketInfo size", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -5490,7 +5489,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription orderbook message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -5512,7 +5511,6 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "Binance : If restarted websocket, use restApi as mush as subscribed orderbook size", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -5695,7 +5693,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription ticker message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -5717,7 +5715,6 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "Binance : If restarted websocket, use restApi as mush as subscribed ticker size", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -5971,7 +5968,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription marketInfo message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -5993,7 +5990,6 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -6176,7 +6172,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription orderbook message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -6198,7 +6194,6 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -6381,7 +6376,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription ticker message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -6403,7 +6398,6 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
-      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -11686,7 +11680,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription orderbook message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -11711,7 +11705,6 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
-      "warn": "Binance : If restarted websocket, use restApi as mush as subscribed orderbook size", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -11880,7 +11873,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription ticker message does not come in the requestTimeout after the subscription request, the subscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -11905,7 +11898,6 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
-      "warn": "Binance : If restarted websocket, use restApi as mush as subscribed ticker size", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -12150,7 +12142,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription orderbook message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -12175,7 +12167,6 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
-      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -12345,7 +12336,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>[ms]<br>If the subscription ticker message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed</p>", 
+              "description": "<p>[ms]<br>If this function does not complete within requestTimeout, it returns error</p>", 
               "optional": false, 
               "defaultValue": "5000", 
               "field": "requestTimeout", 
@@ -12370,7 +12361,6 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
-      "warn": "This function returns a result after the requestTimeout", 
       "version": "0.0.0", 
       "examples": [
         {

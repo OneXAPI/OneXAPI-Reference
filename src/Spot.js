@@ -2506,7 +2506,6 @@
 /**
  * @api {onex} /Spot subscribeTicker
  * @apiName subscribeTicker
- * @onexWarn Binance : If restarted websocket, use restApi as mush as subscribed ticker size
  * @onexInfo Start updating tickers via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -2515,7 +2514,7 @@
  * @apiParam {String} market.baseCurrency
  * @apiParam {String} market.quoteCurrency
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription ticker message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If this function does not complete within requestTimeout, it returns error
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
@@ -2621,7 +2620,6 @@
 /**
  * @api {onex} /Spot unsubscribeTicker
  * @apiName unsubscribeTicker
- * @onexWarn This function returns a result after the requestTimeout
  * @onexInfo Stop updating tickers via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -2630,7 +2628,7 @@
  * @apiParam {String} market.baseCurrency
  * @apiParam {String} market.quoteCurrency
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription ticker message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If this function does not complete within requestTimeout, it returns error
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
@@ -2736,7 +2734,6 @@
 /**
  * @api {onex} /Spot subscribeOrderbook
  * @apiName subscribeOrderbook
- * @onexWarn Binance : If restarted websocket, use restApi as mush as subscribed orderbook size
  * @onexInfo Start updating orderbooks via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -2745,7 +2742,7 @@
  * @apiParam {String} market.baseCurrency
  * @apiParam {String} market.quoteCurrency
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket including the requested markets to the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription orderbook message does not come in the requestTimeout after the subscription request, the subscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If this function does not complete within requestTimeout, it returns error
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
@@ -2851,7 +2848,6 @@
 /**
  * @api {onex} /Spot unsubscribeOrderbook
  * @apiName unsubscribeOrderbook
- * @onexWarn This function returns a result after the requestTimeout
  * @onexInfo Stop updating orderbooks via websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
@@ -2860,7 +2856,7 @@
  * @apiParam {String} market.baseCurrency
  * @apiParam {String} market.quoteCurrency
  * @apiParam {Bool} reconnect=false If this field is true, reconnect the websocket excluding the requested markets for the the markets being subscribed
- * @apiParam {Uint} requestTimeout=5000 [ms]<br>If the subscription orderbook message come in the requestTimeout after the unsubscription request, the unsubscription is treated as failed
+ * @apiParam {Uint} requestTimeout=5000 [ms]<br>If this function does not complete within requestTimeout, it returns error
  * @onexParamExchanges {Binance o} {Upbit o}
  * @onexParamOption {m} {m}
  * @onexParamOption {m} {m}
