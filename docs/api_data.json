@@ -146,7 +146,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"PERP\",\n    \"leverage\":10\n}\n\nprint(client.changeLeverage(request))",
         "type": "python"
       },
       {
@@ -273,7 +273,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"PERP\",\n    \"marginType\":\"isolated\"\n}\n\nprint(client.changeMarginType(request))",
         "type": "python"
       },
       {
@@ -397,7 +397,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"currencies\":[\"BTC\", \"ETH\"]\n}\n\nprint(client.fetchBalance(request))",
         "type": "python"
       },
       {
@@ -735,7 +735,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"startTime\":1656042045125,\n    \"endTime\":1656063182432\n}\n\nprint(client.fetchFundingFeeIncomeHistory(request))",
         "type": "python"
       },
       {
@@ -872,7 +872,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchLeverage(request))",
         "type": "python"
       },
       {
@@ -1013,7 +1013,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"PERP\"\n}\n\nprint(client.fetchMarginType(request))",
         "type": "python"
       },
       {
@@ -1158,7 +1158,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchMarketInfo(request))",
         "type": "python"
       },
       {
@@ -1462,7 +1462,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchOpenOrders(request))",
         "type": "python"
       },
       {
@@ -1727,7 +1727,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"221230\",\n    \"clientOrderId\":\"generatedId\"\n}\n\nprint(client.fetchOrderInfo(request))",
         "type": "python"
       },
       {
@@ -2077,7 +2077,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchPositions(request))",
         "type": "python"
       },
       {
@@ -2376,7 +2376,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\"\n}\n\nprint(client.fetchTradingFee(request))",
         "type": "python"
       },
       {
@@ -3386,7 +3386,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"orderId\":\"39713467831\"\n}\n\nprint(client.orderCancel(request))",
         "type": "python"
       },
       {
@@ -3569,7 +3569,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"XRP\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"220930\",\n    \"price\":0.4348,\n    \"baseAmount\":23.834219\n}",
         "type": "python"
       },
       {
@@ -3752,12 +3752,12 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"XRP\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"PERP\",\n    \"price\":0.4348,\n    \"baseAmount\":23.834219\n}\n\nprint(client.orderLimitSell(request))",
         "type": "python"
       },
       {
         "title": "c++",
-        "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo)__;\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"XRP\",\n            \"quoteCurrency\":\"USDT\",\n            \"price\":486.2348,\n            \"baseAmount\":23.834219\n        }\n    )\";\n\n    std::cout << client.orderLimitSell(request) << std::endl;\n    \n    return 0;\n}",
+        "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){    \n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    OneXAPI::Binance::Futures client(userInfo)__;\n    \n    std::string request = R\"(\n        {\n            \"baseCurrency\":\"XRP\",\n            \"quoteCurrency\":\"USDT\",\n            \"price\":0.4348,\n            \"baseAmount\":23.834219\n        }\n    )\";\n\n    std::cout << client.orderLimitSell(request) << std::endl;\n    \n    return 0;\n}",
         "type": "cpp"
       }
     ],
@@ -3900,7 +3900,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"baseAmount\":1.5843\n}\n\nprint(client.orderMarketBuy(request))",
         "type": "python"
       },
       {
@@ -4048,7 +4048,7 @@
     "examples": [
       {
         "title": "python",
-        "content": "currently empty",
+        "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"BTC\",\n    \"quoteCurrency\":\"USDT\",\n    \"baseAmount\":1.5843\n}\n\nprint(client.orderMarketSell(request))",
         "type": "python"
       },
       {

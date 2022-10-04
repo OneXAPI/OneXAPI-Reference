@@ -54,7 +54,20 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "currencies":["BTC", "ETH"]
+ *  }
+ *  
+ *  print(client.fetchBalance(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -143,7 +156,21 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchPositions(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -228,7 +255,23 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "startTime":1656042045125,
+ *      "endTime":1656063182432
+ *  }
+ *  
+ *  print(client.fetchFundingFeeIncomeHistory(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -630,7 +673,23 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"XRP",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"220930",
+ *      "price":0.4348,
+ *      "baseAmount":23.834219
+ *  }
+ *  
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -718,7 +777,24 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"XRP",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"PERP",
+ *      "price":0.4348,
+ *      "baseAmount":23.834219
+ *  }
+ *  
+ *  print(client.orderLimitSell(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -738,7 +814,7 @@
  *          {
  *              "baseCurrency":"XRP",
  *              "quoteCurrency":"USDT",
- *              "price":486.2348,
+ *              "price":0.4348,
  *              "baseAmount":23.834219
  *          }
  *      )";
@@ -803,7 +879,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "baseAmount":1.5843
+ *  }
+ *  
+ *  print(client.orderMarketBuy(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -887,7 +978,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "baseAmount":1.5843
+ *  }
+ *  
+ *  print(client.orderMarketSell(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -966,7 +1072,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "orderId":"39713467831"
+ *  }
+ *  
+ *  print(client.orderCancel(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1082,7 +1203,23 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"221230",
+ *      "clientOrderId":"generatedId"
+ *  }
+ *  
+ *  print(client.fetchOrderInfo(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1177,7 +1314,21 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchOpenOrders(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1255,7 +1406,21 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchTradingFee(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1334,7 +1499,21 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchLeverage(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1407,7 +1586,23 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"PERP",
+ *      "leverage":10
+ *  }
+ *  
+ *  print(client.changeLeverage(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1487,7 +1682,22 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"PERP"
+ *  }
+ *  
+ *  print(client.fetchMarginType(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1561,7 +1771,23 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT",
+ *      "expiration":"PERP",
+ *      "marginType":"isolated"
+ *  }
+ *  
+ *  print(client.changeMarginType(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -1793,7 +2019,21 @@
  *  }
  *
  * @apiExample {python} python
- *  currently empty
+ *  import OneXAPI
+ *  
+ *  user_info = {
+ *      "accessKey":"user access key",
+ *      "secretKey":"user secrey key"
+ *  }
+ *  
+ *  client = OneXAPI.Binance.Futures(user_info)
+ *  
+ *  request = {
+ *      "baseCurrency":"BTC",
+ *      "quoteCurrency":"USDT"
+ *  }
+ *  
+ *  print(client.fetchMarketInfo(request))
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
