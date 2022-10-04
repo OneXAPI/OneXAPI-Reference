@@ -5511,6 +5511,7 @@ define({
         ]
       }, 
       "filename": "tmp/Futures.js", 
+      "warn": "Binance : The requestTimeout increases by the requested market size.<br>requestTimeout = requestTimeout + 0.5 * market size", 
       "version": "0.0.0", 
       "examples": [
         {
@@ -11705,6 +11706,7 @@ define({
         ]
       }, 
       "filename": "tmp/Spot.js", 
+      "warn": "Binance : The requestTimeout increases by the requested market size.<br>requestTimeout = requestTimeout + 0.5 * market size", 
       "version": "0.0.0", 
       "examples": [
         {
