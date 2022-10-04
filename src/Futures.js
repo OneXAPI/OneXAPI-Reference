@@ -2396,7 +2396,7 @@
 /**
  * @api {onex} /Futures getSubscribingMarketInfo
  * @apiName getSubscribingMarketInfo
- * @onexInfo Returns marketInfo symbols being received on websocket
+ * @onexInfo Returns marketInfo symbols being subscribed on websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -2466,7 +2466,7 @@
 /**
  * @api {onex} /Futures getSubscribingTickers
  * @apiName getSubscribingTickers
- * @onexInfo Returns ticker symbols being received on websocket
+ * @onexInfo Returns ticker symbols being subscribed on websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *
@@ -2536,7 +2536,7 @@
 /**
  * @api {onex} /Futures getSubscribingOrderbooks
  * @apiName getSubscribingOrderbooks
- * @onexInfo Returns orderbook symbols being received on websocket
+ * @onexInfo Returns orderbook symbols being subscribed on websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
  *

@@ -3248,7 +3248,7 @@ define({
       "type": "onex"
     }, 
     {
-      "info": "Returns marketInfo symbols being received on websocket", 
+      "info": "Returns marketInfo symbols being subscribed on websocket", 
       "group": "Futures", 
       "name": "getSubscribingMarketInfo", 
       "success": {
@@ -3354,7 +3354,7 @@ define({
       "type": "onex"
     }, 
     {
-      "info": "Returns orderbook symbols being received on websocket", 
+      "info": "Returns orderbook symbols being subscribed on websocket", 
       "group": "Futures", 
       "name": "getSubscribingOrderbooks", 
       "success": {
@@ -3460,7 +3460,7 @@ define({
       "type": "onex"
     }, 
     {
-      "info": "Returns ticker symbols being received on websocket", 
+      "info": "Returns ticker symbols being subscribed on websocket", 
       "group": "Futures", 
       "name": "getSubscribingTickers", 
       "success": {
@@ -9542,7 +9542,7 @@ define({
       "type": "onex"
     }, 
     {
-      "info": "Returns orderbook symbols being received on websocket", 
+      "info": "Returns orderbook symbols being subscribed on websocket", 
       "group": "Spot", 
       "name": "getSubscribingOrderbooks", 
       "success": {
@@ -9645,7 +9645,7 @@ define({
       "type": "onex"
     }, 
     {
-      "info": "Returns ticker symbols being received on websocket", 
+      "info": "Returns ticker symbols being subscribed on websocket", 
       "group": "Spot", 
       "name": "getSubscribingTickers", 
       "success": {

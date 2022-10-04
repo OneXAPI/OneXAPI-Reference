@@ -2372,7 +2372,7 @@
 /**
  * @api {onex} /Spot getSubscribingTickers
  * @apiName getSubscribingTickers
- * @onexInfo Returns ticker symbols being received on websocket
+ * @onexInfo Returns ticker symbols being subscribed on websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
@@ -2439,7 +2439,7 @@
 /**
  * @api {onex} /Spot getSubscribingOrderbooks
  * @apiName getSubscribingOrderbooks
- * @onexInfo Returns orderbook symbols being received on websocket
+ * @onexInfo Returns orderbook symbols being subscribed on websocket
  * @apiGroup Spot
  * @apiVersion 0.0.0
  *
