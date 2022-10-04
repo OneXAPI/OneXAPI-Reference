@@ -262,7 +262,6 @@
 /**
  * @api {onex} /Futures subscribeBalance
  * @apiName subscribeBalance
- * @onexWarn If restarted websocket, use restApi as mush as requestedApiCount
  * @onexInfo Start updating balance via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
@@ -2367,7 +2366,7 @@
 /**
  * @api {onex} /Futures subscribeMarketInfo
  * @apiName subscribeMarketInfo
- * @onexWarn If restarted websocket, use restApi as mush as requestedApiCount
+ * @onexWarn Binance : If restarted websocket, use restApi as mush as subscribed marketInfo size
  * @onexInfo Start updating MarketInfo via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
@@ -2611,7 +2610,7 @@
 /**
  * @api {onex} /Futures subscribeTicker
  * @apiName subscribeTicker
- * @onexWarn If restarted websocket, use restApi as mush as requestedApiCount
+ * @onexWarn Binance : If restarted websocket, use restApi as mush as subscribed ticker size
  * @onexInfo Start updating tickers via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
@@ -2855,7 +2854,7 @@
 /**
  * @api {onex} /Futures subscribeOrderbook
  * @apiName subscribeOrderbook
- * @onexWarn If restarted websocket, use restApi as mush as requestedApiCount
+ * @onexWarn Binance : If restarted websocket, use restApi as mush as subscribed orderbook size
  * @onexInfo Start updating orderbooks via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
