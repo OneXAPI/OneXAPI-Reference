@@ -4100,7 +4100,7 @@ define({
       "version": "0.0.0", 
       "examples": [
         {
-          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"XRP\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"220930\",\n    \"price\":0.4348,\n    \"baseAmount\":23.834219\n}", 
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\nclient = OneXAPI.Binance.Futures(user_info)\n\nrequest = {\n    \"baseCurrency\":\"XRP\",\n    \"quoteCurrency\":\"USDT\",\n    \"expiration\":\"220930\",\n    \"price\":0.4348,\n    \"baseAmount\":23.834219\n}\n\nprint(client.orderLimitBuy(request))", 
           "type": "python", 
           "title": "python"
         }, 

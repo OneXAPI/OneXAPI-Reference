@@ -689,6 +689,8 @@
  *      "price":0.4348,
  *      "baseAmount":23.834219
  *  }
+ * 
+ *  print(client.orderLimitBuy(request))
  *  
  * 
  * @apiExample {cpp} c++
