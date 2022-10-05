@@ -3090,7 +3090,7 @@
 /**
  * @api {onex} /Futures subscribeOrderbook
  * @apiName subscribeOrderbook
- * @onexWarn Binance : The requestTimeout increases by the requested market size. requestTimeout = requestTimeout + 0.5 * market size
+ * @onexWarn Binance : The requestTimeout increases by the requested market size. requestTimeout = requestTimeout + 500 * market size
  * @onexInfo Start updating orderbooks via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.0
