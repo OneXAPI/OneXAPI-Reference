@@ -19,7 +19,6 @@
  *  {
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {String} exchange
  * @apiSuccess {String=Spot,Futures} instrument
  * @apiSuccess {String} accessKey
@@ -34,8 +33,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "exchange":"Binance",
  *          "instrument":"__GENERAL__",
  *          "accessKey":"",
@@ -106,14 +105,13 @@
  *      "restEndpoint":"https://api2.binance.com"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {String} [requested__config]
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "restEndpoint":"https://api2.binance.com"
  *      }
  *  }
@@ -154,7 +152,6 @@
  *  {
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {StringArray} restEndpoints
  * @apiSuccess {StringArray} publicWebsocketEndpoints
  * @apiSuccess {StringArray} privateWebsocketEndpoints
@@ -162,8 +159,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "restEndpoints":[
  *              "https://api.binance.com",
  *              "https://api1.binance.com",
@@ -221,14 +218,13 @@
  *      "api":"orderLimitBuy"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount 
  * @apiSuccess {Bool} [api__name]
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "orderLimitBuy":true
  *      }
  *  }
