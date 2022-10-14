@@ -190,7 +190,6 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
     // Submenu
     var oldName = '';
     api.forEach(function (entry) {
-      console.log(entry)
       if (entry.group === group) {
         if (entry.isCategory) {
           nav.push({
@@ -787,6 +786,8 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
    * Render original Article and remove the current visible Article.
    */
   function resetArticle(group, name, version) {
+    window.location.href = location.href.split("#")[0] + "#" + "api-" + group + "-" + name;
+    window.location.reload();
     var $root = $('article[data-group=\'' + group + '\'][data-name=\'' + name + '\']:visible');
     var content = renderArticle(group, name, version);
 
