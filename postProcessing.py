@@ -1,6 +1,6 @@
 import sys, json
 
-group_list = ["OneXAPI","Spot","Futures"]
+group_list = ["OneXAPI","Client","Spot","Futures"]
 
 apiExchangeInfo = dict()
 
@@ -124,7 +124,10 @@ with open("docs/api_data.js", "r+") as file:
 
         ### Params Fields Italic&Space ###
         if "parameter" in api:
-            for item in api["parameter"]["fields"]["Parameter : "] + api["success"]["fields"]["Response : "]:
+            items = api["parameter"]["fields"]["Parameter : "]
+            if "success" in api:
+                items += api["success"]["fields"]["Response : "]
+            for item in items:
                 if item["optional"] is True:
                     item["optional"] = False
                     fieldSplitted = item["field"].split(".")

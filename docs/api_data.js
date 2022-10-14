@@ -2,6 +2,75 @@ define({
   "api": [
     {
       "type": "onex",
+      "url": "/Client",
+      "title": "create a new client",
+      "name": "Client",
+      "group": "Client",
+      "version": "0.0.0",
+      "parameter": {
+        "fields": {
+          "Parameter : ": [
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "accessKey",
+              "description": "",
+              "options": [
+                [
+                  "Optional"
+                ],
+                [
+                  "Optional"
+                ]
+              ]
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "secretKey",
+              "description": "",
+              "options": [
+                [
+                  "Optional"
+                ],
+                [
+                  "Optional"
+                ]
+              ]
+            }
+          ]
+        },
+        "examples": [
+          {
+            "title": "Request Example : ",
+            "content": "{\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}",
+            "type": "json"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "python",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\n# Binance Spot\nclient = OneXAPI.Binance.Spot(user_info)\n\n# Binance Futures\nclient = OneXAPI.Binance.Futures(user_info)\n\n# Upbit Spot\nclient = OneXAPI.Upbit.Spot(user_info)                  # Korea\nclient = OneXAPI.Upbit.Singapore.Spot(user_info)        # Singapore\nclient = OneXAPI.Upbit.Thailand.Spot(user_info)         # Thailand\nclient = OneXAPI.Upbit.Indonesia.Spot(user_info)        # Indonesia",
+          "type": "python"
+        },
+        {
+          "title": "c++",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    // Binance Spot\n    OneXAPI::Binance::Spot client(userInfo);\n\n    // Binance Futures\n    OneXAPI::Binance::Futures client(userInfo);\n\n    // Upbit Spot\n    OneXAPI::Upbit::Spot client(userInfo);              // Korea\n    OneXAPI::Upbit::Singapore::Spot client(userInfo);   // Singapore\n    OneXAPI::Upbit::Thailand::Spot client(userInfo);    // Thailand\n    OneXAPI::Upbit::Indonesia::Spot client(userInfo);   // Indonesia\n\n    return 0;\n}",
+          "type": "cpp"
+        }
+      ],
+      "filename": "tmp/Client.js",
+      "groupTitle": "Client",
+      "exchanges": {
+        "Binance": "supported",
+        "Upbit": "supported"
+      }
+    },
+    {
+      "type": "onex",
       "url": "/Futures",
       "title": "General",
       "name": "General",
@@ -106,6 +175,41 @@ define({
                   "Mandatory"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "leverage",
+              "description": ""
             }
           ]
         },
@@ -245,6 +349,45 @@ define({
                   "Mandatory"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "cross",
+                "isolated"
+              ],
+              "optional": false,
+              "field": "marginType",
+              "description": ""
             }
           ]
         },
@@ -375,6 +518,52 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "balance",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "balance.<i>currency name</i>",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.balance",
+              "description": "<p>wallet balance including isolated balance</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.crossWalletBalance",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.availableBalance",
+              "description": ""
             }
           ]
         },
@@ -560,6 +749,90 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "candles",
+              "description": "<p>Ascending order according to timestamp</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "candles.timestamp",
+              "description": "<p>[s]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.openPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.closePrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.highPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.lowPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.baseVolume",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.quoteVolume",
+              "description": ""
             }
           ]
         },
@@ -757,6 +1030,62 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "incomes",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "incomes.income",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "incomes.incomeCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "incomes.timestamp",
+              "description": "<p>[ms]</p>"
             }
           ]
         },
@@ -913,6 +1242,59 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "leverages",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "leverages.baseCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "leverages.quoteCurrency",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "leverages.expiration",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "leverages.symbol",
+              "description": "<p>If this field is empty, all symbols have the same leverage</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "leverages.leverage",
+              "description": ""
             }
           ]
         },
@@ -1066,6 +1448,63 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "marginTypes",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginTypes.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginTypes.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginTypes.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marginTypes.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "cross",
+                "isolated"
+              ],
+              "optional": false,
+              "field": "marginTypes.marginType",
+              "description": ""
             }
           ]
         },
@@ -1224,6 +1663,66 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "markPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fundingRate",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "nextFundingTime",
+              "description": "<p>[s]</p>"
             }
           ]
         },
@@ -1372,6 +1871,41 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "markets",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.symbol",
+              "description": ""
             }
           ]
         },
@@ -1510,6 +2044,112 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "openOrders",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "buy",
+                "sell"
+              ],
+              "optional": false,
+              "field": "openOrders.side",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "long",
+                "short"
+              ],
+              "optional": false,
+              "field": "openOrders.positionSide",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "openOrders.reduceOnly",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.originalAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.filledAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.remainingAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.originalPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "openOrders.created",
+              "description": "<p>[ms]</p>"
             }
           ]
         },
@@ -1728,6 +2368,180 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "buy",
+                "sell"
+              ],
+              "optional": false,
+              "field": "side",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "long",
+                "short"
+              ],
+              "optional": false,
+              "field": "positionSide",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "reduceOnly",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "originalAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "filledAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "remainingAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "originalPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "avgFillPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "created",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "feeCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "feeAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "open",
+                "filled",
+                "cancelled"
+              ],
+              "optional": false,
+              "field": "status",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "fills",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fills.orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fills.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fills.amount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "fills.timestamp",
+              "description": "<p>[ms]</p>"
             }
           ]
         },
@@ -2004,6 +2818,94 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "timestamp",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "bids",
+              "description": "<p>Descending order according to timestamp</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "bids.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "bids.size",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "asks",
+              "description": "<p>Ascending order according to price</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "asks.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "asks.size",
+              "description": ""
             }
           ]
         },
@@ -2207,6 +3109,91 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "positions",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "positions.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "positions.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "positions.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "positions.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "positions.unrealizedProfit",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "positions.entryPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "positions.positionAmt",
+              "description": "<p>positive means long position, negative means short position</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "positions.leverage",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "cross",
+                "isolated"
+              ],
+              "optional": false,
+              "field": "positions.marginType",
+              "description": ""
             }
           ]
         },
@@ -2393,6 +3380,94 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "openTime",
+              "description": "<p>[s] open Time(UTC)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "closePrice",
+              "description": "<p>close Price(last Price)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "lowPrice",
+              "description": "<p>low Price(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "highPrice",
+              "description": "<p>high Price(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseVolume",
+              "description": "<p>baseCurrency Volume(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "quoteVolume",
+              "description": "<p>quoteCurrency Volume(24h)</p>"
             }
           ]
         },
@@ -2570,6 +3645,55 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "fees",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fees.makerFee",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fees.takerFee",
+              "description": ""
             }
           ]
         },
@@ -2683,6 +3807,30 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "StringArray",
+              "allowedValues": [
+                "1min",
+                "3min",
+                "5min",
+                "15min",
+                "30min",
+                "1hour",
+                "2hour",
+                "4hour",
+                "6hour",
+                "8hour",
+                "12hour",
+                "1day",
+                "3day",
+                "1week",
+                "1month"
+              ],
+              "optional": false,
+              "field": "intervals",
+              "description": ""
             }
           ]
         },
@@ -2770,6 +3918,83 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "exchange",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "Spot",
+                "Futures"
+              ],
+              "optional": false,
+              "field": "instrument",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "accessKey",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "secretKey",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "restEndpoint",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "publicWebsocketEndpoint",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "privateWebsocketEndpoint",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "restRequestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "websocketConnectTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "websocketIdleTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]</p>"
             }
           ]
         },
@@ -2910,6 +4135,27 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "StringArray",
+              "optional": false,
+              "field": "restEndpoints",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "StringArray",
+              "optional": false,
+              "field": "publicWebsocketEndpoints",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "StringArray",
+              "optional": false,
+              "field": "privateWebsocketEndpoints",
+              "description": ""
             }
           ]
         },
@@ -2994,6 +4240,84 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitBuyPrice",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitBuyBaseAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitSellPrice",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitSellBaseAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "marketBuyBaseAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "marketSellBaseAmount",
+              "defaultValue": "round",
+              "description": ""
             }
           ]
         },
@@ -3135,6 +4459,41 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "marketInfo",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marketInfo.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marketInfo.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marketInfo.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "marketInfo.symbol",
+              "description": ""
             }
           ]
         },
@@ -3234,6 +4593,41 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "orderbooks",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.symbol",
+              "description": ""
             }
           ]
         },
@@ -3333,6 +4727,41 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "tickers",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.symbol",
+              "description": ""
             }
           ]
         },
@@ -3432,6 +4861,13 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "<i>api name</i>",
+              "description": ""
             }
           ]
         },
@@ -3503,6 +4939,13 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "isSubscribing",
+              "description": ""
             }
           ]
         },
@@ -3623,6 +5066,48 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
             }
           ]
         },
@@ -3834,6 +5319,62 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
             }
           ]
         },
@@ -4060,6 +5601,62 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
             }
           ]
         },
@@ -4243,6 +5840,55 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
             }
           ]
         },
@@ -4419,6 +6065,55 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
             }
           ]
         },
@@ -4617,6 +6312,13 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "<i>requested config</i>",
+              "description": ""
             }
           ]
         },
@@ -4779,6 +6481,18 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "<i>requested field</i>",
+              "description": ""
             }
           ]
         },
@@ -4855,6 +6569,13 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
             }
           ]
         },
@@ -4989,6 +6710,76 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -5186,6 +6977,76 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -5384,6 +7245,76 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -5518,6 +7449,13 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
             }
           ]
         },
@@ -5652,6 +7590,76 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -5849,6 +7857,76 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -6046,6 +8124,76 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.expiration",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -6180,6 +8328,38 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "supportedExchanges",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "supportedExchanges.exchange",
+              "description": "<p>exchange name</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "Spot",
+                "Futures"
+              ],
+              "optional": false,
+              "field": "supportedExchanges.instrument",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "onexapiVersion",
+              "description": ""
             }
           ]
         },
@@ -6276,6 +8456,76 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "main",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "terminal",
+                "file",
+                "both"
+              ],
+              "optional": false,
+              "field": "main.outputMethod",
+              "defaultValue": "terminal",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "off",
+                "info",
+                "warn",
+                "error",
+                "critical"
+              ],
+              "optional": false,
+              "field": "main.logLevel",
+              "defaultValue": "off",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "websocket",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "terminal",
+                "file",
+                "both"
+              ],
+              "optional": false,
+              "field": "websocket.outputMethod",
+              "defaultValue": "terminal",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "off",
+                "info",
+                "warn",
+                "error",
+                "critical"
+              ],
+              "optional": false,
+              "field": "websocket.logLevel",
+              "defaultValue": "off",
+              "description": ""
             }
           ]
         },
@@ -6493,6 +8743,13 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "<i>requested config</i>",
+              "description": ""
             }
           ]
         },
@@ -6611,6 +8868,41 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "currencies",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "currencies.<i>currency name</i>",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "currencies.currency.chains",
+              "description": "<p><b>If this field is empty, exchange supports only single chain or nothing. Please check exchange before withdraw or deposit crypto currency.</b></p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "currencies.currency.chains.chain",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "currencies.currency.chains.isDefault",
+              "description": ""
             }
           ]
         },
@@ -6744,6 +9036,45 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "balance",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "balance.<i>currency name</i>",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.free",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "balance.currency.locked",
+              "description": ""
             }
           ]
         },
@@ -6928,6 +9259,83 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "candles",
+              "description": "<p>Ascending order according to timestamp</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "candles.timestamp",
+              "description": "<p>[s]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.openPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.closePrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.highPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.lowPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.baseVolume",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "candles.quoteVolume",
+              "description": ""
             }
           ]
         },
@@ -7088,6 +9496,41 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "addresses",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "addresses.<i>currency name</i>",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "addresses.currency.chain",
+              "description": "<p>If this field is empty string, it is a default chain</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "addresses.currency.address",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "addresses.currency.tag",
+              "description": "<p>If not exist, return empty string</p>"
             }
           ]
         },
@@ -7251,6 +9694,68 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "deposits",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "deposits.currency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "deposits.amount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "deposits.fee",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "deposits.orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "deposits.txid",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "processing",
+                "cancelled",
+                "confirmed",
+                "done"
+              ],
+              "optional": false,
+              "field": "deposits.status",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "deposits.created",
+              "description": "<p>[ms]</p>"
             }
           ]
         },
@@ -7396,6 +9901,34 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "markets",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "markets.symbol",
+              "description": ""
             }
           ]
         },
@@ -7525,6 +10058,101 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "openOrders",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "buy",
+                "sell"
+              ],
+              "optional": false,
+              "field": "openOrders.side",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.originalAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.filledAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.remainingAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.originalPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "openOrders.created",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "openOrders.lockedCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openOrders.lockedAmount",
+              "description": ""
             }
           ]
         },
@@ -7732,6 +10360,155 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "buy",
+                "sell"
+              ],
+              "optional": false,
+              "field": "side",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "originalAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "filledAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "remainingAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "originalPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "avgFillPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "created",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "feeCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "feeAmount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "open",
+                "filled",
+                "cancelled"
+              ],
+              "optional": false,
+              "field": "status",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "fills",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fills.orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fills.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fills.amount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "fills.timestamp",
+              "description": "<p>[ms]</p>"
             }
           ]
         },
@@ -7980,6 +10757,87 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "timestamp",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "bids",
+              "description": "<p>Descending order according to timestamp</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "bids.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "bids.size",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "asks",
+              "description": "<p>Ascending order according to price</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "asks.price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "asks.size",
+              "description": ""
             }
           ]
         },
@@ -8161,6 +11019,87 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "rest",
+                "websocket"
+              ],
+              "optional": false,
+              "field": "fetchType",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "openTime",
+              "description": "<p>[s]<br>open Time(UTC)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "openPrice",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "closePrice",
+              "description": "<p>close Price(last Price)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "lowPrice",
+              "description": "<p>low Price(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "highPrice",
+              "description": "<p>high Price(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseVolume",
+              "description": "<p>baseCurrency Volume(24h)</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "quoteVolume",
+              "description": "<p>quoteCurrency Volume(24h)</p>"
             }
           ]
         },
@@ -8325,6 +11264,48 @@ define({
                   "Mandatory"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "fees",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "fees.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fees.makerFee",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "fees.takerFee",
+              "description": ""
             }
           ]
         },
@@ -8435,6 +11416,48 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "currencies",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Object",
+              "optional": false,
+              "field": "currencies.<i>currency name</i>",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Array",
+              "optional": false,
+              "field": "currencies.currency.chains",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "currencies.currency.chains.chain",
+              "description": "<p>If chain is empty string, it means exchange supports single chain.</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "currencies.currency.chains.withdrawEnable",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "currencies.currency.chains.depositEnable",
+              "description": ""
             }
           ]
         },
@@ -8605,6 +11628,67 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "withdrawals",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "withdrawals.currency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "withdrawals.amount",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "withdrawals.fee",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "withdrawals.orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "withdrawals.txid",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "processing",
+                "cancelled",
+                "done"
+              ],
+              "optional": false,
+              "field": "withdrawals.status",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "withdrawals.created",
+              "description": "<p>[ms]</p>"
             }
           ]
         },
@@ -8731,6 +11815,31 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "StringArray",
+              "allowedValues": [
+                "1min",
+                "3min",
+                "5min",
+                "10min",
+                "15min",
+                "30min",
+                "1hour",
+                "2hour",
+                "4hour",
+                "6hour",
+                "8hour",
+                "12hour",
+                "1day",
+                "3day",
+                "1week",
+                "1month"
+              ],
+              "optional": false,
+              "field": "intervals",
+              "description": ""
             }
           ]
         },
@@ -8819,6 +11928,83 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "exchange",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "Spot",
+                "Futures"
+              ],
+              "optional": false,
+              "field": "instrument",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "accessKey",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "secretKey",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "restEndpoint",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "publicWebsocketEndpoint",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "privateWebsocketEndpoint",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "restRequestTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "websocketConnectTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "Uint",
+              "optional": false,
+              "field": "websocketIdleTimeout",
+              "defaultValue": "5000",
+              "description": "<p>[ms]</p>"
             }
           ]
         },
@@ -8959,6 +12145,27 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "StringArray",
+              "optional": false,
+              "field": "restEndpoints",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "StringArray",
+              "optional": false,
+              "field": "publicWebsocketEndpoints",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "StringArray",
+              "optional": false,
+              "field": "privateWebsocketEndpoints",
+              "description": ""
             }
           ]
         },
@@ -9043,6 +12250,84 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitBuyPrice",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitBuyBaseAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitSellPrice",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "limitSellBaseAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "marketBuyQuoteAmount",
+              "defaultValue": "round",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "marketSellBaseAmount",
+              "defaultValue": "round",
+              "description": ""
             }
           ]
         },
@@ -9187,6 +12472,34 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "orderbooks",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderbooks.symbol",
+              "description": ""
             }
           ]
         },
@@ -9283,6 +12596,34 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "tickers",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tickers.symbol",
+              "description": ""
             }
           ]
         },
@@ -9376,6 +12717,19 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "roundingRule",
+              "defaultValue": "round",
+              "description": ""
             }
           ]
         },
@@ -9452,6 +12806,13 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "<i>api name</i>",
+              "description": ""
             }
           ]
         },
@@ -9571,6 +12932,13 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "isDepositCompleted",
+              "description": ""
             }
           ]
         },
@@ -9644,6 +13012,13 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "Bool",
+              "optional": false,
+              "field": "isSubscribing",
+              "description": ""
             }
           ]
         },
@@ -9763,6 +13138,41 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
             }
           ]
         },
@@ -9963,6 +13373,55 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
             }
           ]
         },
@@ -10177,6 +13636,55 @@ define({
                   "Ignored"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "price",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
             }
           ]
         },
@@ -10339,6 +13847,48 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "quoteAmount",
+              "description": ""
             }
           ]
         },
@@ -10494,6 +14044,48 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "clientOrderId",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "DoubleString",
+              "optional": false,
+              "field": "baseAmount",
+              "description": ""
             }
           ]
         },
@@ -10685,6 +14277,13 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "<i>requested config</i>",
+              "description": ""
             }
           ]
         },
@@ -10847,6 +14446,18 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "<i>requested field</i>",
+              "description": ""
             }
           ]
         },
@@ -10927,6 +14538,18 @@ define({
                   "Mandatory"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "allowedValues": [
+                "ceil",
+                "floor",
+                "round"
+              ],
+              "optional": false,
+              "field": "roundingRule",
+              "description": ""
             }
           ]
         },
@@ -11006,6 +14629,13 @@ define({
                   "Forbidden"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
             }
           ]
         },
@@ -11143,6 +14773,62 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -11330,6 +15016,62 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "subscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "subscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -11454,6 +15196,13 @@ define({
                   "Forbidden"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "NoParam",
+              "optional": false,
+              "field": "",
+              "description": ""
             }
           ]
         },
@@ -11592,6 +15341,62 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -11779,6 +15584,62 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribed.symbol",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "ObjectArray",
+              "optional": false,
+              "field": "unsubscribeFailed",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.baseCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.quoteCurrency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "unsubscribeFailed.symbol",
+              "description": ""
             }
           ]
         },
@@ -11993,6 +15854,41 @@ define({
                   "Optional"
                 ]
               ]
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "currency",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "chain",
+              "description": "<p>If not exist, return empty string</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "address",
+              "description": ""
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "tag",
+              "description": "<p>If not exist, return empty string</p>"
+            },
+            {
+              "group": "Success 200",
+              "type": "String",
+              "optional": false,
+              "field": "orderId",
+              "description": ""
             }
           ]
         },

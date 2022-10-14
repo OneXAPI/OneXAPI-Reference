@@ -10,6 +10,7 @@
     "getInfo",
     "getLoggerConfig",
     "setLoggerConfig",
+    "Client",
     "Spot",
     "Futures",
     "General",

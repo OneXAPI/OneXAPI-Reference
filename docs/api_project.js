@@ -10,6 +10,7 @@ define({
     "getInfo",
     "getLoggerConfig",
     "setLoggerConfig",
+    "Client",
     "Spot",
     "Futures",
     "General",
@@ -72,7 +73,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2022-10-10T01:46:49.940Z",
+    "time": "2022-10-14T06:30:10.866Z",
     "url": "https://apidocjs.com",
     "version": "0.29.0"
   }
