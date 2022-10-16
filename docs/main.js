@@ -190,7 +190,6 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
     // Submenu
     var oldName = '';
     api.forEach(function (entry) {
-      console.log(entry)
       if (entry.group === group) {
         if (entry.isCategory) {
           nav.push({
@@ -532,7 +531,7 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
     $('#version strong').html(selectedVersion);
 
     // hide all
-    $('article').addClass('hide');
+    $('article').parent().parent().addClass('hide');
     $('#sidenav li:not(.nav-fixed)').addClass('hide');
 
     // show 1st equal or lower Version of each entry
@@ -540,13 +539,14 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
       var group = $(this).data('group');
       var name = $(this).data('name');
       var version = $(this).data('version');
-
+      
       if (version <= selectedVersion) {
         if ($('article[data-group=\'' + group + '\'][data-name=\'' + name + '\']:visible').length === 0) {
           // enable Article
-          $('article[data-group=\'' + group + '\'][data-name=\'' + name + '\'][data-version=\'' + version + '\']').removeClass('hide');
+          $('article[data-group=\'' + group + '\'][data-name=\'' + name + '\'][data-version=\'' + version + '\']').parent().parent().removeClass('hide');
           // enable Navigation
           $('#sidenav li[data-group=\'' + group + '\'][data-name=\'' + name + '\'][data-version=\'' + version + '\']').removeClass('hide');
+          $('#sidenav li.nav-category[data-group=\'' + group + '\']').removeClass('hide');
           $('#sidenav li.nav-header[data-group=\'' + group + '\']').removeClass('hide');
         }
       }
@@ -787,6 +787,8 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
    * Render original Article and remove the current visible Article.
    */
   function resetArticle(group, name, version) {
+    window.location.href = location.href.split("#")[0] + "#" + "api-" + group + "-" + name;
+    window.location.reload();
     var $root = $('article[data-group=\'' + group + '\'][data-name=\'' + name + '\']:visible');
     var content = renderArticle(group, name, version);
 

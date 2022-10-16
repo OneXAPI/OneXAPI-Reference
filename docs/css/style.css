@@ -399,7 +399,7 @@ pre code.sample-request-response-json {
 }
 
 .sidenav > li.is-new a {
-  border-left: #e5e5e5 4px solid;
+  /* border-left: #e5e5e5 4px solid; */
 }
 
 .sidenav .nav-list-item, .sidenav div {
