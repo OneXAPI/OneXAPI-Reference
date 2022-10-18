@@ -126,7 +126,7 @@ with open("docs/api_data.js", "r+") as file:
         if "parameter" in api:
             items = api["parameter"]["fields"]["Parameter : "]
             if "success" in api:
-                items += api["success"]["fields"]["Response : "]
+                items = items + api["success"]["fields"]["Response : "]
             for item in items:
                 if item["optional"] is True:
                     item["optional"] = False
