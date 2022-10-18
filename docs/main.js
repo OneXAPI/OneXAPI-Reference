@@ -135,7 +135,6 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
     // custom order
     if (apiProject.order)
       titles = sortByOrder(titles, apiProject.order, '#~#');
-
     // add single elements to the new list
     titles.forEach(function (name) {
       var values = name.split('#~#');

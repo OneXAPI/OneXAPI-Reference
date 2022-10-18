@@ -68,5 +68,9 @@
     "unsubscribeOrderbook"
   ],
   "forceLanguage":"en",
-  "withGenerator":false
+  "withGenerator":false,
+  "header": {
+    "title": "Introduction",
+    "filename": "header.md"
+  }
 }
