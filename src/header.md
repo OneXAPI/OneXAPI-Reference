@@ -21,6 +21,8 @@ OneXAPI has the following advantages.
   - There is no delay because it communicates directly with the exchange without going through the intermediate server.
 4. Maintenance
   - If the exchange API changes, an immediate update is performed. Users can use the same algorithm only with OneXAPI updates without changing the code.
+5. Safety
+  - OneXAPI does not collect the user's API key, so there is no risk of stealing the API key.
 <br>
 
 ---
