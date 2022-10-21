@@ -21,6 +21,7 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
  *          "supportedExchanges":[
  *          {
@@ -90,6 +91,7 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
  *          "main":{
  *              "outputMethod":"terminal",
@@ -162,6 +164,7 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
  *          "main":{
  *              "logLevel":"info",

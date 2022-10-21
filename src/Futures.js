@@ -25,8 +25,7 @@
  *      "forceRestApi":false,
  *      "currencies":["BTC", "ETH", "XRP", "ADA"]
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {Object} balance
  * @apiSuccess {Object} [balance.currency__name]
@@ -37,8 +36,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "fetchType":"rest",
  *          "balance":{
  *              "BTC":{
@@ -119,8 +118,7 @@
  *      "baseCurrency":"BTC",
  *      "quoteCurrency":"USDT"
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {ObjectArray} positions 
  * @apiSuccess {String} positions.baseCurrency
@@ -136,8 +134,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "fetchType":"rest",
  *          "positions":[
  *              {
@@ -224,8 +222,7 @@
  *      "startTime":1656042045125,
  *      "endTime":1656063182432
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {ObjectArray} incomes 
  * @apiSuccess {String} incomes.baseCurrency
  * @apiSuccess {String} incomes.quoteCurrency
@@ -238,8 +235,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "incomes":[
  *              {
  *                  "baseCurrency":"BTC",
@@ -317,14 +314,14 @@
  *  {
  *      "reconnect":false
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
+ * @apiSuccess {NoParam} __EMPTY__
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1
  *      }
  *  }
  *
@@ -373,14 +370,14 @@
  * @apiParamExample Request Example : 
  *  {
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
+ * @apiSuccess {NoParam} __EMPTY__
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0
  *      }
  *  }
  *
@@ -429,15 +426,14 @@
  * @apiParamExample Request Example : 
  *  {
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {Bool} isSubscribing
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "isSubscribing": true
  *      }
  *  }
@@ -493,8 +489,7 @@
  * @apiParamExample Request Example : 
  *  {
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String=ceil,floor,round} limitBuyPrice=round
  * @apiSuccess {String=ceil,floor,round} limitBuyBaseAmount=round
  * @apiSuccess {String=ceil,floor,round} limitSellPrice=round
@@ -505,8 +500,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "limitBuyPrice":"ceil",             
  *          "limitBuyBaseAmount":"floor",
  *          "limitSellPrice":"ceil",
@@ -566,15 +561,14 @@
  *  {
  *      "marketSellBaseAmount":"floor"
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String=ceil,floor,round} [requested__field]
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "marketSellBaseAmount":"floor"
  *      }
  *  }
@@ -645,8 +639,7 @@
  *      "baseAmount":1.5843,
  *      "amplifier":1.03       //requested price will be 21351.1384*1.03 = 21991.672552
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -659,8 +652,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -751,8 +744,7 @@
  *      "baseAmount":1.5843,
  *      "amplifier":0.97       //requested price will be 21351.1384*0.97 = 20710.604248
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -765,8 +757,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -855,8 +847,7 @@
  *      "quoteCurrency":"USDT",
  *      "baseAmount":1.5843
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -868,8 +859,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -954,8 +945,7 @@
  *      "quoteCurrency":"USDT",
  *      "baseAmount":1.5843
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -967,8 +957,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -1050,8 +1040,7 @@
  *      "quoteCurrency":"USDT",
  *      "orderId":"38463215"
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -1062,8 +1051,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -1144,8 +1133,7 @@
  *      "quoteCurrency":"USDT",
  *      "orderId":"38463215"
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -1173,8 +1161,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":2,
  *      "data":{
- *          "requestedApiCount":2,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -1274,7 +1262,6 @@
  *      "side":"buy"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} openOrders
  * @apiSuccess {String} openOrders.baseCurrency
  * @apiSuccess {String} openOrders.quoteCurrency
@@ -1293,8 +1280,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":2,
  *      "data":{
- *          "requestedApiCount":2,
  *          "openOrders":[
  *              {
  *                  "baseCurrency":"BTC",
@@ -1380,7 +1367,6 @@
  *      "quoteCurrency":"USDT"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} fees
  * @apiSuccess {String} fees.baseCurrency
  * @apiSuccess {String} fees.quoteCurrency
@@ -1392,8 +1378,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "fees":[
  *              {
  *                  "baseCurrency":"BTC",
@@ -1473,7 +1459,6 @@
  *      "quoteCurrency":"USDT"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {ObjectArray} leverages
  * @apiSuccess {String} leverages.baseCurrency If this field is empty, all symbols have the same leverage
@@ -1485,8 +1470,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "fetchType":"rest",
  *          "leverages":[
  *              {
@@ -1567,7 +1552,6 @@
  *      "leverage":10
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String} baseCurrency If this field is empty, all symbols have the same leverage
  * @apiSuccess {String} quoteCurrency If this field is empty, all symbols have the same leverage
  * @apiSuccess {String} expiration If this field is empty, all symbols have the same leverage
@@ -1577,8 +1561,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -1656,7 +1640,6 @@
  *      "quoteCurrency":"USDT"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {ObjectArray} marginTypes
  * @apiSuccess {String} marginTypes.baseCurrency
@@ -1668,8 +1651,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "fetchType":"websocket",
  *          "marginTypes":[
  *              {
@@ -1752,7 +1735,6 @@
  *      "marginType":"isolated"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -1762,8 +1744,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -1839,15 +1821,14 @@
  * @apiParamExample Request Example : 
  *  {
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {StringArray=1min,3min,5min,15min,30min,1hour,2hour,4hour,6hour,8hour,12hour,1day,3day,1week,1month} intervals
  * 
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "intervals":[
  *              "15min","1day","1hour","1min","1month","1week","30min","3min","4hour","5min"
  *          ]
@@ -1899,7 +1880,6 @@
  *      "quoteCurrency":"USDT"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} markets
  * @apiSuccess {String} markets.baseCurrency
  * @apiSuccess {String} markets.quoteCurrency
@@ -1909,8 +1889,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "markets":[
  *              {
  *                  "baseCurrency":"BTC",
@@ -1994,7 +1974,6 @@
  *      "quoteCurrency":"USDT"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String=rest,websocket} fetchType
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
@@ -2007,8 +1986,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "fetchType":"rest",
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
@@ -2089,7 +2068,6 @@
  *      "forceRestApi":true
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -2106,8 +2084,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":1,
  *      "data":{
- *          "requestedApiCount":1,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -2182,7 +2160,6 @@
  *      "expiration":"220930"
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -2199,8 +2176,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"220930",
@@ -2308,7 +2285,6 @@
  *      "fetchInterval":200
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {String} baseCurrency
  * @apiSuccess {String} quoteCurrency
  * @apiSuccess {String} expiration
@@ -2325,8 +2301,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":31,
  *      "data":{
- *          "requestedApiCount":31,
  *          "baseCurrency":"BTC",
  *          "quoteCurrency":"USDT",
  *          "expiration":"PERP",
@@ -2409,8 +2385,7 @@
  * @apiParamExample Request Example : 
  *  {
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {ObjectArray} marketInfo
  * @apiSuccess {String} marketInfo.baseCurrency
  * @apiSuccess {String} marketInfo.quoteCurrency
@@ -2420,8 +2395,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "marketInfo": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -2479,8 +2454,7 @@
  * @apiParamExample Request Example : 
  *  {
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {ObjectArray} tickers
  * @apiSuccess {String} tickers.baseCurrency
  * @apiSuccess {String} tickers.quoteCurrency
@@ -2490,8 +2464,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "tickers": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -2549,8 +2523,7 @@
  * @apiParamExample Request Example : 
  *  {
  *  }
- * 
- * @apiSuccess {Uint} requestedApiCount 
+ *  
  * @apiSuccess {ObjectArray} orderbooks
  * @apiSuccess {String} orderbooks.baseCurrency
  * @apiSuccess {String} orderbooks.quoteCurrency
@@ -2560,8 +2533,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "orderbooks": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -2643,7 +2616,6 @@
  *      "requestTimeout":2500
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} subscribed
  * @apiSuccess {String} subscribed.baseCurrency
  * @apiSuccess {String} subscribed.quoteCurrency
@@ -2658,8 +2630,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "subscribed": [
  *              {
  *                  "baseCurrency":"BTC",
@@ -2764,7 +2736,6 @@
  *      "requestTimeout":2500
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} unsubscribed
  * @apiSuccess {String} unsubscribed.baseCurrency
  * @apiSuccess {String} unsubscribed.quoteCurrency
@@ -2779,8 +2750,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "unsubscribed": [
  *              {
  *                  "baseCurrency":"BTC",
@@ -2885,7 +2856,6 @@
  *      "requestTimeout":2500
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} subscribed
  * @apiSuccess {String} subscribed.baseCurrency
  * @apiSuccess {String} subscribed.quoteCurrency
@@ -2900,8 +2870,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "subscribed": [
  *              {
  *                  "baseCurrency":"BTC",
@@ -3006,7 +2976,6 @@
  *      "requestTimeout":2500
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} unsubscribed
  * @apiSuccess {String} unsubscribed.baseCurrency
  * @apiSuccess {String} unsubscribed.quoteCurrency
@@ -3021,8 +2990,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "unsubscribed": [
  *              {
  *                  "baseCurrency":"BTC",
@@ -3128,7 +3097,6 @@
  *      "requestTimeout":2500
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} subscribed
  * @apiSuccess {String} subscribed.baseCurrency
  * @apiSuccess {String} subscribed.quoteCurrency
@@ -3143,8 +3111,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":2,
  *      "data":{
- *          "requestedApiCount":2,
  *          "subscribed": [
  *              {
  *                  "baseCurrency": "BTC",
@@ -3249,7 +3217,6 @@
  *      "requestTimeout":2500
  *  }
  * 
- * @apiSuccess {Uint} requestedApiCount
  * @apiSuccess {ObjectArray} unsubscribed
  * @apiSuccess {String} unsubscribed.baseCurrency
  * @apiSuccess {String} unsubscribed.quoteCurrency
@@ -3264,8 +3231,8 @@
  * @apiSuccessExample Success-Response :
  *  {
  *      "success":true,
+ *      "requestedApiCount":0,
  *      "data":{
- *          "requestedApiCount":0,
  *          "unsubscribed": [
  *              {
  *                  "baseCurrency": "BTC",

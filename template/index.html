@@ -18,12 +18,14 @@
   <script id="template-sidenav" type="text/x-handlebars-template">
     <nav id="scrollingNav" class="col-md-2">
     
-    <div class="row">
-      <div class="sidenav-logo col-md-2">
-        <img src="img/logo.png" />
-        {{#if apiName}}<h3>{{{apiName}}}</h3>{{/if}}
+    <a href=".">
+      <div class="row">
+        <div class="sidenav-logo col-md-2">
+          <img src="img/logo.png" />
+          {{#if apiName}}<h3>{{{apiName}}}</h3>{{/if}}
+        </div>
       </div>
-    </div>
+    </a>
     
     <div class="row">
       <div class="sidenav-search col-md-2">
@@ -134,9 +136,9 @@
     {{#if article.isCategory}}
       <h3>{{article.groupTitle}}{{#if article.title}} - {{article.title}}{{/if}}</h3>
     {{else}}
-    <div class="row pre-{{toLowerCase article.type}}">
+    <div class="row pre-{{toLowerCase article.type}} {{#if hidden}}hide{{/if}}">
       <div class="col-md-8 no-float">
-        <article id="api-{{article.group}}-{{article.name}}-{{article.version}}" {{#if hidden}}class="hide"{{/if}} data-group="{{article.group}}" data-name="{{article.name}}" data-version="{{article.version}}">
+        <article id="api-{{article.group}}-{{article.name}}-{{article.version}}" data-group="{{article.group}}" data-name="{{article.name}}" data-version="{{article.version}}">
           <div class="pull-left">
             <h3>{{article.groupTitle}}{{#if article.title}} - {{article.title}}{{/if}}</h3>
           </div>
