@@ -5409,7 +5409,7 @@
             "type": "String",
             "optional": false,
             "field": "main.customPath",
-            "description": "<p>: executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>"
+            "description": "<p>executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>"
           },
           {
             "group": "Success 200",
@@ -5451,7 +5451,7 @@
             "type": "String",
             "optional": false,
             "field": "websocket.customPath",
-            "description": "<p>: executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>"
+            "description": "<p>executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>"
           }
         ]
       },
@@ -5526,7 +5526,7 @@
             "type": "String",
             "optional": false,
             "field": "main.customPath",
-            "description": "<p>: executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>"
+            "description": "<p>executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>"
           },
           {
             "group": "Parameter",
@@ -5566,7 +5566,7 @@
             "type": "String",
             "optional": false,
             "field": "websocket.customPath",
-            "description": "<p>: executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>"
+            "description": "<p>executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>"
           }
         ]
       },
