@@ -82,11 +82,11 @@
  * @apiSuccess {Object} main 
  * @apiSuccess {String=terminal,file,both} main.outputMethod=terminal
  * @apiSuccess {String=off,info,warn,error,critical} main.logLevel=off
- * @apiSuccess {String} main.customPath executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log
+ * @apiSuccess {String} main.customPath=executedFilePath/OneXAPI_Log/OneXAPI_<b><i>DATE</i></b>.log
  * @apiSuccess {Object} websocket
  * @apiSuccess {String=terminal,file,both} websocket.outputMethod=terminal
  * @apiSuccess {String=off,info,warn,error,critical} websocket.logLevel=off
- * @apiSuccess {String} websocket.customPath executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log
+ * @apiSuccess {String} websocket.customPath=executedFilePath/OneXAPI_Log/OneXAPI_Websocket_<b><i>DATE</i></b>.log
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -134,12 +134,12 @@
  *
  * @apiParam {Object} main 
  * @apiParam {String=off,info,warn,error,critical} main.logLevel
- * @apiParam {String=terminal,file,both} main.outputMethod terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file
- * @apiParam {String} main.customPath executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log
+ * @apiParam {String=terminal,file,both} main.outputMethod terminal : log on console<br>file : write log into customPath<br>both : terminal + file
+ * @apiParam {String} main.customPath=executedFilePath/OneXAPI_Log/OneXAPI_<b><i>DATE</i></b>.log
  * @apiParam {Object} websocket 
  * @apiParam {String=off,info,warn,error,critical} websocket.logLevel 
- * @apiParam {String=terminal,file,both} websocket.outputMethod terminal : log on console<br>file : write log into OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log<br>both : terminal + file
- * @apiParam {String} websocket.customPath executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log
+ * @apiParam {String=terminal,file,both} websocket.outputMethod terminal : log on console<br>file : write log into customPath<br>both : terminal + file
+ * @apiParam {String} websocket.customPath=executedFilePath/OneXAPI_Log/OneXAPI_Websocket_<b><i>DATE</i></b>.log
  * @onexParamExchanges {all o}
  * @onexParamOption {o}
  * @onexParamOption {o}

@@ -5409,7 +5409,8 @@
             "type": "String",
             "optional": false,
             "field": "main.customPath",
-            "description": "<p>executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>"
+            "defaultValue": "executedFilePath/OneXAPI_Log/OneXAPI_<b><i>DATE</i></b>.log",
+            "description": ""
           },
           {
             "group": "Success 200",
@@ -5451,7 +5452,8 @@
             "type": "String",
             "optional": false,
             "field": "websocket.customPath",
-            "description": "<p>executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>"
+            "defaultValue": "executedFilePath/OneXAPI_Log/OneXAPI_Websocket_<b><i>DATE</i></b>.log",
+            "description": ""
           }
         ]
       },
@@ -5519,14 +5521,15 @@
             ],
             "optional": false,
             "field": "main.outputMethod",
-            "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file</p>"
+            "description": "<p>terminal : log on console<br>file : write log into customPath<br>both : terminal + file</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "main.customPath",
-            "description": "<p>executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>"
+            "defaultValue": "executedFilePath/OneXAPI_Log/OneXAPI_<b><i>DATE</i></b>.log",
+            "description": ""
           },
           {
             "group": "Parameter",
@@ -5559,14 +5562,15 @@
             ],
             "optional": false,
             "field": "websocket.outputMethod",
-            "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log<br>both : terminal + file</p>"
+            "description": "<p>terminal : log on console<br>file : write log into customPath<br>both : terminal + file</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "websocket.customPath",
-            "description": "<p>executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>"
+            "defaultValue": "executedFilePath/OneXAPI_Log/OneXAPI_Websocket_<b><i>DATE</i></b>.log",
+            "description": ""
           }
         ]
       },

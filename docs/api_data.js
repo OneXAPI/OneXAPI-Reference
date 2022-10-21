@@ -6366,11 +6366,12 @@ define({
               "type": "String"
             }, 
             {
-              "type": "String", 
               "group": "Success 200", 
-              "description": "<p>executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>", 
+              "description": "", 
               "optional": false, 
-              "field": "main.customPath"
+              "defaultValue": "executedFilePath/OneXAPI_Log/OneXAPI_<b><i>DATE</i></b>.log", 
+              "field": "main.customPath", 
+              "type": "String"
             }, 
             {
               "type": "Object", 
@@ -6408,11 +6409,12 @@ define({
               "type": "String"
             }, 
             {
-              "type": "String", 
               "group": "Success 200", 
-              "description": "<p>executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>", 
+              "description": "", 
               "optional": false, 
-              "field": "websocket.customPath"
+              "defaultValue": "executedFilePath/OneXAPI_Log/OneXAPI_Websocket_<b><i>DATE</i></b>.log", 
+              "field": "websocket.customPath", 
+              "type": "String"
             }
           ]
         }, 
@@ -6532,7 +6534,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file</p>", 
+              "description": "<p>terminal : log on console<br>file : write log into customPath<br>both : terminal + file</p>", 
               "optional": false, 
               "allowedValues": [
                 "terminal", 
@@ -6549,8 +6551,9 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>", 
+              "description": "", 
               "optional": false, 
+              "defaultValue": "executedFilePath/OneXAPI_Log/OneXAPI_<b><i>DATE</i></b>.log", 
               "field": "main.customPath", 
               "type": "String", 
               "options": [
@@ -6592,7 +6595,7 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log<br>both : terminal + file</p>", 
+              "description": "<p>terminal : log on console<br>file : write log into customPath<br>both : terminal + file</p>", 
               "optional": false, 
               "allowedValues": [
                 "terminal", 
@@ -6609,8 +6612,9 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<p>executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>", 
+              "description": "", 
               "optional": false, 
+              "defaultValue": "executedFilePath/OneXAPI_Log/OneXAPI_Websocket_<b><i>DATE</i></b>.log", 
               "field": "websocket.customPath", 
               "type": "String", 
               "options": [
