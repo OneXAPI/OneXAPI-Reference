@@ -81,9 +81,11 @@
  * @apiSuccess {Object} main 
  * @apiSuccess {String=terminal,file,both} main.outputMethod=terminal
  * @apiSuccess {String=off,info,warn,error,critical} main.logLevel=off
+ * @apiSuccess {String} main.customPath=executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log
  * @apiSuccess {Object} websocket
  * @apiSuccess {String=terminal,file,both} websocket.outputMethod=terminal
  * @apiSuccess {String=off,info,warn,error,critical} websocket.logLevel=off
+ * @apiSuccess {String} websocket.customPath=executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -91,11 +93,13 @@
  *      "data":{
  *          "main":{
  *              "outputMethod":"terminal",
- *              "logLevel":"off"
+ *              "logLevel":"off",
+ *              "customPath":"/root/OneXAPI_Logs/OneXAPI.log"
  *          },
  *          "websocket":{
  *              "outputMethod":"terminal",
- *              "logLevel":"off"
+ *              "logLevel":"off",
+ *              "customPath":"/root/OneXAPI_Logs/OneXAPI_Websocket.log"
  *          }
  *      }
  *  }
@@ -129,10 +133,14 @@
  * @apiParam {Object} main 
  * @apiParam {String=off,info,warn,error,critical} main.logLevel
  * @apiParam {String=terminal,file,both} main.outputMethod terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file
+ * @apiSuccess {String} main.customPath=executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log
  * @apiParam {Object} websocket 
  * @apiParam {String=off,info,warn,error,critical} websocket.logLevel 
- * @apiParam {String=terminal,file,both} websocket.outputMethod terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file
+ * @apiParam {String=terminal,file,both} websocket.outputMethod terminal : log on console<br>file : write log into OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log<br>both : terminal + file
+ * @apiSuccess {String} websocket.customPath=executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log
  * @onexParamExchanges {all o}
+ * @onexParamOption {o}
+ * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
@@ -145,6 +153,7 @@
  *      "main":{
  *          "logLevel":"info",
  *          "outputMethod":"both"
+ *          "customPath":"/root/logs/filename.log"
  *      }
  *  }
  * 
@@ -157,6 +166,7 @@
  *          "main":{
  *              "logLevel":"info",
  *              "outputMethod":"both"
+ *              "customPath":"/root/logs/filename.log"
  *          }
  *      }
  *  }
