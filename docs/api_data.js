@@ -6366,12 +6366,11 @@ define({
               "type": "String"
             }, 
             {
+              "type": "String", 
               "group": "Success 200", 
-              "description": "<ul> <li>OneXAPI_Log/<b><i>DATE</i></b>.log</li> </ul>", 
+              "description": "<p>: executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>", 
               "optional": false, 
-              "defaultValue": "executedFilePath", 
-              "field": "main.customPath", 
-              "type": "String"
+              "field": "main.customPath"
             }, 
             {
               "type": "Object", 
@@ -6409,12 +6408,11 @@ define({
               "type": "String"
             }, 
             {
+              "type": "String", 
               "group": "Success 200", 
-              "description": "<ul> <li>OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</li> </ul>", 
+              "description": "<p>: executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>", 
               "optional": false, 
-              "defaultValue": "executedFilePath", 
-              "field": "websocket.customPath", 
-              "type": "String"
+              "field": "websocket.customPath"
             }
           ]
         }, 
@@ -6551,9 +6549,8 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<ul> <li>OneXAPI_Log/<b><i>DATE</i></b>.log</li> </ul>", 
+              "description": "<p>: executedFilePath + OneXAPI_Log/<b><i>DATE</i></b>.log</p>", 
               "optional": false, 
-              "defaultValue": "executedFilePath", 
               "field": "main.customPath", 
               "type": "String", 
               "options": [
@@ -6612,9 +6609,8 @@ define({
             }, 
             {
               "group": "Parameter", 
-              "description": "<ul> <li>OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</li> </ul>", 
+              "description": "<p>: executedFilePath + OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</p>", 
               "optional": false, 
-              "defaultValue": "executedFilePath", 
               "field": "websocket.customPath", 
               "type": "String", 
               "options": [
