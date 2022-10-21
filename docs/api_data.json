@@ -5406,6 +5406,14 @@
           },
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "main.customPath",
+            "defaultValue": "executedFilePath",
+            "description": "<ul> <li>OneXAPI_Log/<b><i>DATE</i></b>.log</li> </ul>"
+          },
+          {
+            "group": "Success 200",
             "type": "Object",
             "optional": false,
             "field": "websocket",
@@ -5438,13 +5446,21 @@
             "field": "websocket.logLevel",
             "defaultValue": "off",
             "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "websocket.customPath",
+            "defaultValue": "executedFilePath",
+            "description": "<ul> <li>OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</li> </ul>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"requestedApiCount\":0,\n    \"data\":{\n        \"main\":{\n            \"outputMethod\":\"terminal\",\n            \"logLevel\":\"off\"\n        },\n        \"websocket\":{\n            \"outputMethod\":\"terminal\",\n            \"logLevel\":\"off\"\n        }\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"requestedApiCount\":0,\n    \"data\":{\n        \"main\":{\n            \"outputMethod\":\"terminal\",\n            \"logLevel\":\"off\",\n            \"customPath\":\"/root/OneXAPI_Logs/OneXAPI.log\"\n        },\n        \"websocket\":{\n            \"outputMethod\":\"terminal\",\n            \"logLevel\":\"off\",\n            \"customPath\":\"/root/OneXAPI_Logs/OneXAPI_Websocket.log\"\n        }\n    }\n}",
           "type": "json"
         }
       ]
@@ -5509,6 +5525,14 @@
           },
           {
             "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "main.customPath",
+            "defaultValue": "executedFilePath",
+            "description": "<ul> <li>OneXAPI_Log/<b><i>DATE</i></b>.log</li> </ul>"
+          },
+          {
+            "group": "Parameter",
             "type": "Object",
             "optional": false,
             "field": "websocket",
@@ -5538,14 +5562,22 @@
             ],
             "optional": false,
             "field": "websocket.outputMethod",
-            "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Log/<b><i>DATE</i></b>.log<br>both : terminal + file</p>"
+            "description": "<p>terminal : log on console<br>file : write log into OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log<br>both : terminal + file</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "websocket.customPath",
+            "defaultValue": "executedFilePath",
+            "description": "<ul> <li>OneXAPI_Websocket_Log/<b><i>DATE</i></b>.log</li> </ul>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request Example : ",
-          "content": "{\n    \"main\":{\n        \"logLevel\":\"info\",\n        \"outputMethod\":\"both\"\n    }\n}",
+          "content": "{\n    \"main\":{\n        \"logLevel\":\"info\",\n        \"outputMethod\":\"both\"\n        \"customPath\":\"/root/logs/filename.log\"\n    }\n}",
           "type": "json"
         }
       ]
@@ -5565,7 +5597,7 @@
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "{\n    \"success\":true,\n    \"requestedApiCount\":0,\n    \"data\":{\n        \"main\":{\n            \"logLevel\":\"info\",\n            \"outputMethod\":\"both\"\n        }\n    }\n}",
+          "content": "{\n    \"success\":true,\n    \"requestedApiCount\":0,\n    \"data\":{\n        \"main\":{\n            \"logLevel\":\"info\",\n            \"outputMethod\":\"both\"\n            \"customPath\":\"/root/logs/filename.log\"\n        }\n    }\n}",
           "type": "json"
         }
       ]
