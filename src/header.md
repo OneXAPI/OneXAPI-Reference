@@ -124,7 +124,7 @@ If an error occurs, the response `success` field is **false**, and the data fiel
 #### Request Parameter
 Request parameters not in the request field list are ignored  
 #### Upper and lower case letters
-All string parameters are not case sensitive (ex. Btc, bTc, bTC are all considered the same input)  
+All string parameters are not case sensitive (e.g. Btc, bTc, bTC are all considered the same input)  
 However, fields with 'Allowed values' are case sensitive.  
 #### Rounding
 The price and amount of order and draw are automatically rounded.  
