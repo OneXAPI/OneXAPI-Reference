@@ -82,11 +82,9 @@
  * @apiSuccess {Object} main 
  * @apiSuccess {String=terminal,file,both} main.outputMethod=terminal
  * @apiSuccess {String=off,info,warn,error,critical} main.logLevel=off
- * @apiSuccess {String} main.customPath=executedFilePath/OneXAPI_Log/OneXAPI_<b><i>DATE</i></b>.log
  * @apiSuccess {Object} websocket
  * @apiSuccess {String=terminal,file,both} websocket.outputMethod=terminal
  * @apiSuccess {String=off,info,warn,error,critical} websocket.logLevel=off
- * @apiSuccess {String} websocket.customPath=executedFilePath/OneXAPI_Log/OneXAPI_Websocket_<b><i>DATE</i></b>.log
  * 
  * @apiSuccessExample Success-Response :
  *  {
@@ -95,13 +93,11 @@
  *      "data":{
  *          "main":{
  *              "outputMethod":"terminal",
- *              "logLevel":"off",
- *              "customPath":"/root/OneXAPI_Logs/OneXAPI.log"
+ *              "logLevel":"off"
  *          },
  *          "websocket":{
  *              "outputMethod":"terminal",
- *              "logLevel":"off",
- *              "customPath":"/root/OneXAPI_Logs/OneXAPI_Websocket.log"
+ *              "logLevel":"off"
  *          }
  *      }
  *  }
@@ -135,14 +131,10 @@
  * @apiParam {Object} main 
  * @apiParam {String=off,info,warn,error,critical} main.logLevel
  * @apiParam {String=terminal,file,both} main.outputMethod terminal : log on console<br>file : write log into customPath<br>both : terminal + file
- * @apiParam {String} main.customPath=executedFilePath/OneXAPI_Log/OneXAPI_<b><i>DATE</i></b>.log
  * @apiParam {Object} websocket 
  * @apiParam {String=off,info,warn,error,critical} websocket.logLevel 
  * @apiParam {String=terminal,file,both} websocket.outputMethod terminal : log on console<br>file : write log into customPath<br>both : terminal + file
- * @apiParam {String} websocket.customPath=executedFilePath/OneXAPI_Log/OneXAPI_Websocket_<b><i>DATE</i></b>.log
  * @onexParamExchanges {all o}
- * @onexParamOption {o}
- * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
  * @onexParamOption {o}
@@ -155,7 +147,6 @@
  *      "main":{
  *          "logLevel":"info",
  *          "outputMethod":"both"
- *          "customPath":"/root/logs/filename.log"
  *      }
  *  }
  * 
@@ -169,7 +160,6 @@
  *          "main":{
  *              "logLevel":"info",
  *              "outputMethod":"both"
- *              "customPath":"/root/logs/filename.log"
  *          }
  *      }
  *  }

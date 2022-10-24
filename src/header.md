@@ -4,6 +4,7 @@
 # Introduction
 
 Welcome to the documentation of OneXAPI!  
+OneXAPI, an abbreviation for One eXchange API, was created with the aim of communicating with exchanges in one unified API.  
 OneXAPI helps Quant Traders focus on algorithmic research without wasting time on SDK development.  
 
 OneXAPI has the following advantages.  
@@ -30,6 +31,7 @@ OneXAPI has the following advantages.
 
 ### Python
 #### Windows & Linux
+64-bit python only
 ```python
 pip install OneXAPI
 ```
@@ -54,8 +56,8 @@ Please contact OneX Team (ceo@libera.or.kr & cto@libera.or.kr)
 This is a tested and stable environment.  
 We recommend you to use it in the following environment.
 ### Python
-- Windows10 64bit (Python 3.6)
-- Ubuntu 18.04 64bit (Python 3.6)
+- Windows10 64bit (Python 3.6~3.10)
+- Ubuntu 18.04 64bit (Python 3.6~3.10)
 ### C++
 - Ubuntu 18.04 64bit
 <br>
