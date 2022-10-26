@@ -56,8 +56,8 @@ Please contact OneX Team (ceo@libera.or.kr & cto@libera.or.kr)
 This is a tested and stable environment.  
 We recommend you to use it in the following environment.
 ### Python
-- Windows10 64bit (Python 3.6~3.10)
-- Ubuntu 18.04 64bit (Python 3.6~3.10)
+- Windows10 64bit (Python 3.6+)
+- Ubuntu 18.04 64bit (Python 3.6+)
 ### C++
 - Ubuntu 18.04 64bit
 <br>
