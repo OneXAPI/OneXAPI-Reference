@@ -53,12 +53,12 @@ define({
       "examples": [
         {
           "title": "python",
-          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\n# Binance Spot\nclient = OneXAPI.Binance.Spot(user_info)\n\n# Binance Futures\nclient = OneXAPI.Binance.Futures(user_info)\n\n# Upbit Spot\nclient = OneXAPI.Upbit.Spot(user_info)                  # Korea\nclient = OneXAPI.Upbit.Singapore.Spot(user_info)        # Singapore\nclient = OneXAPI.Upbit.Thailand.Spot(user_info)         # Thailand\nclient = OneXAPI.Upbit.Indonesia.Spot(user_info)        # Indonesia",
+          "content": "import OneXAPI\n\nuser_info = {\n    \"accessKey\":\"user access key\",\n    \"secretKey\":\"user secrey key\"\n}\n\n# Binance Spot\nclient = OneXAPI.Binance.Spot(user_info)\n\n# Binance Futures\nclient = OneXAPI.Binance.Futures(user_info)\n\n# Upbit Spot\nclient = OneXAPI.Upbit.Spot(user_info)                  # Korea",
           "type": "python"
         },
         {
           "title": "c++",
-          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    // Binance Spot\n    OneXAPI::Binance::Spot client(userInfo);\n\n    // Binance Futures\n    OneXAPI::Binance::Futures client(userInfo);\n\n    // Upbit Spot\n    OneXAPI::Upbit::Spot client(userInfo);              // Korea\n    OneXAPI::Upbit::Singapore::Spot client(userInfo);   // Singapore\n    OneXAPI::Upbit::Thailand::Spot client(userInfo);    // Thailand\n    OneXAPI::Upbit::Indonesia::Spot client(userInfo);   // Indonesia\n\n    return 0;\n}",
+          "content": "#include <iostream>\n#include \"OneXAPI.hpp\"\n\nint main(){\n    std::string userInfo = R\"(\n        {\n            \"accessKey\":\"user access key\",\n            \"secretKey\":\"user secrey key\"\n        }\n    )\";\n\n    // Binance Spot\n    OneXAPI::Binance::Spot client(userInfo);\n\n    // Binance Futures\n    OneXAPI::Binance::Futures client(userInfo);\n\n    // Upbit Spot\n    OneXAPI::Upbit::Spot client(userInfo);              // Korea\n\n    return 0;\n}",
           "type": "cpp"
         }
       ],

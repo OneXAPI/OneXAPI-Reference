@@ -32,9 +32,6 @@
  *  
  *  # Upbit Spot
  *  client = OneXAPI.Upbit.Spot(user_info)                  # Korea
- *  client = OneXAPI.Upbit.Singapore.Spot(user_info)        # Singapore
- *  client = OneXAPI.Upbit.Thailand.Spot(user_info)         # Thailand
- *  client = OneXAPI.Upbit.Indonesia.Spot(user_info)        # Indonesia
  * 
  * @apiExample {cpp} c++
  *  #include <iostream>
@@ -56,9 +53,6 @@
  *  
  *      // Upbit Spot
  *      OneXAPI::Upbit::Spot client(userInfo)__;              // Korea
- *      OneXAPI::Upbit::Singapore::Spot client(userInfo)__;   // Singapore
- *      OneXAPI::Upbit::Thailand::Spot client(userInfo)__;    // Thailand
- *      OneXAPI::Upbit::Indonesia::Spot client(userInfo)__;   // Indonesia
  *  
  *      return 0;
  *  }
