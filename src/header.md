@@ -148,3 +148,7 @@ Find out what applications you can create with OneXAPI!
 More examples will be available soon at the link below.
 [Github](https://github.com/OneXAPI/OneXAPI_Python/tree/master/OneXAPI/example/)  
 <br>
+
+## Precautions by Exchange 
+### Binance
+1. If the orderbook websocket restarts in the background, it sends restapi as much as the market subscribed.
