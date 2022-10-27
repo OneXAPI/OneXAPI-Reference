@@ -29,6 +29,8 @@ OneXAPI has the following advantages.
 ---
 ## <span id="api-example-for-a-submenu-entry">Install</span>
 
+if OS is Windows, you must install the <A href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="blank">Microsoft Visual C++ Redistributable package</A>.
+
 ### Python
 #### Windows & Linux
 64-bit python only
