@@ -3,7 +3,7 @@
  * @apiName getInfo
  * @onexInfo get information of the OneXAPI Library
  * @apiGroup OneXAPI
- * @apiVersion 0.0.0
+ * @apiVersion 0.0.2
  *
  * @apiParam {NoParam} __EMPTY__ 
  * @onexParamExchanges {all o}
@@ -69,7 +69,7 @@
  * @api {onex} /OneXAPI getLoggerConfig
  * @apiName getLoggerConfig
  * @apiGroup OneXAPI
- * @apiVersion 0.0.0
+ * @apiVersion 0.0.2
  *
  * @apiParam {NoParam} __EMPTY__ 
  * @onexParamExchanges {all o}
@@ -126,7 +126,7 @@
  * @api {onex} /OneXAPI setLoggerConfig
  * @apiName setLoggerConfig
  * @apiGroup OneXAPI
- * @apiVersion 0.0.0
+ * @apiVersion 0.0.2
  *
  * @apiParam {Object} main 
  * @apiParam {String=off,info,warn,error,critical} main.logLevel

@@ -2,7 +2,7 @@
  * @api {onex} /Client create a new client
  * @apiName Client
  * @apiGroup Client
- * @apiVersion 0.0.0
+ * @apiVersion 0.0.2
  *
  * @apiParam {String} accessKey
  * @apiParam {String} secretKey
