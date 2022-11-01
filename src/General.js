@@ -2,7 +2,7 @@
  * @api {onex} /__GENERAL__ General
  * @apiName General
  * @apiGroup __GENERAL__
- * @apiVersion 0.0.2
+ * @apiVersion 0.1.0
  * @onexCategory
  */
 
@@ -10,7 +10,7 @@
  * @api {onex} /__GENERAL__ getConfig
  * @apiName getConfig
  * @apiGroup __GENERAL__
- * @apiVersion 0.0.2
+ * @apiVersion 0.1.0
  *
  * @apiParam {NoParam} __EMPTY__ 
  * @onexParamExchanges {all o}
@@ -81,7 +81,7 @@
  * @onexInfo Sets the settings for the object. Only the requested parameters are included in the response
  * @onexWarn The requested endpoint must be included in the endpoint candidates, otherwise it returns an error. See <a href=#api-Spot-getEndpointCandidates>getEndpointCandidates</a>.
  * @apiGroup __GENERAL__
- * @apiVersion 0.0.2
+ * @apiVersion 0.1.0
  *
  * @apiParam {String} accessKey
  * @apiParam {String} secretKey
@@ -143,7 +143,7 @@
  * @api {onex} /__GENERAL__ getEndpointCandidates
  * @apiName getEndpointCandidates
  * @apiGroup __GENERAL__
- * @apiVersion 0.0.2
+ * @apiVersion 0.1.0
  *
  * @apiParam {NoParam} __EMPTY__ 
  * @onexParamExchanges {all o}
@@ -208,7 +208,7 @@
  * @apiName has
  * @onexInfo Check if API exists or not
  * @apiGroup __GENERAL__
- * @apiVersion 0.0.2
+ * @apiVersion 0.1.0
  *
  * @apiParam {String} api if not exist, return all APIs
  * @onexParamExchanges {all o}

@@ -6,7 +6,7 @@ define({
       "title": "create a new client",
       "name": "Client",
       "group": "Client",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -77,7 +77,7 @@ define({
       "title": "General",
       "name": "General",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "isCategory": true,
@@ -91,7 +91,7 @@ define({
       "title": "Market",
       "name": "Market",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "isCategory": true,
@@ -105,7 +105,7 @@ define({
       "title": "Trade",
       "name": "Trade",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "isCategory": true,
@@ -119,7 +119,7 @@ define({
       "title": "Wallet",
       "name": "Wallet",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "isCategory": true,
@@ -133,7 +133,7 @@ define({
       "title": "changeLeverage",
       "name": "changeLeverage",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -270,7 +270,7 @@ define({
       "title": "changeMarginType",
       "name": "changeMarginType",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -416,7 +416,7 @@ define({
       "title": "fetchBalance",
       "name": "fetchBalance",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -555,7 +555,7 @@ define({
       "title": "fetchCandleHistory",
       "name": "fetchCandleHistory",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -780,7 +780,7 @@ define({
       "title": "fetchFundingFeeIncomeHistory",
       "name": "fetchFundingFeeIncomeHistory",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -950,7 +950,7 @@ define({
       "title": "fetchLeverage",
       "name": "fetchLeverage",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -1105,7 +1105,7 @@ define({
       "title": "fetchMarginType",
       "name": "fetchMarginType",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -1264,7 +1264,7 @@ define({
       "title": "fetchMarketInfo",
       "name": "fetchMarketInfo",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -1428,7 +1428,7 @@ define({
       "title": "fetchMarkets",
       "name": "fetchMarkets",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -1552,7 +1552,7 @@ define({
       "title": "fetchOpenOrders",
       "name": "fetchOpenOrders",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -1763,7 +1763,7 @@ define({
       "title": "fetchOrderInfo",
       "name": "fetchOrderInfo",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -2052,7 +2052,7 @@ define({
       "title": "fetchOrderbook",
       "name": "fetchOrderbook",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -2245,7 +2245,7 @@ define({
       "title": "fetchPositions",
       "name": "fetchPositions",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -2445,7 +2445,7 @@ define({
       "title": "fetchTicker",
       "name": "fetchTicker",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -2637,7 +2637,7 @@ define({
       "title": "fetchTradingFee",
       "name": "fetchTradingFee",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -2777,7 +2777,7 @@ define({
       "title": "getCandleIntervalCandidates",
       "name": "getCandleIntervalCandidates",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -2866,7 +2866,7 @@ define({
       "title": "getConfig",
       "name": "getConfig",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3008,7 +3008,7 @@ define({
       "title": "getEndpointCandidates",
       "name": "getEndpointCandidates",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3094,7 +3094,7 @@ define({
       "title": "getOrderRoundingRule",
       "name": "getOrderRoundingRule",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3237,7 +3237,7 @@ define({
       "title": "getSubscribingMarketInfo",
       "name": "getSubscribingMarketInfo",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3338,7 +3338,7 @@ define({
       "title": "getSubscribingOrderbooks",
       "name": "getSubscribingOrderbooks",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3439,7 +3439,7 @@ define({
       "title": "getSubscribingTickers",
       "name": "getSubscribingTickers",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3540,7 +3540,7 @@ define({
       "title": "has",
       "name": "has",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3613,7 +3613,7 @@ define({
       "title": "isSubscribingBalance",
       "name": "isSubscribingBalance",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3686,7 +3686,7 @@ define({
       "title": "orderCancel",
       "name": "orderCancel",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -3843,7 +3843,7 @@ define({
       "title": "orderLimitBuy",
       "name": "orderLimitBuy",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -4071,7 +4071,7 @@ define({
       "title": "orderLimitSell",
       "name": "orderLimitSell",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -4299,7 +4299,7 @@ define({
       "title": "orderMarketBuy",
       "name": "orderMarketBuy",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -4477,7 +4477,7 @@ define({
       "title": "orderMarketSell",
       "name": "orderMarketSell",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -4655,7 +4655,7 @@ define({
       "title": "setConfig",
       "name": "setConfig",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -4813,7 +4813,7 @@ define({
       "title": "setOrderRoundingRule",
       "name": "setOrderRoundingRule",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -4980,7 +4980,7 @@ define({
       "title": "subscribeBalance",
       "name": "subscribeBalance",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -5054,7 +5054,7 @@ define({
       "title": "subscribeMarketInfo",
       "name": "subscribeMarketInfo",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -5253,7 +5253,7 @@ define({
       "title": "subscribeOrderbook",
       "name": "subscribeOrderbook",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -5453,7 +5453,7 @@ define({
       "title": "subscribeTicker",
       "name": "subscribeTicker",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -5652,7 +5652,7 @@ define({
       "title": "unsubscribeBalance",
       "name": "unsubscribeBalance",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -5725,7 +5725,7 @@ define({
       "title": "unsubscribeMarketInfo",
       "name": "unsubscribeMarketInfo",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -5924,7 +5924,7 @@ define({
       "title": "unsubscribeOrderbook",
       "name": "unsubscribeOrderbook",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -6123,7 +6123,7 @@ define({
       "title": "unsubscribeTicker",
       "name": "unsubscribeTicker",
       "group": "Futures",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -6322,7 +6322,7 @@ define({
       "title": "getInfo",
       "name": "getInfo",
       "group": "OneXAPI",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -6420,7 +6420,7 @@ define({
       "title": "getLoggerConfig",
       "name": "getLoggerConfig",
       "group": "OneXAPI",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -6555,7 +6555,7 @@ define({
       "title": "setLoggerConfig",
       "name": "setLoggerConfig",
       "group": "OneXAPI",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -6711,7 +6711,7 @@ define({
       "title": "General",
       "name": "General",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
       "isCategory": true,
@@ -6725,7 +6725,7 @@ define({
       "title": "Market",
       "name": "Market",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
       "isCategory": true,
@@ -6739,7 +6739,7 @@ define({
       "title": "Trade",
       "name": "Trade",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
       "isCategory": true,
@@ -6753,7 +6753,7 @@ define({
       "title": "Wallet",
       "name": "Wallet",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
       "isCategory": true,
@@ -6767,7 +6767,7 @@ define({
       "title": "fetchAllCurrencies",
       "name": "fetchAllCurrencies",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -6867,7 +6867,7 @@ define({
       "title": "fetchBalance",
       "name": "fetchBalance",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -7008,7 +7008,7 @@ define({
       "title": "fetchCandleHistory",
       "name": "fetchCandleHistory",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -7232,7 +7232,7 @@ define({
       "title": "fetchDepositAddress",
       "name": "fetchDepositAddress",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -7351,7 +7351,7 @@ define({
       "title": "fetchDepositHistory",
       "name": "fetchDepositHistory",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -7544,7 +7544,7 @@ define({
       "title": "fetchMarkets",
       "name": "fetchMarkets",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -7656,7 +7656,7 @@ define({
       "title": "fetchOpenOrders",
       "name": "fetchOpenOrders",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -7854,7 +7854,7 @@ define({
       "title": "fetchOrderInfo",
       "name": "fetchOrderInfo",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -8118,7 +8118,7 @@ define({
       "title": "fetchOrderbook",
       "name": "fetchOrderbook",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -8301,7 +8301,7 @@ define({
       "title": "fetchTicker",
       "name": "fetchTicker",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -8483,7 +8483,7 @@ define({
       "title": "fetchTradingFee",
       "name": "fetchTradingFee",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -8610,7 +8610,7 @@ define({
       "title": "fetchWalletStatus",
       "name": "fetchWalletStatus",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -8721,7 +8721,7 @@ define({
       "title": "fetchWithdrawHistory",
       "name": "fetchWithdrawHistory",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -8913,7 +8913,7 @@ define({
       "title": "getCandleIntervalCandidates",
       "name": "getCandleIntervalCandidates",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9003,7 +9003,7 @@ define({
       "title": "getConfig",
       "name": "getConfig",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9145,7 +9145,7 @@ define({
       "title": "getEndpointCandidates",
       "name": "getEndpointCandidates",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9231,7 +9231,7 @@ define({
       "title": "getOrderRoundingRule",
       "name": "getOrderRoundingRule",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9374,7 +9374,7 @@ define({
       "title": "getSubscribingOrderbooks",
       "name": "getSubscribingOrderbooks",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9472,7 +9472,7 @@ define({
       "title": "getSubscribingTickers",
       "name": "getSubscribingTickers",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9570,7 +9570,7 @@ define({
       "title": "getWithdrawRoundingRule",
       "name": "getWithdrawRoundingRule",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9648,7 +9648,7 @@ define({
       "title": "has",
       "name": "has",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9721,7 +9721,7 @@ define({
       "title": "isDepositCompleted",
       "name": "isDepositCompleted",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9844,7 +9844,7 @@ define({
       "title": "isSubscribingBalance",
       "name": "isSubscribingBalance",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -9917,7 +9917,7 @@ define({
       "title": "orderCancel",
       "name": "orderCancel",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -10067,7 +10067,7 @@ define({
       "title": "orderLimitBuy",
       "name": "orderLimitBuy",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -10283,7 +10283,7 @@ define({
       "title": "orderLimitSell",
       "name": "orderLimitSell",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -10499,7 +10499,7 @@ define({
       "title": "orderMarketBuy",
       "name": "orderMarketBuy",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -10656,7 +10656,7 @@ define({
       "title": "orderMarketSell",
       "name": "orderMarketSell",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -10813,7 +10813,7 @@ define({
       "title": "setConfig",
       "name": "setConfig",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -10971,7 +10971,7 @@ define({
       "title": "setOrderRoundingRule",
       "name": "setOrderRoundingRule",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -11138,7 +11138,7 @@ define({
       "title": "setWithdrawRoundingRule",
       "name": "setWithdrawRoundingRule",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -11220,7 +11220,7 @@ define({
       "title": "subscribeBalance",
       "name": "subscribeBalance",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -11298,7 +11298,7 @@ define({
       "title": "subscribeOrderbook",
       "name": "subscribeOrderbook",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -11487,7 +11487,7 @@ define({
       "title": "subscribeTicker",
       "name": "subscribeTicker",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -11675,7 +11675,7 @@ define({
       "title": "unsubscribeBalance",
       "name": "unsubscribeBalance",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -11752,7 +11752,7 @@ define({
       "title": "unsubscribeOrderbook",
       "name": "unsubscribeOrderbook",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -11941,7 +11941,7 @@ define({
       "title": "unsubscribeTicker",
       "name": "unsubscribeTicker",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [
@@ -12130,7 +12130,7 @@ define({
       "title": "withdraw",
       "name": "withdraw",
       "group": "Spot",
-      "version": "0.0.2",
+      "version": "0.1.0",
       "parameter": {
         "fields": {
           "Parameter : ": [

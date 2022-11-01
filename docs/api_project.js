@@ -1,6 +1,6 @@
 define({
   "name": "OneXAPI",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Documentation for the OneXAPI",
   "title": "OneXAPI Docs",
   "url": null,
@@ -77,7 +77,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2022-11-01T02:37:18.516Z",
+    "time": "2022-11-01T02:43:56.340Z",
     "url": "https://apidocjs.com",
     "version": "0.29.0"
   }
