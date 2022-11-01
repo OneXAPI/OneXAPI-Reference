@@ -12,6 +12,8 @@
  * @onexWarn During websocket is running, fetchBalance does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
+ * @onexWebsocket
  *
  * @apiParam {Bool} forceRestApi=false force to update using REST API
  * @apiParam {StringArray} currencies If not exist, return all currencies
@@ -101,6 +103,8 @@
  * @apiName fetchPositions
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
+ * @onexWebsocket
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -203,6 +207,7 @@
  * @apiName fetchFundingFeeIncomeHistory
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -306,6 +311,7 @@
  * @onexInfo Start updating balance via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {Bool} reconnect=false
  * @onexParamExchanges {Binance o}
@@ -363,6 +369,7 @@
  * @onexInfo Stop updating balance via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {NoParam} __EMPTY__ 
  * @onexParamExchanges {Binance o}
@@ -419,6 +426,7 @@
  * @onexInfo Returns whether balance is being updated via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {NoParam} __EMPTY__
  * @onexParamExchanges {All o}
@@ -612,6 +620,7 @@
  * @onexDanger Currently, OneXAPI supports only One-way mode trading.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -717,6 +726,7 @@
  * @onexDanger Currently, OneXAPI supports only One-way mode trading.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -828,6 +838,7 @@
  * @onexDanger Currently, OneXAPI supports only One-way mode trading.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -926,6 +937,7 @@
  * @onexDanger Currently, OneXAPI supports only One-way mode trading.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1023,6 +1035,7 @@
  * @onexWarn If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1116,6 +1129,7 @@
  * @onexWarn If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1246,6 +1260,7 @@
  * @apiName fetchOpenOrders
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1354,6 +1369,7 @@
  * @onexDanger Binance : Trading fee is a value before bnb discount
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1444,6 +1460,8 @@
  * @apiName fetchLeverage
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
+ * @onexWebsocket
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1536,6 +1554,7 @@
  * @apiName changeLeverage
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1625,6 +1644,8 @@
  * @apiName fetchMarginType
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
+ * @onexWebsocket
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1719,6 +1740,7 @@
  * @onexDanger Binance : Returns an error if the requested marginType is the same as the existing marginType.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1869,6 +1891,7 @@
  * @apiName fetchMarkets
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -1960,6 +1983,8 @@
  * @onexWarn During marketInfo websocket is running, fetchMarketInfo does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true. 
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
+ * @onexWebsocket
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -2052,6 +2077,8 @@
  * @onexWarn During ticker websocket is running, fetchTicker does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true. 
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
+ * @onexWebsocket
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -2145,6 +2172,8 @@
  * @onexDanger Binance : Timestamp does not mean the server time; it means the time when the response arrived.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
+ * @onexWebsocket
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -2260,6 +2289,7 @@
  * @onexWarn When enormous amount of data is requested, fetchCandleHistory takes a long time to execute.
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexRest
  *
  * @apiParam {String} baseCurrency
  * @apiParam {String} quoteCurrency
@@ -2380,6 +2410,7 @@
  * @onexInfo Returns marketInfo symbols being subscribed on websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {NoParam} __EMPTY__ 
  * @onexParamExchanges {Binance o}
@@ -2449,6 +2480,7 @@
  * @onexInfo Returns ticker symbols being subscribed on websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {NoParam} __EMPTY__ 
  * @onexParamExchanges {Binance o}
@@ -2518,6 +2550,7 @@
  * @onexInfo Returns orderbook symbols being subscribed on websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {NoParam} __EMPTY__ 
  * @onexParamExchanges {Binance o}
@@ -2587,6 +2620,7 @@
  * @onexInfo Start updating MarketInfo via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {ObjectArray} market
  * @apiParam {String} market.baseCurrency
@@ -2707,6 +2741,7 @@
  * @onexInfo Stop updating MarketInfo via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {ObjectArray} market
  * @apiParam {String} market.baseCurrency
@@ -2827,6 +2862,7 @@
  * @onexInfo Start updating tickers via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {ObjectArray} market
  * @apiParam {String} market.baseCurrency
@@ -2947,6 +2983,7 @@
  * @onexInfo Stop updating tickers via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {ObjectArray} market
  * @apiParam {String} market.baseCurrency
@@ -3068,6 +3105,7 @@
  * @onexInfo Start updating orderbooks via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {ObjectArray} market
  * @apiParam {String} market.baseCurrency
@@ -3188,6 +3226,7 @@
  * @onexInfo Stop updating orderbooks via websocket
  * @apiGroup Futures
  * @apiVersion 0.0.2
+ * @onexWebsocket
  *
  * @apiParam {ObjectArray} market
  * @apiParam {String} market.baseCurrency

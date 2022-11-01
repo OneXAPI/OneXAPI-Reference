@@ -83,6 +83,10 @@ for group in group_list :
             elif "@apiExample {python}" in line:
                 if len(apiExchangeInfo[group][apiName]["options"]) != paramCnt:
                     error("Param count of option is wrong : " + apiName)
+            elif "@onexRest" in line:
+                apiExchangeInfo[group][apiName]["isRest"] = True
+            elif "@onexWebsocket" in line:
+                apiExchangeInfo[group][apiName]["isWebsocket"] = True
 
 # print(apiExchangeInfo)
 
@@ -104,6 +108,16 @@ with open("docs/api_data.js", "r+") as file:
         ### Category Marking ###
         if "isCategory" in apiExchangeInfo[api["group"]][api["name"]].keys():
             api["isCategory"] = apiExchangeInfo[api["group"]][api["name"]]["isCategory"]
+
+        ### Rest&Websocket Marking ###
+        if "isRest" in apiExchangeInfo[api["group"]][api["name"]].keys():
+            api["isRest"] = apiExchangeInfo[api["group"]][api["name"]]["isRest"]
+        else:
+            api["isRest"] = False
+        if "isWebsocket" in apiExchangeInfo[api["group"]][api["name"]].keys():
+            api["isWebsocket"] = apiExchangeInfo[api["group"]][api["name"]]["isWebsocket"]
+        else:
+            api["isWebsocket"] = False
 
         ### Info&Warn&Danger Update ###
         if "info" in apiExchangeInfo[api["group"]][api["name"]].keys():

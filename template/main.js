@@ -198,7 +198,9 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
             type: entry.type,
             typeName: shortenType(entry.type),
             version: entry.version,
-            isCategory: true
+            isCategory: true,
+            isRest: entry.isRest,
+            isWebsocket: entry.isWebsocket
           });
         } else if (oldName !== entry.name) {
           nav.push({
@@ -207,7 +209,9 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
             name: entry.name,
             type: entry.type,
             typeName: shortenType(entry.type),
-            version: entry.version
+            version: entry.version,
+            isRest: entry.isRest,
+            isWebsocket: entry.isWebsocket
           });
         } else {
           nav.push({
@@ -217,7 +221,9 @@ function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequ
             name: entry.name,
             type: entry.type,
             typeName: shortenType(entry.type),
-            version: entry.version
+            version: entry.version,
+            isRest: entry.isRest,
+            isWebsocket: entry.isWebsocket
           });
         }
         oldName = entry.name;

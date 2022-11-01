@@ -57,7 +57,14 @@
           {{else}}
             <li {{#if hidden}}class="hide" {{/if}}data-group="{{group}}" data-name="{{name}}" data-version="{{version}}">
               <a href="#api-{{group}}-{{name}}" class="nav-list-item">
-                <div>{{title}}</div>
+                <div>{{title}}
+                  {{#if isRest}}
+                    <span class="badge badge-rest">R</span>
+                  {{/if}}
+                  {{#if isWebsocket}}
+                    <span class="badge badge-websocket">W</span>
+                  {{/if}}
+                </div>
               </a>
             </li>
           {{/if}}
@@ -140,7 +147,14 @@
       <div class="col-md-8 no-float">
         <article id="api-{{article.group}}-{{article.name}}-{{article.version}}" data-group="{{article.group}}" data-name="{{article.name}}" data-version="{{article.version}}">
           <div class="pull-left">
-            <h3>{{article.groupTitle}}{{#if article.title}} - {{article.title}}{{/if}}</h3>
+            <h3>{{article.groupTitle}}{{#if article.title}} - {{article.title}}{{/if}}
+              {{#if article.isRest}}
+                <span class="badge badge-rest">Rest</span>
+              {{/if}}
+              {{#if article.isWebsocket}}
+                <span class="badge badge-websocket">Websocket</span>
+              {{/if}}
+            </h3>
           </div>
           {{#if template.withCompare}}
           <div class="pull-right">

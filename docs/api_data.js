@@ -64,6 +64,8 @@ define({
       ],
       "filename": "tmp/Client.js",
       "groupTitle": "Client",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -79,6 +81,8 @@ define({
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "isCategory": true,
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {}
     },
     {
@@ -91,6 +95,8 @@ define({
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "isCategory": true,
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {}
     },
     {
@@ -103,6 +109,8 @@ define({
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "isCategory": true,
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {}
     },
     {
@@ -115,6 +123,8 @@ define({
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
       "isCategory": true,
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {}
     },
     {
@@ -248,6 +258,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported"
       }
@@ -391,6 +403,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "danger": "Binance : Returns an error if the requested marginType is the same as the existing marginType.",
       "exchanges": {
         "Binance": "supported"
@@ -528,6 +542,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": true,
       "warn": "During websocket is running, fetchBalance does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported"
@@ -751,6 +767,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "When enormous amount of data is requested, fetchCandleHistory takes a long time to execute.",
       "exchanges": {
         "Binance": "supported"
@@ -920,6 +938,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported"
       }
@@ -1073,6 +1093,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": true,
       "exchanges": {
         "Binance": "supported"
       }
@@ -1230,6 +1252,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": true,
       "exchanges": {
         "Binance": "supported"
       }
@@ -1391,6 +1415,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": true,
       "warn": "During marketInfo websocket is running, fetchMarketInfo does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported"
@@ -1514,6 +1540,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported"
       }
@@ -1723,6 +1751,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported"
       }
@@ -2009,6 +2039,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.",
       "exchanges": {
         "Binance": "supported"
@@ -2199,6 +2231,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": true,
       "warn": "During orderbook websocket is running, fetchOrderbook does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "danger": "Binance : Timestamp does not mean the server time; it means the time when the response arrived.",
       "exchanges": {
@@ -2399,6 +2433,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": true,
       "exchanges": {
         "Binance": "supported"
       }
@@ -2588,6 +2624,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": true,
       "warn": "During ticker websocket is running, fetchTicker does not send rest API request.<br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported"
@@ -2726,6 +2764,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "danger": "Binance : Trading fee is a value before bnb discount",
       "exchanges": {
         "Binance": "supported"
@@ -2814,6 +2854,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -2954,6 +2996,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -3038,6 +3082,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -3179,6 +3225,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -3277,6 +3325,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Returns marketInfo symbols being subscribed on websocket",
       "exchanges": {
         "Binance": "supported"
@@ -3376,6 +3426,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Returns orderbook symbols being subscribed on websocket",
       "exchanges": {
         "Binance": "supported"
@@ -3475,6 +3527,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Returns ticker symbols being subscribed on websocket",
       "exchanges": {
         "Binance": "supported"
@@ -3546,6 +3600,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": false,
       "info": "Check if API exists or not",
       "exchanges": {
         "All": "supported"
@@ -3617,6 +3673,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Returns whether balance is being updated via websocket",
       "exchanges": {
         "All": "supported"
@@ -3772,6 +3830,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.",
       "exchanges": {
         "Binance": "supported"
@@ -3997,6 +4057,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "danger": "Currently, OneXAPI supports only One-way mode trading.",
       "exchanges": {
@@ -4223,6 +4285,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "danger": "Currently, OneXAPI supports only One-way mode trading.",
       "exchanges": {
@@ -4399,6 +4463,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "danger": "Currently, OneXAPI supports only One-way mode trading.",
       "exchanges": {
@@ -4575,6 +4641,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Futures-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Futures-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "danger": "Currently, OneXAPI supports only One-way mode trading.",
       "exchanges": {
@@ -4731,6 +4799,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": false,
       "info": "Sets the settings for the object. Only the requested parameters are included in the response",
       "warn": "The requested endpoint must be included in the endpoint candidates, otherwise it returns an error. See <a href=#api-Spot-getEndpointCandidates>getEndpointCandidates</a>.",
       "exchanges": {
@@ -4898,6 +4968,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -4969,6 +5041,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Start updating balance via websocket",
       "exchanges": {
         "Binance": "supported"
@@ -5166,6 +5240,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Start updating MarketInfo via websocket",
       "exchanges": {
         "Binance": "supported"
@@ -5363,6 +5439,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Start updating orderbooks via websocket",
       "warn": "Binance : The requestTimeout increases by the requested market size. requestTimeout = requestTimeout + 500 * market size",
       "exchanges": {
@@ -5561,6 +5639,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Start updating tickers via websocket",
       "exchanges": {
         "Binance": "supported"
@@ -5632,6 +5712,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Stop updating balance via websocket",
       "exchanges": {
         "Binance": "supported"
@@ -5829,6 +5911,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Stop updating MarketInfo via websocket",
       "exchanges": {
         "Binance": "supported"
@@ -6026,6 +6110,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Stop updating orderbooks via websocket",
       "exchanges": {
         "Binance": "supported"
@@ -6223,6 +6309,8 @@ define({
       ],
       "filename": "tmp/Futures.js",
       "groupTitle": "Futures",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Stop updating tickers via websocket",
       "exchanges": {
         "Binance": "supported"
@@ -6319,6 +6407,8 @@ define({
       ],
       "filename": "tmp/OneXAPI.js",
       "groupTitle": "OneXAPI",
+      "isRest": false,
+      "isWebsocket": false,
       "info": "get information of the OneXAPI Library",
       "exchanges": {
         "All": "supported"
@@ -6453,6 +6543,8 @@ define({
       ],
       "filename": "tmp/OneXAPI.js",
       "groupTitle": "OneXAPI",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -6607,6 +6699,8 @@ define({
       ],
       "filename": "tmp/OneXAPI.js",
       "groupTitle": "OneXAPI",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -6621,6 +6715,8 @@ define({
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
       "isCategory": true,
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {}
     },
     {
@@ -6633,6 +6729,8 @@ define({
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
       "isCategory": true,
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {}
     },
     {
@@ -6645,6 +6743,8 @@ define({
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
       "isCategory": true,
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {}
     },
     {
@@ -6657,6 +6757,8 @@ define({
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
       "isCategory": true,
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {}
     },
     {
@@ -6753,6 +6855,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -6890,6 +6994,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": true,
       "warn": "During websocket is running, updateAccountBalance does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported",
@@ -7112,6 +7218,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "When enormous amount of data is requested, fetchCandleHistory takes a long time to execute.",
       "exchanges": {
         "Binance": "supported",
@@ -7230,6 +7338,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -7420,6 +7530,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "danger": "Upbit : supports up to 100 deposits<br>Binance : supports up to 1000 deposits and 90 days from now",
       "exchanges": {
         "Binance": "supported",
@@ -7531,6 +7643,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -7727,6 +7841,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -7988,6 +8104,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.",
       "exchanges": {
         "Binance": "supported",
@@ -8168,6 +8286,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": true,
       "warn": "During orderbook websocket is running, fetchOrderbook does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "danger": "Binance : Timestamp does not mean the server time; it means the time when the response arrived.",
       "exchanges": {
@@ -8349,6 +8469,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": true,
       "warn": "During ticker websocket is running, fetchTicker does not send rest API request. <br>If you want to force to send rest API, set forceRestApi parameter as true.",
       "exchanges": {
         "Binance": "supported",
@@ -8474,6 +8596,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "danger": "Binance : Trading fee is a value before bnb discount",
       "exchanges": {
         "Binance": "supported",
@@ -8584,6 +8708,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "exchanges": {
         "Binance": "supported",
         "Upbit": "supported"
@@ -8773,6 +8899,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "danger": "Upbit : supports up to 100 withdrawals<br>Binance : supports up to 1000 withdrawals and 90 days from now",
       "exchanges": {
         "Binance": "supported",
@@ -8863,6 +8991,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -9003,6 +9133,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -9087,6 +9219,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -9228,6 +9362,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -9322,6 +9458,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Returns orderbook symbols being subscribed on websocket",
       "exchanges": {
         "Binance": "supported",
@@ -9418,6 +9556,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Returns ticker symbols being subscribed on websocket",
       "exchanges": {
         "Binance": "supported",
@@ -9496,6 +9636,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -9566,6 +9708,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "info": "Check if API exists or not",
       "exchanges": {
         "All": "supported"
@@ -9685,6 +9829,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "'Deposit Completed' means that the deposited asset is tradable. This does not mean that client can withdraw asset depending on the exchange.<br>This API is used in two ways.<br>1. inquire by txid<br>2. inquire by \u2018currency\u2019 and \u2018amount\u2019 and \u2018since\u2019",
       "danger": "Binance : supports up to 1000 deposits and 90 days from now",
       "exchanges": {
@@ -9758,6 +9904,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Returns whether balance is being updated via websocket",
       "exchanges": {
         "All": "supported"
@@ -9905,6 +10053,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "If both <b><i>orderId</b></i> and <b><i>clientOrderId</b></i> are options, either of them must be sent.<br>If both are sent, <b><i>orderId</b></i> is used preferentially.",
       "exchanges": {
         "Binance": "supported",
@@ -10119,6 +10269,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "exchanges": {
         "Binance": "supported",
@@ -10333,6 +10485,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "exchanges": {
         "Binance": "supported",
@@ -10488,6 +10642,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "exchanges": {
         "Binance": "supported",
@@ -10643,6 +10799,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "warn": "Price and amount are automatically rounded to market. If you want to check or change the rounding rule, see <a href=#api-Spot-getOrderRoundingRule>getOrderRoundingRule</a> and <a href=#api-Spot-setOrderRoundingRule>setOrderRoundingRule</a>.",
       "exchanges": {
         "Binance": "supported",
@@ -10799,6 +10957,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "info": "Sets the settings for the object. Only the requested parameters are included in the response",
       "warn": "The requested endpoint must be included in the endpoint candidates, otherwise it returns an error. See <a href=#api-Spot-getEndpointCandidates>getEndpointCandidates</a>.",
       "exchanges": {
@@ -10966,6 +11126,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -11046,6 +11208,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": false,
       "exchanges": {
         "All": "supported"
       }
@@ -11120,6 +11284,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Start updating balance via websocket",
       "exchanges": {
         "Binance": "supported",
@@ -11306,6 +11472,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Start updating orderbooks via websocket",
       "warn": "Binance : The requestTimeout increases by the requested market size. requestTimeout = requestTimeout + 500 * market size",
       "exchanges": {
@@ -11493,6 +11661,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Start updating tickers via websocket",
       "exchanges": {
         "Binance": "supported",
@@ -11568,6 +11738,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Stop updating balance via websocket",
       "exchanges": {
         "Binance": "supported",
@@ -11755,6 +11927,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Stop updating orderbooks via websocket",
       "exchanges": {
         "Binance": "supported",
@@ -11942,6 +12116,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": false,
+      "isWebsocket": true,
       "info": "Stop updating tickers via websocket",
       "exchanges": {
         "Binance": "supported",
@@ -12135,6 +12311,8 @@ define({
       ],
       "filename": "tmp/Spot.js",
       "groupTitle": "Spot",
+      "isRest": true,
+      "isWebsocket": false,
       "danger": "Binance : If the fast draw setting for the account is enabled, internal draw will be executed.",
       "exchanges": {
         "Binance": "supported",

@@ -1270,3 +1270,15 @@ pre .typ-options {
 /* 아래쪽 툴팁 시작 */
 
 /* 툴팁 방향 설정 끝 */
+.badge-rest{
+  margin-left: 3px;
+  font-size: smaller;
+  background: #12cf8d;
+}
+
+.badge-websocket{
+  margin-left: 3px;
+  font-size: smaller;
+  background: #007bff;
+}
+
